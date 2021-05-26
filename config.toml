@@ -40,7 +40,7 @@ light_color = "#f8f9fa"
 font_family = "lato" # Choose font family from : https://fonts.google.com/
 
 # contact form action
-contact_form_action = "#" # contact form works with : https://formspree.io
+contact_form_action = "https://formspree.io/f/xknkrone" # contact form works with : https://formspree.io
 
 
 ############################## social links ##############################
