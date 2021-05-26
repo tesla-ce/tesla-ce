@@ -1,8 +1,8 @@
 ---
-title: "Billing & Pricing"
+title: "Developers"
 date: 2018-12-28T11:02:05+06:00
-icon: "ti-credit-card"
-description: "Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet"
+icon: "ti-github"
+description: "Resources and documentation for developers"
 type : "docs"
 ---
 
