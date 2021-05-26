@@ -1,12 +1,13 @@
 ################################# Default configuration ###################
 # provide your domain here
 baseURL = "https://tesla-ce.github.io/"
+
 # theme
 theme = "dot"
 # site title
 title = "TeSLA CE"
 # disable language
-disableLanguages = []
+disableLanguages = ["Fr"]
 # google analytics
 googleAnalytics = "" # paste your analytics ID here. (Ex: UA-123-45)
 # unsafe html
@@ -17,15 +18,15 @@ unsafe = true
 ############################# Default Parameters ##########################
 [params]
 # logo is for all page
-logo = ""
+logo = "images/logo_tesla_ce.png"
 # logo white is for homepage logo, you can use colorful logo too...
-logo_white = ""
+logo_white = "images/logo_tesla_ce.png"
 # when logo is empty, it will shown your site title
 
 # OpenGraph / Twitter Card metadata
-description = "This is meta description"
+description = "TeSLA Community Edition"
 author = "Themefisher"
-image = "images/logo.png" # this image will be used as fallback if a page has no image of its own
+image = "images/logo_tesla_ce.png" # this image will be used as fallback if a page has no image of its own
 
 # customize color
 primary_color = "#02007e"
