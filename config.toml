@@ -44,25 +44,25 @@ contact_form_action = "https://formspree.io/f/xknkrone" # contact form works wit
 
 
 ############################## social links ##############################
-[[params.social]]
-icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
-name = "Facebook"
-link = "#"
+#[[params.social]]
+#icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
+#name = "Facebook"
+#link = "#"
 
-[[params.social]]
-icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-name = "Twitter"
-link = "#"
+#[[params.social]]
+#icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
+#name = "Twitter"
+#link = "#"
   
 [[params.social]]
 icon = "ti-github" # themify icon pack : https://themify.me/themify-icons
 name = "Github"
-link = "#"
+link = "https://tesla-ce.github.com"
   
-[[params.social]]
-icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-name = "Linkedin"
-link = "#"
+#[[params.social]]
+#icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+#name = "Linkedin"
+#link = "#"
 
 ################################ English Language ######################
 [Languages.en]
