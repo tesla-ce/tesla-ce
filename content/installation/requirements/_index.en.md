@@ -13,9 +13,11 @@ keywords:
 ---
 ## Domain
 
-Due to the use of personal data, TeSLA CE will use encrypted communications. As part of the deployment, [Traefik ](https://traefik.io/)proxy and load-balancer will be deployed by default, which will manage the certificates using [LetsEncrypt](https://letsencrypt.org/). 
+Due to the use of personal data, TeSLA CE will use encrypted communications. As part of the deployment, [Traefik ](https://traefik.io/)proxy and load-balancer will be deployed by default, which will manage the certificates using [LetsEncrypt](https://letsencrypt.org/).
 
-In order to deploy TeSLA CE, you will require to have a valid domain name pointing to the 
+You will require to have a valid domain name pointing to the server where TeSLA CE will be deployed. 
+
+If you plan to deploy the services as part of the installation procedure (not recommended for production), you will also need to point sub-domains for deployed services pointing to the server. In this case, TeSLA CE configuration scripts will try to reach services on such sub-domains. 
 
 ## Services
 
@@ -31,7 +33,7 @@ In order to operate, TeSLA CE needs a set of services ready to use:
 
 The configuration and credentials to access those services is required in order to perform the initial setup of the system
 
-The initial setup process will prepare all the services in order to be used by TeSLA CE. 
+The initial setup process will prepare all the services in order to be used by TeSLA CE.
 
 ### Production
 
