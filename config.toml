@@ -18,9 +18,9 @@ unsafe = true
 ############################# Default Parameters ##########################
 [params]
 # logo is for all page
-logo = ""
+logo = "/images/logo_tesla_ce.png"
 # logo white is for homepage logo, you can use colorful logo too...
-logo_white = ""
+logo_white = "/images/logo_tesla_ce2.png"
 # when logo is empty, it will shown your site title
 
 # OpenGraph / Twitter Card metadata
@@ -42,27 +42,26 @@ font_family = "lato" # Choose font family from : https://fonts.google.com/
 # contact form action
 contact_form_action = "https://formspree.io/f/xknkrone" # contact form works with : https://formspree.io
 
-
 ############################## social links ##############################
-#[[params.social]]
-#icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
-#name = "Facebook"
-#link = "#"
+# [[params.social]]
+# icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
+# name = "Facebook"
+# link = "#"
 
-#[[params.social]]
-#icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
-#name = "Twitter"
-#link = "#"
+# [[params.social]]
+# icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
+# name = "Twitter"
+# link = "#"
   
 [[params.social]]
 icon = "ti-github" # themify icon pack : https://themify.me/themify-icons
 name = "Github"
-link = "https://github.com/tesla-ce
-  
-#[[params.social]]
-#icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-#name = "Linkedin"
-#link = "#"
+link = "https://github.com/tesla-ce"
+
+# [[params.social]]
+# icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+# name = "Linkedin"
+# link = "#"
 
 ################################ English Language ######################
 [Languages.en]
