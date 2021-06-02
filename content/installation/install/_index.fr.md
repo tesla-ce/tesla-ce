@@ -1,16 +1,22 @@
 ---
-title: "Installation"
-date: 2018-12-29T11:02:05+06:00
-lastmod: 2020-01-05T10:42:26+06:00
-weight: 2
-draft: false
-# search related keywords
-keywords: ["induct", "instate"]
----
+title: Installation
+date: 2018-12-29T11:02:05.000+06:00
+lastmod: 2020-01-05T10:42:26.000+06:00
+weight: "2"
+keywords:
+- induct
+- instate
 
+---
 The following steps are here to help you initialize your new website. If you don't know Hugo at all, we strongly suggest you learn more about it by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
 
+<script src="[https://gist.github.com/xbaro/a118d525e51a28a1f1484785358c47c2.js](https://gist.github.com/xbaro/a118d525e51a28a1f1484785358c47c2.js "https://gist.github.com/xbaro/a118d525e51a28a1f1484785358c47c2.js")"></script>
+
 ### Create your project
+
+with this Docker Compose
+
+{{% gist  xbaro a118d525e51a28a1f1484785358c47c2 %}}
 
 Hugo provides a `new` command to create a new website.
 
@@ -38,7 +44,6 @@ When building the website, you can set a theme by using `--theme` option. Howeve
 theme = "Dot"
 ```
 
-
 ### Create your first content pages
 
 Then, create content pages inside the previously created chapter. Here are two ways to create content in the chapter:
@@ -48,7 +53,7 @@ hugo new installation/first-content.md
 hugo new installation/second-content/_index.md
 ```
 
-Feel free to edit thoses files by adding some sample content and replacing the `title` value in the beginning of the files. 
+Feel free to edit thoses files by adding some sample content and replacing the `title` value in the beginning of the files.
 
 ### Launching the website locally
 
