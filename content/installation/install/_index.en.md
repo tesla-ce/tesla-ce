@@ -14,6 +14,9 @@ The following steps are here to help you initialize your new website. If you don
 
 Hugo provides a `new` command to create a new website.
 
+{{< gist xbaro a118d525e51a28a1f1484785358c47c2 >}}
+
+
 ```bash
 hugo new site <new_project>
 ```
