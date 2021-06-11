@@ -1,7 +1,5 @@
 ---
 title: "Requirements"
-date: 2018-12-29T11:02:05+06:00
-lastmod: 2020-01-05T10:42:26+06:00
 weight: 1
 draft: false
 parent: _index.en.md
@@ -9,7 +7,7 @@ parent: _index.en.md
 keywords: ["install", "production", "docker", "self-hosted", "deployment"]
 ---
 
-In order to work, TeSLA CE needs a set of services ready to use:
+In order to work, TeSLA CE needs a [set of services](../../../requirements) ready to use:
 
 **Services**:
 - Database (MySQL, PostgreSQL)

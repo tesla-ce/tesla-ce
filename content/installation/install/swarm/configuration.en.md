@@ -1,7 +1,5 @@
 ---
 title: "Configuration"
-date: 2018-12-29T11:02:05+06:00
-lastmod: 2020-01-05T10:42:26+06:00
 weight: 3
 draft: false
 parent: _index.en.md
@@ -18,21 +16,52 @@ tesla_ce generate_config --local [--with-services] <domain>
 
 Where **domain** should be a valid domain name pointing to the Docker Swarm cluster. 
 
-The optional flag **--with-services** will generate random credentials for services. Use this flag if you plan to deploy 
+The optional **with-services** flag will generate random credentials for services. Use this flag if you plan to deploy 
 services as part of the TeSLA CE deployment (see [Deploy Services](../services)). 
 
 Otherwise, change the configuration options to provide the correct information to access the services.
 
+**General configuration**
+| Option                    | Default Value       | Type                    | Description        |
+| ------------------------  |:-------------------:| :-------------------:   | -----------------  |
+| tesla_admin_mail          |                     | str                     | Email of the global administrator |
+| tesla_institution_name    | Default Institution | str                     | Name of the institution |
+| tesla_institution_acronym | default             | str                     | Acronym of the institution |
+
+
 **Database**
+| Option           | Default Value | Type                    | Description        |
+| -------------    |:-------------:| :-------------------:   | -----------------  |
+| db_engine        | mysql         | mysql\|postgresql       | Database engine    |
+| db_host          | database      | str                     | Database host      |
+| db_port          | 3306          | int                     | Database port      |
+| db_name          | tesla         | str                     | Database name      |
+| db_user          |               | str                     | Database user      |
+| db_password      |               | str                     | Database password  |
+| db_root_user     | root          | str                     | Database root user |
+| db_root_password |               | str                     | Database root password required if user creation is needed |
 
 **Vault**
+| Option           | Default Value | Type                    | Description        |
+| -------------    |:-------------:| :-------------------:   | -----------------  |
 
 **MinIO**
+| Option           | Default Value | Type                    | Description        |
+| -------------    |:-------------:| :-------------------:   | -----------------  |
 
 **Redis**
+| Option           | Default Value | Type                    | Description        |
+| -------------    |:-------------:| :-------------------:   | -----------------  |
 
 **RabbitMQ**
+| Option           | Default Value | Type                    | Description        |
+| -------------    |:-------------:| :-------------------:   | -----------------  |
 
+
+In addition, some deployment options can also be modified:
+
+| Option           | Default Value | Type                    | Description        |
+| -------------    |:-------------:| :-------------------:   | -----------------  |
 
 
 

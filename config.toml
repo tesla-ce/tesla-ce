@@ -10,6 +10,7 @@ title = "TeSLA CE"
 disableLanguages = ["Fr"]
 # google analytics
 googleAnalytics = "" # paste your analytics ID here. (Ex: UA-123-45)
+enableGitInfo = true
 # unsafe html
 [markup.goldmark.renderer]
 unsafe = true
@@ -41,6 +42,12 @@ font_family = "lato" # Choose font family from : https://fonts.google.com/
 
 # contact form action
 contact_form_action = "https://formspree.io/f/xknkrone" # contact form works with : https://formspree.io
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
 
 ############################## social links ##############################
 # [[params.social]]

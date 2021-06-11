@@ -1,7 +1,5 @@
 ---
 title: "Getting Started"
-date: 2018-12-29T11:02:05+06:00
-lastmod: 2020-01-05T10:42:26+06:00
 weight: 2
 draft: false
 parent: _index.en.md
@@ -21,13 +19,13 @@ pip install tesla-ce
 Alternatively, you can use a docker image to run the installation commands:
 
 {{< highlight bash >}}
-docker run -it -v conf:/tesla teslace/core /bin/bash
+docker run -it -v "$PWD":/tesla teslace/core /bin/bash
 source /venv/bin/activate
 {{< / highlight >}}
 
 In both cases, the **tesla_ce** command will be available. You can try:
 
 {{< highlight bash >}}
-tesla_ce version
+tesla_ce tesla_version
 {{< / highlight >}}
 
