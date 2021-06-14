@@ -4,7 +4,7 @@ weight: 3
 draft: false
 parent: _index.en.md
 # search related keywords
-keywords: ["install", "production", "docker", "self-hosted", "deployment"]
+keywords: ["install", "production", "docker", "self-hosted", "deployment", "configuration"]
 ---
 
 TeSLA CE use a configuration file **tesla-ce.cfg** to store all options and credentials. 
@@ -21,7 +21,15 @@ services as part of the TeSLA CE deployment (see [Deploy Services](../services))
 
 Otherwise, change the configuration options to provide the correct information to access the services.
 
+{{% notice tip%}}
+All options from configuration file are provided as environment variables or secrets to the containers. 
+you can override any of the values on your docker services using environment variables.
+{{% /notice %}}
+
 **General configuration**
+
+Those options define default values used on the initial data exportation.
+
 | Option                    | Default Value       | Type                    | Description        |
 | ------------------------  |:-------------------:| :-------------------:   | -----------------  |
 | tesla_admin_mail          |                     | str                     | Email of the global administrator |
@@ -30,6 +38,9 @@ Otherwise, change the configuration options to provide the correct information t
 
 
 **Database**
+
+Database connection parameters
+
 | Option           | Default Value | Type                    | Description        |
 | -------------    |:-------------:| :-------------------:   | -----------------  |
 | db_engine        | mysql         | mysql\|postgresql       | Database engine    |
@@ -42,26 +53,119 @@ Otherwise, change the configuration options to provide the correct information t
 | db_root_password |               | str                     | Database root password required if user creation is needed |
 
 **Vault**
-| Option           | Default Value | Type                    | Description        |
-| -------------    |:-------------:| :-------------------:   | -----------------  |
 
-**MinIO**
-| Option           | Default Value | Type                    | Description        |
-| -------------    |:-------------:| :-------------------:   | -----------------  |
+Hashicorp Vault connection parameters
+
+| Option                   | Default Value         | Type  | Description        |
+| ---------------------    |:---------------------:| :---: | -----------------  |
+| vault_url                | http://localhost:8200 | str   | Vault complete URL with schema | 
+| vault_ssl_verify         | True                  | bool  | Verify SSL connections with vault |  
+| vault_token              |                       | str   | Root token to authenticate with vault |  
+| vault_keys               |                       | list  | Coma-separated list of unseal keys for Vault | 
+| vault_mount_path_kv      | tesla-ce/kv           | str   | Mount path for KV secrets engine | 
+| vault_mount_path_transit | tesla-ce/transit      | str   | Mount path for transit encryption engine | 
+| vault_mount_path_approle | tesla-ce/approle      | str   | Mount path for approle auth engine | 
+| vault_policies_prefix    | tesla-ce/policy/      | str   | Prefix prepended to ACL policy names | 
+| vault_db_host            |                       | str   | MySQL host for vault database used to generate deploy scripts | 
+| vault_db_port            | 3306                  | int   | MySQL port for vault database used to generate deploy scripts | 
+| vault_db_name            |                       | str   | MySQL database name for vault database used to generate deploy scripts |  
+| vault_db_user            |                       | str   | MySQL user for vault database used to generate deploy scripts | 
+| vault_db_password        |                       | str   | MySQL password for vault database used to generate deploy scripts | 
+
+**Storage**
+
+Storage connection parameters, referring to the MinIO or Amazon S3 information.
+
+| Option                     | Default Value         | Type  | Description                    |
+| -------------------------  |:---------------------:| :---: | -----------------------------  |
+| storage_url                | http://localhost:9000 | str   | Storage url                    |
+| storage_ssl_verify         | True                  | bool  | Verify SSL connections         |
+| storage_bucket_name        | tesla                 | str   | Storage default private bucket |
+| storage_public_bucket_name | tesla-public          | str   | Storage default public bucket  |
+| storage_region             | eu-west-1             | str   | Storage region                 |
+| storage_access_key         |                       | str   | Storage access key id          |
+| storage_secret_key         |                       | str   | Storage secret access key      |
 
 **Redis**
-| Option           | Default Value | Type                    | Description        |
-| -------------    |:-------------:| :-------------------:   | -----------------  |
+
+Redis connection parameters.
+
+| Option         | Default Value | Type  | Description    |
+| -------------  |:-------------:| :---: | -------------  |
+| redis_host     | localhost     | str   | Redis host     |
+| redis_port     | 6379          | int   | Redis port     | 
+| redis_password |               | str   | Redis password |
+| redis_database | 1             | int   | Redis database |
+
 
 **RabbitMQ**
-| Option           | Default Value | Type                    | Description        |
-| -------------    |:-------------:| :-------------------:   | -----------------  |
 
+RabbitMQ connection parameters. Only used if RabbitMQ is deployed as part of TeSLA CE deployment. 
+See **celery** configuration for connection arguments for workers. 
 
-In addition, some deployment options can also be modified:
+| Option                  | Default Value | Type  | Description                                          |
+| ----------------------  |:-------------:| :---: | ---------------------------------------------------- |
+| rabbitmq_erlang_cookie  |               | str   | Erlang Cookie value used for RabbitMQ cluster        |
+| rabbitmq_admin_user     |               | str   | Administrator user to authenticate with RabbitMQ     |
+| rabbitmq_admin_password |               | str   | Administrator password to authenticate with RabbitMQ |
+| rabbitmq_admin_port     | 15672         | int   | Port for the administration api of RabbitMQ          |
+| rabbitmq_port           | 5672          | int   | Port for the amqp api of RabbitMQ                    |
+| rabbitmq_host           | localhost     | str   | Host name of the RabbitMQ server                     |
 
-| Option           | Default Value | Type                    | Description        |
-| -------------    |:-------------:| :-------------------:   | -----------------  |
+**Celery**
 
+Broker connection parameters.
 
+| Option                            | Default Value            | Type      | Description                               |
+| --------------------------------  |:------------------------:| :-------: | ----------------------------------------  |
+| celery_broker_protocol            | amqp                     | amqp\|sqs | Protocol to communicate with brocker|
+| celery_broker_user                |                          | str       | User to authenticate with RabbitMQ or KEY for Amazon SQS |
+| celery_broker_password            |                          | str       | Password to authenticate with RabbitMQ or SECRET for Amazon SQS |
+| celery_broker_host                | localhost                | str       | Host for RabbitMQ |
+| celery_broker_region              | eu-west-1                | str       | Region for Amazon SQS |
+| celery_broker_port                | 5672                     | int       | Port for RabbitMQ |
+| celery_broker_vhost               | /                        | str       | RabbitMQ Virtual Host |
+| celery_queue_default              | tesla                    | str       | Name of the default queue used for periodic tasks |
+| celery_queue_enrolment            | tesla_enrolment          | str       | Name of the default queue for enrolment |
+| celery_queue_enrolment_storage    | tesla_enrolment_storage  | str       | Name of the storage queue for enrolment |
+| celery_queue_enrolment_validation | tesla_enrolment_validate | str       | Name of the validation queue for enrolment |
+| celery_queue_verification         | tesla_verification       | str       | Name of the default queue for verification |
+| celery_queue_alerts               | tesla_alerts             | str       | Name of the default queue for alerts  |
+| celery_queue_reporting            | tesla_reporting          | str       | Name of the default queue for reports |
+            
+**Deployment**
 
+In addition, some deployment options can also be modified. Those options are used to generate the deployment scripts:
+
+| Option                         | Default Value | Type    | Description                                      |
+| ------------------------------ |:------------: | :-----: | ------------------------------------------------ |
+| deployment_orchestrator        | swarm         | swarm   | Docker orchestrator                              |
+| deployment_services            | False         | str     | Deploy external services                         |
+| deployment_lb                  | traefik       | traefik | Load balancer used for deployment                |
+| deployment_image               | teslace/core  | str     | Docker image used for deployment                 |
+| deployment_version             | latest        | str     | Docker image version used for deployment         |
+| deployment_secrets_path        | /run/secrets  | str     | Folder where secrets will be mounted             |
+| deployment_data_path           | /var/tesla    | str     | Folder where volumes will be persisted           |
+| deployment_specialized_workers | True          | bool    | If enabled, specialized workers will be deployed |
+
+**Moodle**
+
+Options used for Moodle deployment when it is deployed as part of TeSLA CE.
+
+| Option                | Default Value            | Type  | Description                             |
+| --------------------  |:------------------------:| :---: | --------------------------------------  |
+| moodle_deploy         | False                    | bool  | Deploy Moodle                           |
+| moodle_name           | default_moodle           | str   | Unique VLE name in TeSLA                |
+| moodle_admin_user     | moodle                   | str   | Administrator user for Moodle           |
+| moodle_admin_password |                          | str   | Administrator password for Moodle       |
+| moodle_admin_email    |                          | str   | Administrator email for Moodle          |
+| moodle_db_host        |                          | str   | Host for Moodle database                | 
+| moodle_db_port        | 3306                     | int   | Port for Moodle database                |
+| moodle_db_name        | moodle                   | str   | Database name for Moodle database       |
+| moodle_db_user        | moodle                   | str   | User for Moodle database                |
+| moodle_db_password    |                          | str   | Password for Moodle database            |
+| moodle_db_prefix      | mdl_                     | str   | Prefix for Moodle tables in the database |
+| moodle_cron_interval  | 15                       | int   | Moodle Cron interval                    |
+| moodle_full_name      | TeSLA CE Moodle          | str   | Full name for Moodle instance           |
+| moodle_short_name     | TeSLA CE                 | str   | Short name for Moodle instance          |
+| moodle_summary        | TeSLA CE Moodle Instance | str   | Summary for Moodle instance             |

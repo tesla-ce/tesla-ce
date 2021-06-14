@@ -26,7 +26,7 @@ If the buckets are created by the configuration script, at the end of the config
 the correct policy to the public bucket. This can be done with the MinIO client following those steps:
 
 1. Get the configuration parameters **STORAGE_URL**, **BUCKET_NAME**, **STORAGE_KEY** and **STORAGE_SECRET** from the configuration 
-   file ```tesla-ce.cfg``` generated previously. 
+   file ```tesla-ce.cfg``` generated previously (see [Configuration](../configuration)). 
 
 {{< highlight cfg >}}
 # Storage configuration (S3 or Minio)
@@ -47,18 +47,18 @@ secret_key=STORAGE_SECRET
 {{< / highlight >}}
 
 2. Run a MinIO client
-{{< highlight bash >}} 
-   docker run -it --entrypoint=/bin/bash minio/mc
+{{< highlight bash >}}
+docker run -it --entrypoint=/bin/bash minio/mc
 {{< / highlight >}}
 
 3. Setup the MinIO connection. If you are not using a real domain, use ```--insecure``` option to avoid certificate errors.
-{{< highlight bash >}} 
-   mc alias set minio STORAGE_URL STORAGE_KEY STORAGE_SECRET
+{{< highlight bash >}}
+mc alias set minio STORAGE_URL STORAGE_KEY STORAGE_SECRET [--insecure]
 {{< / highlight >}}
 
 3. Change the policy for the public bucket. If you are not using a real domain, use ```--insecure``` option to avoid certificate errors.
-{{< highlight bash >}} 
-   mc policy set download minio/BUCKET_NAME
+{{< highlight bash >}}
+mc policy set download minio/BUCKET_NAME [--insecure]
 {{< / highlight >}}
 
 ## Initialize TeSLA CE
