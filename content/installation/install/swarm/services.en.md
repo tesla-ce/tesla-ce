@@ -104,26 +104,26 @@ The rest of the services open their ports on the cluster, and are accessible dir
 ### Working with not public domains
 
 TeSLA CE assumes that provided \<domain\> is a valid domain configured in a public DNS. In the case you are using a not
-valid domain, you should perform some extra actions:
+valid domain, you should perform some extra actions (assuming that **V.X.Y.Z** is the IP of the machine):
 
 1. Add entries for \<domain\> and subdomains on the installation computer local hosts ```/etc/hosts```:
 
 {{< highlight bash >}}
-192.168.1.X <domain>
-192.168.X.Y vault.<domain>
-192.168.X.Y storage.<domain>
-192.168.X.Y rabbitmq.<domain>
+V.X.Y.Z <domain>
+V.X.Y.Z vault.<domain>
+V.X.Y.Z storage.<domain>
+V.X.Y.Z rabbitmq.<domain>
 {{< / highlight >}}
 
 2. Add an extra hosts option to your services, so they can resolve the domain names:
 {{< highlight yaml >}}
    extra_hosts:      
-      192.168.1.X: <domain>
-      192.168.X.Y: vault.<domain>
-      192.168.X.Y: storage.<domain>
-      192.168.X.Y: rabbitmq.<domain>
+      V.X.Y.Z: <domain>
+      V.X.Y.Z: vault.<domain>
+      V.X.Y.Z: storage.<domain>
+      V.X.Y.Z: rabbitmq.<domain>
 {{< / highlight >}}
 
 3. As traefik will not be able to generate valid certificates, you will need to **disable the SSL check** options on the 
-   configuration file.
+   configuration file (storage and vault sections).
 
