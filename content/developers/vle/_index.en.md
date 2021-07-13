@@ -1,10 +1,9 @@
 ---
 title: "VLE Integration"
-weight: 3
+weight: 2
 draft: false
-icon: "ti-github"
 # search related keywords
-keywords: ["money","payment"]
+keywords: ["vle","environment"]
 ---
 
 Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.
