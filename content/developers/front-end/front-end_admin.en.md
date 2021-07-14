@@ -1,9 +1,10 @@
 ---
-title: "Front-end institution"
-weight: 1
+title: "Front-end admin"
+weight: 2
 draft: false
+parent: _index.en.md
 # search related keywords
-keywords: ["front-end","front end", "institution"]
+keywords: ["front-end","front end", "admin"]
 ---
 
 Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.
@@ -41,7 +42,7 @@ Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi vari
 
 Nunc porta malesuada porta. Etiam tristique vestibulum dolor at ultricies. Proin hendrerit sapien sed erat fermentum, at commodo velit consectetur.
 
-![image example](img-1.jpg "image")
+![image example](front-end admin/img-1.jpg "image")
 
 Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.
 
