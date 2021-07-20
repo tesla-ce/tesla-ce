@@ -29,7 +29,7 @@ logo_white = "/images/Logo_TeSLA_v2_White.png"
 # OpenGraph / Twitter Card metadata
 description = "TeSLA Community Edition"
 author = "Themefisher"
-image = "images/logo_tesla_ce.png" # this image will be used as fallback if a page has no image of its own
+image = "images/Logo_TeSLA_v2.png" # this image will be used as fallback if a page has no image of its own
 
 # customize color
 primary_color = "#3429a0" # "#02007e"
