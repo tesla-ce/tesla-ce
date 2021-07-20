@@ -9,7 +9,7 @@ title = "TeSLA CE"
 # disable language
 disableLanguages = ["Fr"]
 # google analytics
-googleAnalytics = "" # paste your analytics ID here. (Ex: UA-123-45)
+googleAnalytics = "G-MP5905RHY2" # paste your analytics ID here. (Ex: UA-123-45)
 enableGitInfo = true
 # unsafe html
 [markup.goldmark.renderer]
