@@ -19,16 +19,14 @@ unsafe = true
 ############################# Default Parameters ##########################
 [params]
 # logo is for all page
-#logo = "/images/logo_tesla_ce.png"
 logo = "/images/Logo_TeSLA_v2.png"
 # logo white is for homepage logo, you can use colorful logo too...
-#logo_white = "/images/logo_tesla_ce2.png"
 logo_white = "/images/Logo_TeSLA_v2_White.png"
 # when logo is empty, it will shown your site title
 
 # OpenGraph / Twitter Card metadata
 description = "TeSLA Community Edition"
-author = "Themefisher"
+author = "Xavier Baró"
 image = "images/Logo_TeSLA_v2.png" # this image will be used as fallback if a page has no image of its own
 
 # customize color
