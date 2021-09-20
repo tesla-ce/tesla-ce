@@ -5,6 +5,10 @@ draft: false
 # search related keywords
 keywords: ["vle","environment"]
 ---
+{{< notice info >}}
+  **This page is under construction** <br>
+  We're working on it!
+{{</ notice >}}
 
 Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.
 
