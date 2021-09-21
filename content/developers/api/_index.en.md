@@ -22,23 +22,23 @@ keywords: ["api"]
 
 ---
 
-#### Admin
+#### [Admin](/developers/api/admin/)
 
 User Management, Institution Management, Instrument Management, UI Management
 
-#### Authentication
+#### [Authentication](/developers/api/authentication/)
 
 Approle, login, logout, token
 
-#### Institution 
+#### [Institution](/developers/api/institution) 
 
 Institution, Course Activity, Group, Group Course, IC, Instructor, Learner, SEND, UI, user, VLE...
 
-#### Provider
+#### [Provider](/developers/api/provider/)
 
 Provider, enrolment, notification, request.
 
-#### VLE
+#### [VLE](/developers/api/vle/)
 
 VLE, course, course activity, course instructor, course learner, instrument, 
 
