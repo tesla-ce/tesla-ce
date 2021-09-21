@@ -23,14 +23,16 @@ keywords: ["API","admin"]
 
 
 # 1. User Management <a name="user_management"></a> 
-- [List Users](#user_management_list)
-- [Read](#user_management_read)
-- [Update](#user_management_update)
-- [Delete](#user_management_delete)
+- [List Users](#admin_user_list)
+- [Create User](#admin_user_create)
+- [Read User](#admin_user_read)
+- [Update User](#admin_user_update)
+- [Update User Partial Information](#admin_user_partial_update)
+- [Delete User](#admin_user_delete)
 
 
 <!--- admin_user_list --->
-## List Users: GET <a name="user_management_list"></a>
+## List Users: GET <a name="admin_user_list"></a>
 
 API endpoint that allows users to be viewed or edited.
 
@@ -56,17 +58,13 @@ institution | string | - | ✔️ |
 roles | string | - | ✔️ | 
 ordering | string | Which field to use when ordering the results. | ✔️ | 
 limit | integer | Number of results to return per page. | ✔️ | 
-offset | integer | The initial index from which to return the results. | ✔️ | 
+offset | integer | The initial index from which to return the results. | ✔️ |
+**count** <br>`required`  | integer |  | | ✔️ | 
+next  | string \<uri\> <br>Nullable | | | ✔️ | 
+previous  | string \<uri\> <br>Nullable | | | ✔️ | 
+results <br>`required`  | Array of Objects (User) |  | | ✔️ | 
 
 ### Responses
-#### Response schema: application/json
-
-Field | Type | Comments
---- | --- | ---
-count `required` | integer | -
-next | string<uri> | Nullable  - 
-previous | string<uri> Nullable | -
-results `required` | Array of objects (User)
 
 #### Response sample
 <!--- details and summary tags, both, needed for expandable code --->
@@ -111,9 +109,9 @@ results `required` | Array of objects (User)
 </details>
 
 <!--- admin_user_create --->
-## Create User: POST <a name="user_management_create"></a>
+## Create User: POST <a name="admin_user_create"></a>
 
-API endpoint that created a new user. This endpoint is only available to admin users with the right admin permissions.
+API endpoint that creates a new user. This endpoint is only available to admin users with the right admin permissions.
 
 ### Request
 Concept | Data
@@ -157,19 +155,19 @@ Content Type | application/json
 Name | Type | Comments | Request | Response
 --- | --- | --- | --- | ---
 id | integer (ID) | - | | ✔️
-**username** <br>_`required`_ | string (Username) | non-empty |  ✔️ | ✔️
-last_login | string<date-time>(Last login) | - |  | ✔️
-first_name | string (First name) | non-empty | ✔️ | ✔️
-last_name | string (Last name) | non-empty | ✔️ | ✔️
-email | string <email> (Email) | non-empty | ✔️ | ✔️
-password | string (Password) | non-empty. Nullable | ✔️ | ✔️
-password2 | string (Password2) | non-empty. Nullable | ✔️ | ✔️
+**username** <br>_`required`_ | string (Username) <br>non-empty |  |  ✔️ | ✔️
+last_login | string \<date-time\>(Last login) | - |  | ✔️
+first_name | string (First name) <br>non-empty |  | ✔️ | ✔️
+last_name | string (Last name) <br>non-empty|  | ✔️ | ✔️
+email | string \<email\> (Email)<br>non-empty | | ✔️ | ✔️
+password | string (Password) <br>non-empty<br>Nullable | | ✔️ | ✔️
+password2 | string (Password2) <br>non-empty<br>Nullable | | ✔️ | ✔️
 institution | string (Institution) | - |  | ✔️
 roles | string (Roles) | - |  | ✔️
 institution_id | integer (Institution id) | Nullable | ✔️ | ✔️
-inst_admin | boolean (Inst admin) | Nullable <br>Default: false | ✔️ | ✔️
-login_allowed | boolean (Login allowed) | Nullable <br>Default: true | ✔️ | ✔️
-uid | string (Uid) | non-empty. Nullable | ✔️ | ✔️
+inst_admin | boolean (Inst admin)<br>Nullable <br>Default: false |  | ✔️ | ✔️
+login_allowed | boolean (Login allowed) <br>Nullable <br>Default: true | | ✔️ | ✔️
+uid | string (Uid) <br>non-empty<br>Nullable| | ✔️ | ✔️
 is_superuser | boolean (Superuser status) | Designates that this user has all permissions without explicitly assigning them. | ✔️ | ✔️
 is_staff | boolean (Staff status)| Designates whether the user can log into this admin site. | ✔️ | ✔️
 is_active | boolean (Active)| Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | ✔️ | ✔️
@@ -230,7 +228,7 @@ results `required` | Array of objects (User)
 </details>
 
 <!--- admin_user_read --->
-## Read <a name="user_management_read"></a>
+## Read User<a name="admin_user_read"></a>
 Retrieves information about a user.
 
 ### Request
@@ -305,7 +303,7 @@ user_permissions | Array of integers | Specific permissions for this user. |️ 
 </details>
 
 <!--- admin_user_update --->
-## Update <a name="user_management_update"></a>
+## Update User<a name="admin_user_update"></a>
 Updates user's information.
 
 ### Request
@@ -379,7 +377,7 @@ user_permissions | Array of integers | Specific permissions for this user. |️�
 </details>
 
 <!--- admin_user_partial_update --->
-## Update <a name="user_management_partial_update"></a>
+## Update User Partial Information<a name="admin_user_partial_update"></a>
 Updates partial user's information.
 
 ### Request
@@ -454,7 +452,7 @@ user_permissions | Array of integers | Specific permissions for this user. |️�
 
 
 <!--- admin_user_delete --->
-## Delete <a name="user_management_delete"></a>
+## Delete User<a name="admin_user_delete"></a>
 Deletes user from the system.
 
 ### Request
@@ -492,17 +490,91 @@ Name | Type | Comments | Request | Response
 ---
 
 # 2. Institution Management <a name="institution_management"></a> 
+- GET: [List Institutions](#admin_institution_list)
+- POST: [Create Institution](#admin_institution_create)
+- GET: [Read Institution](#admin_institution_read)
+- PUT: [Update Institution](#admin_institution_update)
+- PATCH: [Update Institution Partial Information](#admin_institution_partial_update)
+- DELETE: [Delete Institution](#admin_institution_delete)
 
 
-## List <a name="institution_management_list"></a>
+<!--- admin_institution_list --->
+## List Institutions: GET <a name="admin_institution_list"></a>
 
-## Create <a name="institution_management_create"></a>
+API endpoint that allows Institution to be viewed or edited.
 
-## Read <a name="institution_management_read"></a>
+### Request
 
-## Update <a name="institution_management_update"></a>
+Concept | Data
+-- | --
+HTTP Method | GET
+Path | /api/v2/admin/institution/
+Authorization | JWT
+Content Type | application/json
 
-## Delete <a name="institution_management_delete"></a>
+### Parameters
+
+Name | Type | Comments | Request | Response
+---- | ---- | ---- | --- | ---
+search | string | A search term. | ✔️ | 
+**count** `required` | integer | | | ✔️
+ordering | string | Which field to use when ordering the results. | ✔️ |
+limit | integer | Number of results to return per page. | ✔️ | 
+offset | integer | The initial index from which to return the results. | ✔️ |
+next | string \<uri\> | Nullable | | ✔️
+previous | string \<uri\> | Nullable | | ✔️
+**results** `required | Àrray of objects (InstitutionAdmin) | Nullable | | ✔️
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+  {
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+  ]
+}
+  ````
+</details>
+
+
+
+<!--- admin_institution_create --->
+## Create Institution<a name="admin_institution_create"></a>
+
+<!--- admin_institution_read --->
+## Read Institution<a name="admin_institution_read"></a>
+
+<!--- admin_institution_update --->
+## Update Institution<a name="admin_institution_update"></a>
+
+<!--- admin_institution_partial_update --->
+## Update Institution<a name="admin_institution_partial_update"></a>
+
+<!--- admin_institution_delete --->
+## Delete Institution<a name="admin_institution_delete"></a>
 
 ---
 

@@ -5,6 +5,10 @@ description: "Resources and documentation for developers"
 type : "docs"
 weight: "3"
 ---
+{{< notice info >}}
+  **This page is under construction** <br>
+  We're working on it!
+{{</ notice >}}
 
 Module types
 ---
