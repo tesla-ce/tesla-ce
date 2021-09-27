@@ -40,29 +40,110 @@ API endpoint that allows users to be viewed or edited.
 
 Concept | Data
 -- | --
-HTTP Method | GET
+HTTP Method | **GET**
 Path | /api/v2/admin/user/
 Authorization | JWT
 Content Type | application/json
 
 ### Parameters
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+   Request parameters
+    <table>
+      <tbody>
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+              <td>search</td>
+              <td>string</td>
+              <td>A search term.</td>
+          </tr>
+          <tr>
+              <td>username</td>
+              <td>string</span>&nbsp;</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>first_name</td>
+              <td>string</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>last_name</td>
+              <td>string</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>email</td>
+              <td>string</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>institution</td>
+              <td>string</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>roles</td>
+              <td>string</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>ordering</td>
+              <td>string</td>
+              <td>&nbsp;Which field to use when ordering the results.</td>
+          </tr>
+          <tr>
+              <td>limit</td>
+              <td>integer</td>
+              <td>&nbsp;Number of results to return per page.</td>
+          </tr>
+          <tr class="last undefined">
+              <td>offset</td>
+              <td>integer</td>
+              <td>&nbsp;The initial index from which to return the results.</td>
+          </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
 
-Name | Type | Comments | Request | Response
----- | ---- | ---- | --- | ---
-search | string | A search term. | ✔️ | 
-username | string | - | ✔️ | 
-first_name | string | - | ✔️ | 
-last_name | string  | - | ✔️ | 
-email | string  | - | ✔️ | 
-institution | string | - | ✔️ | 
-roles | string | - | ✔️ | 
-ordering | string | Which field to use when ordering the results. | ✔️ | 
-limit | integer | Number of results to return per page. | ✔️ | 
-offset | integer | The initial index from which to return the results. | ✔️ |
-**count** <br>`required`  | integer |  | | ✔️ | 
-next  | string \<uri\> <br>Nullable | | | ✔️ | 
-previous  | string \<uri\> <br>Nullable | | | ✔️ | 
-results <br>`required`  | Array of Objects (User) |  | | ✔️ | 
+  {{< tab "RESPONSE" >}}
+  Response parameters
+    <table>
+      <tbody>
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+              <td><strong>count</strong><br /><code>r<em class="diigoHighlight id_7521e0cfba1bf3a92fdff27c0f9e6295 type_0 yellow">equired</em></code></td>
+              <td>integer</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>next</td>
+              <td>string &lt;uri&gt;<br />Nullable</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>previous</td>
+              <td>string &lt;uri&gt;<br />Nullable</td>
+              <td>&nbsp;</td>
+          </tr>
+          <tr>
+              <td>results<br /><code>required</code></td>
+              <td>Array of Objects (User)</td>
+              <td>&nbsp;</td>
+          </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
 
 ### Responses
 
@@ -116,7 +197,7 @@ API endpoint that creates a new user. This endpoint is only available to admin u
 ### Request
 Concept | Data
 -- | --
-HTTP Method | POST
+HTTP Method | **POST**
 Path | /api/v2/admin/user/
 Authorization | JWT
 Content Type | application/json
@@ -150,32 +231,219 @@ Content Type | application/json
 
 ###  Parameters:
 
-<!--- check why emoji are not working. Instead of images we should use :white_check_mark: or :heavy_check_mark: --->
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+   Request parameters
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td><strong>username</strong><br><code>required</code></td>
+                  <td>string (Username)<br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>first_name</td>
+                  <td>string (First name)<br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>last_name</td>
+                  <td>string (Last name) <br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>email</td>
+                  <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>password</td>
+                  <td>string (Password) <br>non-empty<br>Nullable</td>
+                  <td>-</td>
+              <tr>
+                  <td>password2</td>
+                  <td>string (Password2) <br>non-empty<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+             <tr>
+                  <td>institution_id</td>
+                  <td>integer (Institution id)<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>inst_admin</td>
+                  <td>boolean (Inst admin)<br>Nullable <br>Default: false</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>login_allowed</td>
+                  <td>boolean (Login allowed) <br>Nullable <br>Default: true</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>uid</td>
+                  <td>string (Uid) <br>non-empty<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>is_superuser</td>
+                  <td>boolean (Superuser status)</td>
+                  <td>Designates that this user has all permissions without explicitly assigning them.</td>
+              </tr>
+             <tr>
+                  <td>is_staff</td>
+                  <td>boolean (Staff status)</td>
+                  <td>Designates whether the user can log into this admin site. </td>
+              </tr>
+              <tr>
+                  <td>is_active</td>
+                  <td>boolean (Active)</td>
+                  <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+              </tr>
+              <tr>
+                  <td>date_joined</td>
+                  <td>string &lt;date-time&gt; (Date joined)</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>groups</td>
+                  <td>Array of integers </td>
+                  <td>The groups this user belongs to. A user will get all permissions granted to each of their groups.</td>
+              </tr>
+              <tr>
+                  <td>user_permissions</td>
+                  <td>Array of integers</td>
+                  <td>Specific permissions for this user.</td>
+              </tr>
+          </tbody>
+        </table>
+  {{</ tab >}}
 
-Name | Type | Comments | Request | Response
---- | --- | --- | --- | ---
-id | integer (ID) | - | | ✔️
-**username** <br>_`required`_ | string (Username) <br>non-empty |  |  ✔️ | ✔️
-last_login | string \<date-time\>(Last login) | - |  | ✔️
-first_name | string (First name) <br>non-empty |  | ✔️ | ✔️
-last_name | string (Last name) <br>non-empty|  | ✔️ | ✔️
-email | string \<email\> (Email)<br>non-empty | | ✔️ | ✔️
-password | string (Password) <br>non-empty<br>Nullable | | ✔️ | ✔️
-password2 | string (Password2) <br>non-empty<br>Nullable | | ✔️ | ✔️
-institution | string (Institution) | - |  | ✔️
-roles | string (Roles) | - |  | ✔️
-institution_id | integer (Institution id) | Nullable | ✔️ | ✔️
-inst_admin | boolean (Inst admin)<br>Nullable <br>Default: false |  | ✔️ | ✔️
-login_allowed | boolean (Login allowed) <br>Nullable <br>Default: true | | ✔️ | ✔️
-uid | string (Uid) <br>non-empty<br>Nullable| | ✔️ | ✔️
-is_superuser | boolean (Superuser status) | Designates that this user has all permissions without explicitly assigning them. | ✔️ | ✔️
-is_staff | boolean (Staff status)| Designates whether the user can log into this admin site. | ✔️ | ✔️
-is_active | boolean (Active)| Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | ✔️ | ✔️
-date_joined | string \<date-time\> (Date joined) | - | ✔️ | ✔️
-groups | Array of integers | The groups this user belongs to. A user will get all permissions granted to each of their groups. | ✔️ | ✔️
-user_permissions | Array of integers | Specific permissions for this user. | ✔️ | ✔️
+  {{< tab "RESPONSE" >}}
+       Response parameters
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td>id</td>
+                  <td>integer (ID)</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td><strong>username</strong><br><code>required</code></td>
+                  <td>string (Username)<br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>last_login &lt;date-time&gt;(Last login)</td>
+                  <td>string </td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>first_name</td>
+                  <td>string (First name)<br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>last_name</td>
+                  <td>string (Last name) <br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>email</td>
+                  <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>password</td>
+                  <td>string (Password) <br>non-empty<br>Nullable</td>
+                  <td>-</td>
+              <tr>
+                  <td>password2</td>
+                  <td>string (Password2) <br>non-empty<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>institution</td>
+                  <td>string (Institution)</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>roles</td>
+                  <td>string (Roles)</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>institution_id</td>
+                  <td>integer (Institution id)<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>inst_admin</td>
+                  <td>boolean (Inst admin)<br>Nullable <br>Default: false</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>login_allowed</td>
+                  <td>boolean (Login allowed) <br>Nullable <br>Default: true</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>uid</td>
+                  <td>string (Uid) <br>non-empty<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>is_superuser</td>
+                  <td>boolean (Superuser status)</td>
+                  <td>Designates that this user has all permissions without explicitly assigning them.</td>
+              </tr>
+              <tr>
+                  <td>is_staff</td>
+                  <td>boolean (Staff status)</td>
+                  <td>Designates whether the user can log into this admin site. </td>
+              </tr>
+              <tr>
+                  <td>is_active</td>
+                  <td>boolean (Active)</td>
+                  <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+              </tr>
+              <tr>
+                  <td>date_joined</td>
+                  <td>string &lt;date-time&gt; (Date joined)</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>groups</td>
+                  <td>Array of integers </td>
+                  <td>The groups this user belongs to. A user will get all permissions granted to each of their groups.</td>
+              </tr>
+              <tr>
+                  <td>user_permissions</td>
+                  <td>Array of integers</td>
+                  <td>Specific permissions for this user.</td>
+              </tr>
+          </tbody>
+        </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+
+
+<!--- ✔️ check why emoji are not working. Instead of images we should use :white_check_mark: or :heavy_check_mark: --->
+
 
 ### Responses
+
 #### Response schema: application/json
 <!--- details and summary tags, both, needed for expandable code --->
 <details>
@@ -240,29 +508,138 @@ Authorization | JWT
 Content Type | application/json
 
 ### Parameters:
-Name | Type | Comments | Request | Response
---- | --- | --- | --- | ---
-**id** <br>_`required`_ | string | | ✔️ <br>Request path parameter| ✔️ |
-id | integer (ID) | | | ✔️
-username `required` | string (Username) | non-empty | | ✔️
-last_login | string<date-time>(Last login) | - |  | ✔️
-first_name | string (First name) | non-empty |  | ✔️
-last_name | string (Last name) | non-empty |️ | ✔️
-email | string <email> (Email) | non-empty |️ | ✔️
-password | string (Password) | non-empty. Nullable |️ | ✔️
-password2 | string (Password2) | non-empty. Nullable |️ | ✔️
-institution | string (Institution) | - |  | ✔️
-roles | string (Roles) | - |  | ✔️
-institution_id | integer (Institution id) | Nullable |️ | ✔️
-inst_admin | boolean (Inst admin) | Nullable <br>Default: false |️ | ✔️
-login_allowed | boolean (Login allowed) | Nullable <br>Default: true |️ | ✔️
-uid | string (Uid) | non-empty. Nullable |️ | ✔️
-is_superuser | boolean (Superuser status) | Designates that this user has all permissions without explicitly assigning them. |️ | ✔️
-is_staff | boolean (Staff status)| Designates whether the user can log into this admin site. |️ | ✔️
-is_active | boolean (Active)| Designates whether this user should be treated as active. Unselect this instead of deleting accounts. |️ | ✔️
-date_joined | string \<date-time\> (Date joined) | - |️ | ✔️
-groups | Array of integers | The groups this user belongs to. A user will get all permissions granted to each of their groups. |️ | ✔️
-user_permissions | Array of integers | Specific permissions for this user. |️ | ✔️
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td><strong>id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    <table>
+      <tbody>
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+              <td>id</td>
+              <td>integer (ID)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td><strong>username</strong><br><code>required</code></td>
+              <td>string (Username)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>last_login</td>
+              <td>string &lt;date-time&gt; (Last login) </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>first_name</td>
+              <td>string (First name)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>last_name</td>
+              <td>string (Last name) <br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>email</td>
+              <td>string &lt;email&gt; (Email)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>password</td>
+              <td>string (Password)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>password2</td>
+              <td>string (Password2)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>institution</td>
+              <td>string (Institution) </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>roles</td>
+              <td>string (Roles)</td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>institution_id</td>
+              <td>integer (Institution ID)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>inst_admin</td>
+              <td>boolean (Inst admin)<br>Nullable </td>
+              <td>Default: false</td>
+          </tr>
+          <tr>
+              <td>login_allowed</td>
+              <td>boolean(Login allowed)<br>Nullable </td>
+              <td>Default: true</td>
+          </tr>
+          <tr>
+              <td>uid</td>
+              <td>string (Uid)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>is_superuser</td>
+              <td>boolean (Superuser status) </td>
+              <td>Designates that this user has all permissions without explicitly assigning them. </td>
+          </tr>
+          <tr>
+              <td>is_staff</td>
+              <td>boolean (Staff status) </td>
+              <td>Designates whether the user can log into this admin site.</td>
+          </tr>
+          <tr>
+              <td>is_active</td>
+              <td>boolean (Active) </td>
+              <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+          </tr>
+          <tr>
+              <td>date_joined</td>
+              <td>string &lt;date-time&gt; (Date joined) </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>groups</td>
+              <td>Array of integers</td>
+              <td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+          </tr>
+          <tr>
+              <td>user_permissions</td>
+              <td>Array of integers</td>
+              <td>Specific permissions for this user. </td>
+          </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
 
 ### Responses
 
@@ -309,34 +686,223 @@ Updates user's information.
 ### Request
 Concept | Data
 -- | --
-HTTP Method | PUT
+HTTP Method | **PUT**
 Path | /api/v2/admin/user/{id}/
 Authorization | JWT
 Content Type | application/json
 
 ### Parameters:
-Name | Type | Comments | Request | Response
---- | --- | --- | --- | ---
-**id** <br>_`required`_ | string | | ✔️ <br>Request path parameter| ✔️ |
-**username** `required` | string (Username) | non-empty | ✔️ | ✔️
-last_login | string<date-time>(Last login) | - |  | ✔️
-first_name | string (First name) | non-empty | ✔️ | ✔️
-last_name | string (Last name) | non-empty |✔️️ | ✔️
-email | string <email> (Email) | non-empty |️✔️ | ✔️
-password | string (Password) | non-empty. Nullable |️✔️ | ✔️
-password2 | string (Password2) | non-empty. Nullable |️✔️ | ✔️
-institution | string (Institution) | - |  | ✔️
-roles | string (Roles) | - |  | ✔️
-institution_id | integer (Institution id) | Nullable |️✔️ | ✔️
-inst_admin | boolean (Inst admin) | Nullable <br>Default: false |️ ✔️| ✔️
-login_allowed | boolean (Login allowed) | Nullable <br>Default: true |️ ✔️| ✔️
-uid | string (Uid) | non-empty. Nullable |✔️️ | ✔️
-is_superuser | boolean (Superuser status) | Designates that this user has all permissions without explicitly assigning them. |️✔️ | ✔️
-is_staff | boolean (Staff status)| Designates whether the user can log into this admin site. |️ ✔️| ✔️
-is_active | boolean (Active)| Designates whether this user should be treated as active. Unselect this instead of deleting accounts. |✔️️ | ✔️
-date_joined | string \<date-time\> (Date joined) | - |️✔️ | ✔️
-groups | Array of integers | The groups this user belongs to. A user will get all permissions granted to each of their groups. |️ ✔️| ✔️
-user_permissions | Array of integers | Specific permissions for this user. |️✔️ | ✔️
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>id</strong><br><code>required</code></td>
+                      <td>string </td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                  <td><strong>username</strong><br><code>required</code></td>
+                  <td>string (Username)<br>non-empty </td>
+                  <td>-</td>
+              <tr>
+                  <td>first_name</td>
+                  <td>string (First name)<br>non-empty </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>last_name</td>
+                  <td>string (Last name) <br>non-empty </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>email</td>
+                  <td>string &lt;email&gt; (Email)<br>non-empty </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>password</td>
+                  <td>string (Password)<br>non-empty<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>password2</td>
+                  <td>string (Password2)<br>non-empty<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>institution_id</td>
+                  <td>integer (Institution ID)<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>inst_admin</td>
+                  <td>boolean (Inst admin)<br>Nullable </td>
+                  <td>Default: false</td>
+              </tr>
+              <tr>
+                  <td>login_allowed</td>
+                  <td>boolean(Login allowed)<br>Nullable </td>
+                  <td>Default: true</td>
+              </tr>
+              <tr>
+                  <td>uid</td>
+                  <td>string (Uid)<br>non-empty<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>is_superuser</td>
+                  <td>boolean (Superuser status) </td>
+                  <td>Designates that this user has all permissions without explicitly assigning them. </td>
+              </tr>
+              <tr>
+                  <td>is_staff</td>
+                  <td>boolean (Staff status) </td>
+                  <td>Designates whether the user can log into this admin site.</td>
+              </tr>
+              <tr>
+                  <td>is_active</td>
+                  <td>boolean (Active) </td>
+                  <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+              </tr>
+              <tr>
+                  <td>date_joined</td>
+                  <td>string &lt;date-time&gt; (Date joined) </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>groups</td>
+                  <td>Array of integers</td>
+                  <td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+              </tr>
+              <tr>
+                  <td>user_permissions</td>
+                  <td>Array of integers</td>
+                  <td>Specific permissions for this user. </td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    <table>
+      <tbody>
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+                  <td><strong>id</td>
+                  <td>integer (ID) </td>
+                  <td></td>
+          </tr>
+          <tr>
+              <td><strong>username</strong><br><code>required</code></td>
+              <td>string (Username)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+              <tr>
+                  <td>last_login</td>
+                  <td>string &lt;date-time&gr; (Last login)</td>
+                  <td></td>
+              </tr>
+          <tr>
+              <td>first_name</td>
+              <td>string (First name)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>last_name</td>
+              <td>string (Last name) <br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>email</td>
+              <td>string &lt;email&gt; (Email)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>password</td>
+              <td>string (Password)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>password2</td>
+              <td>string (Password2)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>institution</td>
+              <td>string (Institution) </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>roles</td>
+              <td>string (Roles)</td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>institution_id</td>
+              <td>integer (Institution ID)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>inst_admin</td>
+              <td>boolean (Inst admin)<br>Nullable </td>
+              <td>Default: false</td>
+          </tr>
+          <tr>
+              <td>login_allowed</td>
+              <td>boolean(Login allowed)<br>Nullable </td>
+              <td>Default: true</td>
+          </tr>
+          <tr>
+              <td>uid</td>
+              <td>string (Uid)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>is_superuser</td>
+              <td>boolean (Superuser status) </td>
+              <td>Designates that this user has all permissions without explicitly assigning them. </td>
+          </tr>
+          <tr>
+              <td>is_staff</td>
+              <td>boolean (Staff status) </td>
+              <td>Designates whether the user can log into this admin site.</td>
+          </tr>
+          <tr>
+              <td>is_active</td>
+              <td>boolean (Active) </td>
+              <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+          </tr>
+          <tr>
+              <td>date_joined</td>
+              <td>string &lt;date-time&gt; (Date joined) </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>groups</td>
+              <td>Array of integers</td>
+              <td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+          </tr>
+          <tr>
+              <td>user_permissions</td>
+              <td>Array of integers</td>
+              <td>Specific permissions for this user. </td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
 
 ### Responses
 
@@ -389,28 +955,218 @@ Authorization | JWT
 Content Type | application/json
 
 ### Parameters:
-Name | Type | Comments | Request | Response
---- | --- | --- | --- | ---
-**id** <br>_`required`_ | string | | ✔️ <br>Request path parameter| ✔️ |
-**username** `required` | string (Username) | non-empty | ✔️ | ✔️
-last_login | string<date-time>(Last login) | - |  | ✔️
-first_name | string (First name) | non-empty | ✔️ | ✔️
-last_name | string (Last name) | non-empty |✔️️ | ✔️
-email | string <email> (Email) | non-empty |️✔️ | ✔️
-password | string (Password) | non-empty. Nullable |️✔️ | ✔️
-password2 | string (Password2) | non-empty. Nullable |️✔️ | ✔️
-institution | string (Institution) | - |  | ✔️
-roles | string (Roles) | - |  | ✔️
-institution_id | integer (Institution id) | Nullable |️✔️ | ✔️
-inst_admin | boolean (Inst admin) | Nullable <br>Default: false |️ ✔️| ✔️
-login_allowed | boolean (Login allowed) | Nullable <br>Default: true |️ ✔️| ✔️
-uid | string (Uid) | non-empty. Nullable |✔️️ | ✔️
-is_superuser | boolean (Superuser status) | Designates that this user has all permissions without explicitly assigning them. |️✔️ | ✔️
-is_staff | boolean (Staff status)| Designates whether the user can log into this admin site. |️ ✔️| ✔️
-is_active | boolean (Active)| Designates whether this user should be treated as active. Unselect this instead of deleting accounts. |✔️️ | ✔️
-date_joined | string \<date-time\> (Date joined) | - |️✔️ | ✔️
-groups | Array of integers | The groups this user belongs to. A user will get all permissions granted to each of their groups. |️ ✔️| ✔️
-user_permissions | Array of integers | Specific permissions for this user. |️✔️ | ✔️
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>id</strong><br><code>required</code></td>
+                      <td>string </td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                  <td><strong>username</strong><br><code>required</code></td>
+                  <td>string (Username)<br>non-empty </td>
+                  <td>-</td>
+              <tr>
+                  <td>first_name</td>
+                  <td>string (First name)<br>non-empty </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>last_name</td>
+                  <td>string (Last name) <br>non-empty </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>email</td>
+                  <td>string &lt;email&gt; (Email)<br>non-empty </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>password</td>
+                  <td>string (Password)<br>non-empty<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>password2</td>
+                  <td>string (Password2)<br>non-empty<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>institution_id</td>
+                  <td>integer (Institution ID)<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>inst_admin</td>
+                  <td>boolean (Inst admin)<br>Nullable </td>
+                  <td>Default: false</td>
+              </tr>
+              <tr>
+                  <td>login_allowed</td>
+                  <td>boolean(Login allowed)<br>Nullable </td>
+                  <td>Default: true</td>
+              </tr>
+              <tr>
+                  <td>uid</td>
+                  <td>string (Uid)<br>non-empty<br>Nullable </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>is_superuser</td>
+                  <td>boolean (Superuser status) </td>
+                  <td>Designates that this user has all permissions without explicitly assigning them. </td>
+              </tr>
+              <tr>
+                  <td>is_staff</td>
+                  <td>boolean (Staff status) </td>
+                  <td>Designates whether the user can log into this admin site.</td>
+              </tr>
+              <tr>
+                  <td>is_active</td>
+                  <td>boolean (Active) </td>
+                  <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+              </tr>
+              <tr>
+                  <td>date_joined</td>
+                  <td>string &lt;date-time&gt; (Date joined) </td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>groups</td>
+                  <td>Array of integers</td>
+                  <td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+              </tr>
+              <tr>
+                  <td>user_permissions</td>
+                  <td>Array of integers</td>
+                  <td>Specific permissions for this user. </td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    <table>
+      <tbody>
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+                  <td><strong>id</td>
+                  <td>integer (ID) </td>
+                  <td></td>
+          </tr>
+          <tr>
+              <td><strong>username</strong><br><code>required</code></td>
+              <td>string (Username)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+              <tr>
+                  <td>last_login</td>
+                  <td>string &lt;date-time&gr; (Last login)</td>
+                  <td></td>
+              </tr>
+          <tr>
+              <td>first_name</td>
+              <td>string (First name)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>last_name</td>
+              <td>string (Last name) <br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>email</td>
+              <td>string &lt;email&gt; (Email)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>password</td>
+              <td>string (Password)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>password2</td>
+              <td>string (Password2)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>institution</td>
+              <td>string (Institution) </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>roles</td>
+              <td>string (Roles)</td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>institution_id</td>
+              <td>integer (Institution ID)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>inst_admin</td>
+              <td>boolean (Inst admin)<br>Nullable </td>
+              <td>Default: false</td>
+          </tr>
+          <tr>
+              <td>login_allowed</td>
+              <td>boolean(Login allowed)<br>Nullable </td>
+              <td>Default: true</td>
+          </tr>
+          <tr>
+              <td>uid</td>
+              <td>string (Uid)<br>non-empty<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>is_superuser</td>
+              <td>boolean (Superuser status) </td>
+              <td>Designates that this user has all permissions without explicitly assigning them. </td>
+          </tr>
+          <tr>
+              <td>is_staff</td>
+              <td>boolean (Staff status) </td>
+              <td>Designates whether the user can log into this admin site.</td>
+          </tr>
+          <tr>
+              <td>is_active</td>
+              <td>boolean (Active) </td>
+              <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+          </tr>
+          <tr>
+              <td>date_joined</td>
+              <td>string &lt;date-time&gt; (Date joined) </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>groups</td>
+              <td>Array of integers</td>
+              <td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+          </tr>
+          <tr>
+              <td>user_permissions</td>
+              <td>Array of integers</td>
+              <td>Specific permissions for this user. </td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
 
 ### Responses
 
@@ -464,9 +1220,25 @@ Authorization | JWT
 Content Type | application/json
 
 ### Parameters:
-Name | Type | Comments | Request | Response
---- | --- | --- | --- | ---
-**id** <br>_`required`_ | string | | ✔️ <br>Request path parameter| ✔️ |
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>id</strong><br><code>required</code></td>
+                      <td>string </td>
+                      <td>Request path parameter</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
 
 ### Responses
 
@@ -513,6 +1285,57 @@ Authorization | JWT
 Content Type | application/json
 
 ### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>id</strong><br><code>required</code></td>
+                      <td>string </td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                  <td><strong>username</strong><br><code>required</code></td>
+                  <td>string (Username)<br>non-empty </td>
+                  <td>-</td>
+              <tr>
+                  <td>first_name</td>
+                  <td>string (First name)<br>non-empty </td>
+                  <td>-</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    <table>
+      <tbody>
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+                  <td><strong>id</td>
+                  <td>integer (ID) </td>
+                  <td></td>
+          </tr>
+          <tr>
+              <td><strong>username</strong><br><code>required</code></td>
+              <td>string (Username)<br>non-empty </td>
+              <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
 
 Name | Type | Comments | Request | Response
 ---- | ---- | ---- | --- | ---
@@ -576,35 +1399,69 @@ previous | string \<uri\> | Nullable | | ✔️
 <!--- admin_institution_delete --->
 ## Delete Institution<a name="admin_institution_delete"></a>
 
+
+
 ---
 
 # 3. Instrument Management <a name="instrument_management"></a>
+- GET: [List Instruments](#admin_instrument_list)
+- POST: [Create Instrument](#admin_instrument_create)
+- GET: [Read Instrument](#admin_instrument_read)
+- PUT: [Update Instrument](#admin_instrument_update)
+- PATCH: [Update Instrument Partial Information](#admin_instrument_partial_update)
+- DELETE: [Delete Instrument](#admin_instrument_delete)
 
 
-## List <a name="instrument_management_list"></a>
+<!--- admin_instrument_list --->
+## List Instruments <a name="admin_instrument_list"></a>
 
-## Create <a name="instrument_management_create"></a>
+<!--- admin_instrument_create --->
+## Create instrument<a name="admin_instrument_create"></a>
 
-## Read <a name="instrument_management_read"></a>
+<!--- admin_instrument_read --->
+## Read instrument<a name="admin_instrument_read"></a>
 
-## Update <a name="instrument_management_update"></a>
+<!--- admin_instrument_update --->
+## Update instrument<a name="admin_instrument_update"></a>
 
-## Delete <a name="instrument_management_delete"></a>
+<!--- admin_instrument_partial_update --->
+## Update instrument<a name="admin_instrument_partial_update"></a>
+
+<!--- admin_instrument_delete --->
+## Delete instrument<a name="admin_instrument_delete"></a>
+
+
 
 ---
 
 # 4. UI Management <a name="ui_management"></a>
 
+- GET: [List UI](#admin_ui_list)
+- POST: [Create UI](#admin_ui_create)
+- GET: [Read UI](#admin_ui_read)
+- PUT: [Update UI](#admin_ui_update)
+- PATCH: [Update UI Partial Information](#admin_ui_partial_update)
+- DELETE: [Delete UI](#admin_ui_delete)
 
-## List <a name="ui_management_list"></a>
 
-## Create <a name="ui_management_create"></a>
+<!--- admin_ui_list --->
+## List UI<a name="admin_ui_list"></a>
 
-## Read <a name="ui_management_read"></a>
+<!--- admin_ui_create --->
+## Create UI<a name="admin_ui_create"></a>
 
-## Update <a name="ui_management_update"></a>
+<!--- admin_ui_read --->
+## Read UI<a name="admin_ui_read"></a>
 
-## Delete <a name="ui_management_delete"></a>
+<!--- admin_ui_update --->
+## Update UI<a name="admin_ui_update"></a>
+
+<!--- admin_ui_partial_update --->
+## Update UI<a name="admin_ui_partial_update"></a>
+
+<!--- admin_ui_delete --->
+## Delete UI<a name="admin_ui_delete"></a>
+
 
 
 ****

@@ -26,7 +26,7 @@ keywords: ["api"]
 
 User Management, Institution Management, Instrument Management, UI Management
 
-#### [Authentication](/developers/api/authentication/)
+#### [Authentication](/developers/api/auth/)
 
 Approle, login, logout, token
 
