@@ -209,7 +209,7 @@ We&rsquo;re working on it!</p></div>
 <tbody>
 <tr>
 <td>HTTP Method</td>
-<td>GET</td>
+<td><strong>GET</strong></td>
 </tr>
 <tr>
 <td>Path</td>
@@ -226,117 +226,105 @@ We&rsquo;re working on it!</p></div>
 </tbody>
 </table>
 <h3 id=parameters>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Comments</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
 <tr>
 <td>search</td>
 <td>string</td>
 <td>A search term.</td>
-<td>✔️</td>
-<td></td>
 </tr>
 <tr>
 <td>username</td>
-<td>string</td>
-<td>-</td>
-<td>✔️</td>
-<td></td>
+<td>string</span>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td>first_name</td>
 <td>string</td>
-<td>-</td>
-<td>✔️</td>
-<td></td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>string</td>
-<td>-</td>
-<td>✔️</td>
-<td></td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
-<td>-</td>
-<td>✔️</td>
-<td></td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td>institution</td>
 <td>string</td>
-<td>-</td>
-<td>✔️</td>
-<td></td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td>roles</td>
 <td>string</td>
-<td>-</td>
-<td>✔️</td>
-<td></td>
+<td>&nbsp;</td>
 </tr>
 <tr>
 <td>ordering</td>
 <td>string</td>
-<td>Which field to use when ordering the results.</td>
-<td>✔️</td>
-<td></td>
+<td>&nbsp;Which field to use when ordering the results.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>integer</td>
-<td>Number of results to return per page.</td>
-<td>✔️</td>
-<td></td>
+<td>&nbsp;Number of results to return per page.</td>
 </tr>
-<tr>
+<tr class="last undefined">
 <td>offset</td>
 <td>integer</td>
-<td>The initial index from which to return the results.</td>
-<td>✔️</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>count</strong> <br><code>required</code></td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>next</td>
-<td>string &lt;uri> <br>Nullable</td>
-<td></td>
-<td></td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>previous</td>
-<td>string &lt;uri> <br>Nullable</td>
-<td></td>
-<td></td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>results <br><code>required</code></td>
-<td>Array of Objects (User)</td>
-<td></td>
-<td></td>
-<td>✔️</td>
+<td>&nbsp;The initial index from which to return the results.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>count</strong><br><code>r<em class="diigoHighlight id_7521e0cfba1bf3a92fdff27c0f9e6295 type_0 yellow">equired</em></code></td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string &lt;uri><br>Nullable</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string &lt;uri><br>Nullable</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>results<br><code>required</code></td>
+<td>Array of Objects (User)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <h3 id=responses>Responses</h3>
 <h4 id=response-sample>Response sample</h4>
 <details>
@@ -388,7 +376,7 @@ We&rsquo;re working on it!</p></div>
 <tbody>
 <tr>
 <td>HTTP Method</td>
-<td>POST</td>
+<td><strong>POST</strong></td>
 </tr>
 <tr>
 <td>Path</td>
@@ -428,159 +416,213 @@ We&rsquo;re working on it!</p></div>
   ]
 }
 </code></pre></div><h3 id=parameters-1>Parameters:</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Comments</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>integer (ID)</td>
-<td>-</td>
-<td></td>
-<td>✔️</td>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td><strong>username</strong> <br><em><code>required</code></em></td>
-<td>string (Username) <br>non-empty</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>last_login</td>
-<td>string &lt;date-time>(Last login)</td>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty</td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>first_name</td>
-<td>string (First name) <br>non-empty</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
+<td>string (First name)<br>non-empty</td>
+<td>-</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>string (Last name) <br>non-empty</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
+<td>-</td>
 </tr>
 <tr>
 <td>email</td>
 <td>string &lt;email> (Email)<br>non-empty</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
+<td>-</td>
 </tr>
 <tr>
 <td>password</td>
 <td>string (Password) <br>non-empty<br>Nullable</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
+<td>-</td>
 <tr>
 <td>password2</td>
 <td>string (Password2) <br>non-empty<br>Nullable</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>institution</td>
-<td>string (Institution)</td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>roles</td>
-<td>string (Roles)</td>
-<td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>institution_id</td>
-<td>integer (Institution id)</td>
-<td>Nullable</td>
-<td>✔️</td>
-<td>✔️</td>
+<td>integer (Institution id)<br>Nullable</td>
+<td>-</td>
 </tr>
 <tr>
 <td>inst_admin</td>
 <td>boolean (Inst admin)<br>Nullable <br>Default: false</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
+<td>-</td>
 </tr>
 <tr>
 <td>login_allowed</td>
 <td>boolean (Login allowed) <br>Nullable <br>Default: true</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
+<td>-</td>
 </tr>
 <tr>
 <td>uid</td>
 <td>string (Uid) <br>non-empty<br>Nullable</td>
-<td></td>
-<td>✔️</td>
-<td>✔️</td>
+<td>-</td>
 </tr>
 <tr>
 <td>is_superuser</td>
 <td>boolean (Superuser status)</td>
 <td>Designates that this user has all permissions without explicitly assigning them.</td>
-<td>✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>is_staff</td>
 <td>boolean (Staff status)</td>
-<td>Designates whether the user can log into this admin site.</td>
-<td>✔️</td>
-<td>✔️</td>
+<td>Designates whether the user can log into this admin site. </td>
 </tr>
 <tr>
 <td>is_active</td>
 <td>boolean (Active)</td>
 <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
-<td>✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>date_joined</td>
 <td>string &lt;date-time> (Date joined)</td>
 <td>-</td>
-<td>✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>groups</td>
-<td>Array of integers</td>
+<td>Array of integers </td>
 <td>The groups this user belongs to. A user will get all permissions granted to each of their groups.</td>
-<td>✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>user_permissions</td>
 <td>Array of integers</td>
 <td>Specific permissions for this user.</td>
-<td>✔️</td>
-<td>✔️</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty</td>
+<td>-</td>
+</tr>
+<tr>
+<td>last_login &lt;date-time>(Last login)</td>
+<td>string </td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>string (First name)<br>non-empty</td>
+<td>-</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string (Last name) <br>non-empty</td>
+<td>-</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string &lt;email> (Email)<br>non-empty</td>
+<td>-</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string (Password) <br>non-empty<br>Nullable</td>
+<td>-</td>
+<tr>
+<td>password2</td>
+<td>string (Password2) <br>non-empty<br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>string (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>roles</td>
+<td>string (Roles)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution_id</td>
+<td>integer (Institution id)<br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>inst_admin</td>
+<td>boolean (Inst admin)<br>Nullable <br>Default: false</td>
+<td>-</td>
+</tr>
+<tr>
+<td>login_allowed</td>
+<td>boolean (Login allowed) <br>Nullable <br>Default: true</td>
+<td>-</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string (Uid) <br>non-empty<br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>is_superuser</td>
+<td>boolean (Superuser status)</td>
+<td>Designates that this user has all permissions without explicitly assigning them.</td>
+</tr>
+<tr>
+<td>is_staff</td>
+<td>boolean (Staff status)</td>
+<td>Designates whether the user can log into this admin site. </td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>boolean (Active)</td>
+<td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+</tr>
+<tr>
+<td>date_joined</td>
+<td>string &lt;date-time> (Date joined)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Array of integers </td>
+<td>The groups this user belongs to. A user will get all permissions granted to each of their groups.</td>
+</tr>
+<tr>
+<td>user_permissions</td>
+<td>Array of integers</td>
+<td>Specific permissions for this user.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <h3 id=responses-1>Responses</h3>
 <h4 id=response-schema-applicationjson>Response schema: application/json</h4>
 <details>
@@ -682,166 +724,139 @@ We&rsquo;re working on it!</p></div>
 </tbody>
 </table>
 <h3 id=parameters-2>Parameters:</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Comments</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td><strong>id</strong> <br><em><code>required</code></em></td>
-<td>string</td>
-<td></td>
-<td>✔️ <br>Request path parameter</td>
-<td>✔️</td>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
 </tr>
 <tr>
 <td>id</td>
-<td>integer (ID)</td>
-<td></td>
-<td></td>
-<td>✔️</td>
+<td>integer (ID)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
-<td>username <code>required</code></td>
-<td>string (Username)</td>
-<td>non-empty</td>
-<td></td>
-<td>✔️</td>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>last_login</td>
-<td>string<date-time>(Last login)</td>
+<td>string &lt;date-time> (Last login) </td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>first_name</td>
-<td>string (First name)</td>
-<td>non-empty</td>
-<td></td>
-<td>✔️</td>
+<td>string (First name)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td>string (Last name)</td>
-<td>non-empty</td>
-<td>️</td>
-<td>✔️</td>
+<td>string (Last name) <br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>email</td>
-<td>string <email> (Email)</td>
-<td>non-empty</td>
-<td>️</td>
-<td>✔️</td>
+<td>string &lt;email> (Email)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>password</td>
-<td>string (Password)</td>
-<td>non-empty. Nullable</td>
-<td>️</td>
-<td>✔️</td>
+<td>string (Password)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>password2</td>
-<td>string (Password2)</td>
-<td>non-empty. Nullable</td>
-<td>️</td>
-<td>✔️</td>
+<td>string (Password2)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>institution</td>
-<td>string (Institution)</td>
+<td>string (Institution) </td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>roles</td>
 <td>string (Roles)</td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>institution_id</td>
-<td>integer (Institution id)</td>
-<td>Nullable</td>
-<td>️</td>
-<td>✔️</td>
+<td>integer (Institution ID)<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>inst_admin</td>
-<td>boolean (Inst admin)</td>
-<td>Nullable <br>Default: false</td>
-<td>️</td>
-<td>✔️</td>
+<td>boolean (Inst admin)<br>Nullable </td>
+<td>Default: false</td>
 </tr>
 <tr>
 <td>login_allowed</td>
-<td>boolean (Login allowed)</td>
-<td>Nullable <br>Default: true</td>
-<td>️</td>
-<td>✔️</td>
+<td>boolean(Login allowed)<br>Nullable </td>
+<td>Default: true</td>
 </tr>
 <tr>
 <td>uid</td>
-<td>string (Uid)</td>
-<td>non-empty. Nullable</td>
-<td>️</td>
-<td>✔️</td>
+<td>string (Uid)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>is_superuser</td>
-<td>boolean (Superuser status)</td>
-<td>Designates that this user has all permissions without explicitly assigning them.</td>
-<td>️</td>
-<td>✔️</td>
+<td>boolean (Superuser status) </td>
+<td>Designates that this user has all permissions without explicitly assigning them. </td>
 </tr>
 <tr>
 <td>is_staff</td>
-<td>boolean (Staff status)</td>
+<td>boolean (Staff status) </td>
 <td>Designates whether the user can log into this admin site.</td>
-<td>️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>is_active</td>
-<td>boolean (Active)</td>
+<td>boolean (Active) </td>
 <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
-<td>️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>date_joined</td>
-<td>string &lt;date-time> (Date joined)</td>
+<td>string &lt;date-time> (Date joined) </td>
 <td>-</td>
-<td>️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>groups</td>
 <td>Array of integers</td>
-<td>The groups this user belongs to. A user will get all permissions granted to each of their groups.</td>
-<td>️</td>
-<td>✔️</td>
+<td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
 </tr>
 <tr>
 <td>user_permissions</td>
 <td>Array of integers</td>
-<td>Specific permissions for this user.</td>
-<td>️</td>
-<td>✔️</td>
+<td>Specific permissions for this user. </td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 <h3 id=responses-2>Responses</h3>
 <h4 id=response-sample-200>Response sample: 200</h4>
 <details>
@@ -886,7 +901,7 @@ We&rsquo;re working on it!</p></div>
 <tbody>
 <tr>
 <td>HTTP Method</td>
-<td>PUT</td>
+<td><strong>PUT</strong></td>
 </tr>
 <tr>
 <td>Path</td>
@@ -903,159 +918,218 @@ We&rsquo;re working on it!</p></div>
 </tbody>
 </table>
 <h3 id=parameters-3>Parameters:</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Comments</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td><strong>id</strong> <br><em><code>required</code></em></td>
-<td>string</td>
-<td></td>
-<td>✔️ <br>Request path parameter</td>
-<td>✔️</td>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td><strong>username</strong> <code>required</code></td>
-<td>string (Username)</td>
-<td>non-empty</td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>last_login</td>
-<td>string<date-time>(Last login)</td>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string </td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
+<tr>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty </td>
+<td>-</td>
 <tr>
 <td>first_name</td>
-<td>string (First name)</td>
-<td>non-empty</td>
-<td>✔️</td>
-<td>✔️</td>
+<td>string (First name)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td>string (Last name)</td>
-<td>non-empty</td>
-<td>✔️️</td>
-<td>✔️</td>
+<td>string (Last name) <br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>email</td>
-<td>string <email> (Email)</td>
-<td>non-empty</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>string &lt;email> (Email)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>password</td>
-<td>string (Password)</td>
-<td>non-empty. Nullable</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>string (Password)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>password2</td>
-<td>string (Password2)</td>
-<td>non-empty. Nullable</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>string (Password2)<br>non-empty<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution_id</td>
+<td>integer (Institution ID)<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>inst_admin</td>
+<td>boolean (Inst admin)<br>Nullable </td>
+<td>Default: false</td>
+</tr>
+<tr>
+<td>login_allowed</td>
+<td>boolean(Login allowed)<br>Nullable </td>
+<td>Default: true</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string (Uid)<br>non-empty<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>is_superuser</td>
+<td>boolean (Superuser status) </td>
+<td>Designates that this user has all permissions without explicitly assigning them. </td>
+</tr>
+<tr>
+<td>is_staff</td>
+<td>boolean (Staff status) </td>
+<td>Designates whether the user can log into this admin site.</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>boolean (Active) </td>
+<td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+</tr>
+<tr>
+<td>date_joined</td>
+<td>string &lt;date-time> (Date joined) </td>
+<td>-</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Array of integers</td>
+<td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+</tr>
+<tr>
+<td>user_permissions</td>
+<td>Array of integers</td>
+<td>Specific permissions for this user. </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</td>
+<td>integer (ID) </td>
+<td></td>
+</tr>
+<tr>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>last_login</td>
+<td>string &lt;date-time&gr; (Last login)</td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>string (First name)<br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string (Last name) <br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string &lt;email> (Email)<br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string (Password)<br>non-empty<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>password2</td>
+<td>string (Password2)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>institution</td>
-<td>string (Institution)</td>
+<td>string (Institution) </td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>roles</td>
 <td>string (Roles)</td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>institution_id</td>
-<td>integer (Institution id)</td>
-<td>Nullable</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>integer (Institution ID)<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>inst_admin</td>
-<td>boolean (Inst admin)</td>
-<td>Nullable <br>Default: false</td>
-<td>️ ✔️</td>
-<td>✔️</td>
+<td>boolean (Inst admin)<br>Nullable </td>
+<td>Default: false</td>
 </tr>
 <tr>
 <td>login_allowed</td>
-<td>boolean (Login allowed)</td>
-<td>Nullable <br>Default: true</td>
-<td>️ ✔️</td>
-<td>✔️</td>
+<td>boolean(Login allowed)<br>Nullable </td>
+<td>Default: true</td>
 </tr>
 <tr>
 <td>uid</td>
-<td>string (Uid)</td>
-<td>non-empty. Nullable</td>
-<td>✔️️</td>
-<td>✔️</td>
+<td>string (Uid)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>is_superuser</td>
-<td>boolean (Superuser status)</td>
-<td>Designates that this user has all permissions without explicitly assigning them.</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>boolean (Superuser status) </td>
+<td>Designates that this user has all permissions without explicitly assigning them. </td>
 </tr>
 <tr>
 <td>is_staff</td>
-<td>boolean (Staff status)</td>
+<td>boolean (Staff status) </td>
 <td>Designates whether the user can log into this admin site.</td>
-<td>️ ✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>is_active</td>
-<td>boolean (Active)</td>
+<td>boolean (Active) </td>
 <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
-<td>✔️️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>date_joined</td>
-<td>string &lt;date-time> (Date joined)</td>
+<td>string &lt;date-time> (Date joined) </td>
 <td>-</td>
-<td>️✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>groups</td>
 <td>Array of integers</td>
-<td>The groups this user belongs to. A user will get all permissions granted to each of their groups.</td>
-<td>️ ✔️</td>
-<td>✔️</td>
+<td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
 </tr>
 <tr>
 <td>user_permissions</td>
 <td>Array of integers</td>
-<td>Specific permissions for this user.</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>Specific permissions for this user. </td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 <h3 id=responses-3>Responses</h3>
 <h4 id=response-sample-200-1>Response sample: 200</h4>
 <details>
@@ -1117,159 +1191,218 @@ We&rsquo;re working on it!</p></div>
 </tbody>
 </table>
 <h3 id=parameters-4>Parameters:</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Comments</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td><strong>id</strong> <br><em><code>required</code></em></td>
-<td>string</td>
-<td></td>
-<td>✔️ <br>Request path parameter</td>
-<td>✔️</td>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td><strong>username</strong> <code>required</code></td>
-<td>string (Username)</td>
-<td>non-empty</td>
-<td>✔️</td>
-<td>✔️</td>
-</tr>
-<tr>
-<td>last_login</td>
-<td>string<date-time>(Last login)</td>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string </td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
+<tr>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty </td>
+<td>-</td>
 <tr>
 <td>first_name</td>
-<td>string (First name)</td>
-<td>non-empty</td>
-<td>✔️</td>
-<td>✔️</td>
+<td>string (First name)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td>string (Last name)</td>
-<td>non-empty</td>
-<td>✔️️</td>
-<td>✔️</td>
+<td>string (Last name) <br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>email</td>
-<td>string <email> (Email)</td>
-<td>non-empty</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>string &lt;email> (Email)<br>non-empty </td>
+<td>-</td>
 </tr>
 <tr>
 <td>password</td>
-<td>string (Password)</td>
-<td>non-empty. Nullable</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>string (Password)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>password2</td>
-<td>string (Password2)</td>
-<td>non-empty. Nullable</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>string (Password2)<br>non-empty<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution_id</td>
+<td>integer (Institution ID)<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>inst_admin</td>
+<td>boolean (Inst admin)<br>Nullable </td>
+<td>Default: false</td>
+</tr>
+<tr>
+<td>login_allowed</td>
+<td>boolean(Login allowed)<br>Nullable </td>
+<td>Default: true</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string (Uid)<br>non-empty<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>is_superuser</td>
+<td>boolean (Superuser status) </td>
+<td>Designates that this user has all permissions without explicitly assigning them. </td>
+</tr>
+<tr>
+<td>is_staff</td>
+<td>boolean (Staff status) </td>
+<td>Designates whether the user can log into this admin site.</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>boolean (Active) </td>
+<td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+</tr>
+<tr>
+<td>date_joined</td>
+<td>string &lt;date-time> (Date joined) </td>
+<td>-</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Array of integers</td>
+<td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+</tr>
+<tr>
+<td>user_permissions</td>
+<td>Array of integers</td>
+<td>Specific permissions for this user. </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</td>
+<td>integer (ID) </td>
+<td></td>
+</tr>
+<tr>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>last_login</td>
+<td>string &lt;date-time&gr; (Last login)</td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>string (First name)<br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>string (Last name) <br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string &lt;email> (Email)<br>non-empty </td>
+<td>-</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string (Password)<br>non-empty<br>Nullable </td>
+<td>-</td>
+</tr>
+<tr>
+<td>password2</td>
+<td>string (Password2)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>institution</td>
-<td>string (Institution)</td>
+<td>string (Institution) </td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>roles</td>
 <td>string (Roles)</td>
 <td>-</td>
-<td></td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>institution_id</td>
-<td>integer (Institution id)</td>
-<td>Nullable</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>integer (Institution ID)<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>inst_admin</td>
-<td>boolean (Inst admin)</td>
-<td>Nullable <br>Default: false</td>
-<td>️ ✔️</td>
-<td>✔️</td>
+<td>boolean (Inst admin)<br>Nullable </td>
+<td>Default: false</td>
 </tr>
 <tr>
 <td>login_allowed</td>
-<td>boolean (Login allowed)</td>
-<td>Nullable <br>Default: true</td>
-<td>️ ✔️</td>
-<td>✔️</td>
+<td>boolean(Login allowed)<br>Nullable </td>
+<td>Default: true</td>
 </tr>
 <tr>
 <td>uid</td>
-<td>string (Uid)</td>
-<td>non-empty. Nullable</td>
-<td>✔️️</td>
-<td>✔️</td>
+<td>string (Uid)<br>non-empty<br>Nullable </td>
+<td>-</td>
 </tr>
 <tr>
 <td>is_superuser</td>
-<td>boolean (Superuser status)</td>
-<td>Designates that this user has all permissions without explicitly assigning them.</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>boolean (Superuser status) </td>
+<td>Designates that this user has all permissions without explicitly assigning them. </td>
 </tr>
 <tr>
 <td>is_staff</td>
-<td>boolean (Staff status)</td>
+<td>boolean (Staff status) </td>
 <td>Designates whether the user can log into this admin site.</td>
-<td>️ ✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>is_active</td>
-<td>boolean (Active)</td>
+<td>boolean (Active) </td>
 <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
-<td>✔️️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>date_joined</td>
-<td>string &lt;date-time> (Date joined)</td>
+<td>string &lt;date-time> (Date joined) </td>
 <td>-</td>
-<td>️✔️</td>
-<td>✔️</td>
 </tr>
 <tr>
 <td>groups</td>
 <td>Array of integers</td>
-<td>The groups this user belongs to. A user will get all permissions granted to each of their groups.</td>
-<td>️ ✔️</td>
-<td>✔️</td>
+<td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
 </tr>
 <tr>
 <td>user_permissions</td>
 <td>Array of integers</td>
-<td>Specific permissions for this user.</td>
-<td>️✔️</td>
-<td>✔️</td>
+<td>Specific permissions for this user. </td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 <h3 id=responses-4>Responses</h3>
 <h4 id=response-sample-200-2>Response sample: 200</h4>
 <details>
@@ -1331,26 +1464,28 @@ We&rsquo;re working on it!</p></div>
 </tbody>
 </table>
 <h3 id=parameters-5>Parameters:</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Comments</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td><strong>id</strong> <br><em><code>required</code></em></td>
-<td>string</td>
-<td></td>
-<td>✔️ <br>Request path parameter</td>
-<td>✔️</td>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
 <h3 id=responses-5>Responses</h3>
 <h4 id=response-sample-204>Response sample: 204</h4>
 <details>
@@ -1398,6 +1533,58 @@ We&rsquo;re working on it!</p></div>
 </tbody>
 </table>
 <h3 id=parameters-6>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string </td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty </td>
+<td>-</td>
+<tr>
+<td>first_name</td>
+<td>string (First name)<br>non-empty </td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</td>
+<td>integer (ID) </td>
+<td></td>
+</tr>
+<tr>
+<td><strong>username</strong><br><code>required</code></td>
+<td>string (Username)<br>non-empty </td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <table>
 <thead>
 <tr>
@@ -1501,18 +1688,36 @@ We&rsquo;re working on it!</p></div>
 <h2 id=delete-institutiona-nameadmin_institution_deletea>Delete Institution<a name=admin_institution_delete></a></h2>
 <hr>
 <h1 id=3-instrument-management-a-nameinstrument_managementa>3. Instrument Management <a name=instrument_management></a></h1>
-<h2 id=list-a-nameinstrument_management_lista>List <a name=instrument_management_list></a></h2>
-<h2 id=create-a-nameinstrument_management_createa>Create <a name=instrument_management_create></a></h2>
-<h2 id=read-a-nameinstrument_management_reada>Read <a name=instrument_management_read></a></h2>
-<h2 id=update-a-nameinstrument_management_updatea>Update <a name=instrument_management_update></a></h2>
-<h2 id=delete-a-nameinstrument_management_deletea>Delete <a name=instrument_management_delete></a></h2>
+<ul>
+<li>GET: <a href=#admin_instrument_list>List Instruments</a></li>
+<li>POST: <a href=#admin_instrument_create>Create Instrument</a></li>
+<li>GET: <a href=#admin_instrument_read>Read Instrument</a></li>
+<li>PUT: <a href=#admin_instrument_update>Update Instrument</a></li>
+<li>PATCH: <a href=#admin_instrument_partial_update>Update Instrument Partial Information</a></li>
+<li>DELETE: <a href=#admin_instrument_delete>Delete Instrument</a></li>
+</ul>
+<h2 id=list-instruments-a-nameadmin_instrument_lista>List Instruments <a name=admin_instrument_list></a></h2>
+<h2 id=create-instrumenta-nameadmin_instrument_createa>Create instrument<a name=admin_instrument_create></a></h2>
+<h2 id=read-instrumenta-nameadmin_instrument_reada>Read instrument<a name=admin_instrument_read></a></h2>
+<h2 id=update-instrumenta-nameadmin_instrument_updatea>Update instrument<a name=admin_instrument_update></a></h2>
+<h2 id=update-instrumenta-nameadmin_instrument_partial_updatea>Update instrument<a name=admin_instrument_partial_update></a></h2>
+<h2 id=delete-instrumenta-nameadmin_instrument_deletea>Delete instrument<a name=admin_instrument_delete></a></h2>
 <hr>
 <h1 id=4-ui-management-a-nameui_managementa>4. UI Management <a name=ui_management></a></h1>
-<h2 id=list-a-nameui_management_lista>List <a name=ui_management_list></a></h2>
-<h2 id=create-a-nameui_management_createa>Create <a name=ui_management_create></a></h2>
-<h2 id=read-a-nameui_management_reada>Read <a name=ui_management_read></a></h2>
-<h2 id=update-a-nameui_management_updatea>Update <a name=ui_management_update></a></h2>
-<h2 id=delete-a-nameui_management_deletea>Delete <a name=ui_management_delete></a></h2>
+<ul>
+<li>GET: <a href=#admin_ui_list>List UI</a></li>
+<li>POST: <a href=#admin_ui_create>Create UI</a></li>
+<li>GET: <a href=#admin_ui_read>Read UI</a></li>
+<li>PUT: <a href=#admin_ui_update>Update UI</a></li>
+<li>PATCH: <a href=#admin_ui_partial_update>Update UI Partial Information</a></li>
+<li>DELETE: <a href=#admin_ui_delete>Delete UI</a></li>
+</ul>
+<h2 id=list-uia-nameadmin_ui_lista>List UI<a name=admin_ui_list></a></h2>
+<h2 id=create-uia-nameadmin_ui_createa>Create UI<a name=admin_ui_create></a></h2>
+<h2 id=read-uia-nameadmin_ui_reada>Read UI<a name=admin_ui_read></a></h2>
+<h2 id=update-uia-nameadmin_ui_updatea>Update UI<a name=admin_ui_update></a></h2>
+<h2 id=update-uia-nameadmin_ui_partial_updatea>Update UI<a name=admin_ui_partial_update></a></h2>
+<h2 id=delete-uia-nameadmin_ui_deletea>Delete UI<a name=admin_ui_delete></a></h2>
 <hr>
 <hr>
 <p>Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.</p>
@@ -1562,7 +1767,7 @@ Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna vari
 
 [../_index.en.md]: ../admin/_index.en.md
 </code></pre></div></div>
-<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 21 Sep 2021</p>
+<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 27 Sep 2021</p>
 <nav class="pagination mt-3">
 <a class="nav nav-prev" href=https://tesla-ce.github.io/developers/api/ aria-label="Previous page"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">API</span></a>
 <a class="nav nav-next" href=https://tesla-ce.github.io/developers/api/auth/ aria-label="Previous page"> <span class="d-none d-md-block">Authentication</span><i class="ti-arrow-right ml-2"></i></a>
