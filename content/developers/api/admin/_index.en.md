@@ -23,6 +23,8 @@ keywords: ["API","admin"]
 
 
 # 1. User Management <a name="user_management"></a> 
+Set of API endpoints that allow users to be viewed or edited.
+
 - [List Users](#admin_user_list)
 - [Create User](#admin_user_create)
 - [Read User](#admin_user_read)
@@ -48,7 +50,7 @@ Content Type | application/json
 ### Parameters
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-   Request parameters
+   Request parameters.
     <table>
       <tbody>
           <tr>
@@ -111,7 +113,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-  Response parameters
+  Response parameters.
     <table>
       <tbody>
           <tr>
@@ -202,38 +204,12 @@ Path | /api/v2/admin/user/
 Authorization | JWT
 Content Type | application/json
 
-#### Request Sample: POST
-
-```json
-{
-  "username": "string",
-  "first_name": "string",
-  "last_name": "string",
-  "email": "user@example.com",
-  "password": "string",
-  "password2": "string",
-  "institution_id": 0,
-  "inst_admin": false,
-  "login_allowed": true,
-  "uid": "string",
-  "is_superuser": true,
-  "is_staff": true,
-  "is_active": true,
-  "date_joined": "2019-08-24T14:15:22Z",
-  "groups": [
-    0
-  ],
-  "user_permissions": [
-    0
-  ]
-}
-````
 
 ###  Parameters:
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-   Request parameters
+   Request parameters.
         <table>
           <tbody>
               <tr>
@@ -325,7 +301,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-       Response parameters
+       Response parameters.
         <table>
           <tbody>
               <tr>
@@ -437,27 +413,38 @@ Content Type | application/json
   {{</ tab >}}
 {{</ tabs >}}
 
+#### Request Sample: POST
+
+```json
+{
+  "username": "string",
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "password": "string",
+  "password2": "string",
+  "institution_id": 0,
+  "inst_admin": false,
+  "login_allowed": true,
+  "uid": "string",
+  "is_superuser": true,
+  "is_staff": true,
+  "is_active": true,
+  "date_joined": "2019-08-24T14:15:22Z",
+  "groups": [
+    0
+  ],
+  "user_permissions": [
+    0
+  ]
+}
+````
 
 
 <!--- ✔️ check why emoji are not working. Instead of images we should use :white_check_mark: or :heavy_check_mark: --->
 
 
 ### Responses
-
-#### Response schema: application/json
-<!--- details and summary tags, both, needed for expandable code --->
-<details>
-  <summary>201</summary>
-
-Field | Type | Comments
---- | --- | ---
-id | integer (ID) | - 
-username `required` | string (Username) non-empty | -
-last_login | string<uri> | Nullable  - 
-previous | string<uri> Nullable | -
-results `required` | Array of objects (User)
-
-</details>
 
 #### Response sample: 201
 
@@ -502,7 +489,7 @@ Retrieves information about a user.
 ### Request
 Concept | Data
 -- | --
-HTTP method | GET
+HTTP method | **GET**
 Path | /api/v2/admin/user/{id}/
 Authorization | JWT
 Content Type | application/json
@@ -510,7 +497,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters
+       Request parameters.
         <table>
           <tbody>
               <tr>
@@ -528,6 +515,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
+    Response parameters.
     <table>
       <tbody>
           <tr>
@@ -695,7 +683,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters
+       Request parameters.
         <table>
           <tbody>
              <tr>
@@ -792,6 +780,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
+    Response parameters.
     <table>
       <tbody>
           <tr>
@@ -949,7 +938,7 @@ Updates partial user's information.
 ### Request
 Concept | Data
 -- | --
-HTTP Method | PATCH
+HTTP Method | **PATCH**
 Path | /api/v2/admin/user/{id}/
 Authorization | JWT
 Content Type | application/json
@@ -958,7 +947,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters
+       Request parameters.
         <table>
           <tbody>
              <tr>
@@ -1055,6 +1044,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
+    Response parameters.
     <table>
       <tbody>
           <tr>
@@ -1214,7 +1204,7 @@ Deletes user from the system.
 ### Request
 Concept | Data
 -- | --
-HTTP Method | DELETE
+HTTP Method | **DELETE**
 Path | /api/v2/admin/user/{id}/
 Authorization | JWT
 Content Type | application/json
@@ -1222,7 +1212,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters
+       Request parameters.
         <table>
           <tbody>
              <tr>
@@ -1262,6 +1252,8 @@ Content Type | application/json
 ---
 
 # 2. Institution Management <a name="institution_management"></a> 
+Set of API endpoints that allow an Institution to be viewed or edited.
+
 - GET: [List Institutions](#admin_institution_list)
 - POST: [Create Institution](#admin_institution_create)
 - GET: [Read Institution](#admin_institution_read)
@@ -1279,7 +1271,7 @@ API endpoint that allows Institution to be viewed or edited.
 
 Concept | Data
 -- | --
-HTTP Method | GET
+HTTP Method | **GET**
 Path | /api/v2/admin/institution/
 Authorization | JWT
 Content Type | application/json
@@ -1288,7 +1280,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters
+       Request parameters.
         <table>
           <tbody>
              <tr>
@@ -1297,24 +1289,30 @@ Content Type | application/json
                   <td><strong>Comments</strong></td>
               </tr>
               <tr>
-                      <td><strong>id</strong><br><code>required</code></td>
+                      <td>search</td>
                       <td>string </td>
-                      <td>-</td>
+                      <td>A search term</td>
               </tr>
               <tr>
-                  <td><strong>username</strong><br><code>required</code></td>
-                  <td>string (Username)<br>non-empty </td>
-                  <td>-</td>
+                  <td>ordering</td>
+                  <td>string</td>
+                  <td>Which field to use when ordering the results.</td>
               <tr>
-                  <td>first_name</td>
-                  <td>string (First name)<br>non-empty </td>
-                  <td>-</td>
+                  <td>limit</td>
+                  <td>integer</td>
+                  <td>Number of results to return per page.</td>
+              </tr>
+              <tr>
+                  <td>offset</td>
+                  <td>integer</td>
+                  <td>The initial index from which to return the results.</td>
               </tr>
          </tbody>
         </table>
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
+    Response parameters.
     <table>
       <tbody>
           <tr>
@@ -1323,30 +1321,29 @@ Content Type | application/json
               <td><strong>Comments</strong></td>
           </tr>
           <tr>
-                  <td><strong>id</td>
+                  <td><strong>count</strong><br><code>required</code></td>
                   <td>integer (ID) </td>
                   <td></td>
           </tr>
           <tr>
-              <td><strong>username</strong><br><code>required</code></td>
-              <td>string (Username)<br>non-empty </td>
+              <td>next</td>
+              <td>string (uri)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>previous</td>
+              <td>string (uri)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td><strong>results</strong><br><code>required</code></td>
+              <td>Array of objects (InstitutionAdmin)</td>
               <td>-</td>
           </tr>
        </tbody>
     </table>
   {{</tab>}}
 {{</tabs>}}
-
-Name | Type | Comments | Request | Response
----- | ---- | ---- | --- | ---
-search | string | A search term. | ✔️ | 
-**count** `required` | integer | | | ✔️
-ordering | string | Which field to use when ordering the results. | ✔️ |
-limit | integer | Number of results to return per page. | ✔️ | 
-offset | integer | The initial index from which to return the results. | ✔️ |
-next | string \<uri\> | Nullable | | ✔️
-previous | string \<uri\> | Nullable | | ✔️
-**results** `required | Àrray of objects (InstitutionAdmin) | Nullable | | ✔️
 
 
 ### Responses
@@ -1357,7 +1354,7 @@ previous | string \<uri\> | Nullable | | ✔️
   <summary>200</summary>
 
   ````json
-  {
+{
   "count": 0,
   "next": "http://example.com",
   "previous": "http://example.com",
@@ -1387,17 +1384,797 @@ previous | string \<uri\> | Nullable | | ✔️
 <!--- admin_institution_create --->
 ## Create Institution<a name="admin_institution_create"></a>
 
+API endpoint for creating a new Institution.
+
+### Request
+
+Concept | Data
+-- | --
+HTTP Method | **POST**
+Path | /api/v2/admin/institution/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>acronym</strong><br><code>required</code></td>
+                      <td>string (Acronym) <br>[1 .. 255] characters</td>
+                      <td>Institution acronym</td>
+              </tr>
+              <tr>
+                      <td><strong>name</strong><br><code>required</code></td>
+                      <td>string (Name) <br>non-empty</td>
+                      <td>Name of the institution</td>
+              </tr>
+              <tr>
+                  <td>external_ic</td>
+                  <td>boolean (External ic)</td>
+                  <td>Informed Consent is managed externally to TeSLA</td>
+              <tr>
+                  <td>mail_domain</td>
+                  <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
+                  <td>Accepted mail domains for this institution.</td>
+              </tr>
+              <tr>
+                  <td>disable_vle_learner_creation</td>
+                  <td>boolean (Disable vle learner creation)</td>
+                  <td>If enabled, VLEs cannot create learners.</td>
+              </tr>
+              <tr>
+                  <td>disable_vle_instructor_creation</td>
+                  <td>boolean (Disable vle instructor creation)</td>
+                  <td>If enabled, VLEs cannot create instructors.</td>
+              </tr>
+              <tr>
+                  <td>disable_vle_user_creation</td>
+                  <td>boolean (Disable vle user creation)</td>
+                  <td>If enabled, VLEs cannot create institution users.</td>
+              </tr>
+              <tr>
+                  <td>allow_learner_report</td>
+                  <td>boolean (Allow learner report)</td>
+                  <td>Learners can access their reports.</td>
+              </tr>
+              <tr>
+                  <td>allow_learner_audit</td>
+                  <td>boolean (Allow learner audit)</td>
+                  <td>Learners can access the audit data of their reports.</td>
+              </tr>
+              <tr>
+                  <td>allow_valid_audit</td>
+                  <td>boolean (Allow valid audit)</td>
+                  <td>Audit data is available even when results are valid.</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (Id)</td>
+                <td>Institution Id.</td>
+            </tr>
+            <tr>
+                <td><strong>acronym</strong><br><code>required</code></td>
+                <td>string (Acronym) <br>[1 .. 255] characters</td>
+                <td>Institution acronym</td>
+            </tr>
+            <tr>
+                <td><strong>name</strong><br><code>required</code></td>
+                <td>string (Name) <br>non-empty</td>
+                <td>Name of the institution</td>
+            </tr>
+            <tr>
+                <td>external_ic</td>
+                <td>boolean (External ic)</td>
+                <td>Informed Consent is managed externally to TeSLA</td>
+            </tr>
+            <tr>
+                <td>mail_domain</td>
+                <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
+                <td>Accepted mail domains for this institution.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_learner_creation</td>
+                <td>boolean (Disable vle learner creation)</td>
+                <td>If enabled, VLEs cannot create learners.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_instructor_creation</td>
+                <td>boolean (Disable vle instructor creation)</td>
+                <td>If enabled, VLEs cannot create instructors.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_user_creation</td>
+                <td>boolean (Disable vle user creation)</td>
+                <td>If enabled, VLEs cannot create institution users.</td>
+            </tr>
+            <tr>
+                <td>allow_learner_report</td>
+                <td>boolean (Allow learner report)</td>
+                <td>Learners can access their reports.</td>
+            </tr>
+            <tr>
+                <td>allow_learner_audit</td>
+                <td>boolean (Allow learner audit)</td>
+                <td>Learners can access the audit data of their reports.</td>
+            </tr>
+            <tr>
+                <td>allow_valid_audit</td>
+                <td>boolean (Allow valid audit)</td>
+                <td>Audit data is available even when results are valid.</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt;(Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt;(Updated at)</td>
+                <td>-</td>
+            </tr>
+         </tbody>
+        </table>
+   {{</tab>}}
+{{</tabs>}}
+
+#### Request Sample: POST
+
+```json
+    {
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true
+    }
+````
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+  ````json
+    {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+  ````
+</details>
+
+
 <!--- admin_institution_read --->
 ## Read Institution<a name="admin_institution_read"></a>
+Retrieves information about an Institution.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **GET**
+Path | /api/v2/admin/institution/{institution_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td><strong>institution_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>integer (Id)</td>
+            <td>Institution Id.</td>
+        </tr>
+        <tr>
+            <td><strong>acronym</strong><br><code>required</code></td>
+            <td>string (Acronym) <br>[1 .. 255] characters</td>
+            <td>Institution acronym</td>
+        </tr>
+        <tr>
+            <td><strong>name</strong><br><code>required</code></td>
+            <td>string (Name) <br>non-empty</td>
+            <td>Name of the institution</td>
+        </tr>
+        <tr>
+            <td>external_ic</td>
+            <td>boolean (External ic)</td>
+            <td>Informed Consent is managed externally to TeSLA</td>
+        </tr>
+        <tr>
+            <td>mail_domain</td>
+            <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
+            <td>Accepted mail domains for this institution.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_learner_creation</td>
+            <td>boolean (Disable vle learner creation)</td>
+            <td>If enabled, VLEs cannot create learners.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_instructor_creation</td>
+            <td>boolean (Disable vle instructor creation)</td>
+            <td>If enabled, VLEs cannot create instructors.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_user_creation</td>
+            <td>boolean (Disable vle user creation)</td>
+            <td>If enabled, VLEs cannot create institution users.</td>
+        </tr>
+        <tr>
+            <td>allow_learner_report</td>
+            <td>boolean (Allow learner report)</td>
+            <td>Learners can access their reports.</td>
+        </tr>
+        <tr>
+            <td>allow_learner_audit</td>
+            <td>boolean (Allow learner audit)</td>
+            <td>Learners can access the audit data of their reports.</td>
+        </tr>
+        <tr>
+            <td>allow_valid_audit</td>
+            <td>boolean (Allow valid audit)</td>
+            <td>Audit data is available even when results are valid.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>string &lt;date-time&gt;(Created at)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>string &lt;date-time&gt;(Updated at)</td>
+            <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+    {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+```
+</details>
+
 
 <!--- admin_institution_update --->
 ## Update Institution<a name="admin_institution_update"></a>
+API endpoint that updates Institution's information.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **PUT**
+Path | /api/v2/admin/institution/{institution_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td><strong>institution_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter</td>
+              </tr>
+            <tr>
+                <td><strong>acronym</strong><br><code>required</code></td>
+                <td>string (Acronym) <br>[1 .. 255] characters</td>
+                <td>Institution acronym</td>
+            </tr>
+            <tr>
+                <td><strong>name</strong><br><code>required</code></td>
+                <td>string (Name) <br>non-empty</td>
+                <td>Name of the institution</td>
+            </tr>
+            <tr>
+                <td>external_ic</td>
+                <td>boolean (External ic)</td>
+                <td>Informed Consent is managed externally to TeSLA</td>
+            </tr>
+            <tr>
+                <td>mail_domain</td>
+                <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
+                <td>Accepted mail domains for this institution.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_learner_creation</td>
+                <td>boolean (Disable vle learner creation)</td>
+                <td>If enabled, VLEs cannot create learners.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_instructor_creation</td>
+                <td>boolean (Disable vle instructor creation)</td>
+                <td>If enabled, VLEs cannot create instructors.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_user_creation</td>
+                <td>boolean (Disable vle user creation)</td>
+                <td>If enabled, VLEs cannot create institution users.</td>
+            </tr>
+            <tr>
+                <td>allow_learner_report</td>
+                <td>boolean (Allow learner report)</td>
+                <td>Learners can access their reports.</td>
+            </tr>
+            <tr>
+                <td>allow_learner_audit</td>
+                <td>boolean (Allow learner audit)</td>
+                <td>Learners can access the audit data of their reports.</td>
+            </tr>
+            <tr>
+                <td>allow_valid_audit</td>
+                <td>boolean (Allow valid audit)</td>
+                <td>Audit data is available even when results are valid.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>integer (Id)</td>
+            <td>Institution Id.</td>
+        </tr>
+        <tr>
+            <td><strong>acronym</strong><br><code>required</code></td>
+            <td>string (Acronym) <br>[1 .. 255] characters</td>
+            <td>Institution acronym</td>
+        </tr>
+        <tr>
+            <td><strong>name</strong><br><code>required</code></td>
+            <td>string (Name) <br>non-empty</td>
+            <td>Name of the institution</td>
+        </tr>
+        <tr>
+            <td>external_ic</td>
+            <td>boolean (External ic)</td>
+            <td>Informed Consent is managed externally to TeSLA</td>
+        </tr>
+        <tr>
+            <td>mail_domain</td>
+            <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
+            <td>Accepted mail domains for this institution.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_learner_creation</td>
+            <td>boolean (Disable vle learner creation)</td>
+            <td>If enabled, VLEs cannot create learners.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_instructor_creation</td>
+            <td>boolean (Disable vle instructor creation)</td>
+            <td>If enabled, VLEs cannot create instructors.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_user_creation</td>
+            <td>boolean (Disable vle user creation)</td>
+            <td>If enabled, VLEs cannot create institution users.</td>
+        </tr>
+        <tr>
+            <td>allow_learner_report</td>
+            <td>boolean (Allow learner report)</td>
+            <td>Learners can access their reports.</td>
+        </tr>
+        <tr>
+            <td>allow_learner_audit</td>
+            <td>boolean (Allow learner audit)</td>
+            <td>Learners can access the audit data of their reports.</td>
+        </tr>
+        <tr>
+            <td>allow_valid_audit</td>
+            <td>boolean (Allow valid audit)</td>
+            <td>Audit data is available even when results are valid.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>string &lt;date-time&gt;(Created at)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>string &lt;date-time&gt;(Updated at)</td>
+            <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+    {
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true
+    }
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+    {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+```
+</details>
 
 <!--- admin_institution_partial_update --->
 ## Update Institution<a name="admin_institution_partial_update"></a>
+API endpoint that updates Institution's information.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **PATCH**
+Path | /api/v2/admin/institution/{institution_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td><strong>institution_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter</td>
+              </tr>
+            <tr>
+                <td><strong>acronym</strong><br><code>required</code></td>
+                <td>string (Acronym) <br>[1 .. 255] characters</td>
+                <td>Institution acronym</td>
+            </tr>
+            <tr>
+                <td><strong>name</strong><br><code>required</code></td>
+                <td>string (Name) <br>non-empty</td>
+                <td>Name of the institution</td>
+            </tr>
+            <tr>
+                <td>external_ic</td>
+                <td>boolean (External ic)</td>
+                <td>Informed Consent is managed externally to TeSLA</td>
+            </tr>
+            <tr>
+                <td>mail_domain</td>
+                <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
+                <td>Accepted mail domains for this institution.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_learner_creation</td>
+                <td>boolean (Disable vle learner creation)</td>
+                <td>If enabled, VLEs cannot create learners.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_instructor_creation</td>
+                <td>boolean (Disable vle instructor creation)</td>
+                <td>If enabled, VLEs cannot create instructors.</td>
+            </tr>
+            <tr>
+                <td>disable_vle_user_creation</td>
+                <td>boolean (Disable vle user creation)</td>
+                <td>If enabled, VLEs cannot create institution users.</td>
+            </tr>
+            <tr>
+                <td>allow_learner_report</td>
+                <td>boolean (Allow learner report)</td>
+                <td>Learners can access their reports.</td>
+            </tr>
+            <tr>
+                <td>allow_learner_audit</td>
+                <td>boolean (Allow learner audit)</td>
+                <td>Learners can access the audit data of their reports.</td>
+            </tr>
+            <tr>
+                <td>allow_valid_audit</td>
+                <td>boolean (Allow valid audit)</td>
+                <td>Audit data is available even when results are valid.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>integer (Id)</td>
+            <td>Institution Id.</td>
+        </tr>
+        <tr>
+            <td><strong>acronym</strong><br><code>required</code></td>
+            <td>string (Acronym) <br>[1 .. 255] characters</td>
+            <td>Institution acronym</td>
+        </tr>
+        <tr>
+            <td><strong>name</strong><br><code>required</code></td>
+            <td>string (Name) <br>non-empty</td>
+            <td>Name of the institution</td>
+        </tr>
+        <tr>
+            <td>external_ic</td>
+            <td>boolean (External ic)</td>
+            <td>Informed Consent is managed externally to TeSLA</td>
+        </tr>
+        <tr>
+            <td>mail_domain</td>
+            <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
+            <td>Accepted mail domains for this institution.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_learner_creation</td>
+            <td>boolean (Disable vle learner creation)</td>
+            <td>If enabled, VLEs cannot create learners.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_instructor_creation</td>
+            <td>boolean (Disable vle instructor creation)</td>
+            <td>If enabled, VLEs cannot create instructors.</td>
+        </tr>
+        <tr>
+            <td>disable_vle_user_creation</td>
+            <td>boolean (Disable vle user creation)</td>
+            <td>If enabled, VLEs cannot create institution users.</td>
+        </tr>
+        <tr>
+            <td>allow_learner_report</td>
+            <td>boolean (Allow learner report)</td>
+            <td>Learners can access their reports.</td>
+        </tr>
+        <tr>
+            <td>allow_learner_audit</td>
+            <td>boolean (Allow learner audit)</td>
+            <td>Learners can access the audit data of their reports.</td>
+        </tr>
+        <tr>
+            <td>allow_valid_audit</td>
+            <td>boolean (Allow valid audit)</td>
+            <td>Audit data is available even when results are valid.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>string &lt;date-time&gt;(Created at)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>string &lt;date-time&gt;(Updated at)</td>
+            <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+    {
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true
+    }
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+    {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+```
+</details>
 
 <!--- admin_institution_delete --->
 ## Delete Institution<a name="admin_institution_delete"></a>
+API endpoint for deleting Institution from the system.
+
+### Request
+Concept | Data
+-- | --
+HTTP Method | **DELETE**
+Path | /api/v2/admin/institution/{institution_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>institution_id</strong><br><code>required</code></td>
+                      <td>string </td>
+                      <td>Request path parameter</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+### Responses
+
+#### Response sample: 204
+<details>
+  <summary>204</summary>
+
+```json
+{
+}
+```
+</details>
+
 
 
 
