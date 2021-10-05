@@ -16,11 +16,12 @@ keywords: ["API","admin"]
 2. [Institution Management](#institution_management)
 3. [Instrument Management](#instrument_management)
 4. [UI Management](#ui_management)
-
+<br><br>
 
 *****
 *****
 
+<br>
 
 # 1. User Management <a name="user_management"></a> 
 Set of API endpoints that allow users to be viewed or edited.
@@ -31,7 +32,7 @@ Set of API endpoints that allow users to be viewed or edited.
 - [Update User](#admin_user_update)
 - [Update User Partial Information](#admin_user_partial_update)
 - [Delete User](#admin_user_delete)
-
+<br><br>
 
 <!--- admin_user_list --->
 ## List Users: GET <a name="admin_user_list"></a>
@@ -1219,9 +1220,11 @@ Content Type | application/json
 
 
 
-
+<br>
 
 ---
+
+<br>
 
 # 2. Institution Management <a name="institution_management"></a> 
 Set of API endpoints that allow an Institution to be viewed or edited.
@@ -1232,7 +1235,7 @@ Set of API endpoints that allow an Institution to be viewed or edited.
 - PUT: [Update Institution](#admin_institution_update)
 - PATCH: [Update Institution Partial Information](#admin_institution_partial_update)
 - DELETE: [Delete Institution](#admin_institution_delete)
-
+<br><br>
 
 <!--- admin_institution_list --->
 ## List Institutions: GET <a name="admin_institution_list"></a>
@@ -2151,8 +2154,11 @@ Content Type | application/json
 
 
 
+<br>
 
 ---
+
+<br>
 
 # 3. Instrument Management <a name="instrument_management"></a>
 Set of API endpoints that allow an Instrument to be viewed or edited.
@@ -2163,7 +2169,7 @@ Set of API endpoints that allow an Instrument to be viewed or edited.
 - PUT: [Update Instrument](#admin_instrument_update)
 - PATCH: [Update Instrument Partial Information](#admin_instrument_partial_update)
 - DELETE: [Delete Instrument](#admin_instrument_delete)
-
+<br><br>
 
 <!--- admin_instrument_list --->
 ## List Instruments<a name="admin_instrument_list"></a> [GET]
@@ -3123,8 +3129,11 @@ Content Type | application/json
 </details>
 
 
+<br>
 
 ---
+
+<br>
 
 # 4. UI Management <a name="ui_management"></a>
 Set of API endpoints that allow a UI to be viewed or edited.
@@ -3135,7 +3144,7 @@ Set of API endpoints that allow a UI to be viewed or edited.
 - [Update UI](#admin_ui_update) (PUT)
 - [Update UI Partial Information](#admin_ui_partial_update) (PATCH)
 - [Delete UI](#admin_ui_delete) (DELETE)
-
+<br><br>
 
 <!--- admin_ui_list --->
 ## List UI<a name="admin_ui_list"></a> (GET)
