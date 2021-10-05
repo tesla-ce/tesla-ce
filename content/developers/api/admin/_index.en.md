@@ -50,7 +50,7 @@ Content Type | application/json
 ### Parameters
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-   Request parameters.
+   Request parameters.<br><br>
     <table>
       <tbody>
           <tr>
@@ -65,55 +65,55 @@ Content Type | application/json
           </tr>
           <tr>
               <td>username</td>
-              <td>string</span>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td>string</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>first_name</td>
               <td>string</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>last_name</td>
               <td>string</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>email</td>
               <td>string</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>institution</td>
               <td>string</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>roles</td>
               <td>string</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>ordering</td>
               <td>string</td>
-              <td>&nbsp;Which field to use when ordering the results.</td>
+              <td>Which field to use when ordering the results.</td>
           </tr>
           <tr>
               <td>limit</td>
               <td>integer</td>
-              <td>&nbsp;Number of results to return per page.</td>
+              <td>Number of results to return per page.</td>
           </tr>
           <tr class="last undefined">
               <td>offset</td>
               <td>integer</td>
-              <td>&nbsp;The initial index from which to return the results.</td>
+              <td>The initial index from which to return the results.</td>
           </tr>
       </tbody>
     </table>
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-  Response parameters.
+  Response parameters.<br><br>
     <table>
       <tbody>
           <tr>
@@ -122,24 +122,24 @@ Content Type | application/json
               <td><strong>Comments</strong></td>
           </tr>
           <tr>
-              <td><strong>count</strong><br /><code>r<em class="diigoHighlight id_7521e0cfba1bf3a92fdff27c0f9e6295 type_0 yellow">equired</em></code></td>
+              <td><strong>count</strong><br><code>required</code></td>
               <td>integer</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>next</td>
               <td>string &lt;uri&gt;<br />Nullable</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
           <tr>
               <td>previous</td>
-              <td>string &lt;uri&gt;<br />Nullable</td>
-              <td>&nbsp;</td>
+              <td>string &lt;uri&gt;<br>Nullable</td>
+              <td>-</td>
           </tr>
           <tr>
-              <td>results<br /><code>required</code></td>
+              <td>results<br><code>required</code></td>
               <td>Array of Objects (User)</td>
-              <td>&nbsp;</td>
+              <td>-</td>
           </tr>
       </tbody>
     </table>
@@ -209,43 +209,14 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-   Request parameters.
+   Request parameters.<br>
         <table>
           <tbody>
-              <tr>
-                  <td><strong>Name</strong></td>
-                  <td><strong>Type</strong></td>
-                  <td><strong>Comments</strong></td>
-              </tr>
-              <tr>
-                  <td><strong>username</strong><br><code>required</code></td>
-                  <td>string (Username)<br>non-empty</td>
-                  <td>-</td>
-              </tr>
-              <tr>
-                  <td>first_name</td>
-                  <td>string (First name)<br>non-empty</td>
-                  <td>-</td>
-              </tr>
-              <tr>
-                  <td>last_name</td>
-                  <td>string (Last name) <br>non-empty</td>
-                  <td>-</td>
-              </tr>
-              <tr>
-                  <td>email</td>
-                  <td>string &lt;email&gt; (Email)<br>non-empty</td>
-                  <td>-</td>
-              </tr>
-              <tr>
-                  <td>password</td>
-                  <td>string (Password) <br>non-empty<br>Nullable</td>
-                  <td>-</td>
-              <tr>
-                  <td>password2</td>
-                  <td>string (Password2) <br>non-empty<br>Nullable</td>
-                  <td>-</td>
-              </tr>
+            <tr>
+              <td>password2</td>
+              <td>string (Password2) <br>non-empty<br>Nullable</td>
+              <td>-</td>
+            </tr>
              <tr>
                   <td>institution_id</td>
                   <td>integer (Institution id)<br>Nullable</td>
@@ -301,7 +272,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-       Response parameters.
+       Response parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -343,6 +314,7 @@ Content Type | application/json
                   <td>password</td>
                   <td>string (Password) <br>non-empty<br>Nullable</td>
                   <td>-</td>
+              </tr>
               <tr>
                   <td>password2</td>
                   <td>string (Password2) <br>non-empty<br>Nullable</td>
@@ -497,7 +469,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -515,7 +487,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -683,7 +655,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -780,114 +752,114 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
-          <tr>
-              <td><strong>Name</strong></td>
-              <td><strong>Type</strong></td>
-              <td><strong>Comments</strong></td>
-          </tr>
-          <tr>
-                  <td><strong>id</td>
-                  <td>integer (ID) </td>
-                  <td></td>
-          </tr>
-          <tr>
-              <td><strong>username</strong><br><code>required</code></td>
-              <td>string (Username)<br>non-empty </td>
-              <td>-</td>
-          </tr>
-              <tr>
-                  <td>last_login</td>
-                  <td>string &lt;date-time&gr; (Last login)</td>
-                  <td></td>
-              </tr>
-          <tr>
-              <td>first_name</td>
-              <td>string (First name)<br>non-empty </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>last_name</td>
-              <td>string (Last name) <br>non-empty </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>email</td>
-              <td>string &lt;email&gt; (Email)<br>non-empty </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>password</td>
-              <td>string (Password)<br>non-empty<br>Nullable </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>password2</td>
-              <td>string (Password2)<br>non-empty<br>Nullable </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>institution</td>
-              <td>string (Institution) </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>roles</td>
-              <td>string (Roles)</td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>institution_id</td>
-              <td>integer (Institution ID)<br>Nullable </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>inst_admin</td>
-              <td>boolean (Inst admin)<br>Nullable </td>
-              <td>Default: false</td>
-          </tr>
-          <tr>
-              <td>login_allowed</td>
-              <td>boolean(Login allowed)<br>Nullable </td>
-              <td>Default: true</td>
-          </tr>
-          <tr>
-              <td>uid</td>
-              <td>string (Uid)<br>non-empty<br>Nullable </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>is_superuser</td>
-              <td>boolean (Superuser status) </td>
-              <td>Designates that this user has all permissions without explicitly assigning them. </td>
-          </tr>
-          <tr>
-              <td>is_staff</td>
-              <td>boolean (Staff status) </td>
-              <td>Designates whether the user can log into this admin site.</td>
-          </tr>
-          <tr>
-              <td>is_active</td>
-              <td>boolean (Active) </td>
-              <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
-          </tr>
-          <tr>
-              <td>date_joined</td>
-              <td>string &lt;date-time&gt; (Date joined) </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>groups</td>
-              <td>Array of integers</td>
-              <td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
-          </tr>
-          <tr>
-              <td>user_permissions</td>
-              <td>Array of integers</td>
-              <td>Specific permissions for this user. </td>
-          </tr>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+          <td><strong>id</td>
+          <td>integer (ID) </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>username</strong><br><code>required</code></td>
+          <td>string (Username)<br>non-empty </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>last_login</td>
+          <td>string &lt;date-time&gr; (Last login)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>first_name</td>
+          <td>string (First name)<br>non-empty </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>last_name</td>
+          <td>string (Last name) <br>non-empty </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td>string &lt;email&gt; (Email)<br>non-empty </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td>string (Password)<br>non-empty<br>Nullable </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>password2</td>
+          <td>string (Password2)<br>non-empty<br>Nullable </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>institution</td>
+          <td>string (Institution) </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>roles</td>
+          <td>string (Roles)</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>institution_id</td>
+          <td>integer (Institution ID)<br>Nullable </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>inst_admin</td>
+          <td>boolean (Inst admin)<br>Nullable </td>
+          <td>Default: false</td>
+        </tr>
+        <tr>
+          <td>login_allowed</td>
+          <td>boolean(Login allowed)<br>Nullable </td>
+          <td>Default: true</td>
+        </tr>
+        <tr>
+          <td>uid</td>
+          <td>string (Uid)<br>non-empty<br>Nullable </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>is_superuser</td>
+          <td>boolean (Superuser status) </td>
+          <td>Designates that this user has all permissions without explicitly assigning them. </td>
+        </tr>
+        <tr>
+          <td>is_staff</td>
+          <td>boolean (Staff status) </td>
+          <td>Designates whether the user can log into this admin site.</td>
+        </tr>
+        <tr>
+          <td>is_active</td>
+          <td>boolean (Active) </td>
+          <td>Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</td>
+        </tr>
+        <tr>
+          <td>date_joined</td>
+          <td>string &lt;date-time&gt; (Date joined) </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>groups</td>
+          <td>Array of integers</td>
+          <td>The groups this user belongs to. A user will get all permissions granted to each of their groups. </td>
+        </tr>
+        <tr>
+          <td>user_permissions</td>
+          <td>Array of integers</td>
+          <td>Specific permissions for this user. </td>
+        </tr>
        </tbody>
     </table>
   {{</tab>}}
@@ -947,7 +919,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -1044,7 +1016,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -1212,7 +1184,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -1280,7 +1252,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -1297,6 +1269,7 @@ Content Type | application/json
                   <td>ordering</td>
                   <td>string</td>
                   <td>Which field to use when ordering the results.</td>
+              </tr>
               <tr>
                   <td>limit</td>
                   <td>integer</td>
@@ -1312,7 +1285,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -1399,7 +1372,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -1421,6 +1394,7 @@ Content Type | application/json
                   <td>external_ic</td>
                   <td>boolean (External ic)</td>
                   <td>Informed Consent is managed externally to TeSLA</td>
+              </tr>
               <tr>
                   <td>mail_domain</td>
                   <td>string (Mail domain) <br><= 255 characters. <br>Nullable</td>
@@ -1461,7 +1435,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
         <table>
           <tbody>
             <tr>
@@ -1599,7 +1573,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -1617,7 +1591,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -1739,7 +1713,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -1807,7 +1781,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -1942,7 +1916,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -2010,7 +1984,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -2145,7 +2119,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2208,7 +2182,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2225,6 +2199,7 @@ Content Type | application/json
                   <td>ordering</td>
                   <td>string</td>
                   <td>Which field to use when ordering the results.</td>
+              </tr>
               <tr>
                   <td>limit</td>
                   <td>integer</td>
@@ -2240,7 +2215,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -2328,7 +2303,7 @@ Content Type | application/json
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2395,7 +2370,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2539,7 +2514,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -2557,7 +2532,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -2594,6 +2569,7 @@ Content Type | application/json
           <td>enabled</td>
           <td>boolean (Enabled)</td>
           <td>The instrument is enabled.</td>
+        </tr>
         <tr>
           <td>requires_enrolment</td>
           <td>boolean (Requires enrolment)</td>
@@ -2684,7 +2660,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
                 <tr>
@@ -2721,6 +2697,7 @@ Content Type | application/json
                   <td>enabled</td>
                   <td>boolean (Enabled)</td>
                   <td>The instrument is enabled.</td>
+                </tr>
                 <tr>
                   <td>requires_enrolment</td>
                   <td>boolean (Requires enrolment)</td>
@@ -2756,7 +2733,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -2793,6 +2770,7 @@ Content Type | application/json
           <td>enabled</td>
           <td>boolean (Enabled)</td>
           <td>The instrument is enabled.</td>
+        </tr>
         <tr>
           <td>requires_enrolment</td>
           <td>boolean (Requires enrolment)</td>
@@ -2898,7 +2876,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
                 <tr>
@@ -2935,6 +2913,7 @@ Content Type | application/json
                   <td>enabled</td>
                   <td>boolean (Enabled)</td>
                   <td>The instrument is enabled.</td>
+                </tr>
                 <tr>
                   <td>requires_enrolment</td>
                   <td>boolean (Requires enrolment)</td>
@@ -2970,7 +2949,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -3007,6 +2986,7 @@ Content Type | application/json
           <td>enabled</td>
           <td>boolean (Enabled)</td>
           <td>The instrument is enabled.</td>
+        </tr>
         <tr>
           <td>requires_enrolment</td>
           <td>boolean (Requires enrolment)</td>
@@ -3112,7 +3092,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -3171,7 +3151,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
                 <tr>
@@ -3204,7 +3184,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
             <tr>
@@ -3279,7 +3259,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
                 <tr>
@@ -3296,7 +3276,7 @@ Content Type | application/json
                   <td>enabled</td>
                   <td>boolean (Enabled)</td>
                   <td>Status.</td>
-                <tr>
+                </tr>
                <tr>
                   <td>roles</td>
                   <td>string (Roles) <br><=250 characters.<br>Nullable</td>
@@ -3307,7 +3287,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
             <tr>
@@ -3329,7 +3309,7 @@ Content Type | application/json
               <td>enabled</td>
               <td>boolean (Enabled)</td>
               <td>Status.</td>
-            <tr>
+            </tr>
             <tr>
               <td>roles</td>
               <td>string (Roles) <br><=250 characters.<br>Nullable</td>
@@ -3382,7 +3362,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
                 <tr>
@@ -3400,7 +3380,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
             <tr>
@@ -3422,7 +3402,7 @@ Content Type | application/json
               <td>enabled</td>
               <td>boolean (Enabled)</td>
               <td>Status.</td>
-            <tr>
+            </tr>
             <tr>
               <td>roles</td>
               <td>string (Roles) <br><=250 characters.<br>Nullable</td>
@@ -3469,7 +3449,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
                 <tr>
@@ -3502,7 +3482,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
             <tr>
@@ -3524,7 +3504,7 @@ Content Type | application/json
               <td>enabled</td>
               <td>boolean (Enabled)</td>
               <td>Status.</td>
-            <tr>
+            </tr>
             <tr>
               <td>roles</td>
               <td>string (Roles) <br><=250 characters.<br>Nullable</td>
@@ -3577,7 +3557,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
                 <tr>
@@ -3599,7 +3579,7 @@ Content Type | application/json
                   <td>enabled</td>
                   <td>boolean (Enabled)</td>
                   <td>Status.</td>
-                <tr>
+                </tr>
                <tr>
                   <td>roles</td>
                   <td>string (Roles) <br><=250 characters.<br>Nullable</td>
@@ -3610,7 +3590,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
             <tr>
@@ -3632,7 +3612,7 @@ Content Type | application/json
               <td>enabled</td>
               <td>boolean (Enabled)</td>
               <td>Status.</td>
-            <tr>
+            </tr>
             <tr>
               <td>roles</td>
               <td>string (Roles) <br><=250 characters.<br>Nullable</td>
@@ -3684,7 +3664,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
