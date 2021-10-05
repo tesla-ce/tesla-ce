@@ -2883,13 +2883,6 @@ Content Type | application/json
 </details>
 
 
-
-
-
-
-
-
-
 <!--- admin_instrument_partial_update --->
 ## Update Instrument Partial Information<a name="admin_instrument_partial_update"></a> [PATCH]
 API endpoint that updates Instrument's information.
@@ -3166,20 +3159,559 @@ Set of API endpoints that allow a UI to be viewed or edited.
 
 <!--- admin_ui_list --->
 ## List UI<a name="admin_ui_list"></a> (GET)
+API endpoint for listing UI.
+### Request
+Concept | Data
+-- | --
+HTTP method | **GET**
+Path | /api/v2/admin/ui/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                      <td>search</td>
+                      <td>string</td>
+                      <td>A search term.</td>
+                </tr>
+                <tr>
+                  <td>ordering</td>
+                  <td>string</td>
+                  <td>Which field to use when ordering the results.</td>
+                <tr>
+               <tr>
+                  <td>limit</td>
+                  <td>integer</td>
+                  <td>Number of results to return per page.</td>
+                </tr>
+               <tr>
+                  <td>offset</td>
+                  <td>integer</td>
+                  <td>The initial index from which to return the results.</td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+          <tr>
+                  <td><strong>count</strong><br><code>required</code></td>
+                  <td>integer (ID) </td>
+                  <td></td>
+          </tr>
+          <tr>
+              <td>next</td>
+              <td>string (uri)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>previous</td>
+              <td>string (uri)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td><strong>results</strong><br><code>required</code></td>
+              <td>Array of objects (Instrument)</td>
+              <td>-</td>
+          </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": "string",
+      "route": "string",
+      "enabled": true,
+      "roles": "string"
+    }
+  ]
+}
+```
+</details>
+
 
 <!--- admin_ui_create --->
 ## Create UI<a name="admin_ui_create"></a> (POST)
+API endpoint for creating a new UI.
+
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **POST**
+Path | /api/v2/admin/ui/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                      <td><strong>route</strong><br><code>required</code></td>
+                      <td>string (Route) <br>[1 .. 250] characters</td>
+                      <td>Affected Route.</td>
+                </tr>
+                <tr>
+                  <td>enabled</td>
+                  <td>boolean (Enabled)</td>
+                  <td>Status.</td>
+                <tr>
+               <tr>
+                  <td>roles</td>
+                  <td>string (Roles) <br><=250 characters.<br>Nullable</td>
+                  <td>Required roles.</td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td>ui_id</td>
+              <td>string (Id)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+                  <td><strong>route</strong><br><code>required</code></td>
+                  <td>string (Route) <br>[1 .. 250] characters</td>
+                  <td>Affected Route.</td>
+            </tr>
+            <tr>
+              <td>enabled</td>
+              <td>boolean (Enabled)</td>
+              <td>Status.</td>
+            <tr>
+            <tr>
+              <td>roles</td>
+              <td>string (Roles) <br><=250 characters.<br>Nullable</td>
+              <td>Required roles.</td>
+            </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "route": "string",
+  "enabled": true,
+  "roles": "string"
+}
+```
+### Responses
+
+#### Response sample: 201
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+```json
+{
+  "id": "string",
+  "route": "string",
+  "enabled": true,
+  "roles": "string"
+}
+```
+</details>
+
 
 <!--- admin_ui_read --->
 ## Read UI<a name="admin_ui_read"></a> (GET)
+Retrieves information about UI Options.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **GET**
+Path | /api/v2/admin/ui/{ui_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>ui_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. </td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td>ui_id</td>
+              <td>string (Id)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+                  <td><strong>route</strong><br><code>required</code></td>
+                  <td>string (Route) <br>[1 .. 250] characters</td>
+                  <td>Affected Route.</td>
+            </tr>
+            <tr>
+              <td>enabled</td>
+              <td>boolean (Enabled)</td>
+              <td>Status.</td>
+            <tr>
+            <tr>
+              <td>roles</td>
+              <td>string (Roles) <br><=250 characters.<br>Nullable</td>
+              <td>Required roles.</td>
+            </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": "string",
+  "route": "string",
+  "enabled": true,
+  "roles": "string"
+}
+```
+</details>
+
+
 
 <!--- admin_ui_update --->
 ## Update UI<a name="admin_ui_update"></a> (PUT)
+API endpoint that updates UI Options' information.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **PUT**
+Path | /api/v2/admin/ui/{ui_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>ui_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. </td>
+                </tr>
+                <tr>
+                      <td><strong>route</strong><br><code>required</code></td>
+                      <td>string (Route) <br>[1 .. 250] characters</td>
+                      <td>Affected Route.</td>
+                </tr>
+                <tr>
+                  <td>enabled</td>
+                  <td>boolean (Enabled)</td>
+                  <td>Status.</td>
+                <tr>
+               <tr>
+                  <td>roles</td>
+                  <td>string (Roles) <br><=250 characters.<br>Nullable</td>
+                  <td>Required roles.</td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td>ui_id</td>
+              <td>string (Id)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+                  <td><strong>route</strong><br><code>required</code></td>
+                  <td>string (Route) <br>[1 .. 250] characters</td>
+                  <td>Affected Route.</td>
+            </tr>
+            <tr>
+              <td>enabled</td>
+              <td>boolean (Enabled)</td>
+              <td>Status.</td>
+            <tr>
+            <tr>
+              <td>roles</td>
+              <td>string (Roles) <br><=250 characters.<br>Nullable</td>
+              <td>Required roles.</td>
+            </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "route": "string",
+  "enabled": true,
+  "roles": "string"
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": "string",
+  "route": "string",
+  "enabled": true,
+  "roles": "string"
+}
+```
+</details>
+
 
 <!--- admin_ui_partial_update --->
 ## Update UI Partial Information<a name="admin_ui_partial_update"></a> (PATCH)
+API endpoint that updates UI Options' information.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **PATCH**
+Path | /api/v2/admin/ui/{ui_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>ui_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. </td>
+                </tr>
+                <tr>
+                      <td><strong>route</strong><br><code>required</code></td>
+                      <td>string (Route) <br>[1 .. 250] characters</td>
+                      <td>Affected Route.</td>
+                </tr>
+                <tr>
+                  <td>enabled</td>
+                  <td>boolean (Enabled)</td>
+                  <td>Status.</td>
+                <tr>
+               <tr>
+                  <td>roles</td>
+                  <td>string (Roles) <br><=250 characters.<br>Nullable</td>
+                  <td>Required roles.</td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td>ui_id</td>
+              <td>string (Id)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+                  <td><strong>route</strong><br><code>required</code></td>
+                  <td>string (Route) <br>[1 .. 250] characters</td>
+                  <td>Affected Route.</td>
+            </tr>
+            <tr>
+              <td>enabled</td>
+              <td>boolean (Enabled)</td>
+              <td>Status.</td>
+            <tr>
+            <tr>
+              <td>roles</td>
+              <td>string (Roles) <br><=250 characters.<br>Nullable</td>
+              <td>Required roles.</td>
+            </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "route": "string",
+  "enabled": true,
+  "roles": "string"
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": "string",
+  "route": "string",
+  "enabled": true,
+  "roles": "string"
+}
+```
+</details>
 
 <!--- admin_ui_delete --->
 ## Delete UI<a name="admin_ui_delete"></a> (DELETE)
+API endpoint for deleting UI Options from the system.
+
+### Request
+Concept | Data
+-- | --
+HTTP Method | **DELETE**
+Path | /api/v2/admin/ui/{ui_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>ui_id</strong><br><code>required</code></td>
+                      <td>string </td>
+                      <td>Request path parameter. .</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+### Responses
+
+#### Response sample: 204
+<details>
+  <summary>204</summary>
+
+```json
+{
+}
+```
+</details>
 
 
