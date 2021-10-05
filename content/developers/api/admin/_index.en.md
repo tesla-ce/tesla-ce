@@ -36,7 +36,7 @@ Set of API endpoints that allow users to be viewed or edited.
 <!--- admin_user_list --->
 ## List Users: GET <a name="admin_user_list"></a>
 
-API endpoint that allows users to be viewed or edited.
+API endpoint for listing Users.
 
 ### Request
 
@@ -1265,7 +1265,7 @@ Set of API endpoints that allow an Institution to be viewed or edited.
 <!--- admin_institution_list --->
 ## List Institutions: GET <a name="admin_institution_list"></a>
 
-API endpoint that allows Institution to be viewed or edited.
+API endpoint for listing Institutions.
 
 ### Request
 
@@ -1542,18 +1542,18 @@ Content Type | application/json
 #### Request Sample: POST
 
 ```json
-    {
-      "acronym": "string",
-      "name": "string",
-      "external_ic": true,
-      "mail_domain": "string",
-      "disable_vle_learner_creation": true,
-      "disable_vle_instructor_creation": true,
-      "disable_vle_user_creation": true,
-      "allow_learner_report": true,
-      "allow_learner_audit": true,
-      "allow_valid_audit": true
-    }
+{
+  "acronym": "string",
+  "name": "string",
+  "external_ic": true,
+  "mail_domain": "string",
+  "disable_vle_learner_creation": true,
+  "disable_vle_instructor_creation": true,
+  "disable_vle_user_creation": true,
+  "allow_learner_report": true,
+  "allow_learner_audit": true,
+  "allow_valid_audit": true
+}
 ````
 
 
@@ -1565,21 +1565,21 @@ Content Type | application/json
   <summary>201</summary>
 
   ````json
-    {
-      "id": 0,
-      "acronym": "string",
-      "name": "string",
-      "external_ic": true,
-      "mail_domain": "string",
-      "disable_vle_learner_creation": true,
-      "disable_vle_instructor_creation": true,
-      "disable_vle_user_creation": true,
-      "allow_learner_report": true,
-      "allow_learner_audit": true,
-      "allow_valid_audit": true,
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z"
-    }
+{
+  "id": 0,
+  "acronym": "string",
+  "name": "string",
+  "external_ic": true,
+  "mail_domain": "string",
+  "disable_vle_learner_creation": true,
+  "disable_vle_instructor_creation": true,
+  "disable_vle_user_creation": true,
+  "allow_learner_report": true,
+  "allow_learner_audit": true,
+  "allow_valid_audit": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
   ````
 </details>
 
@@ -1705,21 +1705,21 @@ Content Type | application/json
   <summary>200</summary>
 
 ```json
-    {
-      "id": 0,
-      "acronym": "string",
-      "name": "string",
-      "external_ic": true,
-      "mail_domain": "string",
-      "disable_vle_learner_creation": true,
-      "disable_vle_instructor_creation": true,
-      "disable_vle_user_creation": true,
-      "allow_learner_report": true,
-      "allow_learner_audit": true,
-      "allow_valid_audit": true,
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z"
-    }
+{
+  "id": 0,
+  "acronym": "string",
+  "name": "string",
+  "external_ic": true,
+  "mail_domain": "string",
+  "disable_vle_learner_creation": true,
+  "disable_vle_instructor_creation": true,
+  "disable_vle_user_creation": true,
+  "allow_learner_report": true,
+  "allow_learner_audit": true,
+  "allow_valid_audit": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
 ```
 </details>
 
@@ -1887,18 +1887,18 @@ Content Type | application/json
 
 #### Request sample
 ```json
-    {
-      "acronym": "string",
-      "name": "string",
-      "external_ic": true,
-      "mail_domain": "string",
-      "disable_vle_learner_creation": true,
-      "disable_vle_instructor_creation": true,
-      "disable_vle_user_creation": true,
-      "allow_learner_report": true,
-      "allow_learner_audit": true,
-      "allow_valid_audit": true
-    }
+{
+  "acronym": "string",
+  "name": "string",
+  "external_ic": true,
+  "mail_domain": "string",
+  "disable_vle_learner_creation": true,
+  "disable_vle_instructor_creation": true,
+  "disable_vle_user_creation": true,
+  "allow_learner_report": true,
+  "allow_learner_audit": true,
+  "allow_valid_audit": true
+}
 ```
 ### Responses
 
@@ -1909,21 +1909,21 @@ Content Type | application/json
   <summary>200</summary>
 
 ```json
-    {
-      "id": 0,
-      "acronym": "string",
-      "name": "string",
-      "external_ic": true,
-      "mail_domain": "string",
-      "disable_vle_learner_creation": true,
-      "disable_vle_instructor_creation": true,
-      "disable_vle_user_creation": true,
-      "allow_learner_report": true,
-      "allow_learner_audit": true,
-      "allow_valid_audit": true,
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z"
-    }
+{
+  "id": 0,
+  "acronym": "string",
+  "name": "string",
+  "external_ic": true,
+  "mail_domain": "string",
+  "disable_vle_learner_creation": true,
+  "disable_vle_instructor_creation": true,
+  "disable_vle_user_creation": true,
+  "allow_learner_report": true,
+  "allow_learner_audit": true,
+  "allow_valid_audit": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
 ```
 </details>
 
@@ -2090,18 +2090,18 @@ Content Type | application/json
 
 #### Request sample
 ```json
-    {
-      "acronym": "string",
-      "name": "string",
-      "external_ic": true,
-      "mail_domain": "string",
-      "disable_vle_learner_creation": true,
-      "disable_vle_instructor_creation": true,
-      "disable_vle_user_creation": true,
-      "allow_learner_report": true,
-      "allow_learner_audit": true,
-      "allow_valid_audit": true
-    }
+{
+  "acronym": "string",
+  "name": "string",
+  "external_ic": true,
+  "mail_domain": "string",
+  "disable_vle_learner_creation": true,
+  "disable_vle_instructor_creation": true,
+  "disable_vle_user_creation": true,
+  "allow_learner_report": true,
+  "allow_learner_audit": true,
+  "allow_valid_audit": true
+}
 ```
 ### Responses
 
@@ -2112,21 +2112,21 @@ Content Type | application/json
   <summary>200</summary>
 
 ```json
-    {
-      "id": 0,
-      "acronym": "string",
-      "name": "string",
-      "external_ic": true,
-      "mail_domain": "string",
-      "disable_vle_learner_creation": true,
-      "disable_vle_instructor_creation": true,
-      "disable_vle_user_creation": true,
-      "allow_learner_report": true,
-      "allow_learner_audit": true,
-      "allow_valid_audit": true,
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z"
-    }
+{
+  "id": 0,
+  "acronym": "string",
+  "name": "string",
+  "external_ic": true,
+  "mail_domain": "string",
+  "disable_vle_learner_creation": true,
+  "disable_vle_instructor_creation": true,
+  "disable_vle_user_creation": true,
+  "allow_learner_report": true,
+  "allow_learner_audit": true,
+  "allow_valid_audit": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
 ```
 </details>
 
@@ -2181,6 +2181,8 @@ Content Type | application/json
 ---
 
 # 3. Instrument Management <a name="instrument_management"></a>
+Set of API endpoints that allow an Instrument to be viewed or edited.
+<br>
 - GET: [List Instruments](#admin_instrument_list)
 - POST: [Create Instrument](#admin_instrument_create)
 - GET: [Read Instrument](#admin_instrument_read)
@@ -2190,124 +2192,994 @@ Content Type | application/json
 
 
 <!--- admin_instrument_list --->
-## List Instruments <a name="admin_instrument_list"></a>
+## List Instruments<a name="admin_instrument_list"></a> [GET]
+API endpoint for listing all Instruments.
+
+### Request
+
+Concept | Data
+-- | --
+HTTP Method | **GET**
+Path | /api/v2/admin/instrument/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td>search</td>
+                      <td>string </td>
+                      <td>A search term</td>
+              </tr>
+              <tr>
+                  <td>ordering</td>
+                  <td>string</td>
+                  <td>Which field to use when ordering the results.</td>
+              <tr>
+                  <td>limit</td>
+                  <td>integer</td>
+                  <td>Number of results to return per page.</td>
+              </tr>
+              <tr>
+                  <td>offset</td>
+                  <td>integer</td>
+                  <td>The initial index from which to return the results.</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+                  <td><strong>count</strong><br><code>required</code></td>
+                  <td>integer (ID) </td>
+                  <td></td>
+          </tr>
+          <tr>
+              <td>next</td>
+              <td>string (uri)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td>previous</td>
+              <td>string (uri)<br>Nullable </td>
+              <td>-</td>
+          </tr>
+          <tr>
+              <td><strong>results</strong><br><code>required</code></td>
+              <td>Array of objects (Instrument)</td>
+              <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "options_schema": {},
+      "name": "string",
+      "acronym": "string",
+      "queue": "string",
+      "enabled": true,
+      "requires_enrolment": true,
+      "description": "string",
+      "identity": true,
+      "originality": true,
+      "authorship": true,
+      "integrity": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+  ]
+}
+  ````
+</details>
+
+
 
 <!--- admin_instrument_create --->
-## Create instrument<a name="admin_instrument_create"></a>
+## Create Instrument<a name="admin_instrument_create"></a> [POST] 
+
+API endpoint for creating a new Instrument.
+
+### Request
+
+Concept | Data
+-- | --
+HTTP Method | **POST**
+Path | /api/v2/admin/instrument/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td>options_schema</td>
+                      <td>object (Options schema) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td><strong>name</strong><br><code>required</code></td>
+                      <td>string (Name) <br>[1 .. 250] characters</td>
+                      <td>Instrument name</td>
+              </tr>
+              <tr>
+                      <td><strong>acronym</strong><br><code>required</code></td>
+                      <td>string (Acronym) <br>[1 .. 30] characters</td>
+                      <td>Instrument acronym</td>
+              </tr>
+              <tr>
+                      <td><strong>queue</strong><br><code>required</code></td>
+                      <td>string (Queue) <br>non-empty</td>
+                      <td>Queue this instrument listens to.</td>
+              </tr>
+              <tr>
+                  <td>enabled</td>
+                  <td>boolean (Enabled)</td>
+                  <td>The instrument is enabled.</td>
+              <tr>
+                  <td>requires_enrolment</td>
+                  <td>boolean (Requires enrolment)</td>
+                  <td>Whether this instrument requires enrolment.</td>
+              </tr>
+              <tr>
+                  <td>description</td>
+                  <td>string (Description) <br>Nullable</td>
+                  <td>Description of the instrument.</td>
+              </tr>
+              <tr>
+                  <td>identity</td>
+                  <td>boolean (Identity)</td>
+                  <td>This instrument contributes to the learner identity verification.</td>
+              </tr>
+              <tr>
+                  <td>originality</td>
+                  <td>boolean (Originality)</td>
+                  <td>This instrument contributes to the assessment originality verification.</td>
+              </tr>
+              <tr>
+                  <td>authorship</td>
+                  <td>boolean (Authorship)</td>
+                  <td>This instrument contributes to the assessment authorship verification.</td>
+              </tr>
+              <tr>
+                  <td>integrity</td>
+                  <td>boolean (Integrity)</td>
+                  <td>This instrument contributes to the assessment integrity verification.</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td>id</td>
+                      <td>integer (ID)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>options_schema</td>
+                      <td>object (Options schema) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td><strong>name</strong><br><code>required</code></td>
+                      <td>string (Name) <br>[1 .. 250] characters</td>
+                      <td>Instrument name</td>
+              </tr>
+              <tr>
+                      <td><strong>acronym</strong><br><code>required</code></td>
+                      <td>string (Acronym) <br>[1 .. 30] characters</td>
+                      <td>Instrument acronym</td>
+              </tr>
+              <tr>
+                      <td><strong>queue</strong><br><code>required</code></td>
+                      <td>string (Queue) <br>non-empty</td>
+                      <td>Queue this instrument listens to.</td>
+              </tr>
+              <tr>
+                  <td>enabled</td>
+                  <td>boolean (Enabled)</td>
+                  <td>The instrument is enabled.</td>
+              <tr>
+                  <td>requires_enrolment</td>
+                  <td>boolean (Requires enrolment)</td>
+                  <td>Whether this instrument requires enrolment.</td>
+              </tr>
+              <tr>
+                  <td>description</td>
+                  <td>string (Description) <br>Nullable</td>
+                  <td>Description of the instrument.</td>
+              </tr>
+              <tr>
+                  <td>identity</td>
+                  <td>boolean (Identity)</td>
+                  <td>This instrument contributes to the learner identity verification.</td>
+              </tr>
+              <tr>
+                  <td>originality</td>
+                  <td>boolean (Originality)</td>
+                  <td>This instrument contributes to the assessment originality verification.</td>
+              </tr>
+              <tr>
+                  <td>authorship</td>
+                  <td>boolean (Authorship)</td>
+                  <td>This instrument contributes to the assessment authorship verification.</td>
+              </tr>
+              <tr>
+                  <td>integrity</td>
+                  <td>boolean (Integrity)</td>
+                  <td>This instrument contributes to the assessment integrity verification.</td>
+              </tr>
+              <tr>
+                    <td>created_at</td>
+                    <td>string &lt;date-time&gt; (Created at)</td>
+                    <td>-</td>
+              </tr>
+              <tr>
+                    <td>updated_at</td>
+                    <td>string &lt;date-time&gt; (Updated at)</td>
+                    <td>-</td>
+              </tr>
+         </tbody>
+        </table>
+   {{</tab>}}
+{{</tabs>}}
+
+#### Request Sample: POST
+
+```json
+{
+  "options_schema": {},
+  "name": "string",
+  "acronym": "string",
+  "queue": "string",
+  "enabled": true,
+  "requires_enrolment": true,
+  "description": "string",
+  "identity": true,
+  "originality": true,
+  "authorship": true,
+  "integrity": true
+}
+````
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+  ````json
+{
+  "id": 0,
+  "options_schema": {},
+  "name": "string",
+  "acronym": "string",
+  "queue": "string",
+  "enabled": true,
+  "requires_enrolment": true,
+  "description": "string",
+  "identity": true,
+  "originality": true,
+  "authorship": true,
+  "integrity": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+  ````
+</details>
+
 
 <!--- admin_instrument_read --->
-## Read instrument<a name="admin_instrument_read"></a>
+## Read Instrument<a name="admin_instrument_read"></a> [GET] 
+Retrieves information about an Instrument.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **GET**
+Path | /api/v2/admin/instrument/{instrument_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td><strong>instrument_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this instrument.</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>integer (Id)</td>
+            <td>Instrument Id.</td>
+        </tr>
+        <tr>
+              <td>options_schema</td>
+              <td>object (Options schema) <br>Nullable</td>
+              <td>-</td>
+        </tr>
+        <tr>
+              <td><strong>name</strong><br><code>required</code></td>
+              <td>string (Name) <br>[1 .. 250] characters</td>
+              <td>Instrument name</td>
+        </tr>
+        <tr>
+              <td><strong>acronym</strong><br><code>required</code></td>
+              <td>string (Acronym) <br>[1 .. 30] characters</td>
+              <td>Instrument acronym</td>
+        </tr>
+        <tr>
+              <td><strong>queue</strong><br><code>required</code></td>
+              <td>string (Queue) <br>non-empty</td>
+              <td>Queue this instrument listens to.</td>
+        </tr>
+        <tr>
+          <td>enabled</td>
+          <td>boolean (Enabled)</td>
+          <td>The instrument is enabled.</td>
+        <tr>
+          <td>requires_enrolment</td>
+          <td>boolean (Requires enrolment)</td>
+          <td>Whether this instrument requires enrolment.</td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>string (Description) <br>Nullable</td>
+          <td>Description of the instrument.</td>
+        </tr>
+        <tr>
+          <td>identity</td>
+          <td>boolean (Identity)</td>
+          <td>This instrument contributes to the learner identity verification.</td>
+        </tr>
+        <tr>
+          <td>originality</td>
+          <td>boolean (Originality)</td>
+          <td>This instrument contributes to the assessment originality verification.</td>
+        </tr>
+        <tr>
+          <td>authorship</td>
+          <td>boolean (Authorship)</td>
+          <td>This instrument contributes to the assessment authorship verification.</td>
+        </tr>
+        <tr>
+          <td>integrity</td>
+          <td>boolean (Integrity)</td>
+          <td>This instrument contributes to the assessment integrity verification.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>string &lt;date-time&gt; (Created at)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>string &lt;date-time&gt; (Updated at)</td>
+            <td>-</td>
+        </tr>
+     </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "options_schema": {},
+  "name": "string",
+  "acronym": "string",
+  "queue": "string",
+  "enabled": true,
+  "requires_enrolment": true,
+  "description": "string",
+  "identity": true,
+  "originality": true,
+  "authorship": true,
+  "integrity": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+```
+</details>
+
 
 <!--- admin_instrument_update --->
-## Update instrument<a name="admin_instrument_update"></a>
+## Update Instrument<a name="admin_instrument_update"></a> [PUT] 
+API endpoint that updates Instrument's information.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **PUT**
+Path | /api/v2/admin/instrument/{instrument_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>instrument_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this instrument.</td>
+                </tr>
+                <tr>
+                      <td>options_schema</td>
+                      <td>object (Options schema) <br>Nullable</td>
+                      <td>-</td>
+                </tr>
+                <tr>
+                      <td><strong>name</strong><br><code>required</code></td>
+                      <td>string (Name) <br>[1 .. 250] characters</td>
+                      <td>Instrument name</td>
+                </tr>
+                <tr>
+                      <td><strong>acronym</strong><br><code>required</code></td>
+                      <td>string (Acronym) <br>[1 .. 30] characters</td>
+                      <td>Instrument acronym</td>
+                </tr>
+                <tr>
+                      <td><strong>queue</strong><br><code>required</code></td>
+                      <td>string (Queue) <br>non-empty</td>
+                      <td>Queue this instrument listens to.</td>
+                </tr>
+                <tr>
+                  <td>enabled</td>
+                  <td>boolean (Enabled)</td>
+                  <td>The instrument is enabled.</td>
+                <tr>
+                  <td>requires_enrolment</td>
+                  <td>boolean (Requires enrolment)</td>
+                  <td>Whether this instrument requires enrolment.</td>
+                </tr>
+                <tr>
+                  <td>description</td>
+                  <td>string (Description) <br>Nullable</td>
+                  <td>Description of the instrument.</td>
+                </tr>
+                <tr>
+                  <td>identity</td>
+                  <td>boolean (Identity)</td>
+                  <td>This instrument contributes to the learner identity verification.</td>
+                </tr>
+                <tr>
+                  <td>originality</td>
+                  <td>boolean (Originality)</td>
+                  <td>This instrument contributes to the assessment originality verification.</td>
+                </tr>
+                <tr>
+                  <td>authorship</td>
+                  <td>boolean (Authorship)</td>
+                  <td>This instrument contributes to the assessment authorship verification.</td>
+                </tr>
+                <tr>
+                  <td>integrity</td>
+                  <td>boolean (Integrity)</td>
+                  <td>This instrument contributes to the assessment integrity verification.</td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>integer (Id)</td>
+            <td>Instrument Id.</td>
+        </tr>
+        <tr>
+              <td>options_schema</td>
+              <td>object (Options schema) <br>Nullable</td>
+              <td>-</td>
+        </tr>
+        <tr>
+              <td><strong>name</strong><br><code>required</code></td>
+              <td>string (Name) <br>[1 .. 250] characters</td>
+              <td>Instrument name</td>
+        </tr>
+        <tr>
+              <td><strong>acronym</strong><br><code>required</code></td>
+              <td>string (Acronym) <br>[1 .. 30] characters</td>
+              <td>Instrument acronym</td>
+        </tr>
+        <tr>
+              <td><strong>queue</strong><br><code>required</code></td>
+              <td>string (Queue) <br>non-empty</td>
+              <td>Queue this instrument listens to.</td>
+        </tr>
+        <tr>
+          <td>enabled</td>
+          <td>boolean (Enabled)</td>
+          <td>The instrument is enabled.</td>
+        <tr>
+          <td>requires_enrolment</td>
+          <td>boolean (Requires enrolment)</td>
+          <td>Whether this instrument requires enrolment.</td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>string (Description) <br>Nullable</td>
+          <td>Description of the instrument.</td>
+        </tr>
+        <tr>
+          <td>identity</td>
+          <td>boolean (Identity)</td>
+          <td>This instrument contributes to the learner identity verification.</td>
+        </tr>
+        <tr>
+          <td>originality</td>
+          <td>boolean (Originality)</td>
+          <td>This instrument contributes to the assessment originality verification.</td>
+        </tr>
+        <tr>
+          <td>authorship</td>
+          <td>boolean (Authorship)</td>
+          <td>This instrument contributes to the assessment authorship verification.</td>
+        </tr>
+        <tr>
+          <td>integrity</td>
+          <td>boolean (Integrity)</td>
+          <td>This instrument contributes to the assessment integrity verification.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>string &lt;date-time&gt; (Created at)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>string &lt;date-time&gt; (Updated at)</td>
+            <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "options_schema": {},
+  "name": "string",
+  "acronym": "string",
+  "queue": "string",
+  "enabled": true,
+  "requires_enrolment": true,
+  "description": "string",
+  "identity": true,
+  "originality": true,
+  "authorship": true,
+  "integrity": true
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "options_schema": {},
+  "name": "string",
+  "acronym": "string",
+  "queue": "string",
+  "enabled": true,
+  "requires_enrolment": true,
+  "description": "string",
+  "identity": true,
+  "originality": true,
+  "authorship": true,
+  "integrity": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+```
+</details>
+
+
+
+
+
+
+
+
 
 <!--- admin_instrument_partial_update --->
-## Update instrument<a name="admin_instrument_partial_update"></a>
+## Update Instrument Partial Information<a name="admin_instrument_partial_update"></a> [PATCH]
+API endpoint that updates Instrument's information.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | **PATCH**
+Path | /api/v2/admin/instrument/{instrument_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>instrument_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this instrument.</td>
+                </tr>
+                <tr>
+                      <td>options_schema</td>
+                      <td>object (Options schema) <br>Nullable</td>
+                      <td>-</td>
+                </tr>
+                <tr>
+                      <td><strong>name</strong><br><code>required</code></td>
+                      <td>string (Name) <br>[1 .. 250] characters</td>
+                      <td>Instrument name</td>
+                </tr>
+                <tr>
+                      <td><strong>acronym</strong><br><code>required</code></td>
+                      <td>string (Acronym) <br>[1 .. 30] characters</td>
+                      <td>Instrument acronym</td>
+                </tr>
+                <tr>
+                      <td><strong>queue</strong><br><code>required</code></td>
+                      <td>string (Queue) <br>non-empty</td>
+                      <td>Queue this instrument listens to.</td>
+                </tr>
+                <tr>
+                  <td>enabled</td>
+                  <td>boolean (Enabled)</td>
+                  <td>The instrument is enabled.</td>
+                <tr>
+                  <td>requires_enrolment</td>
+                  <td>boolean (Requires enrolment)</td>
+                  <td>Whether this instrument requires enrolment.</td>
+                </tr>
+                <tr>
+                  <td>description</td>
+                  <td>string (Description) <br>Nullable</td>
+                  <td>Description of the instrument.</td>
+                </tr>
+                <tr>
+                  <td>identity</td>
+                  <td>boolean (Identity)</td>
+                  <td>This instrument contributes to the learner identity verification.</td>
+                </tr>
+                <tr>
+                  <td>originality</td>
+                  <td>boolean (Originality)</td>
+                  <td>This instrument contributes to the assessment originality verification.</td>
+                </tr>
+                <tr>
+                  <td>authorship</td>
+                  <td>boolean (Authorship)</td>
+                  <td>This instrument contributes to the assessment authorship verification.</td>
+                </tr>
+                <tr>
+                  <td>integrity</td>
+                  <td>boolean (Integrity)</td>
+                  <td>This instrument contributes to the assessment integrity verification.</td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+    <table>
+      <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>integer (Id)</td>
+            <td>Instrument Id.</td>
+        </tr>
+        <tr>
+              <td>options_schema</td>
+              <td>object (Options schema) <br>Nullable</td>
+              <td>-</td>
+        </tr>
+        <tr>
+              <td><strong>name</strong><br><code>required</code></td>
+              <td>string (Name) <br>[1 .. 250] characters</td>
+              <td>Instrument name</td>
+        </tr>
+        <tr>
+              <td><strong>acronym</strong><br><code>required</code></td>
+              <td>string (Acronym) <br>[1 .. 30] characters</td>
+              <td>Instrument acronym</td>
+        </tr>
+        <tr>
+              <td><strong>queue</strong><br><code>required</code></td>
+              <td>string (Queue) <br>non-empty</td>
+              <td>Queue this instrument listens to.</td>
+        </tr>
+        <tr>
+          <td>enabled</td>
+          <td>boolean (Enabled)</td>
+          <td>The instrument is enabled.</td>
+        <tr>
+          <td>requires_enrolment</td>
+          <td>boolean (Requires enrolment)</td>
+          <td>Whether this instrument requires enrolment.</td>
+        </tr>
+        <tr>
+          <td>description</td>
+          <td>string (Description) <br>Nullable</td>
+          <td>Description of the instrument.</td>
+        </tr>
+        <tr>
+          <td>identity</td>
+          <td>boolean (Identity)</td>
+          <td>This instrument contributes to the learner identity verification.</td>
+        </tr>
+        <tr>
+          <td>originality</td>
+          <td>boolean (Originality)</td>
+          <td>This instrument contributes to the assessment originality verification.</td>
+        </tr>
+        <tr>
+          <td>authorship</td>
+          <td>boolean (Authorship)</td>
+          <td>This instrument contributes to the assessment authorship verification.</td>
+        </tr>
+        <tr>
+          <td>integrity</td>
+          <td>boolean (Integrity)</td>
+          <td>This instrument contributes to the assessment integrity verification.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>string &lt;date-time&gt; (Created at)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>string &lt;date-time&gt; (Updated at)</td>
+            <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "options_schema": {},
+  "name": "string",
+  "acronym": "string",
+  "queue": "string",
+  "enabled": true,
+  "requires_enrolment": true,
+  "description": "string",
+  "identity": true,
+  "originality": true,
+  "authorship": true,
+  "integrity": true
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "options_schema": {},
+  "name": "string",
+  "acronym": "string",
+  "queue": "string",
+  "enabled": true,
+  "requires_enrolment": true,
+  "description": "string",
+  "identity": true,
+  "originality": true,
+  "authorship": true,
+  "integrity": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+```
+</details>
+
 
 <!--- admin_instrument_delete --->
-## Delete instrument<a name="admin_instrument_delete"></a>
+## Delete Instrument<a name="admin_instrument_delete"></a> [DELETE] 
+API endpoint for deleting Instrument from the system.
+
+### Request
+Concept | Data
+-- | --
+HTTP Method | **DELETE**
+Path | /api/v2/admin/instrument/{instrument_id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td><strong>instrument_id</strong><br><code>required</code></td>
+                      <td>integer </td>
+                      <td>Request path parameter. A unique integer value identifying this instrument.</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+### Responses
+
+#### Response sample: 204
+<details>
+  <summary>204</summary>
+
+```json
+{
+}
+```
+</details>
 
 
 
 ---
 
 # 4. UI Management <a name="ui_management"></a>
+Set of API endpoints that allow a UI to be viewed or edited.
 
-- GET: [List UI](#admin_ui_list)
-- POST: [Create UI](#admin_ui_create)
-- GET: [Read UI](#admin_ui_read)
-- PUT: [Update UI](#admin_ui_update)
-- PATCH: [Update UI Partial Information](#admin_ui_partial_update)
-- DELETE: [Delete UI](#admin_ui_delete)
+- [List UI](#admin_ui_list) (GET)
+- [Create UI](#admin_ui_create) (POST)
+- [Read UI](#admin_ui_read) (GET)
+- [Update UI](#admin_ui_update) (PUT)
+- [Update UI Partial Information](#admin_ui_partial_update) (PATCH)
+- [Delete UI](#admin_ui_delete) (DELETE)
 
 
 <!--- admin_ui_list --->
-## List UI<a name="admin_ui_list"></a>
+## List UI<a name="admin_ui_list"></a> (GET)
 
 <!--- admin_ui_create --->
-## Create UI<a name="admin_ui_create"></a>
+## Create UI<a name="admin_ui_create"></a> (POST)
 
 <!--- admin_ui_read --->
-## Read UI<a name="admin_ui_read"></a>
+## Read UI<a name="admin_ui_read"></a> (GET)
 
 <!--- admin_ui_update --->
-## Update UI<a name="admin_ui_update"></a>
+## Update UI<a name="admin_ui_update"></a> (PUT)
 
 <!--- admin_ui_partial_update --->
-## Update UI<a name="admin_ui_partial_update"></a>
+## Update UI Partial Information<a name="admin_ui_partial_update"></a> (PATCH)
 
 <!--- admin_ui_delete --->
-## Delete UI<a name="admin_ui_delete"></a>
+## Delete UI<a name="admin_ui_delete"></a> (DELETE)
 
 
-
-****
-
-*****
-
-Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.
-
-{{< notice note >}}
-  This is a simple note.
-{{</ notice >}}
-
-{{< notice tip >}}
-  This is a simple tip.
-{{</ notice >}}
-
-{{< notice info >}}
-  This is a simple info.
-{{</ notice >}}
-
-
-{{< tabs >}}
-  {{< tab "first" >}}
-   This is first tab
-  ###bla bla bla
-
-  {{</ tab >}}
-
-  {{< tab "second" >}}
-  this is second tab
-  bla bla bla</>
-  {{</ tab >}}
-
-  {{< tab "third" >}}
-  this is third tab
-  {{</ tab >}}
-{{</ tabs >}}
-
-Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla. Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit.
-
-### Image Example
-
-Nunc porta malesuada porta. Etiam tristique vestibulum dolor at ultricies. Proin hendrerit sapien sed erat fermentum, at commodo velit consectetur.
-
-![image example](img-1.jpg "image")
-
-Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.
-
-### Example Of Code Block
-
-In accumsan lacus ac neque maximus dictum. Phasellus eleifend leo id mattis bibendum. Curabitur et purus turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-
-````html
-`<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png" >
-  <script src="/assets/js/main.js"></script>
-</head>
-```
-
-### Text and Quote
-
-Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna turpis.
-
-> Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet
-
-Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.
-
-[../_index.en.md]: ../admin/_index.en.md
