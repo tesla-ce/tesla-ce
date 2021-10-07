@@ -1668,104 +1668,139 @@ Retrieves information about Provider access enrolment samples.
 ---
 ---
 
-# TEMP WIP
+# TEMP WIP 
 
 4. [Provider Enrolment Sample Validation Management](#provider_enrolment_sample_validation_management)
 5. [Provider Enrolment Notification Management](#provider_enrolment_notification_management)
 6. [Provider Enrolment Request Management](#provider_enrolment_request_management)
 
-
-# 4. Provider Enrolment Sample <a name="provider_enrolment_sample_management"></a>
-Set of API endpoints that allows Provider access enrolment samples.
+# 4. Provider Enrolment Sample Validation Management <a name="provider_enrolment_sample_validation_management"></a>
+Set of API endpoints that allows Provider manage enrolment sample validation.
 <br>
-- GET: [List Provider Enrolment Sample](#provider2_enrolment_sample_list)
-- POST: [Create Instrument](#provider_enrolment_sample_create)
-- GET: [Read Instrument](#admin_instrument_read)
-- PUT: [Update Instrument](#admin_instrument_update)
-- PATCH: [Update Instrument Partial Information](#admin_instrument_partial_update)
-- DELETE: [Delete Instrument](#admin_instrument_delete)
+- GET: [List Provider Enrolment Sample Validation](#provider_enrolment_sample_validation_list)
+- POST: [Create Provider Enrolment Sample Validation](#provider_enrolment_sample_validation_create)
+- GET: [Read Provider Enrolment Sample Validation](#provider_enrolment_sample_validation_read)
+- PUT: [Update Provider Enrolment Sample Validation](#provider_enrolment_sample_validation_update)
+- PATCH: [Partial Update Provider Enrolment Sample Validation Information](#provider_enrolment_sample_validation_partial_update)
+- DELETE: [Delete Provider Enrolment Sample Validation](#provider_enrolment_sample_validation_delete)
+- POST: [Status Provider Enrolment Sample Validation](#provider_enrolment_sample_validation_status)
 
 
-<!--- admin_instrument_list --->
+<!--- provider_enrolment_sample_validation_list --->
 ## List Instruments<a name="admin_instrument_list"></a> [GET]
-API endpoint for listing all Instruments.
+API endpoint for listing all Provider manage enrolment sample validation.
 
 ### Request
+<!-- Using HTML table instead of markdown table because long path needs to be wrapped up -->
 
-Concept | Data
--- | --
-HTTP Method | **GET**
-Path | /api/v2/admin/instrument/
-Authorization | JWT
-Content Type | application/json
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong>GET</strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
 
 ### Parameters
-
 {{< tabs >}}
-  {{< tab "REQUEST" >}}
-       Request parameters.
+    {{< tab "REQUEST" >}}
+    Request parameters.
         <table>
-          <tbody>
-             <tr>
+            <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td>search</td>
+                  <td>string</td>
+                  <td>A search term.</td>
+                </tr>
+                <tr>
+                  <td>ordering</td>
+                  <td>string</td>
+                  <td>Which field to use when ordering the results.</td>
+                </tr>
+                <tr>
+                  <td>limit</td>
+                  <td>integer</td>
+                  <td>Number of results to return per page.</td>
+                </tr>
+                <tr>
+                  <td>offset</td>
+                  <td>integer</td>
+                  <td>The initial index from which to return the results.</td>
+                </tr>
+            </tbody>
+        </table>
+    {{</ tab >}}
+
+   {{< tab "RESPONSE" >}}
+        Response parameters.<br>
+        <table>
+            <tbody>
+              <tr>
                   <td><strong>Name</strong></td>
                   <td><strong>Type</strong></td>
                   <td><strong>Comments</strong></td>
               </tr>
               <tr>
-                      <td>search</td>
-                      <td>string </td>
-                      <td>A search term</td>
-              </tr>
-              <tr>
-                  <td>ordering</td>
-                  <td>string</td>
-                  <td>Which field to use when ordering the results.</td>
-              <tr>
-                  <td>limit</td>
-                  <td>integer</td>
-                  <td>Number of results to return per page.</td>
-              </tr>
-              <tr>
-                  <td>offset</td>
-                  <td>integer</td>
-                  <td>The initial index from which to return the results.</td>
-              </tr>
-         </tbody>
-        </table>
-  {{</ tab >}}
-
-  {{< tab "RESPONSE" >}}
-    Response parameters.
-    <table>
-      <tbody>
-          <tr>
-              <td><strong>Name</strong></td>
-              <td><strong>Type</strong></td>
-              <td><strong>Comments</strong></td>
-          </tr>
-          <tr>
                   <td><strong>count</strong><br><code>required</code></td>
-                  <td>integer (ID) </td>
-                  <td></td>
-          </tr>
-          <tr>
-              <td>next</td>
-              <td>string (uri)<br>Nullable </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td>previous</td>
-              <td>string (uri)<br>Nullable </td>
-              <td>-</td>
-          </tr>
-          <tr>
-              <td><strong>results</strong><br><code>required</code></td>
-              <td>Array of objects (Instrument)</td>
-              <td>-</td>
-          </tr>
-       </tbody>
-    </table>
-  {{</tab>}}
+                  <td>integer</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>next</td>
+                  <td>string &lt;uri&gt;<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>previous</td>
+                  <td>string &lt;uri&gt;<br>Nullable</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>results<br><code>required</code></td>
+                  <td>Array of Objects (Provider)</td>
+                  <td>-</td>
+              </tr>
+            </tbody>
+        </table>
+   {{</tab>}}
 {{</tabs>}}
 
 
@@ -1784,19 +1819,18 @@ Content Type | application/json
   "results": [
     {
       "id": 0,
-      "options_schema": {},
-      "name": "string",
-      "acronym": "string",
-      "queue": "string",
-      "enabled": true,
-      "requires_enrolment": true,
-      "description": "string",
-      "identity": true,
-      "originality": true,
-      "authorship": true,
-      "integrity": true,
-      "created_at": "2019-08-24T14:15:22Z",
-      "updated_at": "2019-08-24T14:15:22Z"
+      "status": 0,
+      "info": "http://example.com",
+      "validation_info": {},
+      "provider": 0,
+      "sample": {
+        "id": 0,
+        "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+        "data": "http://example.com"
+      },
+      "error_message": "string",
+      "contribution": 0,
+      "message_code_id": "string"
     }
   ]
 }
@@ -1804,20 +1838,38 @@ Content Type | application/json
 </details>
 
 
-
-<!--- admin_instrument_create --->
-## Create Instrument<a name="admin_instrument_create"></a> [POST] 
-
-API endpoint for creating a new Instrument.
+<!--- provider_enrolment_sample_validation_create --->
+## Create Provider Enrolment Sample Validation<a name="provider_enrolment_sample_validation_create"></a> [POST] 
+API endpoint for creating new Provider Enrolment Sample Validation.
 
 ### Request
+<!-- Using HTML table instead of markdown table because long path needs to be wrapped up -->
 
-Concept | Data
--- | --
-HTTP Method | **POST**
-Path | /api/v2/admin/instrument/
-Authorization | JWT
-Content Type | application/json
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong>POST</strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
 
 ### Parameters
 
@@ -1831,59 +1883,55 @@ Content Type | application/json
                   <td><strong>Type</strong></td>
                   <td><strong>Comments</strong></td>
               </tr>
+                <tr>
+                  <td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
               <tr>
-                      <td>options_schema</td>
-                      <td>object (Options schema) <br>Nullable</td>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
                       <td>-</td>
               </tr>
               <tr>
-                      <td><strong>name</strong><br><code>required</code></td>
-                      <td>string (Name) <br>[1 .. 250] characters</td>
-                      <td>Instrument name</td>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
               </tr>
               <tr>
-                      <td><strong>acronym</strong><br><code>required</code></td>
-                      <td>string (Acronym) <br>[1 .. 30] characters</td>
-                      <td>Instrument acronym</td>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
               </tr>
               <tr>
-                      <td><strong>queue</strong><br><code>required</code></td>
-                      <td>string (Queue) <br>non-empty</td>
-                      <td>Queue this instrument listens to.</td>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
               </tr>
-              <tr>
-                  <td>enabled</td>
-                  <td>boolean (Enabled)</td>
-                  <td>The instrument is enabled.</td>
               <tr>
                   <td>requires_enrolment</td>
                   <td>boolean (Requires enrolment)</td>
                   <td>Whether this instrument requires enrolment.</td>
               </tr>
               <tr>
-                  <td>description</td>
-                  <td>string (Description) <br>Nullable</td>
-                  <td>Description of the instrument.</td>
-              </tr>
-              <tr>
-                  <td>identity</td>
-                  <td>boolean (Identity)</td>
-                  <td>This instrument contributes to the learner identity verification.</td>
-              </tr>
-              <tr>
-                  <td>originality</td>
-                  <td>boolean (Originality)</td>
-                  <td>This instrument contributes to the assessment originality verification.</td>
-              </tr>
-              <tr>
-                  <td>authorship</td>
-                  <td>boolean (Authorship)</td>
-                  <td>This instrument contributes to the assessment authorship verification.</td>
-              </tr>
-              <tr>
-                  <td>integrity</td>
-                  <td>boolean (Integrity)</td>
-                  <td>This instrument contributes to the assessment integrity verification.</td>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
               </tr>
          </tbody>
         </table>
@@ -1904,68 +1952,44 @@ Content Type | application/json
                       <td>-</td>
               </tr>
               <tr>
-                      <td>options_schema</td>
-                      <td>object (Options schema) <br>Nullable</td>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>info</td>
+                      <td>string &lt;uri&gt; (Info)<br>Nullable.</td>
                       <td>-</td>
               </tr>
               <tr>
-                      <td><strong>name</strong><br><code>required</code></td>
-                      <td>string (Name) <br>[1 .. 250] characters</td>
-                      <td>Instrument name</td>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
               </tr>
               <tr>
-                      <td><strong>acronym</strong><br><code>required</code></td>
-                      <td>string (Acronym) <br>[1 .. 30] characters</td>
-                      <td>Instrument acronym</td>
+                      <td>provider</td>
+                      <td>integer (Provider)</td>
+                      <td>-</td>
               </tr>
               <tr>
-                      <td><strong>queue</strong><br><code>required</code></td>
-                      <td>string (Queue) <br>non-empty</td>
-                      <td>Queue this instrument listens to.</td>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
               </tr>
               <tr>
-                  <td>enabled</td>
-                  <td>boolean (Enabled)</td>
-                  <td>The instrument is enabled.</td>
-              <tr>
-                  <td>requires_enrolment</td>
-                  <td>boolean (Requires enrolment)</td>
-                  <td>Whether this instrument requires enrolment.</td>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
               </tr>
               <tr>
-                  <td>description</td>
-                  <td>string (Description) <br>Nullable</td>
-                  <td>Description of the instrument.</td>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
               </tr>
               <tr>
-                  <td>identity</td>
-                  <td>boolean (Identity)</td>
-                  <td>This instrument contributes to the learner identity verification.</td>
-              </tr>
-              <tr>
-                  <td>originality</td>
-                  <td>boolean (Originality)</td>
-                  <td>This instrument contributes to the assessment originality verification.</td>
-              </tr>
-              <tr>
-                  <td>authorship</td>
-                  <td>boolean (Authorship)</td>
-                  <td>This instrument contributes to the assessment authorship verification.</td>
-              </tr>
-              <tr>
-                  <td>integrity</td>
-                  <td>boolean (Integrity)</td>
-                  <td>This instrument contributes to the assessment integrity verification.</td>
-              </tr>
-              <tr>
-                    <td>created_at</td>
-                    <td>string &lt;date-time&gt; (Created at)</td>
-                    <td>-</td>
-              </tr>
-              <tr>
-                    <td>updated_at</td>
-                    <td>string &lt;date-time&gt; (Updated at)</td>
-                    <td>-</td>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
               </tr>
          </tbody>
         </table>
@@ -1976,17 +2000,12 @@ Content Type | application/json
 
 ```json
 {
-  "options_schema": {},
-  "name": "string",
-  "acronym": "string",
-  "queue": "string",
-  "enabled": true,
-  "requires_enrolment": true,
-  "description": "string",
-  "identity": true,
-  "originality": true,
-  "authorship": true,
-  "integrity": true
+  "status": 0,
+  "validation_info": {},
+  "sample": {},
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
 }
 ````
 
@@ -2001,610 +2020,58 @@ Content Type | application/json
   ````json
 {
   "id": 0,
-  "options_schema": {},
-  "name": "string",
-  "acronym": "string",
-  "queue": "string",
-  "enabled": true,
-  "requires_enrolment": true,
-  "description": "string",
-  "identity": true,
-  "originality": true,
-  "authorship": true,
-  "integrity": true,
-  "created_at": "2019-08-24T14:15:22Z",
-  "updated_at": "2019-08-24T14:15:22Z"
+  "status": 0,
+  "info": "http://example.com",
+  "validation_info": {},
+  "provider": 0,
+  "sample": {
+    "id": 0,
+    "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+    "data": "http://example.com"
+  },
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
 }
   ````
 </details>
 
 
-<!--- admin_instrument_read --->
-## Read Instrument<a name="admin_instrument_read"></a> [GET] 
-Retrieves information about an Instrument.
+<!--- provider_enrolment_sample_validation_read --->
+## Read Provider Enrolment Sample Validation<a name="provider_enrolment_sample_validation_read"></a> [GET] 
+API endpoint that allows Provider Enrolment Sample Validation information.
 
 ### Request
-Concept | Data
--- | --
-HTTP method | **GET**
-Path | /api/v2/admin/instrument/{instrument_id}/
-Authorization | JWT
-Content Type | application/json
+<!-- Using HTML table instead of markdown table because long path needs to be wrapped up -->
 
-### Parameters:
-{{< tabs >}}
-  {{< tab "REQUEST" >}}
-       Request parameters.
-        <table>
-          <tbody>
-              <tr>
-                  <td><strong>Name</strong></td>
-                  <td><strong>Type</strong></td>
-                  <td><strong>Comments</strong></td>
-              </tr>
-              <tr>
-                  <td><strong>instrument_id</strong><br><code>required</code></td>
-                  <td>string </td>
-                  <td>Request path parameter. A unique integer value identifying this instrument.</td>
-              </tr>
-         </tbody>
-        </table>
-  {{</ tab >}}
-
-  {{< tab "RESPONSE" >}}
-    Response parameters.
-    <table>
-      <tbody>
-        <tr>
-            <td><strong>Name</strong></td>
-            <td><strong>Type</strong></td>
-            <td><strong>Comments</strong></td>
-        </tr>
-        <tr>
-            <td>id</td>
-            <td>integer (Id)</td>
-            <td>Instrument Id.</td>
-        </tr>
-        <tr>
-              <td>options_schema</td>
-              <td>object (Options schema) <br>Nullable</td>
-              <td>-</td>
-        </tr>
-        <tr>
-              <td><strong>name</strong><br><code>required</code></td>
-              <td>string (Name) <br>[1 .. 250] characters</td>
-              <td>Instrument name</td>
-        </tr>
-        <tr>
-              <td><strong>acronym</strong><br><code>required</code></td>
-              <td>string (Acronym) <br>[1 .. 30] characters</td>
-              <td>Instrument acronym</td>
-        </tr>
-        <tr>
-              <td><strong>queue</strong><br><code>required</code></td>
-              <td>string (Queue) <br>non-empty</td>
-              <td>Queue this instrument listens to.</td>
-        </tr>
-        <tr>
-          <td>enabled</td>
-          <td>boolean (Enabled)</td>
-          <td>The instrument is enabled.</td>
-        <tr>
-          <td>requires_enrolment</td>
-          <td>boolean (Requires enrolment)</td>
-          <td>Whether this instrument requires enrolment.</td>
-        </tr>
-        <tr>
-          <td>description</td>
-          <td>string (Description) <br>Nullable</td>
-          <td>Description of the instrument.</td>
-        </tr>
-        <tr>
-          <td>identity</td>
-          <td>boolean (Identity)</td>
-          <td>This instrument contributes to the learner identity verification.</td>
-        </tr>
-        <tr>
-          <td>originality</td>
-          <td>boolean (Originality)</td>
-          <td>This instrument contributes to the assessment originality verification.</td>
-        </tr>
-        <tr>
-          <td>authorship</td>
-          <td>boolean (Authorship)</td>
-          <td>This instrument contributes to the assessment authorship verification.</td>
-        </tr>
-        <tr>
-          <td>integrity</td>
-          <td>boolean (Integrity)</td>
-          <td>This instrument contributes to the assessment integrity verification.</td>
-        </tr>
-        <tr>
-            <td>created_at</td>
-            <td>string &lt;date-time&gt; (Created at)</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>updated_at</td>
-            <td>string &lt;date-time&gt; (Updated at)</td>
-            <td>-</td>
-        </tr>
-     </tbody>
-    </table>
-  {{</ tab >}}
-{{</ tabs >}}
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong>GET</strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
 
 
-### Responses
+### Parameters
 
-#### Response sample: 200
-
-<!--- details and summary tags, both, needed for expandable code --->
-<details>
-  <summary>200</summary>
-
-```json
-{
-  "id": 0,
-  "options_schema": {},
-  "name": "string",
-  "acronym": "string",
-  "queue": "string",
-  "enabled": true,
-  "requires_enrolment": true,
-  "description": "string",
-  "identity": true,
-  "originality": true,
-  "authorship": true,
-  "integrity": true,
-  "created_at": "2019-08-24T14:15:22Z",
-  "updated_at": "2019-08-24T14:15:22Z"
-}
-```
-</details>
-
-
-<!--- admin_instrument_update --->
-## Update Instrument<a name="admin_instrument_update"></a> [PUT] 
-API endpoint that updates Instrument's information.
-
-### Request
-Concept | Data
--- | --
-HTTP method | **PUT**
-Path | /api/v2/admin/instrument/{instrument_id}/
-Authorization | JWT
-Content Type | application/json
-
-### Parameters:
-{{< tabs >}}
-  {{< tab "REQUEST" >}}
-       Request parameters.
-        <table>
-          <tbody>
-                <tr>
-                  <td><strong>Name</strong></td>
-                  <td><strong>Type</strong></td>
-                  <td><strong>Comments</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>instrument_id</strong><br><code>required</code></td>
-                  <td>string </td>
-                  <td>Request path parameter. A unique integer value identifying this instrument.</td>
-                </tr>
-                <tr>
-                      <td>options_schema</td>
-                      <td>object (Options schema) <br>Nullable</td>
-                      <td>-</td>
-                </tr>
-                <tr>
-                      <td><strong>name</strong><br><code>required</code></td>
-                      <td>string (Name) <br>[1 .. 250] characters</td>
-                      <td>Instrument name</td>
-                </tr>
-                <tr>
-                      <td><strong>acronym</strong><br><code>required</code></td>
-                      <td>string (Acronym) <br>[1 .. 30] characters</td>
-                      <td>Instrument acronym</td>
-                </tr>
-                <tr>
-                      <td><strong>queue</strong><br><code>required</code></td>
-                      <td>string (Queue) <br>non-empty</td>
-                      <td>Queue this instrument listens to.</td>
-                </tr>
-                <tr>
-                  <td>enabled</td>
-                  <td>boolean (Enabled)</td>
-                  <td>The instrument is enabled.</td>
-                <tr>
-                  <td>requires_enrolment</td>
-                  <td>boolean (Requires enrolment)</td>
-                  <td>Whether this instrument requires enrolment.</td>
-                </tr>
-                <tr>
-                  <td>description</td>
-                  <td>string (Description) <br>Nullable</td>
-                  <td>Description of the instrument.</td>
-                </tr>
-                <tr>
-                  <td>identity</td>
-                  <td>boolean (Identity)</td>
-                  <td>This instrument contributes to the learner identity verification.</td>
-                </tr>
-                <tr>
-                  <td>originality</td>
-                  <td>boolean (Originality)</td>
-                  <td>This instrument contributes to the assessment originality verification.</td>
-                </tr>
-                <tr>
-                  <td>authorship</td>
-                  <td>boolean (Authorship)</td>
-                  <td>This instrument contributes to the assessment authorship verification.</td>
-                </tr>
-                <tr>
-                  <td>integrity</td>
-                  <td>boolean (Integrity)</td>
-                  <td>This instrument contributes to the assessment integrity verification.</td>
-                </tr>
-         </tbody>
-        </table>
-  {{</ tab >}}
-
-  {{< tab "RESPONSE" >}}
-    Response parameters.
-    <table>
-      <tbody>
-        <tr>
-            <td><strong>Name</strong></td>
-            <td><strong>Type</strong></td>
-            <td><strong>Comments</strong></td>
-        </tr>
-        <tr>
-            <td>id</td>
-            <td>integer (Id)</td>
-            <td>Instrument Id.</td>
-        </tr>
-        <tr>
-              <td>options_schema</td>
-              <td>object (Options schema) <br>Nullable</td>
-              <td>-</td>
-        </tr>
-        <tr>
-              <td><strong>name</strong><br><code>required</code></td>
-              <td>string (Name) <br>[1 .. 250] characters</td>
-              <td>Instrument name</td>
-        </tr>
-        <tr>
-              <td><strong>acronym</strong><br><code>required</code></td>
-              <td>string (Acronym) <br>[1 .. 30] characters</td>
-              <td>Instrument acronym</td>
-        </tr>
-        <tr>
-              <td><strong>queue</strong><br><code>required</code></td>
-              <td>string (Queue) <br>non-empty</td>
-              <td>Queue this instrument listens to.</td>
-        </tr>
-        <tr>
-          <td>enabled</td>
-          <td>boolean (Enabled)</td>
-          <td>The instrument is enabled.</td>
-        <tr>
-          <td>requires_enrolment</td>
-          <td>boolean (Requires enrolment)</td>
-          <td>Whether this instrument requires enrolment.</td>
-        </tr>
-        <tr>
-          <td>description</td>
-          <td>string (Description) <br>Nullable</td>
-          <td>Description of the instrument.</td>
-        </tr>
-        <tr>
-          <td>identity</td>
-          <td>boolean (Identity)</td>
-          <td>This instrument contributes to the learner identity verification.</td>
-        </tr>
-        <tr>
-          <td>originality</td>
-          <td>boolean (Originality)</td>
-          <td>This instrument contributes to the assessment originality verification.</td>
-        </tr>
-        <tr>
-          <td>authorship</td>
-          <td>boolean (Authorship)</td>
-          <td>This instrument contributes to the assessment authorship verification.</td>
-        </tr>
-        <tr>
-          <td>integrity</td>
-          <td>boolean (Integrity)</td>
-          <td>This instrument contributes to the assessment integrity verification.</td>
-        </tr>
-        <tr>
-            <td>created_at</td>
-            <td>string &lt;date-time&gt; (Created at)</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>updated_at</td>
-            <td>string &lt;date-time&gt; (Updated at)</td>
-            <td>-</td>
-        </tr>
-      </tbody>
-    </table>
-  {{</ tab >}}
-{{</ tabs >}}
-
-#### Request sample
-```json
-{
-  "options_schema": {},
-  "name": "string",
-  "acronym": "string",
-  "queue": "string",
-  "enabled": true,
-  "requires_enrolment": true,
-  "description": "string",
-  "identity": true,
-  "originality": true,
-  "authorship": true,
-  "integrity": true
-}
-```
-### Responses
-
-#### Response sample: 200
-
-<!--- details and summary tags, both, needed for expandable code --->
-<details>
-  <summary>200</summary>
-
-```json
-{
-  "id": 0,
-  "options_schema": {},
-  "name": "string",
-  "acronym": "string",
-  "queue": "string",
-  "enabled": true,
-  "requires_enrolment": true,
-  "description": "string",
-  "identity": true,
-  "originality": true,
-  "authorship": true,
-  "integrity": true,
-  "created_at": "2019-08-24T14:15:22Z",
-  "updated_at": "2019-08-24T14:15:22Z"
-}
-```
-</details>
-
-
-<!--- admin_instrument_partial_update --->
-## Update Instrument Partial Information<a name="admin_instrument_partial_update"></a> [PATCH]
-API endpoint that updates Instrument's information.
-
-### Request
-Concept | Data
--- | --
-HTTP method | **PATCH**
-Path | /api/v2/admin/instrument/{instrument_id}/
-Authorization | JWT
-Content Type | application/json
-
-### Parameters:
-{{< tabs >}}
-  {{< tab "REQUEST" >}}
-       Request parameters.
-        <table>
-          <tbody>
-                <tr>
-                  <td><strong>Name</strong></td>
-                  <td><strong>Type</strong></td>
-                  <td><strong>Comments</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>instrument_id</strong><br><code>required</code></td>
-                  <td>string </td>
-                  <td>Request path parameter. A unique integer value identifying this instrument.</td>
-                </tr>
-                <tr>
-                      <td>options_schema</td>
-                      <td>object (Options schema) <br>Nullable</td>
-                      <td>-</td>
-                </tr>
-                <tr>
-                      <td><strong>name</strong><br><code>required</code></td>
-                      <td>string (Name) <br>[1 .. 250] characters</td>
-                      <td>Instrument name</td>
-                </tr>
-                <tr>
-                      <td><strong>acronym</strong><br><code>required</code></td>
-                      <td>string (Acronym) <br>[1 .. 30] characters</td>
-                      <td>Instrument acronym</td>
-                </tr>
-                <tr>
-                      <td><strong>queue</strong><br><code>required</code></td>
-                      <td>string (Queue) <br>non-empty</td>
-                      <td>Queue this instrument listens to.</td>
-                </tr>
-                <tr>
-                  <td>enabled</td>
-                  <td>boolean (Enabled)</td>
-                  <td>The instrument is enabled.</td>
-                <tr>
-                  <td>requires_enrolment</td>
-                  <td>boolean (Requires enrolment)</td>
-                  <td>Whether this instrument requires enrolment.</td>
-                </tr>
-                <tr>
-                  <td>description</td>
-                  <td>string (Description) <br>Nullable</td>
-                  <td>Description of the instrument.</td>
-                </tr>
-                <tr>
-                  <td>identity</td>
-                  <td>boolean (Identity)</td>
-                  <td>This instrument contributes to the learner identity verification.</td>
-                </tr>
-                <tr>
-                  <td>originality</td>
-                  <td>boolean (Originality)</td>
-                  <td>This instrument contributes to the assessment originality verification.</td>
-                </tr>
-                <tr>
-                  <td>authorship</td>
-                  <td>boolean (Authorship)</td>
-                  <td>This instrument contributes to the assessment authorship verification.</td>
-                </tr>
-                <tr>
-                  <td>integrity</td>
-                  <td>boolean (Integrity)</td>
-                  <td>This instrument contributes to the assessment integrity verification.</td>
-                </tr>
-         </tbody>
-        </table>
-  {{</ tab >}}
-
-  {{< tab "RESPONSE" >}}
-    Response parameters.
-    <table>
-      <tbody>
-        <tr>
-            <td><strong>Name</strong></td>
-            <td><strong>Type</strong></td>
-            <td><strong>Comments</strong></td>
-        </tr>
-        <tr>
-            <td>id</td>
-            <td>integer (Id)</td>
-            <td>Instrument Id.</td>
-        </tr>
-        <tr>
-              <td>options_schema</td>
-              <td>object (Options schema) <br>Nullable</td>
-              <td>-</td>
-        </tr>
-        <tr>
-              <td><strong>name</strong><br><code>required</code></td>
-              <td>string (Name) <br>[1 .. 250] characters</td>
-              <td>Instrument name</td>
-        </tr>
-        <tr>
-              <td><strong>acronym</strong><br><code>required</code></td>
-              <td>string (Acronym) <br>[1 .. 30] characters</td>
-              <td>Instrument acronym</td>
-        </tr>
-        <tr>
-              <td><strong>queue</strong><br><code>required</code></td>
-              <td>string (Queue) <br>non-empty</td>
-              <td>Queue this instrument listens to.</td>
-        </tr>
-        <tr>
-          <td>enabled</td>
-          <td>boolean (Enabled)</td>
-          <td>The instrument is enabled.</td>
-        <tr>
-          <td>requires_enrolment</td>
-          <td>boolean (Requires enrolment)</td>
-          <td>Whether this instrument requires enrolment.</td>
-        </tr>
-        <tr>
-          <td>description</td>
-          <td>string (Description) <br>Nullable</td>
-          <td>Description of the instrument.</td>
-        </tr>
-        <tr>
-          <td>identity</td>
-          <td>boolean (Identity)</td>
-          <td>This instrument contributes to the learner identity verification.</td>
-        </tr>
-        <tr>
-          <td>originality</td>
-          <td>boolean (Originality)</td>
-          <td>This instrument contributes to the assessment originality verification.</td>
-        </tr>
-        <tr>
-          <td>authorship</td>
-          <td>boolean (Authorship)</td>
-          <td>This instrument contributes to the assessment authorship verification.</td>
-        </tr>
-        <tr>
-          <td>integrity</td>
-          <td>boolean (Integrity)</td>
-          <td>This instrument contributes to the assessment integrity verification.</td>
-        </tr>
-        <tr>
-            <td>created_at</td>
-            <td>string &lt;date-time&gt; (Created at)</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>updated_at</td>
-            <td>string &lt;date-time&gt; (Updated at)</td>
-            <td>-</td>
-        </tr>
-      </tbody>
-    </table>
-  {{</ tab >}}
-{{</ tabs >}}
-
-#### Request sample
-```json
-{
-  "options_schema": {},
-  "name": "string",
-  "acronym": "string",
-  "queue": "string",
-  "enabled": true,
-  "requires_enrolment": true,
-  "description": "string",
-  "identity": true,
-  "originality": true,
-  "authorship": true,
-  "integrity": true
-}
-```
-### Responses
-
-#### Response sample: 200
-
-<!--- details and summary tags, both, needed for expandable code --->
-<details>
-  <summary>200</summary>
-
-```json
-{
-  "id": 0,
-  "options_schema": {},
-  "name": "string",
-  "acronym": "string",
-  "queue": "string",
-  "enabled": true,
-  "requires_enrolment": true,
-  "description": "string",
-  "identity": true,
-  "originality": true,
-  "authorship": true,
-  "integrity": true,
-  "created_at": "2019-08-24T14:15:22Z",
-  "updated_at": "2019-08-24T14:15:22Z"
-}
-```
-</details>
-
-
-<!--- admin_instrument_delete --->
-## Delete Instrument<a name="admin_instrument_delete"></a> [DELETE] 
-API endpoint for deleting Instrument from the system.
-
-### Request
-Concept | Data
--- | --
-HTTP Method | **DELETE**
-Path | /api/v2/admin/instrument/{instrument_id}/
-Authorization | JWT
-Content Type | application/json
-
-### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
        Request parameters.
@@ -2615,13 +2082,584 @@ Content Type | application/json
                   <td><strong>Type</strong></td>
                   <td><strong>Comments</strong></td>
               </tr>
+                <tr>
+                  <td><strong>id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
               <tr>
-                      <td><strong>instrument_id</strong><br><code>required</code></td>
-                      <td>integer </td>
-                      <td>Request path parameter. A unique integer value identifying this instrument.</td>
+                      <td>id</td>
+                      <td>integer (ID)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>info</td>
+                      <td>string &lt;uri&gt; (Info)<br>Nullable.</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>provider</td>
+                      <td>integer (Provider)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
+              </tr>
+              <tr>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
               </tr>
          </tbody>
         </table>
+   {{</tab>}}
+{{</tabs>}}
+
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "status": 0,
+  "info": "http://example.com",
+  "validation_info": {},
+  "provider": 0,
+  "sample": {
+    "id": 0,
+    "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+    "data": "http://example.com"
+  },
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
+}
+```
+</details>
+
+
+
+
+<!--- provider_enrolment_sample_validation_update --->
+## Update Provider Enrolment Sample Validation<a name="provider_enrolment_sample_validation_update"></a> [PUT] 
+API endpoint that allows Provider manage enrolment sample validation updates.
+
+### Request
+<!-- Using HTML table instead of markdown table because long path needs to be wrapped up -->
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong>PUT</strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+                <tr>
+                  <td><strong>id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+              <tr>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
+              </tr>
+              <tr>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td>id</td>
+                      <td>integer (ID)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>info</td>
+                      <td>string &lt;uri&gt; (Info)<br>Nullable.</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>provider</td>
+                      <td>integer (Provider)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
+              </tr>
+              <tr>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "status": 0,
+  "validation_info": {},
+  "sample": {},
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "status": 0,
+  "info": "http://example.com",
+  "validation_info": {},
+  "provider": 0,
+  "sample": {
+    "id": 0,
+    "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+    "data": "http://example.com"
+  },
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
+}
+```
+</details>
+
+
+<br>
+
+<!--- provider_enrolment_sample_validation_partial_update --->
+## Partial Update Provider Enrolment Sample Validation Information<a name="provider_enrolment_sample_validation_partial_update"></a> [PATCH]
+API endpoint that updates Provider manage enrolment sample validation.
+
+### Request
+<!-- Using HTML table instead of markdown table because long path needs to be wrapped up -->
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong>PATCH</strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+                <tr>
+                  <td><strong>id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+              <tr>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
+              </tr>
+              <tr>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td>id</td>
+                      <td>integer (ID)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>info</td>
+                      <td>string &lt;uri&gt; (Info)<br>Nullable.</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>provider</td>
+                      <td>integer (Provider)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
+              </tr>
+              <tr>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "status": 0,
+  "validation_info": {},
+  "sample": {},
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "status": 0,
+  "info": "http://example.com",
+  "validation_info": {},
+  "provider": 0,
+  "sample": {
+    "id": 0,
+    "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+    "data": "http://example.com"
+  },
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
+}
+```
+</details>
+
+
+<br>
+
+<!--- provider_enrolment_sample_validation_delete --->
+## Delete Provider Enrolment Sample Validation<a name="provider_enrolment_sample_validation_delete"></a> [DELETE] 
+API endpoint for deleting Provider Enrolment Sample Validation.
+
+### Request
+<!-- Using HTML table instead of markdown table because long path needs to be wrapped up -->
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong>DELETE</strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+    Request parameters.
+    <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+        </tbody>
+    </table>
   {{</ tab >}}
 {{</tabs>}}
 
@@ -2638,6 +2676,220 @@ Content Type | application/json
 </details>
 
 
+<br>
+
+<!--- provider_enrolment_sample_validation_status --->
+## Status Provider Enrolment Sample Validation<a name="provider_enrolment_sample_validation_status"></a> [POST] 
+Change enrolment sample validation status.
+
+### Request
+<!-- Using HTML table instead of markdown table because long path needs to be wrapped up -->
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong>POST</strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/status/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+    Request parameters.
+    <table>
+          <tbody>
+                <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                  <td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+                </tr>
+              <tr>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
+              </tr>
+              <tr>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+         </tbody>
+    </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.
+        <table>
+          <tbody>
+             <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                      <td>id</td>
+                      <td>integer (ID)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>status</td>
+                      <td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+                      <td>Validation status for this sample.</td>
+              </tr>
+              <tr>
+                      <td>info</td>
+                      <td>string &lt;uri&gt; (Info)<br>Nullable.</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>validation_info</td>
+                      <td>object (Validation info) <br>Nullable</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>provider</td>
+                      <td>integer (Provider)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>sample</td>
+                      <td>object (ProviderEnrolmentSample)</td>
+                      <td>-</td>
+              </tr>
+              <tr>
+                      <td>error_message</td>
+                      <td>string (Error message) <br>non-empty<br>Nullable</td>
+                      <td>Error message when status is error.</td>
+              </tr>
+              <tr>
+                  <td>contribution</td>
+                  <td>number (Contribution)<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+              <tr>
+                  <td>message_code_id</td>
+                  <td>string (Message code id) <br>non-empty<br>Nullable.</td>
+                  <td>-</td>
+              </tr>
+        </tbody>
+    </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+#### Request sample
+```json
+{
+  "status": 0,
+  "validation_info": {},
+  "sample": {},
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
+}
+```
+### Responses
+
+#### Response sample: 201
+<details>
+  <summary>201</summary>
+
+```json
+{
+  "id": 0,
+  "status": 0,
+  "info": "http://example.com",
+  "validation_info": {},
+  "provider": 0,
+  "sample": {
+    "id": 0,
+    "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+    "data": "http://example.com"
+  },
+  "error_message": "string",
+  "contribution": 0,
+  "message_code_id": "string"
+}
+```
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+666
+5. [Provider Enrolment Notification Management](#provider_enrolment_notification_management)
+6. [Provider Enrolment Request Management](#provider_enrolment_request_management)
 
 ---
 
@@ -2648,7 +2900,7 @@ Set of API endpoints that allow a UI to be viewed or edited.
 - [Create UI](#admin_ui_create) (POST)
 - [Read UI](#admin_ui_read) (GET)
 - [Update UI](#admin_ui_update) (PUT)
-- [Update UI Partial Information](#admin_ui_partial_update) (PATCH)
+- [Partial Update UI Information](#admin_ui_partial_update) (PATCH)
 - [Delete UI](#admin_ui_delete) (DELETE)
 
 
@@ -3058,7 +3310,7 @@ Content Type | application/json
 
 
 <!--- admin_ui_partial_update --->
-## Update UI Partial Information<a name="admin_ui_partial_update"></a> (PATCH)
+## Partial Update UI Information<a name="admin_ui_partial_update"></a> (PATCH)
 API endpoint that updates UI Options' information.
 
 ### Request
@@ -3208,5 +3460,6 @@ Content Type | application/json
 }
 ```
 </details>
+
 
 
