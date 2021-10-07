@@ -1858,35 +1858,34 @@ Response parameters.
 <li><a href=#provider_enrolment_notification_management>Provider Enrolment Notification Management</a></li>
 <li><a href=#provider_enrolment_request_management>Provider Enrolment Request Management</a></li>
 </ol>
-<h1 id=4-provider-enrolment-sample-a-nameprovider_enrolment_sample_managementa>4. Provider Enrolment Sample <a name=provider_enrolment_sample_management></a></h1>
-<p>Set of API endpoints that allows Provider access enrolment samples.
+<h1 id=4-provider-enrolment-sample-validation-management-a-nameprovider_enrolment_sample_validation_managementa>4. Provider Enrolment Sample Validation Management <a name=provider_enrolment_sample_validation_management></a></h1>
+<p>Set of API endpoints that allows Provider manage enrolment sample validation.
 <br></p>
 <ul>
-<li>GET: <a href=#provider2_enrolment_sample_list>List Provider Enrolment Sample</a></li>
-<li>POST: <a href=#provider_enrolment_sample_create>Create Instrument</a></li>
-<li>GET: <a href=#admin_instrument_read>Read Instrument</a></li>
-<li>PUT: <a href=#admin_instrument_update>Update Instrument</a></li>
-<li>PATCH: <a href=#admin_instrument_partial_update>Update Instrument Partial Information</a></li>
-<li>DELETE: <a href=#admin_instrument_delete>Delete Instrument</a></li>
+<li>GET: <a href=#provider_enrolment_sample_validation_list>List Provider Enrolment Sample Validation</a></li>
+<li>POST: <a href=#provider_enrolment_sample_validation_create>Create Provider Enrolment Sample Validation</a></li>
+<li>GET: <a href=#provider_enrolment_sample_validation_read>Read Provider Enrolment Sample Validation</a></li>
+<li>PUT: <a href=#provider_enrolment_sample_validation_update>Update Provider Enrolment Sample Validation</a></li>
+<li>PATCH: <a href=#provider_enrolment_sample_validation_partial_update>Partial Update Provider Enrolment Sample Validation Information</a></li>
+<li>DELETE: <a href=#provider_enrolment_sample_validation_delete>Delete Provider Enrolment Sample Validation</a></li>
+<li>POST: <a href=#provider_enrolment_sample_validation_status>Status Provider Enrolment Sample Validation</a></li>
 </ul>
 <h2 id=list-instrumentsa-nameadmin_instrument_lista-get>List Instruments<a name=admin_instrument_list></a> [GET]</h2>
-<p>API endpoint for listing all Instruments.</p>
+<p>API endpoint for listing all Provider manage enrolment sample validation.</p>
 <h3 id=request-13>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
+<table style=table-layout:fixed;width:100%>
 <tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
 <tr>
 <td>HTTP Method</td>
 <td><strong>GET</strong></td>
 </tr>
 <tr>
 <td>Path</td>
-<td>/api/v2/admin/instrument/</td>
+<td><span style=word-wrap:break-word>/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/</span></td>
 </tr>
 <tr>
 <td>Authorization</td>
@@ -1912,14 +1911,30 @@ Request parameters.
 <td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td>search</td>
+<td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
 <td>string </td>
-<td>A search term</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>A search term.</td>
 </tr>
 <tr>
 <td>ordering</td>
 <td>string</td>
 <td>Which field to use when ordering the results.</td>
+</tr>
 <tr>
 <td>limit</td>
 <td>integer</td>
@@ -1934,7 +1949,7 @@ Request parameters.
 </table>
 </div>
 <div class=tab-pane title=RESPONSE>
-Response parameters.
+Response parameters.<br>
 <table>
 <tbody>
 <tr>
@@ -1944,22 +1959,22 @@ Response parameters.
 </tr>
 <tr>
 <td><strong>count</strong><br><code>required</code></td>
-<td>integer (ID) </td>
-<td></td>
+<td>integer</td>
+<td>-</td>
 </tr>
 <tr>
 <td>next</td>
-<td>string (uri)<br>Nullable </td>
+<td>string &lt;uri><br>Nullable</td>
 <td>-</td>
 </tr>
 <tr>
 <td>previous</td>
-<td>string (uri)<br>Nullable </td>
+<td>string &lt;uri><br>Nullable</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>results</strong><br><code>required</code></td>
-<td>Array of objects (Instrument)</td>
+<td>results<br><code>required</code></td>
+<td>Array of Objects (Provider)</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -1978,41 +1993,38 @@ Response parameters.
 <span style=color:#f92672>&#34;results&#34;</span>: [
   {
     <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
-    <span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-    <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-    <span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-    <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-    <span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-    <span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-    <span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-    <span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-    <span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>,
-    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
-    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+    <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;info&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+    <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+    <span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;sample&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>,
+      <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>
+    },
+    <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
   }
 ]
 }
 </code></pre></div></details>
-<h2 id=create-instrumenta-nameadmin_instrument_createa-post>Create Instrument<a name=admin_instrument_create></a> [POST]</h2>
-<p>API endpoint for creating a new Instrument.</p>
+<h2 id=create-provider-enrolment-sample-validationa-nameprovider_enrolment_sample_validation_createa-post>Create Provider Enrolment Sample Validation<a name=provider_enrolment_sample_validation_create></a> [POST]</h2>
+<p>API endpoint for creating new Provider Enrolment Sample Validation.</p>
 <h3 id=request-14>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
+<table style=table-layout:fixed;width:100%>
 <tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
 <tr>
 <td>HTTP Method</td>
 <td><strong>POST</strong></td>
 </tr>
 <tr>
 <td>Path</td>
-<td>/api/v2/admin/instrument/</td>
+<td><span style=word-wrap:break-word>/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/</span></td>
 </tr>
 <tr>
 <td>Authorization</td>
@@ -2038,58 +2050,54 @@ Request parameters.
 <td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td>options_schema</td>
-<td>object (Options schema) <br>Nullable</td>
+<td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
+</tr>
+<tr>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>name</strong><br><code>required</code></td>
-<td>string (Name) <br>[1 .. 250] characters</td>
-<td>Instrument name</td>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
 </tr>
 <tr>
-<td><strong>acronym</strong><br><code>required</code></td>
-<td>string (Acronym) <br>[1 .. 30] characters</td>
-<td>Instrument acronym</td>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
 </tr>
 <tr>
-<td><strong>queue</strong><br><code>required</code></td>
-<td>string (Queue) <br>non-empty</td>
-<td>Queue this instrument listens to.</td>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
 </tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>The instrument is enabled.</td>
 <tr>
 <td>requires_enrolment</td>
 <td>boolean (Requires enrolment)</td>
 <td>Whether this instrument requires enrolment.</td>
 </tr>
 <tr>
-<td>description</td>
-<td>string (Description) <br>Nullable</td>
-<td>Description of the instrument.</td>
-</tr>
-<tr>
-<td>identity</td>
-<td>boolean (Identity)</td>
-<td>This instrument contributes to the learner identity verification.</td>
-</tr>
-<tr>
-<td>originality</td>
-<td>boolean (Originality)</td>
-<td>This instrument contributes to the assessment originality verification.</td>
-</tr>
-<tr>
-<td>authorship</td>
-<td>boolean (Authorship)</td>
-<td>This instrument contributes to the assessment authorship verification.</td>
-</tr>
-<tr>
-<td>integrity</td>
-<td>boolean (Integrity)</td>
-<td>This instrument contributes to the assessment integrity verification.</td>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -2109,67 +2117,43 @@ Response parameters.
 <td>-</td>
 </tr>
 <tr>
-<td>options_schema</td>
-<td>object (Options schema) <br>Nullable</td>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>string &lt;uri> (Info)<br>Nullable.</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>name</strong><br><code>required</code></td>
-<td>string (Name) <br>[1 .. 250] characters</td>
-<td>Instrument name</td>
-</tr>
-<tr>
-<td><strong>acronym</strong><br><code>required</code></td>
-<td>string (Acronym) <br>[1 .. 30] characters</td>
-<td>Instrument acronym</td>
-</tr>
-<tr>
-<td><strong>queue</strong><br><code>required</code></td>
-<td>string (Queue) <br>non-empty</td>
-<td>Queue this instrument listens to.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>The instrument is enabled.</td>
-<tr>
-<td>requires_enrolment</td>
-<td>boolean (Requires enrolment)</td>
-<td>Whether this instrument requires enrolment.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string (Description) <br>Nullable</td>
-<td>Description of the instrument.</td>
-</tr>
-<tr>
-<td>identity</td>
-<td>boolean (Identity)</td>
-<td>This instrument contributes to the learner identity verification.</td>
-</tr>
-<tr>
-<td>originality</td>
-<td>boolean (Originality)</td>
-<td>This instrument contributes to the assessment originality verification.</td>
-</tr>
-<tr>
-<td>authorship</td>
-<td>boolean (Authorship)</td>
-<td>This instrument contributes to the assessment authorship verification.</td>
-</tr>
-<tr>
-<td>integrity</td>
-<td>boolean (Integrity)</td>
-<td>This instrument contributes to the assessment integrity verification.</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>string &lt;date-time> (Created at)</td>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
 <td>-</td>
 </tr>
 <tr>
-<td>updated_at</td>
-<td>string &lt;date-time> (Updated at)</td>
+<td>provider</td>
+<td>integer (Provider)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
+</tr>
+<tr>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -2179,17 +2163,12 @@ Response parameters.
 </div>
 <h4 id=request-sample-post-1>Request Sample: POST</h4>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;sample&#34;</span>: {},
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div><h3 id=responses-14>Responses</h3>
 <h4 id=response-sample-5>Response sample</h4>
@@ -2197,39 +2176,36 @@ Response parameters.
 <summary>201</summary>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
 <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
-<span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-<span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-<span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-<span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-<span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-<span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-<span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-<span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-<span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-<span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-<span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>,
-<span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
-<span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+<span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+<span style=color:#f92672>&#34;info&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+<span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#ae81ff>0</span>,
+<span style=color:#f92672>&#34;sample&#34;</span>: {
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>,
+  <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>
+},
+<span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+<span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+<span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div></details>
-<h2 id=read-instrumenta-nameadmin_instrument_reada-get>Read Instrument<a name=admin_instrument_read></a> [GET]</h2>
-<p>Retrieves information about an Instrument.</p>
+<h2 id=read-provider-enrolment-sample-validationa-nameprovider_enrolment_sample_validation_reada-get>Read Provider Enrolment Sample Validation<a name=provider_enrolment_sample_validation_read></a> [GET]</h2>
+<p>API endpoint that allows Provider Enrolment Sample Validation information.</p>
 <h3 id=request-15>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
+<table style=table-layout:fixed;width:100%>
 <tbody>
 <tr>
-<td>HTTP method</td>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
 <td><strong>GET</strong></td>
 </tr>
 <tr>
 <td>Path</td>
-<td>/api/v2/admin/instrument/{instrument_id}/</td>
+<td><span style=word-wrap:break-word>/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
 </tr>
 <tr>
 <td>Authorization</td>
@@ -2241,7 +2217,7 @@ Response parameters.
 </tr>
 </tbody>
 </table>
-<h3 id=parameters-15>Parameters:</h3>
+<h3 id=parameters-15>Parameters</h3>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
@@ -2255,9 +2231,24 @@ Request parameters.
 <td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td><strong>instrument_id</strong><br><code>required</code></td>
+<td><strong>id</strong><br><code>required</code></td>
 <td>string </td>
-<td>Request path parameter. A unique integer value identifying this instrument.</td>
+<td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -2273,71 +2264,47 @@ Response parameters.
 </tr>
 <tr>
 <td>id</td>
-<td>integer (Id)</td>
-<td>Instrument Id.</td>
-</tr>
-<tr>
-<td>options_schema</td>
-<td>object (Options schema) <br>Nullable</td>
+<td>integer (ID)</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>name</strong><br><code>required</code></td>
-<td>string (Name) <br>[1 .. 250] characters</td>
-<td>Instrument name</td>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
 </tr>
 <tr>
-<td><strong>acronym</strong><br><code>required</code></td>
-<td>string (Acronym) <br>[1 .. 30] characters</td>
-<td>Instrument acronym</td>
-</tr>
-<tr>
-<td><strong>queue</strong><br><code>required</code></td>
-<td>string (Queue) <br>non-empty</td>
-<td>Queue this instrument listens to.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>The instrument is enabled.</td>
-<tr>
-<td>requires_enrolment</td>
-<td>boolean (Requires enrolment)</td>
-<td>Whether this instrument requires enrolment.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string (Description) <br>Nullable</td>
-<td>Description of the instrument.</td>
-</tr>
-<tr>
-<td>identity</td>
-<td>boolean (Identity)</td>
-<td>This instrument contributes to the learner identity verification.</td>
-</tr>
-<tr>
-<td>originality</td>
-<td>boolean (Originality)</td>
-<td>This instrument contributes to the assessment originality verification.</td>
-</tr>
-<tr>
-<td>authorship</td>
-<td>boolean (Authorship)</td>
-<td>This instrument contributes to the assessment authorship verification.</td>
-</tr>
-<tr>
-<td>integrity</td>
-<td>boolean (Integrity)</td>
-<td>This instrument contributes to the assessment integrity verification.</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>string &lt;date-time> (Created at)</td>
+<td>info</td>
+<td>string &lt;uri> (Info)<br>Nullable.</td>
 <td>-</td>
 </tr>
 <tr>
-<td>updated_at</td>
-<td>string &lt;date-time> (Updated at)</td>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>integer (Provider)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
+</tr>
+<tr>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -2351,39 +2318,36 @@ Response parameters.
 <summary>200</summary>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
-  <span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
-  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;sample&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>,
+    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>
+  },
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div></details>
-<h2 id=update-instrumenta-nameadmin_instrument_updatea-put>Update Instrument<a name=admin_instrument_update></a> [PUT]</h2>
-<p>API endpoint that updates Instrument&rsquo;s information.</p>
+<h2 id=update-provider-enrolment-sample-validationa-nameprovider_enrolment_sample_validation_updatea-put>Update Provider Enrolment Sample Validation<a name=provider_enrolment_sample_validation_update></a> [PUT]</h2>
+<p>API endpoint that allows Provider manage enrolment sample validation updates.</p>
 <h3 id=request-16>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
+<table style=table-layout:fixed;width:100%>
 <tbody>
 <tr>
-<td>HTTP method</td>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
 <td><strong>PUT</strong></td>
 </tr>
 <tr>
 <td>Path</td>
-<td>/api/v2/admin/instrument/{instrument_id}/</td>
+<td><span style=word-wrap:break-word>/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
 </tr>
 <tr>
 <td>Authorization</td>
@@ -2395,7 +2359,7 @@ Response parameters.
 </tr>
 </tbody>
 </table>
-<h3 id=parameters-16>Parameters:</h3>
+<h3 id=parameters-16>Parameters</h3>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
@@ -2409,63 +2373,54 @@ Request parameters.
 <td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td><strong>instrument_id</strong><br><code>required</code></td>
+<td><strong>id</strong><br><code>required</code></td>
 <td>string </td>
-<td>Request path parameter. A unique integer value identifying this instrument.</td>
+<td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
 </tr>
 <tr>
-<td>options_schema</td>
-<td>object (Options schema) <br>Nullable</td>
+<td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
+</tr>
+<tr>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>name</strong><br><code>required</code></td>
-<td>string (Name) <br>[1 .. 250] characters</td>
-<td>Instrument name</td>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
 </tr>
 <tr>
-<td><strong>acronym</strong><br><code>required</code></td>
-<td>string (Acronym) <br>[1 .. 30] characters</td>
-<td>Instrument acronym</td>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
 </tr>
 <tr>
-<td><strong>queue</strong><br><code>required</code></td>
-<td>string (Queue) <br>non-empty</td>
-<td>Queue this instrument listens to.</td>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
 </tr>
 <tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>The instrument is enabled.</td>
-<tr>
-<td>requires_enrolment</td>
-<td>boolean (Requires enrolment)</td>
-<td>Whether this instrument requires enrolment.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string (Description) <br>Nullable</td>
-<td>Description of the instrument.</td>
-</tr>
-<tr>
-<td>identity</td>
-<td>boolean (Identity)</td>
-<td>This instrument contributes to the learner identity verification.</td>
-</tr>
-<tr>
-<td>originality</td>
-<td>boolean (Originality)</td>
-<td>This instrument contributes to the assessment originality verification.</td>
-</tr>
-<tr>
-<td>authorship</td>
-<td>boolean (Authorship)</td>
-<td>This instrument contributes to the assessment authorship verification.</td>
-</tr>
-<tr>
-<td>integrity</td>
-<td>boolean (Integrity)</td>
-<td>This instrument contributes to the assessment integrity verification.</td>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -2481,71 +2436,47 @@ Response parameters.
 </tr>
 <tr>
 <td>id</td>
-<td>integer (Id)</td>
-<td>Instrument Id.</td>
-</tr>
-<tr>
-<td>options_schema</td>
-<td>object (Options schema) <br>Nullable</td>
+<td>integer (ID)</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>name</strong><br><code>required</code></td>
-<td>string (Name) <br>[1 .. 250] characters</td>
-<td>Instrument name</td>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
 </tr>
 <tr>
-<td><strong>acronym</strong><br><code>required</code></td>
-<td>string (Acronym) <br>[1 .. 30] characters</td>
-<td>Instrument acronym</td>
-</tr>
-<tr>
-<td><strong>queue</strong><br><code>required</code></td>
-<td>string (Queue) <br>non-empty</td>
-<td>Queue this instrument listens to.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>The instrument is enabled.</td>
-<tr>
-<td>requires_enrolment</td>
-<td>boolean (Requires enrolment)</td>
-<td>Whether this instrument requires enrolment.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string (Description) <br>Nullable</td>
-<td>Description of the instrument.</td>
-</tr>
-<tr>
-<td>identity</td>
-<td>boolean (Identity)</td>
-<td>This instrument contributes to the learner identity verification.</td>
-</tr>
-<tr>
-<td>originality</td>
-<td>boolean (Originality)</td>
-<td>This instrument contributes to the assessment originality verification.</td>
-</tr>
-<tr>
-<td>authorship</td>
-<td>boolean (Authorship)</td>
-<td>This instrument contributes to the assessment authorship verification.</td>
-</tr>
-<tr>
-<td>integrity</td>
-<td>boolean (Integrity)</td>
-<td>This instrument contributes to the assessment integrity verification.</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>string &lt;date-time> (Created at)</td>
+<td>info</td>
+<td>string &lt;uri> (Info)<br>Nullable.</td>
 <td>-</td>
 </tr>
 <tr>
-<td>updated_at</td>
-<td>string &lt;date-time> (Updated at)</td>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>integer (Provider)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
+</tr>
+<tr>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -2555,17 +2486,12 @@ Response parameters.
 </div>
 <h4 id=request-sample-2>Request sample</h4>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;sample&#34;</span>: {},
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div><h3 id=responses-16>Responses</h3>
 <h4 id=response-sample-200-8>Response sample: 200</h4>
@@ -2573,39 +2499,37 @@ Response parameters.
 <summary>200</summary>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
-  <span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
-  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;sample&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>,
+    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>
+  },
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div></details>
-<h2 id=update-instrument-partial-informationa-nameadmin_instrument_partial_updatea-patch>Update Instrument Partial Information<a name=admin_instrument_partial_update></a> [PATCH]</h2>
-<p>API endpoint that updates Instrument&rsquo;s information.</p>
+<br>
+<h2 id=partial-update-provider-enrolment-sample-validation-informationa-nameprovider_enrolment_sample_validation_partial_updatea-patch>Partial Update Provider Enrolment Sample Validation Information<a name=provider_enrolment_sample_validation_partial_update></a> [PATCH]</h2>
+<p>API endpoint that updates Provider manage enrolment sample validation.</p>
 <h3 id=request-17>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
+<table style=table-layout:fixed;width:100%>
 <tbody>
 <tr>
-<td>HTTP method</td>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
 <td><strong>PATCH</strong></td>
 </tr>
 <tr>
 <td>Path</td>
-<td>/api/v2/admin/instrument/{instrument_id}/</td>
+<td><span style=word-wrap:break-word>/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
 </tr>
 <tr>
 <td>Authorization</td>
@@ -2617,7 +2541,7 @@ Response parameters.
 </tr>
 </tbody>
 </table>
-<h3 id=parameters-17>Parameters:</h3>
+<h3 id=parameters-17>Parameters</h3>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
@@ -2631,63 +2555,54 @@ Request parameters.
 <td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td><strong>instrument_id</strong><br><code>required</code></td>
+<td><strong>id</strong><br><code>required</code></td>
 <td>string </td>
-<td>Request path parameter. A unique integer value identifying this instrument.</td>
+<td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
 </tr>
 <tr>
-<td>options_schema</td>
-<td>object (Options schema) <br>Nullable</td>
+<td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
+</tr>
+<tr>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>name</strong><br><code>required</code></td>
-<td>string (Name) <br>[1 .. 250] characters</td>
-<td>Instrument name</td>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
 </tr>
 <tr>
-<td><strong>acronym</strong><br><code>required</code></td>
-<td>string (Acronym) <br>[1 .. 30] characters</td>
-<td>Instrument acronym</td>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
 </tr>
 <tr>
-<td><strong>queue</strong><br><code>required</code></td>
-<td>string (Queue) <br>non-empty</td>
-<td>Queue this instrument listens to.</td>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
 </tr>
 <tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>The instrument is enabled.</td>
-<tr>
-<td>requires_enrolment</td>
-<td>boolean (Requires enrolment)</td>
-<td>Whether this instrument requires enrolment.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string (Description) <br>Nullable</td>
-<td>Description of the instrument.</td>
-</tr>
-<tr>
-<td>identity</td>
-<td>boolean (Identity)</td>
-<td>This instrument contributes to the learner identity verification.</td>
-</tr>
-<tr>
-<td>originality</td>
-<td>boolean (Originality)</td>
-<td>This instrument contributes to the assessment originality verification.</td>
-</tr>
-<tr>
-<td>authorship</td>
-<td>boolean (Authorship)</td>
-<td>This instrument contributes to the assessment authorship verification.</td>
-</tr>
-<tr>
-<td>integrity</td>
-<td>boolean (Integrity)</td>
-<td>This instrument contributes to the assessment integrity verification.</td>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -2703,71 +2618,47 @@ Response parameters.
 </tr>
 <tr>
 <td>id</td>
-<td>integer (Id)</td>
-<td>Instrument Id.</td>
-</tr>
-<tr>
-<td>options_schema</td>
-<td>object (Options schema) <br>Nullable</td>
+<td>integer (ID)</td>
 <td>-</td>
 </tr>
 <tr>
-<td><strong>name</strong><br><code>required</code></td>
-<td>string (Name) <br>[1 .. 250] characters</td>
-<td>Instrument name</td>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
 </tr>
 <tr>
-<td><strong>acronym</strong><br><code>required</code></td>
-<td>string (Acronym) <br>[1 .. 30] characters</td>
-<td>Instrument acronym</td>
-</tr>
-<tr>
-<td><strong>queue</strong><br><code>required</code></td>
-<td>string (Queue) <br>non-empty</td>
-<td>Queue this instrument listens to.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>The instrument is enabled.</td>
-<tr>
-<td>requires_enrolment</td>
-<td>boolean (Requires enrolment)</td>
-<td>Whether this instrument requires enrolment.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string (Description) <br>Nullable</td>
-<td>Description of the instrument.</td>
-</tr>
-<tr>
-<td>identity</td>
-<td>boolean (Identity)</td>
-<td>This instrument contributes to the learner identity verification.</td>
-</tr>
-<tr>
-<td>originality</td>
-<td>boolean (Originality)</td>
-<td>This instrument contributes to the assessment originality verification.</td>
-</tr>
-<tr>
-<td>authorship</td>
-<td>boolean (Authorship)</td>
-<td>This instrument contributes to the assessment authorship verification.</td>
-</tr>
-<tr>
-<td>integrity</td>
-<td>boolean (Integrity)</td>
-<td>This instrument contributes to the assessment integrity verification.</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td>string &lt;date-time> (Created at)</td>
+<td>info</td>
+<td>string &lt;uri> (Info)<br>Nullable.</td>
 <td>-</td>
 </tr>
 <tr>
-<td>updated_at</td>
-<td>string &lt;date-time> (Updated at)</td>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>integer (Provider)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
+</tr>
+<tr>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -2777,17 +2668,12 @@ Response parameters.
 </div>
 <h4 id=request-sample-3>Request sample</h4>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;sample&#34;</span>: {},
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div><h3 id=responses-17>Responses</h3>
 <h4 id=response-sample-200-9>Response sample: 200</h4>
@@ -2795,39 +2681,37 @@ Response parameters.
 <summary>200</summary>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
   <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
-  <span style=color:#f92672>&#34;options_schema&#34;</span>: {},
-  <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;queue&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;requires_enrolment&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;identity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;originality&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;authorship&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;integrity&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
-  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;sample&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>,
+    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>
+  },
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div></details>
-<h2 id=delete-instrumenta-nameadmin_instrument_deletea-delete>Delete Instrument<a name=admin_instrument_delete></a> [DELETE]</h2>
-<p>API endpoint for deleting Instrument from the system.</p>
+<br>
+<h2 id=delete-provider-enrolment-sample-validationa-nameprovider_enrolment_sample_validation_deletea-delete>Delete Provider Enrolment Sample Validation<a name=provider_enrolment_sample_validation_delete></a> [DELETE]</h2>
+<p>API endpoint for deleting Provider Enrolment Sample Validation.</p>
 <h3 id=request-18>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
+<table style=table-layout:fixed;width:100%>
 <tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
 <tr>
 <td>HTTP Method</td>
 <td><strong>DELETE</strong></td>
 </tr>
 <tr>
 <td>Path</td>
-<td>/api/v2/admin/instrument/{instrument_id}/</td>
+<td><span style=word-wrap:break-word>/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/</span></td>
 </tr>
 <tr>
 <td>Authorization</td>
@@ -2839,7 +2723,7 @@ Response parameters.
 </tr>
 </tbody>
 </table>
-<h3 id=parameters-18>Parameters:</h3>
+<h3 id=parameters-18>Parameters</h3>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
@@ -2853,9 +2737,24 @@ Request parameters.
 <td><strong>Comments</strong></td>
 </tr>
 <tr>
-<td><strong>instrument_id</strong><br><code>required</code></td>
-<td>integer </td>
-<td>Request path parameter. A unique integer value identifying this instrument.</td>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -2869,6 +2768,192 @@ Request parameters.
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
 }
 </code></pre></div></details>
+<br>
+<h2 id=status-provider-enrolment-sample-validationa-nameprovider_enrolment_sample_validation_statusa-post>Status Provider Enrolment Sample Validation<a name=provider_enrolment_sample_validation_status></a> [POST]</h2>
+<p>Change enrolment sample validation status.</p>
+<h3 id=request-19>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong>POST</strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/provider/{parent_lookup_provider_id}/enrolment/{parent_lookup_sample__learner__learner_id}/sample/{parent_lookup_sample_id}/validation/{id}/status/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-19>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter. A unique integer value identifying this enrolment sample validation.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_provider_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample__learner__learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_sample_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
+</tr>
+<tr>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
+</tr>
+<tr>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer (Status) <br>Enum: 0, 1, 2, 3, 4</td>
+<td>Validation status for this sample.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>string &lt;uri> (Info)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>validation_info</td>
+<td>object (Validation info) <br>Nullable</td>
+<td>-</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>integer (Provider)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sample</td>
+<td>object (ProviderEnrolmentSample)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>string (Error message) <br>non-empty<br>Nullable</td>
+<td>Error message when status is error.</td>
+</tr>
+<tr>
+<td>contribution</td>
+<td>number (Contribution)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>message_code_id</td>
+<td>string (Message code id) <br>non-empty<br>Nullable.</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-4>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;sample&#34;</span>: {},
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div><h3 id=responses-19>Responses</h3>
+<h4 id=response-sample-201-1>Response sample: 201</h4>
+<details>
+<summary>201</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+  <span style=color:#f92672>&#34;validation_info&#34;</span>: {},
+  <span style=color:#f92672>&#34;provider&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;sample&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>,
+    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>
+  },
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;contribution&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code_id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div></details>
+<p><br><br><br><br><br>
+666
+5. <a href=#provider_enrolment_notification_management>Provider Enrolment Notification Management</a>
+6. <a href=#provider_enrolment_request_management>Provider Enrolment Request Management</a></p>
 <hr>
 <h1 id=4-ui-management-a-nameui_managementa>4. UI Management <a name=ui_management></a></h1>
 <p>Set of API endpoints that allow a UI to be viewed or edited.</p>
@@ -2877,12 +2962,12 @@ Request parameters.
 <li><a href=#admin_ui_create>Create UI</a> (POST)</li>
 <li><a href=#admin_ui_read>Read UI</a> (GET)</li>
 <li><a href=#admin_ui_update>Update UI</a> (PUT)</li>
-<li><a href=#admin_ui_partial_update>Update UI Partial Information</a> (PATCH)</li>
+<li><a href=#admin_ui_partial_update>Partial Update UI Information</a> (PATCH)</li>
 <li><a href=#admin_ui_delete>Delete UI</a> (DELETE)</li>
 </ul>
 <h2 id=list-uia-nameadmin_ui_lista-get>List UI<a name=admin_ui_list></a> (GET)</h2>
 <p>API endpoint for listing UI.</p>
-<h3 id=request-19>Request</h3>
+<h3 id=request-20>Request</h3>
 <table>
 <thead>
 <tr>
@@ -2909,7 +2994,7 @@ Request parameters.
 </tr>
 </tbody>
 </table>
-<h3 id=parameters-19>Parameters:</h3>
+<h3 id=parameters-20>Parameters:</h3>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
@@ -2979,7 +3064,7 @@ Response parameters.
 </div>
 </div>
 </div>
-<h3 id=responses-19>Responses</h3>
+<h3 id=responses-20>Responses</h3>
 <h4 id=response-sample-200-10>Response sample: 200</h4>
 <details>
 <summary>200</summary>
@@ -2999,7 +3084,7 @@ Response parameters.
 </code></pre></div></details>
 <h2 id=create-uia-nameadmin_ui_createa-post>Create UI<a name=admin_ui_create></a> (POST)</h2>
 <p>API endpoint for creating a new UI.</p>
-<h3 id=request-20>Request</h3>
+<h3 id=request-21>Request</h3>
 <table>
 <thead>
 <tr>
@@ -3026,117 +3111,6 @@ Response parameters.
 </tr>
 </tbody>
 </table>
-<h3 id=parameters-20>Parameters:</h3>
-<div class=code-tabs>
-<ul class="nav nav-tabs"></ul>
-<div class=tab-content>
-<div class=tab-pane title=REQUEST>
-Request parameters.
-<table>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Comments</strong></td>
-</tr>
-<tr>
-<td><strong>route</strong><br><code>required</code></td>
-<td>string (Route) <br>[1 .. 250] characters</td>
-<td>Affected Route.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>Status.</td>
-<tr>
-<tr>
-<td>roles</td>
-<td>string (Roles) <br><=250 characters.<br>Nullable</td>
-<td>Required roles.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class=tab-pane title=RESPONSE>
-Response parameters.
-<table>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Comments</strong></td>
-</tr>
-<tr>
-<td>ui_id</td>
-<td>string (Id)</td>
-<td>-</td>
-</tr>
-<tr>
-<td><strong>route</strong><br><code>required</code></td>
-<td>string (Route) <br>[1 .. 250] characters</td>
-<td>Affected Route.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>Status.</td>
-<tr>
-<tr>
-<td>roles</td>
-<td>string (Roles) <br><=250 characters.<br>Nullable</td>
-<td>Required roles.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<h4 id=request-sample-4>Request sample</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;route&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
-}
-</code></pre></div><h3 id=responses-20>Responses</h3>
-<h4 id=response-sample-201-1>Response sample: 201</h4>
-<details>
-<summary>201</summary>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;route&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
-}
-</code></pre></div></details>
-<h2 id=read-uia-nameadmin_ui_reada-get>Read UI<a name=admin_ui_read></a> (GET)</h2>
-<p>Retrieves information about UI Options.</p>
-<h3 id=request-21>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HTTP method</td>
-<td><strong>GET</strong></td>
-</tr>
-<tr>
-<td>Path</td>
-<td>/api/v2/admin/ui/{ui_id}/</td>
-</tr>
-<tr>
-<td>Authorization</td>
-<td>JWT</td>
-</tr>
-<tr>
-<td>Content Type</td>
-<td>application/json</td>
-</tr>
-</tbody>
-</table>
 <h3 id=parameters-21>Parameters:</h3>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
@@ -3149,106 +3123,6 @@ Request parameters.
 <td><strong>Name</strong></td>
 <td><strong>Type</strong></td>
 <td><strong>Comments</strong></td>
-</tr>
-<tr>
-<td><strong>ui_id</strong><br><code>required</code></td>
-<td>string </td>
-<td>Request path parameter. </td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class=tab-pane title=RESPONSE>
-Response parameters.
-<table>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Comments</strong></td>
-</tr>
-<tr>
-<td>ui_id</td>
-<td>string (Id)</td>
-<td>-</td>
-</tr>
-<tr>
-<td><strong>route</strong><br><code>required</code></td>
-<td>string (Route) <br>[1 .. 250] characters</td>
-<td>Affected Route.</td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>boolean (Enabled)</td>
-<td>Status.</td>
-<tr>
-<tr>
-<td>roles</td>
-<td>string (Roles) <br><=250 characters.<br>Nullable</td>
-<td>Required roles.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<h3 id=responses-21>Responses</h3>
-<h4 id=response-sample-200-11>Response sample: 200</h4>
-<details>
-<summary>200</summary>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;route&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
-  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
-  <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
-}
-</code></pre></div></details>
-<h2 id=update-uia-nameadmin_ui_updatea-put>Update UI<a name=admin_ui_update></a> (PUT)</h2>
-<p>API endpoint that updates UI Options' information.</p>
-<h3 id=request-22>Request</h3>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Data</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HTTP method</td>
-<td><strong>PUT</strong></td>
-</tr>
-<tr>
-<td>Path</td>
-<td>/api/v2/admin/ui/{ui_id}/</td>
-</tr>
-<tr>
-<td>Authorization</td>
-<td>JWT</td>
-</tr>
-<tr>
-<td>Content Type</td>
-<td>application/json</td>
-</tr>
-</tbody>
-</table>
-<h3 id=parameters-22>Parameters:</h3>
-<div class=code-tabs>
-<ul class="nav nav-tabs"></ul>
-<div class=tab-content>
-<div class=tab-pane title=REQUEST>
-Request parameters.
-<table>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Comments</strong></td>
-</tr>
-<tr>
-<td><strong>ui_id</strong><br><code>required</code></td>
-<td>string </td>
-<td>Request path parameter. </td>
 </tr>
 <tr>
 <td><strong>route</strong><br><code>required</code></td>
@@ -3308,8 +3182,103 @@ Response parameters.
   <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
   <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
-</code></pre></div><h3 id=responses-22>Responses</h3>
-<h4 id=response-sample-200-12>Response sample: 200</h4>
+</code></pre></div><h3 id=responses-21>Responses</h3>
+<h4 id=response-sample-201-2>Response sample: 201</h4>
+<details>
+<summary>201</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;route&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
+  <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div></details>
+<h2 id=read-uia-nameadmin_ui_reada-get>Read UI<a name=admin_ui_read></a> (GET)</h2>
+<p>Retrieves information about UI Options.</p>
+<h3 id=request-22>Request</h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP method</td>
+<td><strong>GET</strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td>/api/v2/admin/ui/{ui_id}/</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-22>Parameters:</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>ui_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter. </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>ui_id</td>
+<td>string (Id)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>route</strong><br><code>required</code></td>
+<td>string (Route) <br>[1 .. 250] characters</td>
+<td>Affected Route.</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean (Enabled)</td>
+<td>Status.</td>
+<tr>
+<tr>
+<td>roles</td>
+<td>string (Roles) <br><=250 characters.<br>Nullable</td>
+<td>Required roles.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-22>Responses</h3>
+<h4 id=response-sample-200-11>Response sample: 200</h4>
 <details>
 <summary>200</summary>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
@@ -3319,7 +3288,7 @@ Response parameters.
   <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div></details>
-<h2 id=update-ui-partial-informationa-nameadmin_ui_partial_updatea-patch>Update UI Partial Information<a name=admin_ui_partial_update></a> (PATCH)</h2>
+<h2 id=update-uia-nameadmin_ui_updatea-put>Update UI<a name=admin_ui_update></a> (PUT)</h2>
 <p>API endpoint that updates UI Options' information.</p>
 <h3 id=request-23>Request</h3>
 <table>
@@ -3332,7 +3301,7 @@ Response parameters.
 <tbody>
 <tr>
 <td>HTTP method</td>
-<td><strong>PATCH</strong></td>
+<td><strong>PUT</strong></td>
 </tr>
 <tr>
 <td>Path</td>
@@ -3425,7 +3394,7 @@ Response parameters.
   <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div><h3 id=responses-23>Responses</h3>
-<h4 id=response-sample-200-13>Response sample: 200</h4>
+<h4 id=response-sample-200-12>Response sample: 200</h4>
 <details>
 <summary>200</summary>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
@@ -3435,8 +3404,8 @@ Response parameters.
   <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
 }
 </code></pre></div></details>
-<h2 id=delete-uia-nameadmin_ui_deletea-delete>Delete UI<a name=admin_ui_delete></a> (DELETE)</h2>
-<p>API endpoint for deleting UI Options from the system.</p>
+<h2 id=partial-update-ui-informationa-nameadmin_ui_partial_updatea-patch>Partial Update UI Information<a name=admin_ui_partial_update></a> (PATCH)</h2>
+<p>API endpoint that updates UI Options' information.</p>
 <h3 id=request-24>Request</h3>
 <table>
 <thead>
@@ -3447,8 +3416,8 @@ Response parameters.
 </thead>
 <tbody>
 <tr>
-<td>HTTP Method</td>
-<td><strong>DELETE</strong></td>
+<td>HTTP method</td>
+<td><strong>PATCH</strong></td>
 </tr>
 <tr>
 <td>Path</td>
@@ -3480,6 +3449,122 @@ Request parameters.
 <tr>
 <td><strong>ui_id</strong><br><code>required</code></td>
 <td>string </td>
+<td>Request path parameter. </td>
+</tr>
+<tr>
+<td><strong>route</strong><br><code>required</code></td>
+<td>string (Route) <br>[1 .. 250] characters</td>
+<td>Affected Route.</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean (Enabled)</td>
+<td>Status.</td>
+<tr>
+<tr>
+<td>roles</td>
+<td>string (Roles) <br><=250 characters.<br>Nullable</td>
+<td>Required roles.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>ui_id</td>
+<td>string (Id)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>route</strong><br><code>required</code></td>
+<td>string (Route) <br>[1 .. 250] characters</td>
+<td>Affected Route.</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>boolean (Enabled)</td>
+<td>Status.</td>
+<tr>
+<tr>
+<td>roles</td>
+<td>string (Roles) <br><=250 characters.<br>Nullable</td>
+<td>Required roles.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-7>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;route&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
+  <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div><h3 id=responses-24>Responses</h3>
+<h4 id=response-sample-200-13>Response sample: 200</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;route&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;enabled&#34;</span>: <span style=color:#66d9ef>true</span>,
+  <span style=color:#f92672>&#34;roles&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div></details>
+<h2 id=delete-uia-nameadmin_ui_deletea-delete>Delete UI<a name=admin_ui_delete></a> (DELETE)</h2>
+<p>API endpoint for deleting UI Options from the system.</p>
+<h3 id=request-25>Request</h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP Method</td>
+<td><strong>DELETE</strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td>/api/v2/admin/ui/{ui_id}/</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-25>Parameters:</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>ui_id</strong><br><code>required</code></td>
+<td>string </td>
 <td>Request path parameter. .</td>
 </tr>
 </tbody>
@@ -3487,7 +3572,7 @@ Request parameters.
 </div>
 </div>
 </div>
-<h3 id=responses-24>Responses</h3>
+<h3 id=responses-25>Responses</h3>
 <h4 id=response-sample-204-2>Response sample: 204</h4>
 <details>
 <summary>204</summary>
@@ -3495,7 +3580,7 @@ Request parameters.
 }
 </code></pre></div></details>
 </div>
-<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 05 Oct 2021</p>
+<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 07 Oct 2021</p>
 <nav class="pagination mt-3">
 <a class="nav nav-prev" href=https://tesla-ce.github.io/developers/api/institution/ aria-label="Previous page"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Institution</span></a>
 <a class="nav nav-next" href=https://tesla-ce.github.io/developers/api/vle/ aria-label="Previous page"> <span class="d-none d-md-block">VLE</span><i class="ti-arrow-right ml-2"></i></a>
