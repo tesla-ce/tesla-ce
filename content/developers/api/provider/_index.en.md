@@ -21,7 +21,7 @@ keywords: ["API","provider"]
 5. [Provider Notification Management](#provider_notification_management)
 6. [Provider Request Management](#provider_request_management)
 
-</td></tr><table>
+</td></tr></table>
 
 <br><br>
 
@@ -50,7 +50,7 @@ Content Type | application/json
 ### Parameters
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-   Request parameters.
+   Request parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -83,7 +83,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-  Response parameters.
+  Response parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -209,7 +209,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -451,17 +451,17 @@ Content Type | application/json
           </tr>
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
-                  <td>integer (ID) </td>
+                  <td>integer</td>
                   <td></td>
           </tr>
           <tr>
               <td>next</td>
-              <td>string (uri)<br>Nullable </td>
+              <td>string &lt;uri&gt;<br>Nullable </td>
               <td>-</td>
           </tr>
           <tr>
               <td>previous</td>
-              <td>string (uri)<br>Nullable </td>
+              <td>string &lt;uri&gt;<br>Nullable </td>
               <td>-</td>
           </tr>
           <tr>
@@ -635,7 +635,7 @@ Content Type | application/json
    {{</tab>}}
 {{</tabs>}}
 
-#### Request Sample: POST
+#### Request Sample: 
 
 ```json
 {
@@ -715,7 +715,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -824,7 +824,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -847,7 +847,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -1668,7 +1668,7 @@ Retrieves information about Provider access enrolment samples.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
           <tr>
@@ -1772,7 +1772,7 @@ API endpoint for listing all Provider manage enrolment sample validation.
 ### Parameters
 {{< tabs >}}
     {{< tab "REQUEST" >}}
-    Request parameters.
+    Request parameters.<br>
         <table>
             <tbody>
                 <tr>
@@ -1931,7 +1931,7 @@ API endpoint for creating new Provider Enrolment Sample Validation.
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -1994,7 +1994,7 @@ API endpoint for creating new Provider Enrolment Sample Validation.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2052,7 +2052,7 @@ API endpoint for creating new Provider Enrolment Sample Validation.
    {{</tab>}}
 {{</tabs>}}
 
-#### Request Sample: POST
+#### Request Sample: 
 
 ```json
 {
@@ -2135,7 +2135,7 @@ API endpoint that allows Provider Enrolment Sample Validation information.
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2168,7 +2168,7 @@ API endpoint that allows Provider Enrolment Sample Validation information.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2297,7 +2297,7 @@ API endpoint that allows Provider manage enrolment sample validation updates.
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2360,7 +2360,7 @@ API endpoint that allows Provider manage enrolment sample validation updates.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2500,7 +2500,7 @@ API endpoint that updates Provider manage enrolment sample validation.
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2563,7 +2563,7 @@ API endpoint that updates Provider manage enrolment sample validation.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -2703,7 +2703,7 @@ API endpoint for deleting Provider Enrolment Sample Validation.
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-    Request parameters.
+    Request parameters.<br>
     <table>
           <tbody>
                 <tr>
@@ -2792,7 +2792,7 @@ Change enrolment sample validation status.
 
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-    Request parameters.
+    Request parameters.<br>
     <table>
           <tbody>
                 <tr>
@@ -2855,7 +2855,7 @@ Change enrolment sample validation status.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
         <table>
           <tbody>
              <tr>
@@ -3197,7 +3197,7 @@ Content Type | application/json
    {{</tab>}}
 {{</tabs>}}
 
-#### Request Sample: POST
+#### Request Sample: 
 
 ```json
 {
@@ -3273,7 +3273,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -3364,7 +3364,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -3402,7 +3402,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -3500,7 +3500,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -3538,7 +3538,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -3862,7 +3862,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -3968,7 +3968,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -4021,7 +4021,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -4137,7 +4137,7 @@ Content Type | application/json
 ### Parameters:
 {{< tabs >}}
   {{< tab "REQUEST" >}}
-       Request parameters.
+       Request parameters.<br>
         <table>
           <tbody>
               <tr>
@@ -4190,7 +4190,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
@@ -4359,7 +4359,7 @@ Content Type | application/json
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.
+    Response parameters.<br>
     <table>
       <tbody>
         <tr>
