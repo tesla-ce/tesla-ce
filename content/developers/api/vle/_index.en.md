@@ -1420,8 +1420,6 @@ Content Type | application/json
 
 
 <br><br><br><br>
-----------
-666
 
 # 3. VLE Instrument Management <a name="vle_instrument_management"></a>
 ---
@@ -2787,17 +2785,1308 @@ Content Type | application/json
 
 # 5. VLE Course Learner Management <a name="vle_course_learner_management"></a>
 ---
+Set of API endpoints that allows learners in a course to be viewed or edited.<br>
 
-{{< notice note >}}
-**Section TBD** <br>
-{{</ notice >}}
 
-   
+  5.1 GET: [List VLE Course Learner](#vle_course_learner_list)<br>
+  5.2 POST: [Create VLE Course Learner](#vle_course_learner_create)<br>
+  5.3 GET: [Read VLE Course Learner](#vle_course_learner_read)<br>
+  5.4 PUT: [Update VLE Course Learner](#vle_course_learner_update)<br>
+  5.5 PATCH: [Partial Update VLE Course Learner](#vle_course_learner_partial_update)<br>
+  5.6 DELETE: [Delete VLE Course Learner](#vle_course_learner_delete)
 <div align="right">
 
 [[top page]](#table-of-content) 
 </div>
 <br>
+
+
+<!--- vle_course_learner_list --->
+## 5.1 List VLE Course Learner<a name="vle_course_learner_list"></a>
+
+API endpoint for listing Learner from a Course in a VLE.
+
+### Request
+
+Concept | Data
+-- | --
+HTTP Method | <code>**GET**</code>
+Path | /api/v2/vle/{parent_lookup_vle_id}/course/{parent_lookup_course_id}/learner/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_course_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_vle_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td>string </td>
+                <td>A search term</td>
+            </tr>
+            <tr>
+                <td>uid</td>
+                <td>string</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>string</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>learner_id</td>
+                <td>string</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>ordering</td>
+                <td>string</td>
+                <td>Which field to use when ordering the results.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Number of results to return per page.</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>The initial index from which to return the results.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>count</strong><br><code>required</code></td>
+            <td>integer </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>string &lt;uri&gt;<br>Nullable </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>previous</td>
+            <td>string &lt;uri&gt;<br>Nullable </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>results</strong><br><code>required</code></td>
+            <td>Array of objects (VLECourseLearner)</td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "username": "string",
+      "consent": {
+        "version": "string",
+        "status": "string"
+      },
+      "consent_accepted": "2019-08-24T14:15:22Z",
+      "consent_rejected": "2019-08-24T14:15:22Z",
+      "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+      "last_login": "2019-08-24T14:15:22Z",
+      "send": {},
+      "ic_status": "string",
+      "enrolment_status": {},
+      "first_name": "string",
+      "last_name": "string",
+      "email": "user@example.com",
+      "locale": "string",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "uid": "string",
+      "inst_admin": true,
+      "legal_admin": true,
+      "send_admin": true,
+      "data_admin": true,
+      "joined_at": "2019-08-24T14:15:22Z"
+    }
+  ]
+}
+  ````
+</details>
+
+<div align="right">
+
+[[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- vle_course_learner_create --->
+## 5.2 Create VLE Course Learner<a name="vle_course_learner_create"></a>
+
+API endpoint for creating Learner for a Course in a VLE.
+
+
+### Request
+
+Concept | Data
+-- | --
+HTTP Method | <code>**POST**</code>
+Path | /api/v2/vle/{parent_lookup_vle_id}/course/{parent_lookup_course_id}/learner/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>              
+            <tr>
+                <td><strong>parent_lookup_vle_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (VLECourseLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Locale)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution</td>
+            </tr>
+            <tr>
+              <td>legal_admin</td>
+              <td>boolean (Inst admin)</td>
+              <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+            <tr>
+              <td>send_admin</td>
+              <td>boolean (Send admin)</td>
+              <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+              <td>data_admin</td>
+              <td>boolean (Data admin)</td>
+              <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td>id</td>
+              <td>integer (ID)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>string (Username)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (VLECourseLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_accepted</td>
+                <td>string &lt;date-time&gt; (Consent accepted)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_rejected</td>
+                <td>string &lt;date-time&gt; (Consent rejected)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>learner_id</td>
+                <td>string &lt;uuid&gt; (Learner ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_login</td>
+                <td>string &lt;date-time&gt; (Last login)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>send</td>
+                <td>object (Send)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>ic_status</td>
+                <td>string (IC Status)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>enrolment_status</td>
+                <td>object (Enrolment status)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Locale)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user</td>
+            </tr>
+            <tr>
+              <td>created_at</td>
+              <td>string &lt;date-time&gt; (Created at)</td>
+              <td>Date when user was created.</td>
+            </tr>
+            <tr>
+              <td>updated_at</td>
+              <td>string &lt;date-time&gt; (Updated at)</td>
+              <td>Last user modification.</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution</td>
+            </tr>
+            <tr>
+              <td>legal_admin</td>
+              <td>boolean (Inst admin)</td>
+              <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+            <tr>
+              <td>send_admin</td>
+              <td>boolean (Send admin)</td>
+              <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+              <td>data_admin</td>
+              <td>boolean (Data admin)</td>
+              <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+            <tr>
+              <td>joined_</td>
+              <td>string &lt;date-time&gt; (Joined at)</td>
+              <td>Date the learner joined for this institution.</td>
+            </tr>
+         </tbody>
+        </table>
+   {{</tab>}}
+{{</tabs>}}
+
+#### Request Sample: 
+
+```json
+{
+  "consent": {
+    "version": "string"
+  },
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "locale": "string",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true
+}
+````
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+  ````json
+{
+  "id": 0,
+  "username": "string",
+  "consent": {
+    "version": "string",
+    "status": "string"
+  },
+  "consent_accepted": "2019-08-24T14:15:22Z",
+  "consent_rejected": "2019-08-24T14:15:22Z",
+  "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+  "last_login": "2019-08-24T14:15:22Z",
+  "send": {},
+  "ic_status": "string",
+  "enrolment_status": {},
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "locale": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true,
+  "joined_at": "2019-08-24T14:15:22Z"
+}
+  ````
+</details>
+
+<div align="right">
+
+[[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- vle_course_learner_read --->
+## 5.3 Read VLE Course Learner<a name="vle_course_learner_read"></a>
+API endpoint for reading Learner from a Course in a VLE.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | <code>**GET**</code>
+Path | /api/v2/vle/{parent_lookup_vle_id}/course/{parent_lookup_course_id}/learner/{id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+              <tr>
+                  <td><strong>Name</strong></td>
+                  <td><strong>Type</strong></td>
+                  <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                  <td><strong>id</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Request path parameter.</td>
+              </tr>
+            <tr>
+                <td><strong>parent_lookup_course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>              
+            <tr>
+                <td><strong>parent_lookup_vle_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+        </tbody>
+    </table>
+{{</ tab >}}
+    
+{{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td><strong>Type</strong></td>
+          <td><strong>Comments</strong></td>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>integer (ID)</td>
+          <td>-</td>
+        </tr>
+        <tr>
+            <td>username</td>
+            <td>string (Username)<br>non-empty</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>consent</td>
+            <td>object (VLECourseLearnerConsent)<br>Nullable.</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>consent_accepted</td>
+            <td>string &lt;date-time&gt; (Consent accepted)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>consent_rejected</td>
+            <td>string &lt;date-time&gt; (Consent rejected)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>learner_id</td>
+            <td>string &lt;uuid&gt; (Learner ID)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>last_login</td>
+            <td>string &lt;date-time&gt; (Last login)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>send</td>
+            <td>object (Send)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>ic_status</td>
+            <td>string (IC Status)<br>non-empty</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>enrolment_status</td>
+            <td>object (Enrolment status)</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>first_name</td>
+            <td>string (First name)<br>non-empty</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>last_name</td>
+            <td>string (Last name)<br>non-empty</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>string &lt;email&gt; (Email)<br>non-empty</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>locale</td>
+            <td>string (Locale)<br>[1 .. 10] characters<br>Nullable.</td>
+            <td>Default locale for this user</td>
+        </tr>
+        <tr>
+          <td>created_at</td>
+          <td>string &lt;date-time&gt; (Created at)</td>
+          <td>Date when user was created.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td>string &lt;date-time&gt; (Updated at)</td>
+          <td>Last user modification.</td>
+        </tr>
+        <tr>
+            <td><strong>uid</strong><br><code>required</code></td>
+            <td>string (Uid)<br>[1 .. 255] characters</td>
+            <td>Unique User Identifier for the institution.</td>
+        </tr>
+        <tr>
+            <td>inst_admin</td>
+            <td>boolean (Inst admin)</td>
+            <td>Whether this user is administrator of the institution</td>
+        </tr>
+        <tr>
+          <td>legal_admin</td>
+          <td>boolean (Inst admin)</td>
+          <td>Whether this user can manage legal data of the institution.</td>
+        </tr>
+        <tr>
+          <td>send_admin</td>
+          <td>boolean (Send admin)</td>
+          <td>Whether this user can manage SEND data of the institution.</td>
+        </tr>
+        <tr>
+          <td>data_admin</td>
+          <td>boolean (Data admin)</td>
+          <td>Whether this user can manage the data of the institution.</td>
+        </tr>
+        <tr>
+          <td>joined_</td>
+          <td>string &lt;date-time&gt; (Joined at)</td>
+          <td>Date the learner joined for this institution.</td>
+        </tr>
+     </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "username": "string",
+  "consent": {
+    "version": "string",
+    "status": "string"
+  },
+  "consent_accepted": "2019-08-24T14:15:22Z",
+  "consent_rejected": "2019-08-24T14:15:22Z",
+  "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+  "last_login": "2019-08-24T14:15:22Z",
+  "send": {},
+  "ic_status": "string",
+  "enrolment_status": {},
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "locale": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true,
+  "joined_at": "2019-08-24T14:15:22Z"
+}
+```
+</details>
+
+<div align="right">
+
+[[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- vle_course_learner_update --->
+## 5.4 Update VLE Course Learner<a name="vle_course_learner_update"></a>
+API endpoint that updates a Learner from a Course in a VLE.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | <code>**PUT**</code>
+Path | /api/v2/vle/{parent_lookup_vle_id}/course/{parent_lookup_course_id}/learner/{id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>              
+            <tr>
+                <td><strong>parent_lookup_course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>              
+            <tr>
+                <td><strong>parent_lookup_vle_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (VLECourseLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Locale)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution</td>
+            </tr>
+            <tr>
+              <td>legal_admin</td>
+              <td>boolean (Inst admin)</td>
+              <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+            <tr>
+              <td>send_admin</td>
+              <td>boolean (Send admin)</td>
+              <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+              <td>data_admin</td>
+              <td>boolean (Data admin)</td>
+              <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td>id</td>
+              <td>integer (ID)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>string (Username)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (VLECourseLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_accepted</td>
+                <td>string &lt;date-time&gt; (Consent accepted)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_rejected</td>
+                <td>string &lt;date-time&gt; (Consent rejected)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>learner_id</td>
+                <td>string &lt;uuid&gt; (Learner ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_login</td>
+                <td>string &lt;date-time&gt; (Last login)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>send</td>
+                <td>object (Send)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>ic_status</td>
+                <td>string (IC Status)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>enrolment_status</td>
+                <td>object (Enrolment status)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Locale)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user</td>
+            </tr>
+            <tr>
+              <td>created_at</td>
+              <td>string &lt;date-time&gt; (Created at)</td>
+              <td>Date when user was created.</td>
+            </tr>
+            <tr>
+              <td>updated_at</td>
+              <td>string &lt;date-time&gt; (Updated at)</td>
+              <td>Last user modification.</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution</td>
+            </tr>
+            <tr>
+              <td>legal_admin</td>
+              <td>boolean (Inst admin)</td>
+              <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+            <tr>
+              <td>send_admin</td>
+              <td>boolean (Send admin)</td>
+              <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+              <td>data_admin</td>
+              <td>boolean (Data admin)</td>
+              <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+            <tr>
+              <td>joined_</td>
+              <td>string &lt;date-time&gt; (Joined at)</td>
+              <td>Date the learner joined for this institution.</td>
+            </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "consent": {
+    "version": "string"
+  },
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "locale": "string",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "username": "string",
+  "consent": {
+    "version": "string",
+    "status": "string"
+  },
+  "consent_accepted": "2019-08-24T14:15:22Z",
+  "consent_rejected": "2019-08-24T14:15:22Z",
+  "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+  "last_login": "2019-08-24T14:15:22Z",
+  "send": {},
+  "ic_status": "string",
+  "enrolment_status": {},
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "locale": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true,
+  "joined_at": "2019-08-24T14:15:22Z"
+}
+```
+</details>
+
+<div align="right">
+
+[[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- vle_course_learner_partial_update --->
+## 5.5 Partial Update VLE Course Learner <a name="vle_course_learner_partial_update"></a>
+API endpoint that updates a Learner from a Course in a VLE.
+
+### Request
+Concept | Data
+-- | --
+HTTP method | <code>**PATCH**</code>
+Path | /api/v2/vle/{parent_lookup_vle_id}/course/{parent_lookup_course_id}/learner/{id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>              
+            <tr>
+                <td><strong>parent_lookup_course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>              
+            <tr>
+                <td><strong>parent_lookup_vle_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (VLECourseLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Locale)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution</td>
+            </tr>
+            <tr>
+              <td>legal_admin</td>
+              <td>boolean (Inst admin)</td>
+              <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+            <tr>
+              <td>send_admin</td>
+              <td>boolean (Send admin)</td>
+              <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+              <td>data_admin</td>
+              <td>boolean (Data admin)</td>
+              <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td>id</td>
+              <td>integer (ID)</td>
+              <td>-</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>string (Username)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (VLECourseLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_accepted</td>
+                <td>string &lt;date-time&gt; (Consent accepted)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_rejected</td>
+                <td>string &lt;date-time&gt; (Consent rejected)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>learner_id</td>
+                <td>string &lt;uuid&gt; (Learner ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_login</td>
+                <td>string &lt;date-time&gt; (Last login)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>send</td>
+                <td>object (Send)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>ic_status</td>
+                <td>string (IC Status)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>enrolment_status</td>
+                <td>object (Enrolment status)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>string &lt;email&gt; (Email)<br>non-empty</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Locale)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user</td>
+            </tr>
+            <tr>
+              <td>created_at</td>
+              <td>string &lt;date-time&gt; (Created at)</td>
+              <td>Date when user was created.</td>
+            </tr>
+            <tr>
+              <td>updated_at</td>
+              <td>string &lt;date-time&gt; (Updated at)</td>
+              <td>Last user modification.</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution</td>
+            </tr>
+            <tr>
+              <td>legal_admin</td>
+              <td>boolean (Inst admin)</td>
+              <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+            <tr>
+              <td>send_admin</td>
+              <td>boolean (Send admin)</td>
+              <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+              <td>data_admin</td>
+              <td>boolean (Data admin)</td>
+              <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+            <tr>
+              <td>joined_</td>
+              <td>string &lt;date-time&gt; (Joined at)</td>
+              <td>Date the learner joined for this institution.</td>
+            </tr>
+      </tbody>
+    </table>
+  {{</ tab >}}
+{{</ tabs >}}
+
+#### Request sample
+```json
+{
+  "consent": {
+    "version": "string"
+  },
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "locale": "string",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true
+}
+```
+### Responses
+
+#### Response sample: 200
+
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+```json
+{
+  "id": 0,
+  "username": "string",
+  "consent": {
+    "version": "string",
+    "status": "string"
+  },
+  "consent_accepted": "2019-08-24T14:15:22Z",
+  "consent_rejected": "2019-08-24T14:15:22Z",
+  "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+  "last_login": "2019-08-24T14:15:22Z",
+  "send": {},
+  "ic_status": "string",
+  "enrolment_status": {},
+  "first_name": "string",
+  "last_name": "string",
+  "email": "user@example.com",
+  "locale": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true,
+  "joined_at": "2019-08-24T14:15:22Z"
+}
+```
+</details>
+
+<div align="right">
+
+[[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+
+<!--- vle_course_learner_delete --->
+## 5.6 Delete VLE Course Learner<a name="vle_course_learner_delete"></a>
+API endpoint for deleting a Learner from a Course in a VLE.
+
+### Request
+Concept | Data
+-- | --
+HTTP Method | <code>**DELETE**</code>
+Path | /api/v2/vle/{parent_lookup_vle_id}/course/{parent_lookup_course_id}/learner/{id}/
+Authorization | JWT
+Content Type | application/json
+
+### Parameters:
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Type</strong></td>
+              <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+              <td><strong>id</strong><br><code>required</code></td>
+              <td>string </td>
+              <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>              
+            <tr>
+                <td><strong>parent_lookup_vle_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+### Responses
+
+#### Response sample: 204
+<details>
+  <summary>204</summary>
+
+```json
+{
+}
+```
+</details>
+
+<div align="right">
+
+[[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+<br><br><br>
 
 # 6. VLE Course Activity Management <a name="vle_course_activity_management"></a>
 ---
