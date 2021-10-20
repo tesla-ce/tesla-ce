@@ -38,7 +38,7 @@ Set of API endpoints that allows access to VLE related models.
   1.2 GET: [Read VLE](#vle_read)<br>
   1.3 POST: [VLE Assesment](#vle_assessment): create a new assessment session.<br>
   1.4 POST: [VLE Launcher](#vle_launcher): create a new launcher url for VLE user.
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -153,7 +153,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_management) [[top page]](#table-of-content) 
 </div>
@@ -252,7 +252,7 @@ Content Type | application/json
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_management) [[top page]](#table-of-content) 
 </div>
@@ -415,7 +415,7 @@ Content Type | application/json
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_management) [[top page]](#table-of-content) 
 </div>
@@ -518,7 +518,7 @@ Content Type | application/json
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_management) [[top page]](#table-of-content) 
 </div>
@@ -542,7 +542,7 @@ Set of API endpoints that allow a course in a VLE to be viewed or edited.<br>
   2.4 PUT: [Update VLE Course](#vle_course_update)<br>
   2.5 PATCH: [Partial Update VLE Course](#vle_course_partial_update)<br>
   2.6 DELETE: [Delete VLE Course](#vle_course_delete)<br>
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -694,7 +694,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_management) [[top page]](#table-of-content) 
 </div>
@@ -871,7 +871,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_management) [[top page]](#table-of-content) 
 </div>
@@ -1003,7 +1003,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_management) [[top page]](#table-of-content) 
 </div>
@@ -1179,7 +1179,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_management) [[top page]](#table-of-content) 
 </div>
@@ -1355,7 +1355,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_management) [[top page]](#table-of-content) 
 </div>
@@ -1412,7 +1412,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_management) [[top page]](#table-of-content) 
 </div>
@@ -1428,7 +1428,7 @@ Set of API endpoints that allows access to VLE related models.
 
   3.1 GET: [List VLE Instrument](#vle_instrument_list)<br>
   3.2 GET: [Read VLE Instrument](#vle_instrument_read)<br>
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -1557,7 +1557,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -1715,7 +1715,7 @@ Content Type | application/json
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -1734,7 +1734,7 @@ Set of API endpoints that allows Instructor in a Course to be viewed or edited.<
   4.4 PUT: [Update VLE Course Instructor](#vle_course_instructor_update)<br>
   4.5 PATCH: [Partial Update VLE Course Instructor](#vle_course_instructor_partial_update)<br>
   4.6 DELETE: [Delete VLE Course Instructor](#vle_course_instructor_delete)
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -1890,7 +1890,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_instructor_management) [[top page]](#table-of-content) 
 </div>
@@ -2110,7 +2110,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_instructor_management) [[top page]](#table-of-content) 
 </div>
@@ -2272,7 +2272,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_instructor_management) [[top page]](#table-of-content) 
 </div>
@@ -2492,7 +2492,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_instructor_management) [[top page]](#table-of-content) 
 </div>
@@ -2712,7 +2712,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_instructor_management) [[top page]](#table-of-content) 
 </div>
@@ -2775,7 +2775,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_instructor_management) [[top page]](#table-of-content) 
 </div>
@@ -2794,7 +2794,7 @@ Set of API endpoints that allows learners in a course to be viewed or edited.<br
   5.4 PUT: [Update VLE Course Learner](#vle_course_learner_update)<br>
   5.5 PATCH: [Partial Update VLE Course Learner](#vle_course_learner_partial_update)<br>
   5.6 DELETE: [Delete VLE Course Learner](#vle_course_learner_delete)
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -2966,7 +2966,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -3246,7 +3246,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -3459,7 +3459,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -3738,7 +3738,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -4017,7 +4017,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -4080,7 +4080,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -4099,7 +4099,7 @@ Set of API endpoints that allows Activity in a Course to be viewed or edited.<br
   6.4 PUT: [Update VLE Course Activity](#vle_course_activity_update)<br>
   6.5 PATCH: [Partial Update VLE Course Activity](#vle_course_activity_partial_update)<br>
   6.6 DELETE: [Delete VLE Course Activity](#vle_course_activity_delete)
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -4274,7 +4274,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_management) [[top page]](#table-of-content) 
 </div>
@@ -4510,7 +4510,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_management) [[top page]](#table-of-content) 
 </div>
@@ -4676,7 +4676,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_management) [[top page]](#table-of-content) 
 </div>
@@ -4912,7 +4912,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_management) [[top page]](#table-of-content) 
 </div>
@@ -5148,7 +5148,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_management) [[top page]](#table-of-content) 
 </div>
@@ -5211,7 +5211,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_management) [[top page]](#table-of-content) 
 </div>
@@ -5226,7 +5226,7 @@ Set of API endpoints that Return the list of instruments (if any) waiting to pro
 
   7.1 GET: [List VLE Course Activity Attachment](#vle_course_activity_attachment_list)<br>
   7.2 POST: [Create VLE Course Activity Attachment](#vle_course_activity_attachment_create)<br>
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -5371,7 +5371,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_attachment_management) [[top page]](#table-of-content) 
 </div>
@@ -5583,7 +5583,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_attachment_management) [[top page]](#table-of-content) 
 </div>
@@ -5605,7 +5605,7 @@ Set of API endpoints that allows Activity instruments in a Course to be viewed o
   8.4 PUT: [Update VLE Course Activity Instrument](#vle_course_activity_instrument_update)<br>
   8.5 PATCH: [Partial Update VLE Course Activity Instrument](#vle_course_activity_instrument_partial_update)<br>
   8.6 DELETE: [Delete VLE Course Activity Instrument](#vle_course_activity_instrument_delete)
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -5787,7 +5787,7 @@ API endpoint for listing Activity's instruments from a Course in a VLE.
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -6022,7 +6022,7 @@ API endpoint for adding instrument to Activity for a Course in a VLE.
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -6202,7 +6202,7 @@ API endpoint for reading Activity's instrument from a Course in a VLE.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -6437,7 +6437,7 @@ API endpoint that updates an Activity's Instrument from a Course in a VLE.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -6672,7 +6672,7 @@ API endpoint that updates an Activity's Instrument from a Course in a VLE.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -6759,7 +6759,7 @@ API endpoint for deleting an Instrument from Activity.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_instrument_management) [[top page]](#table-of-content) 
 </div>
@@ -6776,7 +6776,7 @@ Set of API endpoints that allows access results for learners in an Activity.<br>
   9.2 GET: [Read VLE Course Activity Learner](#vle_course_activity_learner_read)<br>
   9.3 GET: [List VLE Course Activity Learner Request](#vle_course_activity_learner_request_list)<br>
   9.4 GET: [Read VLE Course Activity Learner Request](#vle_course_activity_learner_request_read)<br>
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -6954,7 +6954,7 @@ Set of API endpoints that allows access results for learners in an Activity.<br>
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -7100,7 +7100,7 @@ API endpoint for reading Activity's instrument from a Course in a VLE.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -7282,7 +7282,7 @@ API endpoint for listing Activity Learner Requests.<br>
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -7479,7 +7479,7 @@ API endpoint that allows Activity Learner Request to be viewed.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_learner_management) [[top page]](#table-of-content) 
 </div>
@@ -7494,7 +7494,7 @@ API endpoint that allows Activity Learner Request to be viewed.
   10.1 [List VLE Course Activity Report](#vle_course_activity_report_list)<br>
   10.2 [Read VLE Course Activity Report](#vle_course_activity_report_read)<br><br>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top page]](#table-of-content) 
 </div>
@@ -7661,7 +7661,7 @@ API endpoint for listing Activity Reports from a Course in a VLE.
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_report_management) [[top page]](#table-of-content) 
 </div>
@@ -7818,7 +7818,7 @@ Retrieves Activity Report from a Course in a VLE.
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#vle_course_activity_report_management) [[top page]](#table-of-content) 
 </div>

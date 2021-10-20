@@ -170,7 +170,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_management) [[top page]](#table-of-content) 
 </div>
@@ -361,7 +361,7 @@ Content Type | application/json
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_management) [[top page]](#table-of-content) 
 </div>
@@ -505,7 +505,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -671,7 +671,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -803,7 +803,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -924,7 +924,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -1090,7 +1090,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -1147,7 +1147,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -1251,7 +1251,7 @@ Get available samples for this enrolment model.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -1338,7 +1338,7 @@ Content Type | application/json
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -1443,7 +1443,7 @@ Get used samples for this enrolment model.
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_management) [[top page]](#table-of-content) 
 </div>
@@ -1597,7 +1597,7 @@ API endpoint for listing Provider Samples.
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_management) [[top page]](#table-of-content) 
 </div>
@@ -1714,7 +1714,7 @@ Retrieves information about Provider access enrolment samples.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_management) [[top page]](#table-of-content) 
 </div>
@@ -1887,7 +1887,7 @@ API endpoint for listing all Provider manage enrolment sample validation.
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_validation_management) [[top page]](#table-of-content) 
 </div>
@@ -2092,7 +2092,7 @@ API endpoint for creating new Provider Enrolment Sample Validation.
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_validation_management) [[top page]](#table-of-content) 
 </div>
@@ -2254,7 +2254,7 @@ API endpoint that allows Provider Enrolment Sample Validation information.
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_validation_management) [[top page]](#table-of-content) 
 </div>
@@ -2457,7 +2457,7 @@ API endpoint that allows Provider manage enrolment sample validation updates.
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_validation_management) [[top page]](#table-of-content) 
 </div>
@@ -2660,7 +2660,7 @@ API endpoint that updates Provider manage enrolment sample validation.
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_validation_management) [[top page]](#table-of-content) 
 </div>
@@ -2749,7 +2749,7 @@ API endpoint for deleting Provider Enrolment Sample Validation.
 </details>
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_validation_management) [[top page]](#table-of-content) 
 </div>
@@ -2949,7 +2949,7 @@ Change enrolment sample validation status.
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_enrolment_sample_validation_management) [[top page]](#table-of-content) 
 </div>
@@ -3092,7 +3092,7 @@ Content Type | application/json
 
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_notification_management) [[top page]](#table-of-content) 
 </div>
@@ -3228,7 +3228,7 @@ Content Type | application/json
   ````
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_notification_management) [[top page]](#table-of-content) 
 </div>
@@ -3343,7 +3343,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_notification_management) [[top page]](#table-of-content) 
 </div>
@@ -3479,7 +3479,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_notification_management) [[top page]](#table-of-content) 
 </div>
@@ -3615,7 +3615,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_notification_management) [[top page]](#table-of-content) 
 </div>
@@ -3671,7 +3671,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_notification_management) [[top page]](#table-of-content) 
 </div>
@@ -3816,7 +3816,7 @@ Content Type | application/json
 
 
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_request_management) [[top page]](#table-of-content) 
 </div>
@@ -3947,7 +3947,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_request_management) [[top page]](#table-of-content) 
 </div>
@@ -4116,7 +4116,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_request_management) [[top page]](#table-of-content) 
 </div>
@@ -4285,7 +4285,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_request_management) [[top page]](#table-of-content) 
 </div>
@@ -4452,7 +4452,7 @@ Content Type | application/json
 ```
 </details>
 
-<div align="right">
+<div style="text-align:right">
 
 [[top section]](#provider_request_management) [[top page]](#table-of-content) 
 </div>
