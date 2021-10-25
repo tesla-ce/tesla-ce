@@ -452,7 +452,7 @@ Content Type | application/json
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
                   <td>integer</td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td>next</td>
@@ -3040,7 +3040,7 @@ Content Type | application/json
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
                   <td>integer (ID) </td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td>next</td>
@@ -3759,7 +3759,7 @@ Content Type | application/json
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
                   <td>integer (ID) </td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td>next</td>

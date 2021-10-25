@@ -294,7 +294,7 @@ Content Type | application/json
               <tr>
                   <td>last_login &lt;date-time&gt;(Last login)</td>
                   <td>string </td>
-                  <td></td>
+                  <td>-</td>
               </tr>
               <tr>
                   <td>first_name</td>
@@ -764,7 +764,7 @@ Content Type | application/json
         <tr>
           <td><strong>id</td>
           <td>integer (ID) </td>
-          <td></td>
+          <td>-</td>
         </tr>
         <tr>
           <td><strong>username</strong><br><code>required</code></td>
@@ -774,7 +774,7 @@ Content Type | application/json
         <tr>
           <td>last_login</td>
           <td>string &lt;date-time&gr; (Last login)</td>
-          <td></td>
+          <td>-</td>
         </tr>
         <tr>
           <td>first_name</td>
@@ -1028,7 +1028,7 @@ Content Type | application/json
           <tr>
                   <td><strong>id</td>
                   <td>integer (ID) </td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td><strong>username</strong><br><code>required</code></td>
@@ -1038,7 +1038,7 @@ Content Type | application/json
               <tr>
                   <td>last_login</td>
                   <td>string &lt;date-time&gr; (Last login)</td>
-                  <td></td>
+                  <td>-</td>
               </tr>
           <tr>
               <td>first_name</td>
@@ -1299,7 +1299,7 @@ Content Type | application/json
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
                   <td>integer (ID) </td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td>next</td>
@@ -2232,7 +2232,7 @@ Content Type | application/json
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
                   <td>integer (ID) </td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td>next</td>
@@ -3204,7 +3204,7 @@ Content Type | application/json
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
                   <td>integer (ID) </td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td>next</td>

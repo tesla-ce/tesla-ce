@@ -636,7 +636,7 @@ Content Type | application/json
           <tr>
                   <td><strong>count</strong><br><code>required</code></td>
                   <td>integer </td>
-                  <td></td>
+                  <td>-</td>
           </tr>
           <tr>
               <td>next</td>
@@ -4203,7 +4203,7 @@ Content Type | application/json
           <tr>
             <td><strong>count</strong><br><code>required</code></td>
             <td>integer </td>
-            <td></td>
+            <td>-</td>
           </tr>
           <tr>
             <td>next</td>
@@ -5707,7 +5707,7 @@ API endpoint for listing Activity's instruments from a Course in a VLE.
           <tr>
             <td><strong>count</strong><br><code>required</code></td>
             <td>integer </td>
-            <td></td>
+            <td>-</td>
           </tr>
           <tr>
             <td>next</td>
@@ -6904,7 +6904,7 @@ Set of API endpoints that allows access results for learners in an Activity.<br>
           <tr>
             <td><strong>count</strong><br><code>required</code></td>
             <td>integer </td>
-            <td></td>
+            <td>-</td>
           </tr>
           <tr>
             <td>next</td>
