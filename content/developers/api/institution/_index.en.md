@@ -18,7 +18,7 @@ keywords: ["API","institution"]
 2. [Institution VLE Management](#institution_vle_management)
 3. [Institution Course Management](#institution_course_management)
 4. [Institution Group Management](#institution_group_management)
-5. [Institution Group Courses Management](#institution_group_courses_management)
+5. [Institution Group Courses Management](#institution_group_course_management)
 6. [Institution IC Management](#institution_ic_management)
 7. [Institution IC Document Management](#institution_ic_document_management)
 8. [Institution Instrument Management](#institution_instrument_management)
@@ -26,14 +26,15 @@ keywords: ["API","institution"]
 10. [Institution User Management](#institution_user_management)
 11. [Institution Instructor Managament](#institution_instructor_management)
 12. [Institution Learner Management](#institution_learner_management)
-13. Institution SEND
-14. Institution learner SEND
+13. [Institution SEND Management](#institution_send_management)
+14. [Institution learner SEND Management](#institution_learner_send_management)
 15. Institution Course Instructor
 16. Institution Course Learner
 17. Institution Course Activity
 18. Institution Course Activity Instrument
-19. Institution Course Activity Report
-20. Institution Course Activity Report Audit
+19. [Institution Course Activity Report Management](#institution_course_activity_report_management)
+20. [Institution Course Activity Report Request Management](#institution_course_activity_report_request_management)
+21. Institution Course Activity Report Audit
 
 
 </td></tr></table>
@@ -2962,16 +2963,16 @@ API endpoint that deletes Course Group.
 
 
 
-# 5. Institution Group Courses Management <a name="institution_group_courses_management"></a>
+# 5. Institution Group Courses Management <a name="institution_group_course_management"></a>
 ---
 Set of API endpoint that allows Courses in Course Groups to be added or deleted.
 
-  5.1 GET: [List Institution Group Courses](#institution_group_courses_list)<br>
-  5.2 POST: [Create Institution Group Courses](#institution_group_courses_create)<br>
-  5.3 GET: [Read Institution Group Courses](#institution_group_courses_read)<br>
-  5.4 PUT: [Update Institution Group Courses](#institution_group_courses_update)<br>
-  5.5 PATCH: [Partial Update Institution Group Courses](#institution_group_courses_partial_update)<br>
-  5.6 DEL: [Delete Institution Group Courses](#institution_group_courses_delete)<br>
+  5.1 GET: [List Institution Group Courses](#institution_group_course_list)<br>
+  5.2 POST: [Create Institution Group Courses](#institution_group_course_create)<br>
+  5.3 GET: [Read Institution Group Courses](#institution_group_course_read)<br>
+  5.4 PUT: [Update Institution Group Courses](#institution_group_course_update)<br>
+  5.5 PATCH: [Partial Update Institution Group Courses](#institution_group_course_partial_update)<br>
+  5.6 DEL: [Delete Institution Group Courses](#institution_group_course_delete)<br>
 <div style="text-align:right">
 
 [[top page]](#table-of-content) 
@@ -2979,8 +2980,8 @@ Set of API endpoint that allows Courses in Course Groups to be added or deleted.
 <br>
 
 
-<!--- institution_group_courses_list --->
-## 5.1 List Institution Group Courses <a name="institution_group_courses_list"></a>
+<!--- institution_group_course_list --->
+## 5.1 List Institution Group Courses <a name="institution_group_course_list"></a>
 
 API endpoint that lists Courses in a Course Group.
 
@@ -3119,13 +3120,13 @@ API endpoint that lists Courses in a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_courses_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
 </div>
 <br>
 
 
-<!--- institution_group_courses_create --->
-## 5.2 Create Institution Group Courses <a name="institution_group_courses_create"></a>
+<!--- institution_group_course_create --->
+## 5.2 Create Institution Group Courses <a name="institution_group_course_create"></a>
 
 API endpoint that adds Course to a Course Group.
 
@@ -3276,12 +3277,12 @@ API endpoint that adds Course to a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_courses_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
 </div>
 <br>
 
-<!--- institution_group_courses_read --->
-## 5.3 Read Institution Group Courses <a name="institution_group_courses_read"></a>
+<!--- institution_group_course_read --->
+## 5.3 Read Institution Group Courses <a name="institution_group_course_read"></a>
 
 API endpoint that allows access to Course data from a Course Group.
 
@@ -3427,13 +3428,13 @@ API endpoint that allows access to Course data from a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_courses_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
 </div>
 
 <br>
 
-<!--- institution_group_courses_update --->
-## 5.4 Update Institution Group Courses <a name="institution_group_courses_update"></a>
+<!--- institution_group_course_update --->
+## 5.4 Update Institution Group Courses <a name="institution_group_course_update"></a>
 
 API endpoint that updates Course data from a Course Group .
 
@@ -3593,12 +3594,12 @@ API endpoint that updates Course data from a Course Group .
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_courses_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
 </div>
 <br>
 
-<!--- institution_group_courses_partial_update --->
-## 5.5 Partial Update Institution Group Courses <a name="institution_group_courses_partial_update"></a>
+<!--- institution_group_course_partial_update --->
+## 5.5 Partial Update Institution Group Courses <a name="institution_group_course_partial_update"></a>
 
 API endpoint that updates Course data from a Course Group .
 
@@ -3757,12 +3758,12 @@ API endpoint that updates Course data from a Course Group .
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_courses_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
 </div>
 <br>
 
-<!--- institution_group_courses_delete --->
-## 5.6 Delete Institution Group Courses <a name="institution_group_courses_delete"></a>
+<!--- institution_group_course_delete --->
+## 5.6 Delete Institution Group Courses <a name="institution_group_course_delete"></a>
 
 API endpoint that deletes course in a Course Group.
 
@@ -3841,7 +3842,7 @@ API endpoint that deletes course in a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_courses_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
 </div>
 <br><br>
 
@@ -6392,7 +6393,7 @@ API endpoint that allows access to Institution UI data.
           </tr>
           <tr>
             <td><strong>results</strong><br><code>required</code></td>
-            <td>Array of objects (InstitutionVLE)</td>
+            <td>Array of objects (InstitutionUIOption)</td>
             <td>-</td>
           </tr>
        </tbody>
@@ -7244,7 +7245,7 @@ API endpoint that allows Institution Users to be listed.
           </tr>
           <tr>
             <td><strong>results</strong><br><code>required</code></td>
-            <td>Array of objects (InstitutionVLE)</td>
+            <td>Array of objects (InstitutionUser)</td>
             <td>-</td>
           </tr>
        </tbody>
@@ -8476,7 +8477,7 @@ API endpoint that allows Institution Instructors to be listed.
           </tr>
           <tr>
             <td><strong>results</strong><br><code>required</code></td>
-            <td>Array of objects (InstitutionVLE)</td>
+            <td>Array of objects (InstitutionInstructor)</td>
             <td>-</td>
           </tr>
        </tbody>
@@ -10998,7 +10999,2618 @@ API endpoint that deletes Institution Learner.
 <br><br>
 
 
-888<br><br><br><br>
+
+# 13. Institution SEND Management <a name="institution_send_management"></a>
+---
+Set of API endpoint that allows Institution SEND Category Data to be viewed or edited.
+
+  13.1 GET: [List Institution SEND](#institution_send_list)<br>
+  13.2 POST: [Create Institution SEND](#institution_send_create)<br>
+  13.3 GET: [Read Institution SEND](#institution_send_read)<br>
+  13.4 PUT: [Update Institution SEND](#institution_send_update)<br>
+  13.5 PATCH: [Partial Update Institution SEND](#institution_send_partial_update)<br>
+  13.6 DEL: [Delete Institution SEND](#institution_send_delete)<br>
+<div style="text-align:right">
+
+[[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_send_list --->
+## 13.1 List Institution SEND <a name="institution_send_list"></a>
+
+API endpoint that allows Institution SEND Categories to be listed.
+
+### Request
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/send/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td>string </td>
+                <td>A search term</td>
+            </tr>
+            <tr>
+                <td>ordering</td>
+                <td>string</td>
+                <td>Which field to use when ordering the results.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Number of results to return per page.</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>The initial index from which to return the results.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>count</strong><br><code>required</code></td>
+            <td>integer </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>previous</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>results</strong><br><code>required</code></td>
+            <td>Array of objects (InstitutionSENDCategory)</td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "institution": {
+        "id": 0,
+        "acronym": "string",
+        "name": "string",
+        "external_ic": true,
+        "mail_domain": "string",
+        "disable_vle_learner_creation": true,
+        "disable_vle_instructor_creation": true,
+        "disable_vle_user_creation": true,
+        "allow_learner_report": true,
+        "allow_learner_audit": true,
+        "allow_valid_audit": true,
+        "created_at": "2019-08-24T14:15:22Z",
+        "updated_at": "2019-08-24T14:15:22Z"
+      },
+      "data": {},
+      "description": "string",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    }
+  ]
+}
+ ````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_send_create --->
+## 13.2 Create Institution SEND <a name="institution_send_create"></a>
+
+API endpoint that creates Institution SEND Category.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>POST</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/send/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>object (InstitutionSENDCategoryData)</td>
+                <td>Default: {}</td>
+            </tr>
+            <tr>
+                <td><strong>description</strong><br><code>required</code></td>
+                <td>string (Description)<br>non-empty</td>
+                <td>Category description.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>object (InstitutionSENDCategoryData)</td>
+                <td>Default: {}</td>
+            </tr>
+            <tr>
+                <td><strong>description</strong><br><code>required</code></td>
+                <td>string (Description)<br>non-empty</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+`````json
+{
+  "institution": {
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true
+  },
+  "data": {},
+  "description": "string"
+}
+`````
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+````json
+{
+  "id": 0,
+  "institution": {
+    "id": 0,
+    "acronym": "string",
+    "name": "string",
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true,
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "data": {},
+  "description": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+````
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_send_read --->
+## 13.3 Read Institution SEND <a name="institution_send_read"></a>
+
+API endpoint that allows access to Institution SEND Category data.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>object (InstitutionSENDCategoryData)</td>
+                <td>Default: {}</td>
+            </tr>
+            <tr>
+                <td><strong>description</strong><br><code>required</code></td>
+                <td>string (Description)<br>non-empty</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "institution": {
+    "id": 0,
+    "acronym": "string",
+    "name": "string",
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true,
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "data": {},
+  "description": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+````
+</details>
+
+
+<div style="text-align:right">
+
+[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+</div>
+
+<br>
+
+<!--- institution_send_update --->
+## 13.4 Update Institution SEND <a name="institution_send_update"></a>
+
+API endpoint that updates Institution SEND Category data.
+
+### Request
+
+ <table style="table-layout: fixed; width: 100%">
+     <tbody>
+        <tr>
+            <td style="width:20%"><strong>Concept</strong></td>
+            <td><strong>Data</strong></td>
+        </tr>
+        <tr>
+            <td>HTTP Method</td>
+            <td><strong><code>PUT</code></strong></td>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>object (InstitutionSENDCategoryData)</td>
+                <td>Default: {}</td>
+            </tr>
+            <tr>
+                <td><strong>description</strong><br><code>required</code></td>
+                <td>string (Description)<br>non-empty</td>
+                <td>Category description.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>object (InstitutionSENDCategoryData)</td>
+                <td>Default: {}</td>
+            </tr>
+            <tr>
+                <td><strong>description</strong><br><code>required</code></td>
+                <td>string (Description)<br>non-empty</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+
+````json
+{
+  "institution": {
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true
+  },
+  "data": {},
+  "description": "string"
+}
+````
+        
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "institution": {
+    "id": 0,
+    "acronym": "string",
+    "name": "string",
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true,
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "data": {},
+  "description": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+<!--- institution_send_partial_update --->
+## 13.5 Partial Update Institution SEND <a name="institution_send_partial_update"></a>
+
+API endpoint that updates Institution SEND Category data.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>PATCH</code></strong></td>
+    </tr>
+        <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>object (InstitutionSENDCategoryData)</td>
+                <td>Default: {}</td>
+            </tr>
+            <tr>
+                <td><strong>description</strong><br><code>required</code></td>
+                <td>string (Description)<br>non-empty</td>
+                <td>Category description.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>object (InstitutionSENDCategoryData)</td>
+                <td>Default: {}</td>
+            </tr>
+            <tr>
+                <td><strong>description</strong><br><code>required</code></td>
+                <td>string (Description)<br>non-empty</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+
+````json
+{
+  "institution": {
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true
+  },
+  "data": {},
+  "description": "string"
+}
+````
+        
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "institution": {
+    "id": 0,
+    "acronym": "string",
+    "name": "string",
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true,
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "data": {},
+  "description": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z"
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+<!--- institution_send_delete --->
+## 13.6 Delete Institution SEND <a name="institution_send_delete"></a>
+
+API endpoint that deletes Institution SEND Category.
+
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>DELETE</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>204</summary>
+
+  ````json
+{
+}
+````
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+</div>
+<br><br>
+
+
+
+
+
+# 14. Institution Learner SEND Management <a name="institution_learner_send_management"></a>
+---
+Set of API endpoint that allows Institution Learner SEND Data to be viewed or edited.
+
+  14.1 GET: [List Institution Learner SEND](#institution_learner_send_list)<br>
+  14.2 POST: [Create Institution Learner SEND](#institution_learner_send_create)<br>
+  14.3 GET: [Read Institution Learner SEND](#institution_learner_send_read)<br>
+  14.4 PUT: [Update Institution Learner SEND](#institution_learner_send_update)<br>
+  14.5 PATCH: [Partial Update Institution Learner SEND](#institution_learner_send_partial_update)<br>
+  14.6 DEL: [Delete Institution Learner SEND](#institution_learner_send_delete)<br>
+<div style="text-align:right">
+
+[[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_learner_send_list --->
+## 14.1 List Institution Learner SEND <a name="institution_learner_send_list"></a>
+
+API endpoint that allows Institution Learner SEND to be listed.
+
+### Request
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td>string </td>
+                <td>A search term</td>
+            </tr>
+            <tr>
+                <td>ordering</td>
+                <td>string</td>
+                <td>Which field to use when ordering the results.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Number of results to return per page.</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>The initial index from which to return the results.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>count</strong><br><code>required</code></td>
+            <td>integer </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>previous</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>results</strong><br><code>required</code></td>
+            <td>Array of objects (InstitutionSENDLearner)</td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "expires_at": "2019-08-24T14:15:22Z",
+      "category": 0,
+      "info": {
+        "id": 0,
+        "institution": {
+          "id": 0,
+          "acronym": "string",
+          "name": "string",
+          "external_ic": true,
+          "mail_domain": "string",
+          "disable_vle_learner_creation": true,
+          "disable_vle_instructor_creation": true,
+          "disable_vle_user_creation": true,
+          "allow_learner_report": true,
+          "allow_learner_audit": true,
+          "allow_valid_audit": true,
+          "created_at": "2019-08-24T14:15:22Z",
+          "updated_at": "2019-08-24T14:15:22Z"
+        },
+        "data": {},
+        "description": "string",
+        "created_at": "2019-08-24T14:15:22Z",
+        "updated_at": "2019-08-24T14:15:22Z"
+      }
+    }
+  ]
+}
+ ````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_learner_send_create --->
+## 14.2 Create Institution Learner SEND <a name="institution_learner_send_create"></a>
+
+API endpoint that creates Institution Learner SEND.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>POST</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>expires_at</td>
+                <td>string &lt;date-time&gt; (Expires at)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>category</strong><br><code>required</code></td>
+                <td>integer (Category)</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>object (InstitutionSENDCategory)</td>
+                <td>-</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>expires_at</td>
+                <td>string &lt;date-time&gt; (Expires at)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>category</strong><br><code>required</code></td>
+                <td>integer (Category)</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>object (InstitutionSENDCategory)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+`````json
+{
+  "expires_at": "2019-08-24T14:15:22Z",
+  "category": 0,
+  "info": {
+    "institution": {
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true
+    },
+    "data": {},
+    "description": "string"
+  }
+}
+`````
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+````json
+{
+  "id": 0,
+  "expires_at": "2019-08-24T14:15:22Z",
+  "category": 0,
+  "info": {
+    "id": 0,
+    "institution": {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    },
+    "data": {},
+    "description": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  }
+}
+````
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_learner_send_read --->
+## 14.3 Read Institution Learner SEND <a name="institution_learner_send_read"></a>
+
+API endpoint that allows access to Institution Learner SEND data.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>expires_at</td>
+                <td>string &lt;date-time&gt; (Expires at)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>category</strong><br><code>required</code></td>
+                <td>integer (Category)</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>object (InstitutionSENDCategory)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "expires_at": "2019-08-24T14:15:22Z",
+  "category": 0,
+  "info": {
+    "id": 0,
+    "institution": {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    },
+    "data": {},
+    "description": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  }
+}
+````
+</details>
+
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+</div>
+
+<br>
+
+<!--- institution_learner_send_update --->
+## 14.4 Update Institution Learner SEND <a name="institution_learner_send_update"></a>
+
+API endpoint that updates Institution Learner SEND data.
+
+### Request
+
+ <table style="table-layout: fixed; width: 100%">
+     <tbody>
+        <tr>
+            <td style="width:20%"><strong>Concept</strong></td>
+            <td><strong>Data</strong></td>
+        </tr>
+        <tr>
+            <td>HTTP Method</td>
+            <td><strong><code>PUT</code></strong></td>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>expires_at</td>
+                <td>string &lt;date-time&gt; (Expires at)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>category</strong><br><code>required</code></td>
+                <td>integer (Category)</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>object (InstitutionSENDCategory)</td>
+                <td>-</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>expires_at</td>
+                <td>string &lt;date-time&gt; (Expires at)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>category</strong><br><code>required</code></td>
+                <td>integer (Category)</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>object (InstitutionSENDCategory)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+
+````json
+{
+  "expires_at": "2019-08-24T14:15:22Z",
+  "category": 0,
+  "info": {
+    "institution": {
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true
+    },
+    "data": {},
+    "description": "string"
+  }
+}
+````
+        
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "expires_at": "2019-08-24T14:15:22Z",
+  "category": 0,
+  "info": {
+    "id": 0,
+    "institution": {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    },
+    "data": {},
+    "description": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  }
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+<!--- institution_learner_send_partial_update --->
+## 14.5 Partial Update Institution Learner SEND <a name="institution_learner_send_partial_update"></a>
+
+API endpoint that updates Institution Learner SEND data.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>PATCH</code></strong></td>
+    </tr>
+        <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>expires_at</td>
+                <td>string &lt;date-time&gt; (Expires at)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>category</strong><br><code>required</code></td>
+                <td>integer (Category)</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>object (InstitutionSENDCategory)</td>
+                <td>-</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>expires_at</td>
+                <td>string &lt;date-time&gt; (Expires at)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>category</strong><br><code>required</code></td>
+                <td>integer (Category)</td>
+                <td>Category description.</td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>object (InstitutionSENDCategory)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+
+````json
+{
+  "expires_at": "2019-08-24T14:15:22Z",
+  "category": 0,
+  "info": {
+    "institution": {
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true
+    },
+    "data": {},
+    "description": "string"
+  }
+}
+````
+        
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "expires_at": "2019-08-24T14:15:22Z",
+  "category": 0,
+  "info": {
+    "id": 0,
+    "institution": {
+      "id": 0,
+      "acronym": "string",
+      "name": "string",
+      "external_ic": true,
+      "mail_domain": "string",
+      "disable_vle_learner_creation": true,
+      "disable_vle_instructor_creation": true,
+      "disable_vle_user_creation": true,
+      "allow_learner_report": true,
+      "allow_learner_audit": true,
+      "allow_valid_audit": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+    },
+    "data": {},
+    "description": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  }
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+<!--- institution_learner_send_delete --->
+## 14.6 Delete Institution Learner SEND <a name="institution_learner_send_delete"></a>
+
+API endpoint that deletes Institution Learner SEND.
+
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>DELETE</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>204</summary>
+
+  ````json
+{
+}
+````
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+</div>
+<br><br>
+
+
+
+
+
+# 19. Institution Course Activity Report Management <a name="institution_course_activity_report_management"></a>
+---
+Set of API endpoint that allows view Activity Reports from a Course.
+
+  19.1 GET: [List Institution Course Activity Report](#institution_course_activity_report_list)<br>
+  19.2 GET: [Read Institution Course Activity Report](#institution_course_activity_report_read)<br>
+<div style="text-align:right">
+
+[[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_course_activity_report_list --->
+## 19.1 List Institution Course Activity Report <a name="institution_course_activity_report_list"></a>
+
+API endpoint that lists Activity Reports in a Course.
+
+### Request
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr> 
+            <tr>
+                <td>search</td>
+                <td>string</td>
+                <td>A search term.</td>
+            </tr>
+            <tr>
+                <td>ordering</td>
+                <td>string</td>
+                <td>Which field to use when ordering the results.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Number of results to return per page.</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>The initial index from which to return the results.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>count</strong><br><code>required</code></td>
+            <td>integer </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>previous</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>results</strong><br><code>required</code></td>
+            <td>Array of objects (InstitutionCourseActivityReport)</td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "learner": {
+        "id": 0,
+        "uid": "string",
+        "first_name": "string",
+        "last_name": "string",
+        "email": "user@example.com",
+        "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7"
+      },
+      "detail": [
+        {
+          "instrument": "string",
+          "enrolment": 0,
+          "confidence": 0,
+          "result": 0,
+          "identity_level": 0,
+          "content_level": 0,
+          "integrity_level": 0,
+          "instrument_id": 0
+        }
+      ],
+      "identity_level": 0,
+      "content_level": 0,
+      "integrity_level": 0
+    }
+  ]
+}
+ ````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_report_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+
+
+<!--- institution_course_activity_report_read --->
+## 19.2 Read Institution Course Activity Report <a name="institution_course_activity_report_read"></a>
+
+API endpoint that allows view Activity Reports data from a Course.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter. A unique integer value identifying this Report Activity.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr> 
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>learner</strong><br><code>required</code></td>
+                <td>object (InstitutionCourseActivityReportLearner)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>detail</strong><br><code>required</code></td>
+                <td>Array of objects (InstitutionCourseActivityReportDetail)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>identity_level</td>
+                <td>integer (Identity Level)<br>Enum: 0, 1, 2, 3, 4</td>
+                <td>Alert level for learner identity.</td>
+            </tr>
+            <tr>
+                <td>content_level</td>
+                <td>integer (Content Level)<br>Enum: 0, 1, 2, 3, 4</td>
+                <td>Alert level for content authorship.</td>
+            </tr>
+            <tr>
+                <td>integrity_level</td>
+                <td>integer (Integrity Level)<br>Enum: 0, 1, 2, 3, 4</td>
+                <td>Alert level for system integrity.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "learner": {
+    "id": 0,
+    "uid": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "email": "user@example.com",
+    "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7"
+  },
+  "detail": [
+    {
+      "instrument": "string",
+      "enrolment": 0,
+      "confidence": 0,
+      "result": 0,
+      "identity_level": 0,
+      "content_level": 0,
+      "integrity_level": 0,
+      "instrument_id": 0
+    }
+  ],
+  "identity_level": 0,
+  "content_level": 0,
+  "integrity_level": 0
+}
+````
+</details>
+
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_report_management) [[top page]](#table-of-content) 
+</div>
+<br><br>
+
+
+
+
+# 20. Institution Course Activity Report Request Management <a name="institution_course_activity_report_request_management"></a>
+---
+Set of API endpoint that allows view Activity Reports Requests in a Course.
+
+  20.1 GET: [List Institution Course Activity Report Request](#institution_course_activity_report_request_list)<br>
+  20.2 GET: [Read Institution Course Activity Report Request](#institution_course_activity_report_request_read)<br>
+<div style="text-align:right">
+
+[[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_course_activity_report_request_list --->
+## 20.1 List Institution Course Activity Report Request <a name="institution_course_activity_report_request_list"></a>
+
+API endpoint that lists Activity Reports Requests in a Course.
+
+### Request
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/{parent_lookup_id}/request/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr> 
+            <tr>
+                <td>search</td>
+                <td>string</td>
+                <td>A search term.</td>
+            </tr>
+            <tr>
+                <td>ordering</td>
+                <td>string</td>
+                <td>Which field to use when ordering the results.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Number of results to return per page.</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>The initial index from which to return the results.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>count</strong><br><code>required</code></td>
+            <td>integer </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>previous</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>results</strong><br><code>required</code></td>
+            <td>Array of objects (InstitutionCourseActivityReportRequest)</td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "result": [
+        {
+          "id": 0,
+          "status": 0,
+          "result": 0,
+          "error_message": "string",
+          "code": 0,
+          "audit": "http://example.com",
+          "created_at": "2019-08-24T14:15:22Z",
+          "updated_at": "2019-08-24T14:15:22Z",
+          "request": 0,
+          "instrument": 0,
+          "message_code": "string"
+        }
+      ],
+      "status": 0,
+      "data": "http://example.com",
+      "error_message": "string",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "learner": "string",
+      "activity": 0,
+      "session": 0,
+      "message_code": "string",
+      "instruments": [
+        0
+      ]
+    }
+  ]
+}
+ ````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_report_request_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+
+
+<!--- institution_course_activity_report_request_read --->
+## 20.2 Read Institution Course Activity Report Request <a name="institution_course_activity_report_request_read"></a>
+
+API endpoint that allows view Activity Reports Requests data from a Course.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/{parent_lookup_id}/request/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter. A unique integer value identifying this Report Activity.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr> 
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>result</strong><br><code>required</code></td>
+                <td>Array of objects (InstitutionCourseActivityReportRequestResult)</td>
+                <td>-</td>
+            </tr>
+           <tr>
+                <td>status</td>
+                <td>integer (Status)<br>Enum: 0, 1, 2, 3, 4, 5, 6</td>
+                <td>Status for this request.</td>
+            </tr>
+           <tr>
+                <td>data</td>
+                <td>string &lt;uri&gt; (Data)</td>
+                <td>Data path on storage.</td>
+            </tr>
+           <tr>
+                <td>error_message</td>
+                <td>string (Error message)<br>non-empty<br>Nullable.</td>
+                <td>Error message when status is error.</td>
+            </tr>
+           <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+           <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>   
+            <tr>
+                <td><strong>learner</strong><br><code>required</code></td>
+                <td>string (Learner)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>activity</td>
+                <td>integer (Activity)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>session</td>
+                <td>integer (Session)<br>Nullable.</td>
+                <td>Assessment session for this request</td>
+            </tr>
+            <tr>
+                <td>message_code</td>
+                <td>string (Message code)<br>Nullable.</td>
+                <td>Related message code.</td>
+            </tr>
+            <tr>
+                <td><strong>instruments</strong><br><code>required</code></td>
+                <td>Array of integers</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "result": [
+    {
+      "id": 0,
+      "status": 0,
+      "result": 0,
+      "error_message": "string",
+      "code": 0,
+      "audit": "http://example.com",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "request": 0,
+      "instrument": 0,
+      "message_code": "string"
+    }
+  ],
+  "status": 0,
+  "data": "http://example.com",
+  "error_message": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "learner": "string",
+  "activity": 0,
+  "session": 0,
+  "message_code": "string",
+  "instruments": [
+    0
+  ]
+}
+````
+</details>
+
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_report_request_management) [[top page]](#table-of-content) 
+</div>
+<br><br>
+
+
+
+
+
+888
+
+<br><br><br><br>
 
 ----
 ----
