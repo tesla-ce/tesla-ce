@@ -34,7 +34,7 @@ keywords: ["API","institution"]
 18. Institution Course Activity Instrument
 19. [Institution Course Activity Report Management](#institution_course_activity_report_management)
 20. [Institution Course Activity Report Request Management](#institution_course_activity_report_request_management)
-21. Institution Course Activity Report Audit
+21. [Institution Course Activity Report Audit Management](#institution_course_activity_report_audit_management)
 
 
 </td></tr></table>
@@ -12867,6 +12867,8 @@ API endpoint that deletes Institution Learner SEND.
 
 
 
+888
+
 
 
 # 19. Institution Course Activity Report Management <a name="institution_course_activity_report_management"></a>
@@ -13607,8 +13609,356 @@ API endpoint that allows view Activity Reports Requests data from a Course.
 
 
 
+# 21. Institution Course Activity Report Audit Management <a name="institution_course_activity_report_audit_management"></a>
+---
+Set of API endpoint that allows view Activity Report Audit data.
 
-888
+  21.1 GET: [List Institution Course Activity Report Audit](#institution_course_activity_report_audit_list)<br>
+  21.2 GET: [Read Institution Course Activity Report Audit](#institution_course_activity_report_audit_read)<br>
+<div style="text-align:right">
+
+[[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_course_activity_report_audit_list --->
+## 21.1 List Institution Course Activity Report Audit <a name="institution_course_activity_report_audit_list"></a>
+
+API endpoint that lists Activity Report Audit data.
+
+### Request
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_report__activity__vle__institution_id}/course/{parent_lookup_report__activity__course_id}/activity/{parent_lookup_report__activity_id}/report/{parent_lookup_report_id}/audit/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report__activity_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report__activity__course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report__activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Number of results to return per page.</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>The initial index from which to return the results.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>count</strong><br><code>required</code></td>
+            <td>integer </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>previous</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>results</strong><br><code>required</code></td>
+            <td>Array of objects (InstitutionCourseActivityReportAudit)</td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "enrolment": -32768,
+      "confidence": -32768,
+      "result": -32768,
+      "identity_level": 0,
+      "content_level": 0,
+      "integrity_level": 0,
+      "audit_data": "http://example.com",
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "report": 0,
+      "instrument": 0
+    }
+  ]
+}
+ ````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_report_audit_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+
+
+<!--- institution_course_activity_report_audit_read --->
+## 21.2 Read Institution Course Activity Report Audit <a name="institution_course_activity_report_audit_read"></a>
+
+API endpoint that allows view Activity Reports Audits data from a Course.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_report__activity__vle__institution_id}/course/{parent_lookup_report__activity__course_id}/activity/{parent_lookup_report__activity_id}/report/{parent_lookup_report_id}/audit/{instrument_id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>instrument_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter. </td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report__activity_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report__activity__course_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_report__activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>enrolment</strong><br><code>required</code></td>
+                <td>integer (Enrolment)<br>[ -32768 .. 32767 ]</td>
+                <td>Enrolment percentage.</td>
+            </tr>
+            <tr>
+                <td><strong>confidence</strong><br><code>required</code></td>
+                <td>integer (Confidence)<br>[ -32768 .. 32767 ]</td>
+                <td>Confidence percentage.</td>
+            </tr>
+            <tr>
+                <td><strong>result</strong><br><code>required</code></td>
+                <td>integer (Result)<br>[ -32768 .. 32767 ]</td>
+                <td>Result percentage.</td>
+            </tr>
+           <tr>
+                <td>identity_level</td>
+                <td>integer (Identity level)<br>Enum: 0, 1, 2, 3, 4</td>
+                <td>Alert level for learner identity.</td>
+            </tr>
+           <tr>
+                <td>content_level</td>
+                <td>integer (Content level)<br>Enum: 0, 1, 2, 3, 4</td>
+                <td>Alert level for content authorship.</td>
+            </tr>
+           <tr>
+                <td>integrity_level</td>
+                <td>integer (Integrity level)<br>Enum: 0, 1, 2, 3, 4</td>
+                <td>Alert level for system integrity.</td>
+            </tr>
+           <tr>
+                <td>audit_data</td>
+                <td>string &lt;uri&gt; (Audit data)<br>Nullable.</td>
+                <td>Path to the audit data.</td>
+            </tr>
+           <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+           <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>   
+            <tr>
+                <td><strong>report</strong><br><code>required</code></td>
+                <td>integer (Report)</td>
+                <td>Related Activity Report.</td>
+            </tr>
+            <tr>
+                <td><strong>instrument</strong><br><code>required</code></td>
+                <td>integer (Instrument)</td>
+                <td>Instrument related to this report detail.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "enrolment": -32768,
+  "confidence": -32768,
+  "result": -32768,
+  "identity_level": 0,
+  "content_level": 0,
+  "integrity_level": 0,
+  "audit_data": "http://example.com",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "report": 0,
+  "instrument": 0
+}
+````
+</details>
+
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_report_audit_management) [[top page]](#table-of-content) 
+</div>
+<br><br>
+
+
+
 
 <br><br><br><br>
 
