@@ -185,7 +185,7 @@ We&rsquo;re working on it!</p></div>
 <li><a href=#institution_vle_management>Institution VLE Management</a></li>
 <li><a href=#institution_course_management>Institution Course Management</a></li>
 <li><a href=#institution_group_management>Institution Group Management</a></li>
-<li><a href=#institution_group_courses_management>Institution Group Courses Management</a></li>
+<li><a href=#institution_group_course_management>Institution Group Courses Management</a></li>
 <li><a href=#institution_ic_management>Institution IC Management</a></li>
 <li><a href=#institution_ic_document_management>Institution IC Document Management</a></li>
 <li><a href=#institution_instrument_management>Institution Instrument Management</a></li>
@@ -193,13 +193,14 @@ We&rsquo;re working on it!</p></div>
 <li><a href=#institution_user_management>Institution User Management</a></li>
 <li><a href=#institution_instructor_management>Institution Instructor Managament</a></li>
 <li><a href=#institution_learner_management>Institution Learner Management</a></li>
-<li>Institution SEND</li>
-<li>Institution learner SEND</li>
+<li><a href=#institution_send_management>Institution SEND Management</a></li>
+<li><a href=#institution_learner_send_management>Institution learner SEND Management</a></li>
 <li>Institution Course Instructor</li>
 <li>Institution Course Learner</li>
 <li>Institution Course Activity</li>
 <li>Institution Course Activity Instrument</li>
-<li>Institution Course Activity Report</li>
+<li><a href=#institution_course_activity_report_management>Institution Course Activity Report Management</a></li>
+<li><a href=#institution_course_activity_report_request_management>Institution Course Activity Report Request Management</a></li>
 <li>Institution Course Activity Report Audit</li>
 </ol>
 </td></tr></table>
@@ -2818,20 +2819,20 @@ Request parameters.<br>
 <p><a href=#institution_group_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br><br>
-<h1 id=5-institution-group-courses-management-a-nameinstitution_group_courses_managementa>5. Institution Group Courses Management <a name=institution_group_courses_management></a></h1>
+<h1 id=5-institution-group-courses-management-a-nameinstitution_group_course_managementa>5. Institution Group Courses Management <a name=institution_group_course_management></a></h1>
 <hr>
 <p>Set of API endpoint that allows Courses in Course Groups to be added or deleted.</p>
-<p>5.1 GET: <a href=#institution_group_courses_list>List Institution Group Courses</a><br>
-5.2 POST: <a href=#institution_group_courses_create>Create Institution Group Courses</a><br>
-5.3 GET: <a href=#institution_group_courses_read>Read Institution Group Courses</a><br>
-5.4 PUT: <a href=#institution_group_courses_update>Update Institution Group Courses</a><br>
-5.5 PATCH: <a href=#institution_group_courses_partial_update>Partial Update Institution Group Courses</a><br>
-5.6 DEL: <a href=#institution_group_courses_delete>Delete Institution Group Courses</a><br></p>
+<p>5.1 GET: <a href=#institution_group_course_list>List Institution Group Courses</a><br>
+5.2 POST: <a href=#institution_group_course_create>Create Institution Group Courses</a><br>
+5.3 GET: <a href=#institution_group_course_read>Read Institution Group Courses</a><br>
+5.4 PUT: <a href=#institution_group_course_update>Update Institution Group Courses</a><br>
+5.5 PATCH: <a href=#institution_group_course_partial_update>Partial Update Institution Group Courses</a><br>
+5.6 DEL: <a href=#institution_group_course_delete>Delete Institution Group Courses</a><br></p>
 <div style=text-align:right>
 <p><a href=#table-of-content>[top page]</a></p>
 </div>
 <br>
-<h2 id=51-list-institution-group-courses-a-nameinstitution_group_courses_lista>5.1 List Institution Group Courses <a name=institution_group_courses_list></a></h2>
+<h2 id=51-list-institution-group-courses-a-nameinstitution_group_course_lista>5.1 List Institution Group Courses <a name=institution_group_course_list></a></h2>
 <p>API endpoint that lists Courses in a Course Group.</p>
 <h3 id=request-18>Request</h3>
 <table style=table-layout:fixed;width:100%>
@@ -2957,10 +2958,10 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#institution_group_courses_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#institution_group_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br>
-<h2 id=52-create-institution-group-courses-a-nameinstitution_group_courses_createa>5.2 Create Institution Group Courses <a name=institution_group_courses_create></a></h2>
+<h2 id=52-create-institution-group-courses-a-nameinstitution_group_course_createa>5.2 Create Institution Group Courses <a name=institution_group_course_create></a></h2>
 <p>API endpoint that adds Course to a Course Group.</p>
 <h3 id=request-19>Request</h3>
 <table style=table-layout:fixed;width:100%>
@@ -3098,10 +3099,10 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#institution_group_courses_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#institution_group_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br>
-<h2 id=53-read-institution-group-courses-a-nameinstitution_group_courses_reada>5.3 Read Institution Group Courses <a name=institution_group_courses_read></a></h2>
+<h2 id=53-read-institution-group-courses-a-nameinstitution_group_course_reada>5.3 Read Institution Group Courses <a name=institution_group_course_read></a></h2>
 <p>API endpoint that allows access to Course data from a Course Group.</p>
 <h3 id=request-20>Request</h3>
 <table style=table-layout:fixed;width:100%>
@@ -3235,10 +3236,10 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#institution_group_courses_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#institution_group_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br>
-<h2 id=54-update-institution-group-courses-a-nameinstitution_group_courses_updatea>5.4 Update Institution Group Courses <a name=institution_group_courses_update></a></h2>
+<h2 id=54-update-institution-group-courses-a-nameinstitution_group_course_updatea>5.4 Update Institution Group Courses <a name=institution_group_course_update></a></h2>
 <p>API endpoint that updates Course data from a Course Group .</p>
 <h3 id=request-21>Request</h3>
 <table style=table-layout:fixed;width:100%>
@@ -3381,10 +3382,10 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#institution_group_courses_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#institution_group_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br>
-<h2 id=55-partial-update-institution-group-courses-a-nameinstitution_group_courses_partial_updatea>5.5 Partial Update Institution Group Courses <a name=institution_group_courses_partial_update></a></h2>
+<h2 id=55-partial-update-institution-group-courses-a-nameinstitution_group_course_partial_updatea>5.5 Partial Update Institution Group Courses <a name=institution_group_course_partial_update></a></h2>
 <p>API endpoint that updates Course data from a Course Group .</p>
 <h3 id=request-22>Request</h3>
 <table style=table-layout:fixed;width:100%>
@@ -3527,10 +3528,10 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#institution_group_courses_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#institution_group_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br>
-<h2 id=56-delete-institution-group-courses-a-nameinstitution_group_courses_deletea>5.6 Delete Institution Group Courses <a name=institution_group_courses_delete></a></h2>
+<h2 id=56-delete-institution-group-courses-a-nameinstitution_group_course_deletea>5.6 Delete Institution Group Courses <a name=institution_group_course_delete></a></h2>
 <p>API endpoint that deletes course in a Course Group.</p>
 <h3 id=request-23>Request</h3>
 <table style=table-layout:fixed;width:100%>
@@ -3598,7 +3599,7 @@ Request parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#institution_group_courses_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#institution_group_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br><br>
 <h1 id=6-institution-ic-management-a-nameinstitution_ic_managementa>6. Institution IC Management <a name=institution_ic_management></a></h1>
@@ -5874,7 +5875,7 @@ Response parameters.<br>
 </tr>
 <tr>
 <td><strong>results</strong><br><code>required</code></td>
-<td>Array of objects (InstitutionVLE)</td>
+<td>Array of objects (InstitutionUIOption)</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -6623,7 +6624,7 @@ Response parameters.<br>
 </tr>
 <tr>
 <td><strong>results</strong><br><code>required</code></td>
-<td>Array of objects (InstitutionVLE)</td>
+<td>Array of objects (InstitutionUser)</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -7753,7 +7754,7 @@ Response parameters.<br>
 </tr>
 <tr>
 <td><strong>results</strong><br><code>required</code></td>
-<td>Array of objects (InstitutionVLE)</td>
+<td>Array of objects (InstitutionInstructor)</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -10079,7 +10080,2327 @@ Request parameters.<br>
 <p><a href=#institution_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
 </div>
 <br><br>
-<p>888<br><br><br><br></p>
+<h1 id=13-institution-send-management-a-nameinstitution_send_managementa>13. Institution SEND Management <a name=institution_send_management></a></h1>
+<hr>
+<p>Set of API endpoint that allows Institution SEND Category Data to be viewed or edited.</p>
+<p>13.1 GET: <a href=#institution_send_list>List Institution SEND</a><br>
+13.2 POST: <a href=#institution_send_create>Create Institution SEND</a><br>
+13.3 GET: <a href=#institution_send_read>Read Institution SEND</a><br>
+13.4 PUT: <a href=#institution_send_update>Update Institution SEND</a><br>
+13.5 PATCH: <a href=#institution_send_partial_update>Partial Update Institution SEND</a><br>
+13.6 DEL: <a href=#institution_send_delete>Delete Institution SEND</a><br></p>
+<div style=text-align:right>
+<p><a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=131-list-institution-send-a-nameinstitution_send_lista>13.1 List Institution SEND <a name=institution_send_list></a></h2>
+<p>API endpoint that allows Institution SEND Categories to be listed.</p>
+<h3 id=request-63>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_institution_id}/send/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-63>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string </td>
+<td>A search term</td>
+</tr>
+<tr>
+<td>ordering</td>
+<td>string</td>
+<td>Which field to use when ordering the results.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>Number of results to return per page.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td>The initial index from which to return the results.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>count</strong><br><code>required</code></td>
+<td>integer </td>
+<td>-</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>results</strong><br><code>required</code></td>
+<td>Array of objects (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-63>Responses</h3>
+<h4 id=response-sample-63>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+<span style=color:#f92672>&#34;count&#34;</span>: <span style=color:#ae81ff>0</span>,
+<span style=color:#f92672>&#34;next&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;previous&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;results&#34;</span>: [
+  {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  }
+]
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=132-create-institution-send-a-nameinstitution_send_createa>13.2 Create Institution SEND <a name=institution_send_create></a></h2>
+<p>API endpoint that creates Institution SEND Category.</p>
+<h3 id=request-64>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>POST</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_institution_id}/send/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-64>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>object (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object (InstitutionSENDCategoryData)</td>
+<td>Default: {}</td>
+</tr>
+<tr>
+<td><strong>description</strong><br><code>required</code></td>
+<td>string (Description)<br>non-empty</td>
+<td>Category description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>object (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object (InstitutionSENDCategoryData)</td>
+<td>Default: {}</td>
+</tr>
+<tr>
+<td><strong>description</strong><br><code>required</code></td>
+<td>string (Description)<br>non-empty</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string &lt;date-time> (Created at)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>string &lt;date-time> (Updated at)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-29>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;institution&#34;</span>: {
+    <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>
+  },
+  <span style=color:#f92672>&#34;data&#34;</span>: {},
+  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div><h3 id=responses-64>Responses</h3>
+<h4 id=response-sample-64>Response sample</h4>
+<details>
+<summary>201</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;institution&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  },
+  <span style=color:#f92672>&#34;data&#34;</span>: {},
+  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=133-read-institution-send-a-nameinstitution_send_reada>13.3 Read Institution SEND <a name=institution_send_read></a></h2>
+<p>API endpoint that allows access to Institution SEND Category data.</p>
+<h3 id=request-65>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-65>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>object (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object (InstitutionSENDCategoryData)</td>
+<td>Default: {}</td>
+</tr>
+<tr>
+<td><strong>description</strong><br><code>required</code></td>
+<td>string (Description)<br>non-empty</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string &lt;date-time> (Created at)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>string &lt;date-time> (Updated at)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-65>Responses</h3>
+<h4 id=response-sample-65>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;institution&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  },
+  <span style=color:#f92672>&#34;data&#34;</span>: {},
+  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=134-update-institution-send-a-nameinstitution_send_updatea>13.4 Update Institution SEND <a name=institution_send_update></a></h2>
+<p>API endpoint that updates Institution SEND Category data.</p>
+<h3 id=request-66>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>PUT</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-66>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>object (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object (InstitutionSENDCategoryData)</td>
+<td>Default: {}</td>
+</tr>
+<tr>
+<td><strong>description</strong><br><code>required</code></td>
+<td>string (Description)<br>non-empty</td>
+<td>Category description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>object (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object (InstitutionSENDCategoryData)</td>
+<td>Default: {}</td>
+</tr>
+<tr>
+<td><strong>description</strong><br><code>required</code></td>
+<td>string (Description)<br>non-empty</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string &lt;date-time> (Created at)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>string &lt;date-time> (Updated at)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-30>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;institution&#34;</span>: {
+    <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>
+  },
+  <span style=color:#f92672>&#34;data&#34;</span>: {},
+  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div><h3 id=responses-66>Responses</h3>
+<h4 id=response-sample-66>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;institution&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  },
+  <span style=color:#f92672>&#34;data&#34;</span>: {},
+  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=135-partial-update-institution-send-a-nameinstitution_send_partial_updatea>13.5 Partial Update Institution SEND <a name=institution_send_partial_update></a></h2>
+<p>API endpoint that updates Institution SEND Category data.</p>
+<h3 id=request-67>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>PATCH</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-67>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>object (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object (InstitutionSENDCategoryData)</td>
+<td>Default: {}</td>
+</tr>
+<tr>
+<td><strong>description</strong><br><code>required</code></td>
+<td>string (Description)<br>non-empty</td>
+<td>Category description.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>institution</td>
+<td>object (Institution)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object (InstitutionSENDCategoryData)</td>
+<td>Default: {}</td>
+</tr>
+<tr>
+<td><strong>description</strong><br><code>required</code></td>
+<td>string (Description)<br>non-empty</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string &lt;date-time> (Created at)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>string &lt;date-time> (Updated at)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-31>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;institution&#34;</span>: {
+    <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>
+  },
+  <span style=color:#f92672>&#34;data&#34;</span>: {},
+  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+}
+</code></pre></div><h3 id=responses-67>Responses</h3>
+<h4 id=response-sample-67>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;institution&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  },
+  <span style=color:#f92672>&#34;data&#34;</span>: {},
+  <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=136-delete-institution-send-a-nameinstitution_send_deletea>13.6 Delete Institution SEND <a name=institution_send_delete></a></h2>
+<p>API endpoint that deletes Institution SEND Category.</p>
+<h3 id=request-68>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>DELETE</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_institution_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-68>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-68>Responses</h3>
+<h4 id=response-sample-68>Response sample</h4>
+<details>
+<summary>204</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br><br>
+<h1 id=14-institution-learner-send-management-a-nameinstitution_learner_send_managementa>14. Institution Learner SEND Management <a name=institution_learner_send_management></a></h1>
+<hr>
+<p>Set of API endpoint that allows Institution Learner SEND Data to be viewed or edited.</p>
+<p>14.1 GET: <a href=#institution_learner_send_list>List Institution Learner SEND</a><br>
+14.2 POST: <a href=#institution_learner_send_create>Create Institution Learner SEND</a><br>
+14.3 GET: <a href=#institution_learner_send_read>Read Institution Learner SEND</a><br>
+14.4 PUT: <a href=#institution_learner_send_update>Update Institution Learner SEND</a><br>
+14.5 PATCH: <a href=#institution_learner_send_partial_update>Partial Update Institution Learner SEND</a><br>
+14.6 DEL: <a href=#institution_learner_send_delete>Delete Institution Learner SEND</a><br></p>
+<div style=text-align:right>
+<p><a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=141-list-institution-learner-send-a-nameinstitution_learner_send_lista>14.1 List Institution Learner SEND <a name=institution_learner_send_list></a></h2>
+<p>API endpoint that allows Institution Learner SEND to be listed.</p>
+<h3 id=request-69>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-69>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string </td>
+<td>A search term</td>
+</tr>
+<tr>
+<td>ordering</td>
+<td>string</td>
+<td>Which field to use when ordering the results.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>Number of results to return per page.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td>The initial index from which to return the results.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>count</strong><br><code>required</code></td>
+<td>integer </td>
+<td>-</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>results</strong><br><code>required</code></td>
+<td>Array of objects (InstitutionSENDLearner)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-69>Responses</h3>
+<h4 id=response-sample-69>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+<span style=color:#f92672>&#34;count&#34;</span>: <span style=color:#ae81ff>0</span>,
+<span style=color:#f92672>&#34;next&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;previous&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;results&#34;</span>: [
+  {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;info&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;institution&#34;</span>: {
+        <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+        <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+        <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+        <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+        <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+        <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+      },
+      <span style=color:#f92672>&#34;data&#34;</span>: {},
+      <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+    }
+  }
+]
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_learner_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=142-create-institution-learner-send-a-nameinstitution_learner_send_createa>14.2 Create Institution Learner SEND <a name=institution_learner_send_create></a></h2>
+<p>API endpoint that creates Institution Learner SEND.</p>
+<h3 id=request-70>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>POST</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-70>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>string &lt;date-time> (Expires at)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>category</strong><br><code>required</code></td>
+<td>integer (Category)</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>string &lt;date-time> (Expires at)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>category</strong><br><code>required</code></td>
+<td>integer (Category)</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-32>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: {
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+  }
+}
+</code></pre></div><h3 id=responses-70>Responses</h3>
+<h4 id=response-sample-70>Response sample</h4>
+<details>
+<summary>201</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  }
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_learner_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=143-read-institution-learner-send-a-nameinstitution_learner_send_reada>14.3 Read Institution Learner SEND <a name=institution_learner_send_read></a></h2>
+<p>API endpoint that allows access to Institution Learner SEND data.</p>
+<h3 id=request-71>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-71>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>string &lt;date-time> (Expires at)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>category</strong><br><code>required</code></td>
+<td>integer (Category)</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-71>Responses</h3>
+<h4 id=response-sample-71>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  }
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_learner_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=144-update-institution-learner-send-a-nameinstitution_learner_send_updatea>14.4 Update Institution Learner SEND <a name=institution_learner_send_update></a></h2>
+<p>API endpoint that updates Institution Learner SEND data.</p>
+<h3 id=request-72>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>PUT</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-72>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>string &lt;date-time> (Expires at)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>category</strong><br><code>required</code></td>
+<td>integer (Category)</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>string &lt;date-time> (Expires at)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>category</strong><br><code>required</code></td>
+<td>integer (Category)</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-33>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: {
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+  }
+}
+</code></pre></div><h3 id=responses-72>Responses</h3>
+<h4 id=response-sample-72>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  }
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_learner_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=145-partial-update-institution-learner-send-a-nameinstitution_learner_send_partial_updatea>14.5 Partial Update Institution Learner SEND <a name=institution_learner_send_partial_update></a></h2>
+<p>API endpoint that updates Institution Learner SEND data.</p>
+<h3 id=request-73>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>PATCH</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-73>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>string &lt;date-time> (Expires at)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>category</strong><br><code>required</code></td>
+<td>integer (Category)</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>expires_at</td>
+<td>string &lt;date-time> (Expires at)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>category</strong><br><code>required</code></td>
+<td>integer (Category)</td>
+<td>Category description.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>object (InstitutionSENDCategory)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4 id=request-sample-34>Request sample</h4>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: {
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+  }
+}
+</code></pre></div><h3 id=responses-73>Responses</h3>
+<h4 id=response-sample-73>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;expires_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;category&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;info&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;institution&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;acronym&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;external_ic&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;mail_domain&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;disable_vle_learner_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_instructor_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;disable_vle_user_creation&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_report&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_learner_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;allow_valid_audit&#34;</span>: <span style=color:#66d9ef>true</span>,
+      <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+    },
+    <span style=color:#f92672>&#34;data&#34;</span>: {},
+    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>
+  }
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_learner_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=146-delete-institution-learner-send-a-nameinstitution_learner_send_deletea>14.6 Delete Institution Learner SEND <a name=institution_learner_send_delete></a></h2>
+<p>API endpoint that deletes Institution Learner SEND.</p>
+<h3 id=request-74>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>DELETE</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_learner__institution_id}/learner/{parent_lookup_learner_id}/send/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-74>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner_id</strong><br><code>required</code></td>
+<td>string </td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_learner__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-74>Responses</h3>
+<h4 id=response-sample-74>Response sample</h4>
+<details>
+<summary>204</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_learner_send_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br><br>
+<h1 id=19-institution-course-activity-report-management-a-nameinstitution_course_activity_report_managementa>19. Institution Course Activity Report Management <a name=institution_course_activity_report_management></a></h1>
+<hr>
+<p>Set of API endpoint that allows view Activity Reports from a Course.</p>
+<p>19.1 GET: <a href=#institution_course_activity_report_list>List Institution Course Activity Report</a><br>
+19.2 GET: <a href=#institution_course_activity_report_read>Read Institution Course Activity Report</a><br></p>
+<div style=text-align:right>
+<p><a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=191-list-institution-course-activity-report-a-nameinstitution_course_activity_report_lista>19.1 List Institution Course Activity Report <a name=institution_course_activity_report_list></a></h2>
+<p>API endpoint that lists Activity Reports in a Course.</p>
+<h3 id=request-75>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-75>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>A search term.</td>
+</tr>
+<tr>
+<td>ordering</td>
+<td>string</td>
+<td>Which field to use when ordering the results.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>Number of results to return per page.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td>The initial index from which to return the results.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>count</strong><br><code>required</code></td>
+<td>integer </td>
+<td>-</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>results</strong><br><code>required</code></td>
+<td>Array of objects (InstitutionCourseActivityReport)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-75>Responses</h3>
+<h4 id=response-sample-75>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+<span style=color:#f92672>&#34;count&#34;</span>: <span style=color:#ae81ff>0</span>,
+<span style=color:#f92672>&#34;next&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;previous&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;results&#34;</span>: [
+  {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;learner&#34;</span>: {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;uid&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;first_name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;last_name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;email&#34;</span>: <span style=color:#e6db74>&#34;user@example.com&#34;</span>,
+      <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>
+    },
+    <span style=color:#f92672>&#34;detail&#34;</span>: [
+      {
+        <span style=color:#f92672>&#34;instrument&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+        <span style=color:#f92672>&#34;enrolment&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;confidence&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;result&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;identity_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;content_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;integrity_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;instrument_id&#34;</span>: <span style=color:#ae81ff>0</span>
+      }
+    ],
+    <span style=color:#f92672>&#34;identity_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;content_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;integrity_level&#34;</span>: <span style=color:#ae81ff>0</span>
+  }
+]
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_course_activity_report_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=192-read-institution-course-activity-report-a-nameinstitution_course_activity_report_reada>19.2 Read Institution Course Activity Report <a name=institution_course_activity_report_read></a></h2>
+<p>API endpoint that allows view Activity Reports data from a Course.</p>
+<h3 id=request-76>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-76>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter. A unique integer value identifying this Report Activity.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>learner</strong><br><code>required</code></td>
+<td>object (InstitutionCourseActivityReportLearner)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>detail</strong><br><code>required</code></td>
+<td>Array of objects (InstitutionCourseActivityReportDetail)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>identity_level</td>
+<td>integer (Identity Level)<br>Enum: 0, 1, 2, 3, 4</td>
+<td>Alert level for learner identity.</td>
+</tr>
+<tr>
+<td>content_level</td>
+<td>integer (Content Level)<br>Enum: 0, 1, 2, 3, 4</td>
+<td>Alert level for content authorship.</td>
+</tr>
+<tr>
+<td>integrity_level</td>
+<td>integer (Integrity Level)<br>Enum: 0, 1, 2, 3, 4</td>
+<td>Alert level for system integrity.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-76>Responses</h3>
+<h4 id=response-sample-76>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;learner&#34;</span>: {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;uid&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;first_name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;last_name&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;email&#34;</span>: <span style=color:#e6db74>&#34;user@example.com&#34;</span>,
+    <span style=color:#f92672>&#34;learner_id&#34;</span>: <span style=color:#e6db74>&#34;2df776db-09df-4cb9-a2af-db56cada6cb7&#34;</span>
+  },
+  <span style=color:#f92672>&#34;detail&#34;</span>: [
+    {
+      <span style=color:#f92672>&#34;instrument&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;enrolment&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;confidence&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;result&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;identity_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;content_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;integrity_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;instrument_id&#34;</span>: <span style=color:#ae81ff>0</span>
+    }
+  ],
+  <span style=color:#f92672>&#34;identity_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;content_level&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;integrity_level&#34;</span>: <span style=color:#ae81ff>0</span>
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_course_activity_report_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br><br>
+<h1 id=20-institution-course-activity-report-request-management-a-nameinstitution_course_activity_report_request_managementa>20. Institution Course Activity Report Request Management <a name=institution_course_activity_report_request_management></a></h1>
+<hr>
+<p>Set of API endpoint that allows view Activity Reports Requests in a Course.</p>
+<p>20.1 GET: <a href=#institution_course_activity_report_request_list>List Institution Course Activity Report Request</a><br>
+20.2 GET: <a href=#institution_course_activity_report_request_read>Read Institution Course Activity Report Request</a><br></p>
+<div style=text-align:right>
+<p><a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=201-list-institution-course-activity-report-request-a-nameinstitution_course_activity_report_request_lista>20.1 List Institution Course Activity Report Request <a name=institution_course_activity_report_request_list></a></h2>
+<p>API endpoint that lists Activity Reports Requests in a Course.</p>
+<h3 id=request-77>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/{parent_lookup_id}/request/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-77>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>parent_lookup_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>A search term.</td>
+</tr>
+<tr>
+<td>ordering</td>
+<td>string</td>
+<td>Which field to use when ordering the results.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>Number of results to return per page.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td>The initial index from which to return the results.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>count</strong><br><code>required</code></td>
+<td>integer </td>
+<td>-</td>
+</tr>
+<tr>
+<td>next</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>string &lt;uri><br>Nullable. </td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>results</strong><br><code>required</code></td>
+<td>Array of objects (InstitutionCourseActivityReportRequest)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-77>Responses</h3>
+<h4 id=response-sample-77>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+<span style=color:#f92672>&#34;count&#34;</span>: <span style=color:#ae81ff>0</span>,
+<span style=color:#f92672>&#34;next&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;previous&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+<span style=color:#f92672>&#34;results&#34;</span>: [
+  {
+    <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;result&#34;</span>: [
+      {
+        <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;result&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+        <span style=color:#f92672>&#34;code&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;audit&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+        <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+        <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+        <span style=color:#f92672>&#34;request&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;instrument&#34;</span>: <span style=color:#ae81ff>0</span>,
+        <span style=color:#f92672>&#34;message_code&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+      }
+    ],
+    <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+    <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+    <span style=color:#f92672>&#34;learner&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;activity&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;session&#34;</span>: <span style=color:#ae81ff>0</span>,
+    <span style=color:#f92672>&#34;message_code&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+    <span style=color:#f92672>&#34;instruments&#34;</span>: [
+      <span style=color:#ae81ff>0</span>
+    ]
+  }
+]
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_course_activity_report_request_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br>
+<h2 id=202-read-institution-course-activity-report-request-a-nameinstitution_course_activity_report_request_reada>20.2 Read Institution Course Activity Report Request <a name=institution_course_activity_report_request_read></a></h2>
+<p>API endpoint that allows view Activity Reports Requests data from a Course.</p>
+<h3 id=request-78>Request</h3>
+<table style=table-layout:fixed;width:100%>
+<tbody>
+<tr>
+<td style=width:20%><strong>Concept</strong></td>
+<td><strong>Data</strong></td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td><strong><code>GET</code></strong></td>
+</tr>
+<tr>
+<td>Path</td>
+<td><span style=word-wrap:break-word>/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/report/{parent_lookup_id}/request/{id}/</span></td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Content Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id=parameters-78>Parameters</h3>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=REQUEST>
+Request parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td><strong>id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter. A unique integer value identifying this Report Activity.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+<tr>
+<td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+<td>string</td>
+<td>Request path parameter.</td>
+</tr>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=tab-pane title=RESPONSE>
+Response parameters.<br>
+<table>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Comments</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer (ID)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>result</strong><br><code>required</code></td>
+<td>Array of objects (InstitutionCourseActivityReportRequestResult)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>status</td>
+<td>integer (Status)<br>Enum: 0, 1, 2, 3, 4, 5, 6</td>
+<td>Status for this request.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string &lt;uri> (Data)</td>
+<td>Data path on storage.</td>
+</tr>
+<tr>
+<td>error_message</td>
+<td>string (Error message)<br>non-empty<br>Nullable.</td>
+<td>Error message when status is error.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string &lt;date-time> (Created at)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>string &lt;date-time> (Updated at)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>learner</strong><br><code>required</code></td>
+<td>string (Learner)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>activity</td>
+<td>integer (Activity)<br>Nullable.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>session</td>
+<td>integer (Session)<br>Nullable.</td>
+<td>Assessment session for this request</td>
+</tr>
+<tr>
+<td>message_code</td>
+<td>string (Message code)<br>Nullable.</td>
+<td>Related message code.</td>
+</tr>
+<tr>
+<td><strong>instruments</strong><br><code>required</code></td>
+<td>Array of integers</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h3 id=responses-78>Responses</h3>
+<h4 id=response-sample-78>Response sample</h4>
+<details>
+<summary>200</summary>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;result&#34;</span>: [
+    {
+      <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;result&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+      <span style=color:#f92672>&#34;code&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;audit&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+      <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+      <span style=color:#f92672>&#34;request&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;instrument&#34;</span>: <span style=color:#ae81ff>0</span>,
+      <span style=color:#f92672>&#34;message_code&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>
+    }
+  ],
+  <span style=color:#f92672>&#34;status&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;data&#34;</span>: <span style=color:#e6db74>&#34;http://example.com&#34;</span>,
+  <span style=color:#f92672>&#34;error_message&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;created_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;updated_at&#34;</span>: <span style=color:#e6db74>&#34;2019-08-24T14:15:22Z&#34;</span>,
+  <span style=color:#f92672>&#34;learner&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;activity&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;session&#34;</span>: <span style=color:#ae81ff>0</span>,
+  <span style=color:#f92672>&#34;message_code&#34;</span>: <span style=color:#e6db74>&#34;string&#34;</span>,
+  <span style=color:#f92672>&#34;instruments&#34;</span>: [
+    <span style=color:#ae81ff>0</span>
+  ]
+}
+</code></pre></div></details>
+<div style=text-align:right>
+<p><a href=#institution_course_activity_report_request_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+</div>
+<br><br>
+<p>888</p>
+<p><br><br><br><br></p>
 <hr>
 <hr>
 <hr>
@@ -10115,7 +12436,7 @@ this is third tab
 </blockquote>
 <p>Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.</p>
 </div>
-<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 25 Oct 2021</p>
+<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 26 Oct 2021</p>
 <nav class="pagination mt-3">
 <a class="nav nav-prev" href=https://tesla-ce.github.io/developers/api/auth/ aria-label="Previous page"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Authentication</span></a>
 <a class="nav nav-next" href=https://tesla-ce.github.io/developers/api/provider/ aria-label="Previous page"> <span class="d-none d-md-block">Provider</span><i class="ti-arrow-right ml-2"></i></a>
