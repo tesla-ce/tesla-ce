@@ -31,7 +31,7 @@ keywords: ["API","institution"]
 15. [Institution Course Instructor Management](#institution_course_instructor_management)
 16. [Institution Course Learner Management](#institution_course_learner_management)
 17. [Institution Course Activity Management](#institution_course_activity_management)
-18. Institution Course Activity Instrument
+18. [Institution Course Activity Instrument Management](#institution_course_activity_instrument_management)
 19. [Institution Course Activity Report Management](#institution_course_activity_report_management)
 20. [Institution Course Activity Report Request Management](#institution_course_activity_report_request_management)
 21. [Institution Course Activity Report Audit Management](#institution_course_activity_report_audit_management)
@@ -9501,6 +9501,11 @@ Set of API endpoint that allows Institution Learners to be viewed or edited.
   12.4 PUT: [Update Institution Learner](#institution_learner_update)<br>
   12.5 PATCH: [Partial Update Institution Learner](#institution_learner_partial_update)<br>
   12.6 DEL: [Delete Institution Learner](#institution_learner_delete)<br>
+  12.7 GET: [Enrolment Institution Learner](#institution_learner_enrolment)<br>
+  12.8 POST: [Create Institution Learner IC](#institution_learner_ic_create)<br>
+  12.9 DEL: [Delete Institution Learner IC](#institution_learner_ic_delete)<br>
+
+
 <div style="text-align:right">
 
 [[top page]](#table-of-content) 
@@ -10991,6 +10996,667 @@ API endpoint that deletes Institution Learner.
 }
 ````
 </details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_learner_enrolment --->
+## 12.7 Enrolment Institution Learner <a name="institution_learner_enrolment"></a>
+
+API endpoint that allows learner enrolment status to be viewed.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+       <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/learner/{id}/enrolment/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>string (Username)<br>non-empty </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (InstitutionLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_accepted</td>
+                <td>string &lt;date-time&gt; (Consent accepted)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_rejected</td>
+                <td>string &lt;date-time&gt; (Consent rejected)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>learner_id</td>
+                <td>string &lt;uuid&gt; (Learner id)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_login</td>
+                <td>string &lt;date-time&gt; (Last login)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>send</td>
+                <td>object (Send)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>email</strong><br><code>required</code></td>
+                <td>string &lt;email&gt; (Email)<br>non-empty </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>ic_status</td>
+                <td>string (IC status)<br>non-empty </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>login_allowed</td>
+                <td>boolean (Login allowed)</td>
+                <td>Default: false</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br><=150 characters></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br><=150 characters</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Local)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user.</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>Date when user was created.</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>Last user modification.</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution.</td>
+            </tr>
+             <tr>
+                <td>legal_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+           <tr>
+                <td>send_admin</td>
+                <td>boolean (Send admin)</td>
+                <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+                <td>data_admin</td>
+                <td>boolean (Data admin)</td>
+                <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+            <tr>
+                <td>joined_at</td>
+                <td>string &lt;date-time&gt; (Joined at)</td>
+                <td>Date the learner joined for this institution.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+     
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "institution": {
+    "id": 0,
+    "acronym": "string",
+    "name": "string",
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true,
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "username": "string",
+  "consent": {
+    "version": "string",
+    "status": "string"
+  },
+  "consent_accepted": "2019-08-24T14:15:22Z",
+  "consent_rejected": "2019-08-24T14:15:22Z",
+  "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+  "last_login": "2019-08-24T14:15:22Z",
+  "send": {},
+  "email": "user@example.com",
+  "ic_status": "string",
+  "login_allowed": false,
+  "first_name": "string",
+  "last_name": "string",
+  "locale": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true,
+  "joined_at": "2019-08-24T14:15:22Z"
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_learner_ic_create --->
+## 12.8 Create Institution Learner IC <a name="institution_learner_ic_create"></a>
+
+API endpoint that manages learner informed consent.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>POST</code></strong></td>
+    </tr>
+       <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/learner/{id}/ic/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (InstitutionLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>email</strong><br><code>required</code></td>
+                <td>string &lt;email&gt; (Email)<br>non-empty </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br><=150 characters></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br><=150 characters</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Local)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user.</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution.</td>
+            </tr>
+             <tr>
+                <td>legal_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+           <tr>
+                <td>send_admin</td>
+                <td>boolean (Send admin)</td>
+                <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+                <td>data_admin</td>
+                <td>boolean (Data admin)</td>
+                <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>institution</td>
+                <td>object (Institution)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>string (Username)<br>non-empty </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent</td>
+                <td>object (InstitutionLearnerConsent)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_accepted</td>
+                <td>string &lt;date-time&gt; (Consent accepted)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>consent_rejected</td>
+                <td>string &lt;date-time&gt; (Consent rejected)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>learner_id</td>
+                <td>string &lt;uuid&gt; (Learner id)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_login</td>
+                <td>string &lt;date-time&gt; (Last login)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>send</td>
+                <td>object (Send)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>email</strong><br><code>required</code></td>
+                <td>string &lt;email&gt; (Email)<br>non-empty </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>ic_status</td>
+                <td>string (IC status)<br>non-empty </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>login_allowed</td>
+                <td>boolean (Login allowed)</td>
+                <td>Default: false</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>string (First name)<br><=150 characters></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>string (Last name)<br><=150 characters</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>string (Local)<br>[1 .. 10] characters<br>Nullable.</td>
+                <td>Default locale for this user.</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>Date when user was created.</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>Last user modification.</td>
+            </tr>
+            <tr>
+                <td><strong>uid</strong><br><code>required</code></td>
+                <td>string (Uid)<br>[1 .. 255] characters</td>
+                <td>Unique User Identifier for the institution.</td>
+            </tr>
+            <tr>
+                <td>inst_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user is administrator of the institution.</td>
+            </tr>
+             <tr>
+                <td>legal_admin</td>
+                <td>boolean (Inst admin)</td>
+                <td>Whether this user can manage legal data of the institution.</td>
+            </tr>
+           <tr>
+                <td>send_admin</td>
+                <td>boolean (Send admin)</td>
+                <td>Whether this user can manage SEND data of the institution.</td>
+            </tr>
+            <tr>
+                <td>data_admin</td>
+                <td>boolean (Data admin)</td>
+                <td>Whether this user can manage the data of the institution.</td>
+            </tr>
+            <tr>
+                <td>joined_at</td>
+                <td>string &lt;date-time&gt; (Joined at)</td>
+                <td>Date the learner joined for this institution.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+
+````json
+{
+  "institution": {
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true
+  },
+  "consent": {
+    "version": "string"
+  },
+  "email": "user@example.com",
+  "first_name": "string",
+  "last_name": "string",
+  "locale": "string",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true
+}
+````
+        
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+````json
+{
+  "id": 0,
+  "institution": {
+    "id": 0,
+    "acronym": "string",
+    "name": "string",
+    "external_ic": true,
+    "mail_domain": "string",
+    "disable_vle_learner_creation": true,
+    "disable_vle_instructor_creation": true,
+    "disable_vle_user_creation": true,
+    "allow_learner_report": true,
+    "allow_learner_audit": true,
+    "allow_valid_audit": true,
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "username": "string",
+  "consent": {
+    "version": "string",
+    "status": "string"
+  },
+  "consent_accepted": "2019-08-24T14:15:22Z",
+  "consent_rejected": "2019-08-24T14:15:22Z",
+  "learner_id": "2df776db-09df-4cb9-a2af-db56cada6cb7",
+  "last_login": "2019-08-24T14:15:22Z",
+  "send": {},
+  "email": "user@example.com",
+  "ic_status": "string",
+  "login_allowed": false,
+  "first_name": "string",
+  "last_name": "string",
+  "locale": "string",
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "uid": "string",
+  "inst_admin": true,
+  "legal_admin": true,
+  "send_admin": true,
+  "data_admin": true,
+  "joined_at": "2019-08-24T14:15:22Z"
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_learner_ic_delete --->
+## 12.9 Delete Institution Learner IC <a name="institution_learner_ic_delete"></a>
+
+API endpoint that deletes Institution Learner Informed Consent.
+
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>DELETE</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_institution_id}/learner/{id}/ic/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_institution_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>204</summary>
+
+  ````json
+{
+}
+````
+</details>
+
 
 <div style="text-align:right">
 
@@ -15987,7 +16653,1076 @@ API endpoint that deletes Institution Course Activity.
 <br><br>
 
 
-888
+
+
+# 18. Institution Course Activity Instrument Management <a name="institution_course_activity_instrument_management"></a>
+---
+Set of API endpoint that allows Institution Course Activity Instrument Data to be viewed or edited.
+
+  18.1 GET: [List Institution Course Activity Instrument](#institution_course_activity_instrument_list)<br>
+  18.2 POST: [Create Institution Course Activity Instrument](#institution_course_activity_instrument_create)<br>
+  18.3 GET: [Read Institution Course Activity Instrument](#institution_course_activity_instrument_read)<br>
+  18.4 PUT: [Update Institution Course Activity Instrument](#institution_course_activity_instrument_update)<br>
+  18.5 PATCH: [Partial Update Institution Course Activity Instrument](#institution_course_activity_instrument_partial_update)<br>
+  18.6 DEL: [Delete Institution Course Activity Instrument](#institution_course_activity_instrument_delete)<br>
+<div style="text-align:right">
+
+[[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_course_activity_instrument_list --->
+## 18.1 List Institution Course Activity Instrument <a name="institution_course_activity_instrument_list"></a>
+
+API endpoint that allows Institution Course Activity Instrument to be listed.
+
+### Request
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/instrument/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td>string </td>
+                <td>A search term</td>
+            </tr>
+            <tr>
+                <td>ordering</td>
+                <td>string</td>
+                <td>Which field to use when ordering the results.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>Number of results to return per page.</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>The initial index from which to return the results.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>count</strong><br><code>required</code></td>
+            <td>integer </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>next</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>previous</td>
+            <td>string &lt;uri&gt;<br>Nullable. </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>results</strong><br><code>required</code></td>
+            <td>Array of objects (InstitutionCourseActivityInstrument)</td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+  "count": 0,
+  "next": "http://example.com",
+  "previous": "http://example.com",
+  "results": [
+    {
+      "id": 0,
+      "options": {},
+      "instrument": {
+        "id": 0,
+        "name": "string",
+        "acronym": "string",
+        "queue": "string",
+        "enabled": true,
+        "requires_enrolment": true,
+        "description": "string",
+        "identity": true,
+        "originality": true,
+        "authorship": true,
+        "integrity": true,
+        "options_schema": "string",
+        "created_at": "2019-08-24T14:15:22Z",
+        "updated_at": "2019-08-24T14:15:22Z"
+      },
+      "instrument_id": 0,
+      "active": true,
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z",
+      "alternative_to": 0
+    }
+  ]
+}
+ ````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_course_activity_instrument_create --->
+## 18.2 Create Institution Course Activity Instrument <a name="institution_course_activity_instrument_create"></a>
+
+API endpoint that creates Institution Course Activity Instrument.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>POST</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/instrument/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+    Request parameters.<br>
+    <table  style="table-layout: fixed; width: 100%">
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong><span style="word-wrap: break-word">parent_lookup_activity_id</span></strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong><span style="word-wrap: break-word">parent_lookup_activity__course_id</span></strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong><span style="word-wrap: break-word">parent_lookup_activity__vle__institution_id</span></strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>object (Options)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>instrument</td>
+                <td><span style="word-wrap: break-word">object (InstitutionCourseActivityInstrumentInfo)</span></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>instrument_id</strong><br><code>required</code></td>
+                <td>integer (Instrument ID) </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>active</strong><br><code>required</code></td>
+                <td>boolean (Active) </td>
+                <td>Is Instrument active?</td>
+            </tr>
+            <tr>
+                <td>alternative_to</td>
+                <td>integer (Alternative to)<br>Nullable.</td>
+                <td>Primary Instrument to be used.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>object (Options)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>instrument</td>
+                <td><span style="word-wrap: break-word">object (InstitutionCourseActivityInstrumentInfo)</span></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>instrument_id</strong><br><code>required</code></td>
+                <td>integer (Instrument ID) </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>active</strong><br><code>required</code></td>
+                <td>boolean (Active) </td>
+                <td>Is Instrument active?</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>alternative_to</td>
+                <td>integer (Alternative to)<br>Nullable.</td>
+                <td>Primary Instrument to be used.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+`````json
+{
+  "options": {},
+  "instrument": {
+    "name": "string",
+    "acronym": "string",
+    "queue": "string",
+    "enabled": true,
+    "requires_enrolment": true,
+    "description": "string",
+    "identity": true,
+    "originality": true,
+    "authorship": true,
+    "integrity": true,
+    "options_schema": "string"
+  },
+  "instrument_id": 0,
+  "active": true,
+  "alternative_to": 0
+}
+`````
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>201</summary>
+
+````json
+{
+  "id": 0,
+  "options": {},
+  "instrument": {
+    "id": 0,
+    "name": "string",
+    "acronym": "string",
+    "queue": "string",
+    "enabled": true,
+    "requires_enrolment": true,
+    "description": "string",
+    "identity": true,
+    "originality": true,
+    "authorship": true,
+    "integrity": true,
+    "options_schema": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "instrument_id": 0,
+  "active": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "alternative_to": 0
+}
+````
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+
+<!--- institution_course_activity_instrument_read --->
+## 18.3 Read Institution Course Activity Instrument <a name="institution_course_activity_instrument_read"></a>
+
+API endpoint that allows access to Institution Course Activity Instrument data.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>GET</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/instrument/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter. A unique integer value identifying this activity instrument.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>object (Options)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>instrument</td>
+                <td>object (InstitutionCourseActivityInstrumentInfo)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>instrument_id</strong><br><code>required</code></td>
+                <td>integer (Instrument ID) </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>active</strong><br><code>required</code></td>
+                <td>boolean (Active) </td>
+                <td>Is Instrument active?</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>alternative_to</td>
+                <td>integer (Alternative to)<br>Nullable.</td>
+                <td>Primary Instrument to be used.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "options": {},
+  "instrument": {
+    "id": 0,
+    "name": "string",
+    "acronym": "string",
+    "queue": "string",
+    "enabled": true,
+    "requires_enrolment": true,
+    "description": "string",
+    "identity": true,
+    "originality": true,
+    "authorship": true,
+    "integrity": true,
+    "options_schema": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "instrument_id": 0,
+  "active": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "alternative_to": 0
+}
+````
+</details>
+
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+</div>
+
+<br>
+
+<!--- institution_course_activity_instrument_update --->
+## 18.4 Update Institution Course Activity Instrument <a name="institution_course_activity_instrument_update"></a>
+
+API endpoint that updates Institution Course Activity Instrument data.
+
+### Request
+
+ <table style="table-layout: fixed; width: 100%">
+     <tbody>
+        <tr>
+            <td style="width:20%"><strong>Concept</strong></td>
+            <td><strong>Data</strong></td>
+        </tr>
+        <tr>
+            <td>HTTP Method</td>
+            <td><strong><code>PUT</code></strong></td>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/instrument/{id}/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table  style="table-layout: fixed; width: 100%">
+            <tbody>
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Type</strong></td>
+                    <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                    <td><strong><span style="word-wrap: break-word">parent_lookup_activity_id</span></strong><br><code>required</code></td>
+                    <td>string </td>
+                    <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="word-wrap: break-word">parent_lookup_activity__course_id</span></strong><br><code>required</code></td>
+                    <td>string </td>
+                    <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="word-wrap: break-word">parent_lookup_activity__vle__institution_id</span></strong><br><code>required</code></td>
+                    <td>string </td>
+                    <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                    <td>options</td>
+                    <td>object (Options)<br>Nullable.</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>instrument</td>
+                    <td><span style="word-wrap: break-word">object (InstitutionCourseActivityInstrumentInfo)</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>instrument_id</strong><br><code>required</code></td>
+                    <td>integer (Instrument ID) </td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>active</strong><br><code>required</code></td>
+                    <td>boolean (Active) </td>
+                    <td>Is Instrument active?</td>
+                </tr>
+                <tr>
+                    <td>alternative_to</td>
+                    <td>integer (Alternative to)<br>Nullable.</td>
+                    <td>Primary Instrument to be used.</td>
+                </tr>
+            </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>object (Options)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>instrument</td>
+                <td>object (InstitutionCourseActivityInstrumentInfo)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>instrument_id</strong><br><code>required</code></td>
+                <td>integer (Instrument ID) </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>active</strong><br><code>required</code></td>
+                <td>boolean (Active) </td>
+                <td>Is Instrument active?</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>alternative_to</td>
+                <td>integer (Alternative to)<br>Nullable.</td>
+                <td>Primary Instrument to be used.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+
+#### Request sample
+
+````json
+{
+  "options": {},
+  "instrument": {
+    "name": "string",
+    "acronym": "string",
+    "queue": "string",
+    "enabled": true,
+    "requires_enrolment": true,
+    "description": "string",
+    "identity": true,
+    "originality": true,
+    "authorship": true,
+    "integrity": true,
+    "options_schema": "string"
+  },
+  "instrument_id": 0,
+  "active": true,
+  "alternative_to": 0
+}
+````
+        
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "options": {},
+  "instrument": {
+    "id": 0,
+    "name": "string",
+    "acronym": "string",
+    "queue": "string",
+    "enabled": true,
+    "requires_enrolment": true,
+    "description": "string",
+    "identity": true,
+    "originality": true,
+    "authorship": true,
+    "integrity": true,
+    "options_schema": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "instrument_id": 0,
+  "active": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "alternative_to": 0
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+<!--- institution_course_activity_instrument_partial_update --->
+## 18.5 Partial Update Institution Course Activity Instrument <a name="institution_course_activity_instrument_partial_update"></a>
+
+API endpoint that updates Institution Course Activity Instrument data.
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>PATCH</code></strong></td>
+    </tr>
+        <tr>
+            <td>Path</td>
+            <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/instrument/{id}/</span></td>
+        </tr>
+        <tr>
+            <td>Authorization</td>
+            <td>JWT</td>
+        </tr>
+        <tr>
+            <td>Content Type</td>
+            <td>application/json</td>
+        </tr>
+     </tbody>
+ </table>
+
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table  style="table-layout: fixed; width: 100%">
+            <tbody>
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Type</strong></td>
+                    <td><strong>Comments</strong></td>
+                </tr>
+                <tr>
+                    <td><strong><span style="word-wrap: break-word">parent_lookup_activity_id</span></strong><br><code>required</code></td>
+                    <td>string </td>
+                    <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="word-wrap: break-word">parent_lookup_activity__course_id</span></strong><br><code>required</code></td>
+                    <td>string </td>
+                    <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                    <td><strong><span style="word-wrap: break-word">parent_lookup_activity__vle__institution_id</span></strong><br><code>required</code></td>
+                    <td>string </td>
+                    <td>Request path parameter.</td>
+                </tr>
+                <tr>
+                    <td>options</td>
+                    <td>object (Options)<br>Nullable.</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>instrument</td>
+                    <td><span style="word-wrap: break-word">object (InstitutionCourseActivityInstrumentInfo)</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>instrument_id</strong><br><code>required</code></td>
+                    <td>integer (Instrument ID) </td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>active</strong><br><code>required</code></td>
+                    <td>boolean (Active) </td>
+                    <td>Is Instrument active?</td>
+                </tr>
+                <tr>
+                    <td>alternative_to</td>
+                    <td>integer (Alternative to)<br>Nullable.</td>
+                    <td>Primary Instrument to be used.</td>
+                </tr>
+            </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters.<br>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>integer (ID)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td>object (Options)<br>Nullable.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>instrument</td>
+                <td>object (InstitutionCourseActivityInstrumentInfo)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>instrument_id</strong><br><code>required</code></td>
+                <td>integer (Instrument ID) </td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>active</strong><br><code>required</code></td>
+                <td>boolean (Active) </td>
+                <td>Is Instrument active?</td>
+            </tr>
+            <tr>
+                <td>created_at</td>
+                <td>string &lt;date-time&gt; (Created at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>updated_at</td>
+                <td>string &lt;date-time&gt; (Updated at)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>alternative_to</td>
+                <td>integer (Alternative to)<br>Nullable.</td>
+                <td>Primary Instrument to be used.</td>
+            </tr>
+        </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+
+````json
+{
+  "options": {},
+  "instrument": {
+    "name": "string",
+    "acronym": "string",
+    "queue": "string",
+    "enabled": true,
+    "requires_enrolment": true,
+    "description": "string",
+    "identity": true,
+    "originality": true,
+    "authorship": true,
+    "integrity": true,
+    "options_schema": "string"
+  },
+  "instrument_id": 0,
+  "active": true,
+  "alternative_to": 0
+}
+````
+        
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+````json
+{
+  "id": 0,
+  "options": {},
+  "instrument": {
+    "id": 0,
+    "name": "string",
+    "acronym": "string",
+    "queue": "string",
+    "enabled": true,
+    "requires_enrolment": true,
+    "description": "string",
+    "identity": true,
+    "originality": true,
+    "authorship": true,
+    "integrity": true,
+    "options_schema": "string",
+    "created_at": "2019-08-24T14:15:22Z",
+    "updated_at": "2019-08-24T14:15:22Z"
+  },
+  "instrument_id": 0,
+  "active": true,
+  "created_at": "2019-08-24T14:15:22Z",
+  "updated_at": "2019-08-24T14:15:22Z",
+  "alternative_to": 0
+}
+````
+
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+</div>
+<br>
+
+<!--- institution_course_activity_instrument_delete --->
+## 18.6 Delete Institution Course Activity Instrument <a name="institution_course_activity_instrument_delete"></a>
+
+API endpoint that deletes Institution Course Activity Instrument.
+
+
+### Request
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>DELETE</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_activity__vle__institution_id}/course/{parent_lookup_activity__course_id}/activity/{parent_lookup_activity_id}/instrument/{id}/</span></td>
+    </tr>
+    <tr>
+        <td>Authorization</td>
+        <td>JWT</td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__course_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+            <tr>
+                <td><strong>parent_lookup_activity__vle__institution_id</strong><br><code>required</code></td>
+                <td>string </td>
+                <td>Request path parameter.</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+{{</tabs>}}
+
+
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>204</summary>
+
+  ````json
+{
+}
+````
+</details>
+
+<div style="text-align:right">
+
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+</div>
+<br><br>
+
 
 
 # 19. Institution Course Activity Report Management <a name="institution_course_activity_report_management"></a>
