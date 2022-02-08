@@ -108,30 +108,35 @@ url = "faq"
 weight = 2
 
 [[Languages.en.menu.main]]
+name = "About"
+url = "about"
+weight = 3
+
+[[Languages.en.menu.main]]
 name = "contact"
 url = "contact"
-weight = 3
+weight = 4
 
 # Dropdown menu
 [[Languages.en.menu.main]]
-weight = 4
-name = "docs"
+weight = 5
+name = "sections"
 hasChildren = true
 
   [[Languages.en.menu.main]]
-  parent = "docs"
+  parent = "sections"
   name = "Features"
   url = "features"
   weight = 1
 
   [[Languages.en.menu.main]]
-  parent = "docs"
+  parent = "sections"
   name = "Installation"
   url = "installation"
   weight = 2
 
   [[Languages.en.menu.main]]
-  parent = "docs"
+  parent = "sections"
   name = "Developers"
   url = "developers"
   weight = 3
@@ -174,31 +179,36 @@ name = "Faq"
 url = "faq"
 weight = 2
 
+[[Languages.en.menu.main]]
+name = "About"
+url = "about"
+weight = 3
+
 [[Languages.fr.menu.main]]
 name = "contact"
 url = "contact"
-weight = 3
+weight = 4
 
 # Dropdown menu
 [[Languages.fr.menu.main]]
-weight = 4
-name = "docs"
+weight = 5
+name = "sections"
 hasChildren = true
 
   [[Languages.fr.menu.main]]
-  parent = "docs"
+  parent = "sections"
   name = "Installation"
   url = "installation"
   weight = 1
 
   [[Languages.fr.menu.main]]
-  parent = "docs"
+  parent = "sections"
   name = "Billing and Pricing"
   url = "billing-pricing"
   weight = 2
 
   [[Languages.fr.menu.main]]
-  parent = "docs"
+  parent = "sections"
   name = "Features"
   url = "features"
   weight = 3
