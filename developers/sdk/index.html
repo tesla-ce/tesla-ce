@@ -211,6 +211,23 @@ We&rsquo;re working on it!</p></div>
 </ul>
 </nav>
 </div>
+<div class="notices warning"><p>Before using any of the TeSLA CE SDKs, please, note that a client must exist.</p></div>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=PHP>
+<p>Client creation (php):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Client</span>($role, $secret, $base_url, <span style=color:#f92672>!</span>$debug, $tesla_cache);
+</code></pre></div>
+</div>
+<div class=tab-pane title=Python>
+<p>Client creation (Python):
+Python client:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client <span style=color:#f92672>=</span> Client<span style=color:#f92672>.</span>create_instance(config[<span style=color:#e6db74>&#39;VAULT_URL&#39;</span>], config[<span style=color:#e6db74>&#39;VAULT_ROLE_ID&#39;</span>], config[<span style=color:#e6db74>&#39;VAULT_SECRET_ID&#39;</span>], config[<span style=color:#e6db74>&#39;VAULT_SSL_VERIFY&#39;</span>])
+</code></pre></div>
+</div>
+</div>
+</div>
 <h1 id=vle-integration-user-cases>VLE Integration User Cases</h1>
 <h2 id=1-course-management>1. Course Management</h2>
 <p>Create/Get/Update a Course.</p>
@@ -219,27 +236,28 @@ We&rsquo;re working on it!</p></div>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-<p>This first tab shows an example of HTML code, but we should use <strong>HTTP</strong> header and calls.</p>
-<p>API method:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>head</span>&gt;
-  &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>charset</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utf-8&#34;</span>&gt;
-  &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>http-equiv</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;X-UA-Compatible&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;IE=edge&#34;</span>&gt;
-  &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;viewport&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width=device-width, initial-scale=1&#34;</span>&gt;
-  &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/assets/css/main.css&#34;</span>&gt;
-  &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;shortcut icon&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;image/png&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/assets/img/favicon.png&#34;</span> &gt;
-  &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/assets/js/main.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
-&lt;/<span style=color:#f92672>head</span>&gt;
-</code></pre></div>
+<p>Check the API VLE Course Management documentation for methods details: <a href=https://www.tesla-ce.eu/developers/api/vle/#vle_course_management>https://www.tesla-ce.eu/developers/api/vle/#vle_course_management</a></p>
 </div>
 <div class=tab-pane title="PHP SDK">
-<p>This second tab shows an example of PHP code, but we should use <strong>SKD</strong> header and calls.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;Hello World!&#34;</span>)
+<p>Adding a Course:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>create</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Get Course information:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>get</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Get Course information by VLE Course ID:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getByVleCourseId</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Updating an existing Course:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>update</span>(<span style=color:#f92672>...</span>);
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<p>This second tab shows an example of PYTHON code, but we should use <strong>SKD</strong> header and calls.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Hello World!&#34;</span>)
-</code></pre></div>
+<p>Adding a Course:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Course information:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Course information by VLE Course ID:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>find_by_vle_id(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Updating an existing Course: <em>TBD</em></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python></code></pre></div>
 </div>
 </div>
 </div>
