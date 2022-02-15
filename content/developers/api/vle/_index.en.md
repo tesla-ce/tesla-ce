@@ -536,7 +536,7 @@ Content Type | application/json
 
 Set of API endpoints that allow a course in a VLE to be viewed or edited.<br>
 
-  2.1 GET: [List VLE Course](#vle_course_list)<br>
+  2.1 GET: [List VLE Courses](#vle_course_list)<br>
   2.2 POST: [Create VLE Course](#vle_course_create)<br>
   2.3 GET: [Read VLE Course](#vle_course_read)<br>
   2.4 PUT: [Update VLE Course](#vle_course_update)<br>
@@ -550,7 +550,7 @@ Set of API endpoints that allow a course in a VLE to be viewed or edited.<br>
 
 
 <!--- vle_course_list --->
-## 2.1 List VLE Course<a name="vle_course_list"></a>
+## 2.1 List VLE Courses<a name="vle_course_list"></a>
 
 API endpoint for listing Courses in a VLE.
 

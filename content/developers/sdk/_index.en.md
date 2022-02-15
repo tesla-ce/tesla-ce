@@ -12,12 +12,10 @@ keywords: ["sdk"]
 
 The Open Source TeSLA CE SDKs for supporting TeSLA CE REST API. 
 
-This section will show you main SDKs user cases for calling TeSLA CE API.
-
 Available SDKs:
-* https://github.com/tesla-ce/php-client: VLE integration
-* https://github.com/tesla-ce/python-provider-sdk: Providers integration
-* https://github.com/tesla-ce/python-client: General API methods for generic and admin calls such as system installation, client set up, and so on.
+* [PHP Client](https://github.com/tesla-ce/php-client): VLE integration
+* [Python Provider SDK](https://github.com/tesla-ce/python-provider-sdk): Providers integration
+* [Pyhton Client](https://github.com/tesla-ce/python-client): General API methods for generic and admin calls such as system installation, client set up, and so on.
 
 
 
@@ -28,6 +26,7 @@ Available SDKs:
 {{< notice warning >}}
 Before using any of the TeSLA CE SDKs, please, note that a client must exist.
 {{</ notice >}}
+
 {{% tabs %}}
 {{% tab "PHP"%}}
 Client creation (php):
@@ -42,30 +41,21 @@ Python client:
 self._client = Client.create_instance(config['VAULT_URL'], config['VAULT_ROLE_ID'], config['VAULT_SECRET_ID'], config['VAULT_SSL_VERIFY'])
 ```
 {{% /tab%}}
-
 {{% /tabs %}}
-
-
-
 
 # VLE Integration User Cases
 ## 1. Course Management
-Create/Get/Update a Course.
-
-All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).
-
-
+SDK for Course Management including 3 user cases: Create/Get/Update a Course.
 
 {{%tabs %}}
 {{% tab "HTTP" %}}
-Check the API VLE Course Management documentation for methods details: https://www.tesla-ce.eu/developers/api/vle/#vle_course_management
+All the three User Cases (Create, Get, and Update) using the same API endpoint but with its corresponding verb (PUT, GET, and PATCH).
 
+Check the [API VLE Course Management documentation](/developers/api/vle/#vle_course_management) for methods details.
 {{% /tab %}}
-
 {{% tab "PHP SDK" %}}
-
+<!-- # TODO: Missing all source code documentation links -->
 Adding a Course:
-
 ```php
 $this->client->getCourse()->create(...);
  ```
@@ -73,115 +63,183 @@ Get Course information:
 ```php
 $this->client->getCourse()->get(...);
  ```
-
 Get Course information by VLE Course ID:
 ```php
 $this->client->getCourse()->getByVleCourseId(...);
  ```
-
 Updating an existing Course:
 ```php
 $this->client->getCourse()->update(...);
 ```
 {{% /tab %}}
-
 {{% tab "Python SDK" %}}
-Adding a Course:
+Adding a Course ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.create)): 
 ```python
 self._client.vle.course.create(...)
 ```
-
 Get Course information:
+<!-- # TODO: missing GET call in python-client documentation --> 
 ```python
 self._client.vle.course.get(...)
  ```
-
-Get Course information by VLE Course ID:
+Get Course information by VLE Course ID ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.find_by_vle_id))::
 ```python
 self._client.vle.course.find_by_vle_id(...)
  ```
-
 Updating an existing Course: *TBD*
+<!-- # TODO: missing updating existing course method in python-client -->
+<!-- # TODO: missing UPDATE call in python-client documentation -->
 ```python
 ```
 {{% /tab %}}
- 
 {{% /tabs %}}
+<br>
 
 ## 2. Add User to a Course
-User can be an Instructor or a Learner.
+SDK for adding User to an existing Course.
 
+Note that the User can be an Instructor or a Learner.
 
-{{< tabs >}}
-  {{< tab "HTTP" >}}
-   This is first tab
-  {{</ tab >}}
+{{%tabs %}}
+{{% tab "HTTP" %}}
+The API level differentiate between Instructor and Learner users:
+- Adding an Instructor to a Course: Check the [API VLE Course Instructor documentation](/developers/api/vle/#vle_course_instructor_create)
+- Adding a Learner to a Course: Check the [API VLE Course Learner documentation](/developers/api/vle/#vle_course_learner_create)
+<!-- 666: is that correct? --> 
+{{% /tab %}}
+{{% tab "PHP SDK" %}}
+<!-- # TODO: Missing all source code documentation links -->
+Adding Instructor to a Course:
+<!-- 666 find right source code sample -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addInstructor(...);
+ ```
+Adding Learner to a Course
+<!-- 666 find right source code sample -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addLearner(...);
+ ```
+{{% /tab %}}
+{{% tab "Python SDK" %}}
+Adding Instructors to a Course ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.create)): 
+<!-- 666 find documentation link -->
+<!-- 666 find right source code sample -->
+```python
+print("Section under construction")
+self._client.vle.course.create(...)
+```
+Adding Learner to a Course:
+<!-- 666 find documentation link -->
+<!-- 666 find right source code sample -->
+```python
+print("Section under construction")
+self._client.vle.course.get(...)
+ ```
 
-  {{< tab "SDK" >}}
-  this is second tab
-  {{</ tab >}}
-
- 
-{{</ tabs >}}
+{{% /tab %}}
+{{% /tabs %}}
+<br>
 
 ## 3. Get a Launcher
-What you need for forwarding fro your LMS to TeSLA CE Dashboard, without need of the use of credentials.
-Example: an INstructor using Moodle that wants to check TeSLA reports about specific activity in TeSLA Dashboard.
+What you need for forwarding from your LMS to TeSLA CE Dashboard, without need of the use of credentials.
 TeSLA CE Dashboard can be used for monitoring status of instruments, informed consent, activities.
+Example: an Instructor using Moodle that wants to check TeSLA reports about specific activity in TeSLA Dashboard.
 
-Note: TeSLA Dasboard can be access directly by an Intitution role (legal, admin, send), but, 
-by default, a user (Instructor o Learner) is not allowed to access directly to TeSLA dashboard, she needs access through the LMS front-end.
-However, you can change this behaviour by activating the option "login allowed" of the user profile
- in the Instituion Admin Dashboard. In that case, you will need to assign a new password using the "Change Password" button.
+Note: TeSLA Dashboard can be access directly by an Institution role (legal, admin, send), but, 
+by default, a user (either Instructor or Learner) is not allowed to access directly to TeSLA dashboard, 
+she needs access through the LMS front-end.
+Please, note that you can change this behaviour by activating the option "login allowed" of the user profile
+ in the Institution Admin Dashboard. In that case, you will need to assign a new password using the "Change Password" button.
 
 Note: A course should be created first in the LMS front-end (for example Moodle). When the user uses 
 the launcher, the system will check and decide if it needs to create the course in the TeSLA system.
 
 
 
-{{< tabs >}}
-  {{< tab "HTTP" >}}
-   This is first tab
-  {{</ tab >}}
+{{%tabs %}}
+{{% tab "HTTP" %}}
+The API level differentiate between Instructor and Learner users:
+<!-- 666: API endpoint? --> 
+{{% /tab %}}
+{{% tab "PHP SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addInstructor(...);
+ ```
 
-  {{< tab "SDK" >}}
-  this is second tab
-  {{</ tab >}}
-
- 
-{{</ tabs >}}
+{{% /tab %}}
+{{% tab "Python SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```python
+print("Section under construction")
+self._client.vle.course.create(...)
+```
+{{% /tab %}}
+{{% /tabs %}}
+<br>
 
 ## 4. Create/Get/Update an Activity
 
 All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).
 
 
-{{< tabs >}}
-  {{< tab "HTTP" >}}
-   This is first tab
-  {{</ tab >}}
+{{%tabs %}}
+{{% tab "HTTP" %}}
+The API level differentiate between Instructor and Learner users:
+<!-- 666: API endpoint? --> 
+{{% /tab %}}
+{{% tab "PHP SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addInstructor(...);
+ ```
 
-  {{< tab "SDK" >}}
-  this is second tab
-  {{</ tab >}}
-
- 
-{{</ tabs >}}
+{{% /tab %}}
+{{% tab "Python SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```python
+print("Section under construction")
+self._client.vle.course.create(...)
+```
+{{% /tab %}}
+{{% /tabs %}}
+<br>
 
 ## 5. Learner Information
 
 
-{{< tabs >}}
-  {{< tab "HTTP" >}}
-   This is first tab
-  {{</ tab >}}
+{{%tabs %}}
+{{% tab "HTTP" %}}
+The API level differentiate between Instructor and Learner users:
+<!-- 666: API endpoint? --> 
+{{% /tab %}}
+{{% tab "PHP SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addInstructor(...);
+ ```
 
-  {{< tab "SDK" >}}
-  this is second tab
-  {{</ tab >}}
-
- 
-{{</ tabs >}}
+{{% /tab %}}
+{{% tab "Python SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```python
+print("Section under construction")
+self._client.vle.course.create(...)
+```
+{{% /tab %}}
+{{% /tabs %}}
+<br>
 
 ## 6. Create an Assessment
 
@@ -200,52 +258,90 @@ This user case takes care of all the following scenarios:
 * Otherwise (everything correct): the system returns a javascript (the URL connection) for inserting 
 in the LMS for starting capturing data dinamically.
   
-{{< tabs >}}
-  {{< tab "HTTP" >}}
-   This is first tab
-  {{</ tab >}}
+{{%tabs %}}
+{{% tab "HTTP" %}}
+The API level differentiate between Instructor and Learner users:
+<!-- 666: API endpoint? --> 
+{{% /tab %}}
+{{% tab "PHP SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addInstructor(...);
+ ```
 
-  {{< tab "SDK" >}}
-  this is second tab
-  {{</ tab >}}
-
- 
-{{</ tabs >}}
+{{% /tab %}}
+{{% tab "Python SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```python
+print("Section under construction")
+self._client.vle.course.create(...)
+```
+{{% /tab %}}
+{{% /tabs %}}
+<br>
 
 ## 7. Add document to an assessment
 
 SendActivityDocument
 
-{{< tabs >}}
-  {{< tab "HTTP" >}}
-   This is first tab
-  {{</ tab >}}
+{{%tabs %}}
+{{% tab "HTTP" %}}
+The API level differentiate between Instructor and Learner users:
+<!-- 666: API endpoint? --> 
+{{% /tab %}}
+{{% tab "PHP SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addInstructor(...);
+ ```
 
-  {{< tab "SDK" >}}
-  this is second tab
-  {{</ tab >}}
-
- 
-{{</ tabs >}}
+{{% /tab %}}
+{{% tab "Python SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```python
+print("Section under construction")
+self._client.vle.course.create(...)
+```
+{{% /tab %}}
+{{% /tabs %}}
+<br>
 
 ## 8. Can Send 
 
 canSend
 Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?
 
-{{< tabs >}}
-  {{< tab "HTTP" >}}
-   This is first tab
-  {{</ tab >}}
+{{%tabs %}}
+{{% tab "HTTP" %}}
+The API level differentiate between Instructor and Learner users:
+<!-- 666: API endpoint? --> 
+{{% /tab %}}
+{{% tab "PHP SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```php
+echo "Section under construction";
+$this->client->getCourse()->addInstructor(...);
+ ```
 
-  {{< tab "SDK" >}}
-  this is second tab
-  {{</ tab >}}
+{{% /tab %}}
+{{% tab "Python SDK" %}}
+<!-- # 666: Documentation links? -->
+<!-- # 666: source code? -->
+```python
+print("Section under construction")
+self._client.vle.course.create(...)
+```
+{{% /tab %}}
+{{% /tabs %}}
+<br>
 
- 
-{{</ tabs >}}
-
-Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla. Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit.
 
 
 
