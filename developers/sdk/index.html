@@ -182,14 +182,13 @@ SDK
 <div class="notices info"><p><strong>This page is under construction</strong> <br>
 We&rsquo;re working on it!</p></div>
 <p>The Open Source TeSLA CE SDKs for supporting TeSLA CE REST API.</p>
-<p>This section will show you main SDKs user cases for calling TeSLA CE API.</p>
 <p>Available SDKs:</p>
 <ul>
-<li><a href=https://github.com/tesla-ce/php-client target=_blank>https://github.com/tesla-ce/php-client</a>
+<li><a href=https://github.com/tesla-ce/php-client target=_blank>PHP Client</a>
 : VLE integration</li>
-<li><a href=https://github.com/tesla-ce/python-provider-sdk target=_blank>https://github.com/tesla-ce/python-provider-sdk</a>
+<li><a href=https://github.com/tesla-ce/python-provider-sdk target=_blank>Python Provider SDK</a>
 : Providers integration</li>
-<li><a href=https://github.com/tesla-ce/python-client target=_blank>https://github.com/tesla-ce/python-client</a>
+<li><a href=https://github.com/tesla-ce/python-client target=_blank>Pyhton Client</a>
 : General API methods for generic and admin calls such as system installation, client set up, and so on.</li>
 </ul>
 <h1 id=table-of-contents>Table Of Contents</h1>
@@ -233,14 +232,14 @@ Python client:</p>
 </div>
 <h1 id=vle-integration-user-cases>VLE Integration User Cases</h1>
 <h2 id=1-course-management>1. Course Management</h2>
-<p>Create/Get/Update a Course.</p>
-<p>All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).</p>
+<p>SDK for Course Management including 3 user cases: Create/Get/Update a Course.</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-<p>Check the API VLE Course Management documentation for methods details: <a href=https://www.tesla-ce.eu/developers/api/vle/#vle_course_management target=_blank>https://www.tesla-ce.eu/developers/api/vle/#vle_course_management</a>
-</p>
+<p>All the three User Cases (Create, Get, and Update) using the same API endpoint but with its corresponding verb (PUT, GET, and PATCH).</p>
+<p>Check the <a href=/developers/api/vle/#vle_course_management>API VLE Course Management documentation</a>
+for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
 <p>Adding a Course:</p>
@@ -254,76 +253,128 @@ Python client:</p>
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<p>Adding a Course:</p>
+<p>Adding a Course (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.create target=_blank>source code documentation</a>
+):</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
 </code></pre></div><p>Get Course information:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
-</code></pre></div><p>Get Course information by VLE Course ID:</p>
+</code></pre></div><p>Get Course information by VLE Course ID (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.find_by_vle_id target=_blank>source code documentation</a>
+)::</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>find_by_vle_id(<span style=color:#f92672>...</span>)
 </code></pre></div><p>Updating an existing Course: <em>TBD</em></p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python></code></pre></div>
 </div>
 </div>
 </div>
+<br>
 <h2 id=2-add-user-to-a-course>2. Add User to a Course</h2>
-<p>User can be an Instructor or a Learner.</p>
+<p>SDK for adding User to an existing Course.</p>
+<p>Note that the User can be an Instructor or a Learner.</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-This is first tab
+<p>The API level differentiate between Instructor and Learner users:</p>
+<ul>
+<li>Adding an Instructor to a Course: Check the <a href=/developers/api/vle/#vle_course_instructor_create>API VLE Course Instructor documentation</a>
+</li>
+<li>Adding a Learner to a Course: Check the <a href=/developers/api/vle/#vle_course_learner_create>API VLE Course Learner documentation</a>
+</li>
+</ul>
 </div>
-<div class=tab-pane title=SDK>
-this is second tab
+<div class=tab-pane title="PHP SDK">
+<p>Adding Instructor to a Course:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Adding Learner to a Course</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addLearner</span>(<span style=color:#f92672>...</span>);
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<p>Adding Instructors to a Course (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.create target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Adding Learner to a Course:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
+<br>
 <h2 id=3-get-a-launcher>3. Get a Launcher</h2>
-<p>What you need for forwarding fro your LMS to TeSLA CE Dashboard, without need of the use of credentials.
-Example: an INstructor using Moodle that wants to check TeSLA reports about specific activity in TeSLA Dashboard.
-TeSLA CE Dashboard can be used for monitoring status of instruments, informed consent, activities.</p>
-<p>Note: TeSLA Dasboard can be access directly by an Intitution role (legal, admin, send), but,
-by default, a user (Instructor o Learner) is not allowed to access directly to TeSLA dashboard, she needs access through the LMS front-end.
-However, you can change this behaviour by activating the option &ldquo;login allowed&rdquo; of the user profile
-in the Instituion Admin Dashboard. In that case, you will need to assign a new password using the &ldquo;Change Password&rdquo; button.</p>
+<p>What you need for forwarding from your LMS to TeSLA CE Dashboard, without need of the use of credentials.
+TeSLA CE Dashboard can be used for monitoring status of instruments, informed consent, activities.
+Example: an Instructor using Moodle that wants to check TeSLA reports about specific activity in TeSLA Dashboard.</p>
+<p>Note: TeSLA Dashboard can be access directly by an Institution role (legal, admin, send), but,
+by default, a user (either Instructor or Learner) is not allowed to access directly to TeSLA dashboard,
+she needs access through the LMS front-end.
+Please, note that you can change this behaviour by activating the option &ldquo;login allowed&rdquo; of the user profile
+in the Institution Admin Dashboard. In that case, you will need to assign a new password using the &ldquo;Change Password&rdquo; button.</p>
 <p>Note: A course should be created first in the LMS front-end (for example Moodle). When the user uses
 the launcher, the system will check and decide if it needs to create the course in the TeSLA system.</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-This is first tab
+<p>The API level differentiate between Instructor and Learner users:</p>
 </div>
-<div class=tab-pane title=SDK>
-this is second tab
+<div class=tab-pane title="PHP SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
+<br>
 <h2 id=4-creategetupdate-an-activity>4. Create/Get/Update an Activity</h2>
 <p>All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-This is first tab
+<p>The API level differentiate between Instructor and Learner users:</p>
 </div>
-<div class=tab-pane title=SDK>
-this is second tab
+<div class=tab-pane title="PHP SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
+<br>
 <h2 id=5-learner-information>5. Learner Information</h2>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-This is first tab
+<p>The API level differentiate between Instructor and Learner users:</p>
 </div>
-<div class=tab-pane title=SDK>
-this is second tab
+<div class=tab-pane title="PHP SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
+<br>
 <h2 id=6-create-an-assessment>6. Create an Assessment</h2>
 <p>There are two types of send data processes: the enrolment data and the verification data.</p>
 <p>The enrolment data is done once (unless the Institution decides it needs to be done more than once, such, for instance, once a year),
@@ -342,26 +393,42 @@ in the LMS for starting capturing data dinamically.</li>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-This is first tab
+<p>The API level differentiate between Instructor and Learner users:</p>
 </div>
-<div class=tab-pane title=SDK>
-this is second tab
+<div class=tab-pane title="PHP SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
+<br>
 <h2 id=7-add-document-to-an-assessment>7. Add document to an assessment</h2>
 <p>SendActivityDocument</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-This is first tab
+<p>The API level differentiate between Instructor and Learner users:</p>
 </div>
-<div class=tab-pane title=SDK>
-this is second tab
+<div class=tab-pane title="PHP SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
+<br>
 <h2 id=8-can-send>8. Can Send</h2>
 <p>canSend
 Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?</p>
@@ -369,14 +436,21 @@ Notify the system if a verification can be sent: does the course exist in TeSLA 
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-This is first tab
+<p>The API level differentiate between Instructor and Learner users:</p>
 </div>
-<div class=tab-pane title=SDK>
-this is second tab
+<div class=tab-pane title="PHP SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
+$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
-<p>Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla. Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit.</p>
+<br>
 <hr>
 <hr>
 <h2 id=heading>***************</h2>
