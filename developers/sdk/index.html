@@ -3,7 +3,7 @@
 <meta charset=utf-8>
 <title>SDK</title>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <meta name=description content="SDK - TeSLA CE ">
 <link rel=stylesheet href=https://tesla-ce.github.io/plugins/bootstrap/bootstrap.min.css>
 <link rel=stylesheet href=https://tesla-ce.github.io/plugins/themify-icons/themify-icons.css>
@@ -181,25 +181,183 @@ SDK
 <div class=content>
 <div class="notices info"><p><strong>This page is under construction</strong> <br>
 We&rsquo;re working on it!</p></div>
-<p>Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.</p>
-<div class="notices note"><p>This is a simple note.</p></div>
-<div class="notices tip"><p>This is a simple tip.</p></div>
-<div class="notices info"><p>This is a simple info.</p></div>
+<p>The Open Source TeSLA CE SDKs for supporting TeSLA CE REST API.</p>
+<p>This section will show you main SDKs user cases for calling TeSLA CE API.</p>
+<p>Available SDKs:</p>
+<ul>
+<li><a href=https://github.com/tesla-ce/php-client>https://github.com/tesla-ce/php-client</a>: VLE integration</li>
+<li><a href=https://github.com/tesla-ce/python-provider-sdk>https://github.com/tesla-ce/python-provider-sdk</a>: Providers integration</li>
+<li><a href=https://github.com/tesla-ce/python-client>https://github.com/tesla-ce/python-client</a>: General API methods for generic and admin calls such as system installation, client set up, and so on.</li>
+</ul>
+<h1 id=table-of-contents>Table Of Contents</h1>
+<div class=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#1-course-management>1. Course Management</a></li>
+<li><a href=#2-add-user-to-a-course>2. Add User to a Course</a></li>
+<li><a href=#3-get-a-launcher>3. Get a Launcher</a></li>
+<li><a href=#4-creategetupdate-an-activity>4. Create/Get/Update an Activity</a></li>
+<li><a href=#5-learner-information>5. Learner Information</a></li>
+<li><a href=#6-create-an-assessment>6. Create an Assessment</a></li>
+<li><a href=#7-add-document-to-an-assessment>7. Add document to an assessment</a></li>
+<li><a href=#8-can-send>8. Can Send</a></li>
+<li><a href=#heading>***************</a>
+<ul>
+<li><a href=#image-example>Image Example</a></li>
+<li><a href=#example-of-code-block>Example Of Code Block</a></li>
+<li><a href=#text-and-quote>Text and Quote</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<h1 id=vle-integration-user-cases>VLE Integration User Cases</h1>
+<h2 id=1-course-management>1. Course Management</h2>
+<p>Create/Get/Update a Course.</p>
+<p>All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
-<div class=tab-pane title=first>
+<div class=tab-pane title=HTTP>
+<p>This first tab shows an example of HTML code, but we should use <strong>HTTP</strong> header and calls.</p>
+<p>API method:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>head</span>&gt;
+  &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>charset</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utf-8&#34;</span>&gt;
+  &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>http-equiv</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;X-UA-Compatible&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;IE=edge&#34;</span>&gt;
+  &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;viewport&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width=device-width, initial-scale=1&#34;</span>&gt;
+  &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/assets/css/main.css&#34;</span>&gt;
+  &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;shortcut icon&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;image/png&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/assets/img/favicon.png&#34;</span> &gt;
+  &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/assets/js/main.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+&lt;/<span style=color:#f92672>head</span>&gt;
+</code></pre></div>
+</div>
+<div class=tab-pane title="PHP SDK">
+<p>This second tab shows an example of PHP code, but we should use <strong>SKD</strong> header and calls.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>print</span>(<span style=color:#e6db74>&#34;Hello World!&#34;</span>)
+</code></pre></div>
+</div>
+<div class=tab-pane title="Python SDK">
+<p>This second tab shows an example of PYTHON code, but we should use <strong>SKD</strong> header and calls.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Hello World!&#34;</span>)
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id=2-add-user-to-a-course>2. Add User to a Course</h2>
+<p>User can be an Instructor or a Learner.</p>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=HTTP>
 This is first tab
 </div>
-<div class=tab-pane title=second>
+<div class=tab-pane title=SDK>
 this is second tab
 </div>
-<div class=tab-pane title=third>
-this is third tab
+</div>
+</div>
+<h2 id=3-get-a-launcher>3. Get a Launcher</h2>
+<p>What you need for forwarding fro your LMS to TeSLA CE Dashboard, without need of the use of credentials.
+Example: an INstructor using Moodle that wants to check TeSLA reports about specific activity in TeSLA Dashboard.
+TeSLA CE Dashboard can be used for monitoring status of instruments, informed consent, activities.</p>
+<p>Note: TeSLA Dasboard can be access directly by an Intitution role (legal, admin, send), but,
+by default, a user (Instructor o Learner) is not allowed to access directly to TeSLA dashboard, she needs access through the LMS front-end.
+However, you can change this behaviour by activating the option &ldquo;login allowed&rdquo; of the user profile
+in the Instituion Admin Dashboard. In that case, you will need to assign a new password using the &ldquo;Change Password&rdquo; button.</p>
+<p>Note: A course should be created first in the LMS front-end (for example Moodle). When the user uses
+the launcher, the system will check and decide if it needs to create the course in the TeSLA system.</p>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=HTTP>
+This is first tab
+</div>
+<div class=tab-pane title=SDK>
+this is second tab
+</div>
+</div>
+</div>
+<h2 id=4-creategetupdate-an-activity>4. Create/Get/Update an Activity</h2>
+<p>All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).</p>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=HTTP>
+This is first tab
+</div>
+<div class=tab-pane title=SDK>
+this is second tab
+</div>
+</div>
+</div>
+<h2 id=5-learner-information>5. Learner Information</h2>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=HTTP>
+This is first tab
+</div>
+<div class=tab-pane title=SDK>
+this is second tab
+</div>
+</div>
+</div>
+<h2 id=6-create-an-assessment>6. Create an Assessment</h2>
+<p>There are two types of send data processes: the enrolment data and the verification data.</p>
+<p>The enrolment data is done once (unless the Institution decides it needs to be done more than once, such, for instance, once a year),
+and it&rsquo;s done in the TeSLA CE dashboard.</p>
+<p>The verification data process is done while the learner is making the assessment, and since the
+assessment can be done over several days, every day will have a dedicated assessment for
+letting the system know that all data sent during same assessment is related.</p>
+<p>This user case takes care of all the following scenarios:</p>
+<ul>
+<li>Enrolment not done: system forwards the learner to dashboard for making the enrolment.</li>
+<li>Informed Consent is not accepted/signed: the system forward the learner to the informed consent in the dashboard.</li>
+<li>Otherwise (everything correct): the system returns a javascript (the URL connection) for inserting
+in the LMS for starting capturing data dinamically.</li>
+</ul>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=HTTP>
+This is first tab
+</div>
+<div class=tab-pane title=SDK>
+this is second tab
+</div>
+</div>
+</div>
+<h2 id=7-add-document-to-an-assessment>7. Add document to an assessment</h2>
+<p>SendActivityDocument</p>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=HTTP>
+This is first tab
+</div>
+<div class=tab-pane title=SDK>
+this is second tab
+</div>
+</div>
+</div>
+<h2 id=8-can-send>8. Can Send</h2>
+<p>canSend
+Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?</p>
+<div class=code-tabs>
+<ul class="nav nav-tabs"></ul>
+<div class=tab-content>
+<div class=tab-pane title=HTTP>
+This is first tab
+</div>
+<div class=tab-pane title=SDK>
+this is second tab
 </div>
 </div>
 </div>
 <p>Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla. Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit.</p>
+<hr>
+<hr>
+<h2 id=heading>***************</h2>
 <h3 id=image-example>Image Example</h3>
 <p>Nunc porta malesuada porta. Etiam tristique vestibulum dolor at ultricies. Proin hendrerit sapien sed erat fermentum, at commodo velit consectetur.</p>
 <p><img src=img-1.jpg alt="image example" title=image></p>
@@ -221,7 +379,7 @@ this is third tab
 </blockquote>
 <p>Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.</p>
 </div>
-<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 20 Sep 2021</p>
+<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 15 Feb 2022</p>
 <nav class="pagination mt-3">
 <a class="nav nav-prev" href=https://tesla-ce.github.io/developers/api/vle/ aria-label="Previous page"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">VLE</span></a>
 <a class="nav nav-next" href=https://tesla-ce.github.io/about/ aria-label="Previous page"> <span class="d-none d-md-block">About</span><i class="ti-arrow-right ml-2"></i></a>
