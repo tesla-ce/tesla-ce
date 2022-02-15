@@ -212,3 +212,10 @@ hasChildren = true
   name = "Features"
   url = "features"
   weight = 3
+
+# TableOfContents configuration
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
