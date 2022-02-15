@@ -24,42 +24,85 @@ Available SDKs:
 # Table Of Contents
 {{< toc >}}
 
+
+{{< notice warning >}}
+Before using any of the TeSLA CE SDKs, please, note that a client must exist.
+{{</ notice >}}
+{{% tabs %}}
+{{% tab "PHP"%}}
+Client creation (php):
+````php
+$this->client = new Client($role, $secret, $base_url, !$debug, $tesla_cache);
+````
+{{% /tab%}}
+{{% tab "Python"%}}
+Client creation (Python):
+Python client:
+```python
+self._client = Client.create_instance(config['VAULT_URL'], config['VAULT_ROLE_ID'], config['VAULT_SECRET_ID'], config['VAULT_SSL_VERIFY'])
+```
+{{% /tab%}}
+
+{{% /tabs %}}
+
+
+
+
 # VLE Integration User Cases
 ## 1. Course Management
 Create/Get/Update a Course.
 
 All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).
 
+
+
 {{%tabs %}}
 {{% tab "HTTP" %}}
-This first tab shows an example of HTML code, but we should use **HTTP** header and calls.
+Check the API VLE Course Management documentation for methods details: https://www.tesla-ce.eu/developers/api/vle/#vle_course_management
 
-API method:
-```html
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png" >
-  <script src="/assets/js/main.js"></script>
-</head>
-```
 {{% /tab %}}
 
 {{% tab "PHP SDK" %}}
-This second tab shows an example of PHP code, but we should use **SKD** header and calls.
+
+Adding a Course:
 
 ```php
-print("Hello World!")
+$this->client->getCourse()->create(...);
+ ```
+Get Course information:
+```php
+$this->client->getCourse()->get(...);
+ ```
+
+Get Course information by VLE Course ID:
+```php
+$this->client->getCourse()->getByVleCourseId(...);
+ ```
+
+Updating an existing Course:
+```php
+$this->client->getCourse()->update(...);
 ```
 {{% /tab %}}
 
 {{% tab "Python SDK" %}}
-This second tab shows an example of PYTHON code, but we should use **SKD** header and calls.
-
+Adding a Course:
 ```python
-print("Hello World!")
+self._client.vle.course.create(...)
+```
+
+Get Course information:
+```python
+self._client.vle.course.get(...)
+ ```
+
+Get Course information by VLE Course ID:
+```python
+self._client.vle.course.find_by_vle_id(...)
+ ```
+
+Updating an existing Course: *TBD*
+```python
 ```
 {{% /tab %}}
  
