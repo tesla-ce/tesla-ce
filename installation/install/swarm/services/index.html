@@ -203,7 +203,8 @@ Skip this step if you already have your services deployed.</p></div>
 docker network create --driver overlay tesla_private</code></pre></div>
 <h3 id=create-persistent-data-folders>Create persistent data folders</h3>
 <p>To provide persistence of the data, all services will be provided with a mounted volume.
-All data folders are created under the folder provided in the <strong>deployment_data_path</strong> configuration option (see <a href=../configuration>Configuration</a>).
+All data folders are created under the folder provided in the <strong>deployment_data_path</strong> configuration option (see <a href=../configuration>Configuration</a>
+).
 By default, this folder is <code>/var/tesla</code>.</p>
 <p>Traefik is used as a default load balancer and certificate management. We need to create a persistence folder for traefik:<br>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo mkdir -p /var/tesla/traefik</code></pre></div></p>

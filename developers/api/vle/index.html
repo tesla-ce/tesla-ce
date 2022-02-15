@@ -185,27 +185,42 @@ We&rsquo;re working on it!</p></div>
 <table><tr><td>
 <h1 id=table-of-content>Table of Content</h1>
 <ol>
-<li><a href=#vle_management>VLE Management</a></li>
-<li><a href=#vle_course_management>VLE Course Management</a></li>
-<li><a href=#vle_instrument_management>VLE Instrument Management</a></li>
-<li><a href=#vle_course_instructor_management>VLE Course Instructor Management</a></li>
-<li><a href=#vle_course_learner_management>VLE Course Learner Management</a></li>
-<li><a href=#vle_course_activity_management>VLE Course Activity Management</a></li>
-<li><a href=#vle_course_activity_attachment_management>VLE Course Activity Attachment Management</a></li>
-<li><a href=#vle_course_activity_instrument_management>VLE Course Activity Instrument Management</a></li>
-<li><a href=#vle_course_activity_learner_management>VLE Course Activity Learner Management</a></li>
-<li><a href=#vle_course_activity_report_management>VLE Course Activity Report Management</a></li>
+<li><a href=#vle_management>VLE Management</a>
+</li>
+<li><a href=#vle_course_management>VLE Course Management</a>
+</li>
+<li><a href=#vle_instrument_management>VLE Instrument Management</a>
+</li>
+<li><a href=#vle_course_instructor_management>VLE Course Instructor Management</a>
+</li>
+<li><a href=#vle_course_learner_management>VLE Course Learner Management</a>
+</li>
+<li><a href=#vle_course_activity_management>VLE Course Activity Management</a>
+</li>
+<li><a href=#vle_course_activity_attachment_management>VLE Course Activity Attachment Management</a>
+</li>
+<li><a href=#vle_course_activity_instrument_management>VLE Course Activity Instrument Management</a>
+</li>
+<li><a href=#vle_course_activity_learner_management>VLE Course Activity Learner Management</a>
+</li>
+<li><a href=#vle_course_activity_report_management>VLE Course Activity Report Management</a>
+</li>
 </ol>
 </td></tr></table>
 <p><br><br></p>
 <h1 id=1-vle-management-a-namevle_managementa>1. VLE Management <a name=vle_management></a></h1>
 <hr>
-<p>1.1 GET: <a href=#vle_list>List VLE</a><br>
-1.2 GET: <a href=#vle_read>Read VLE</a><br>
-1.3 POST: <a href=#vle_assessment>VLE Assesment</a>: create a new assessment session.<br>
-1.4 POST: <a href=#vle_launcher>VLE Launcher</a>: create a new launcher url for VLE user.</p>
+<p>1.1 GET: <a href=#vle_list>List VLE</a>
+<br>
+1.2 GET: <a href=#vle_read>Read VLE</a>
+<br>
+1.3 POST: <a href=#vle_assessment>VLE Assesment</a>
+: create a new assessment session.<br>
+1.4 POST: <a href=#vle_launcher>VLE Launcher</a>
+: create a new launcher url for VLE user.</p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=11-list-vle-a-namevle_lista>1.1 List VLE <a name=vle_list></a></h2>
@@ -327,7 +342,9 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=12-read-vlea-namevle_reada>1.2 Read VLE<a name=vle_read></a></h2>
@@ -432,7 +449,9 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <h2 id=13-vle-assessment-a-namevle_assessmenta>1.3 VLE Assessment <a name=vle_assessment></a></h2>
 <p>API endpoint that creates a new assessment session.</p>
@@ -600,7 +619,9 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=14-vle-launcher-a-namevle_launchera>1.4 VLE Launcher <a name=vle_launcher></a></h2>
@@ -708,21 +729,30 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br></p>
 <h1 id=2-vle-course-management-a-namevle_course_managementa>2. VLE Course Management <a name=vle_course_management></a></h1>
 <hr>
 <p>Set of API endpoints that allow a course in a VLE to be viewed or edited.<br></p>
-<p>2.1 GET: <a href=#vle_course_list>List VLE Course</a><br>
-2.2 POST: <a href=#vle_course_create>Create VLE Course</a><br>
-2.3 GET: <a href=#vle_course_read>Read VLE Course</a><br>
-2.4 PUT: <a href=#vle_course_update>Update VLE Course</a><br>
-2.5 PATCH: <a href=#vle_course_partial_update>Partial Update VLE Course</a><br>
-2.6 DELETE: <a href=#vle_course_delete>Delete VLE Course</a><br></p>
+<p>2.1 GET: <a href=#vle_course_list>List VLE Course</a>
+<br>
+2.2 POST: <a href=#vle_course_create>Create VLE Course</a>
+<br>
+2.3 GET: <a href=#vle_course_read>Read VLE Course</a>
+<br>
+2.4 PUT: <a href=#vle_course_update>Update VLE Course</a>
+<br>
+2.5 PATCH: <a href=#vle_course_partial_update>Partial Update VLE Course</a>
+<br>
+2.6 DELETE: <a href=#vle_course_delete>Delete VLE Course</a>
+<br></p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=21-list-vle-coursea-namevle_course_lista>2.1 List VLE Course<a name=vle_course_list></a></h2>
@@ -879,7 +909,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=22-create-vle-coursea-namevle_course_createa>2.2 Create VLE Course<a name=vle_course_create></a></h2>
@@ -1058,7 +1090,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=23-read-vle-coursea-namevle_course_reada>2.3 Read VLE Course<a name=vle_course_read></a></h2>
@@ -1198,7 +1232,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=24-update-vle-coursea-namevle_course_updatea>2.4 Update VLE Course<a name=vle_course_update></a></h2>
@@ -1381,7 +1417,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=25-partial-update-vle-course-a-namevle_course_partial_updatea>2.5 Partial Update VLE Course <a name=vle_course_partial_update></a></h2>
@@ -1564,7 +1602,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=26-delete-vle-coursea-namevle_course_deletea>2.6 Delete VLE Course<a name=vle_course_delete></a></h2>
@@ -1632,17 +1672,22 @@ Request parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br><br></p>
 <h1 id=3-vle-instrument-management-a-namevle_instrument_managementa>3. VLE Instrument Management <a name=vle_instrument_management></a></h1>
 <hr>
 <p>Set of API endpoints that allows access to VLE related models.</p>
-<p>3.1 GET: <a href=#vle_instrument_list>List VLE Instrument</a><br>
-3.2 GET: <a href=#vle_instrument_read>Read VLE Instrument</a><br></p>
+<p>3.1 GET: <a href=#vle_instrument_list>List VLE Instrument</a>
+<br>
+3.2 GET: <a href=#vle_instrument_read>Read VLE Instrument</a>
+<br></p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=31-list-vle-instrument-a-namevle_instrument_lista>3.1 List VLE Instrument <a name=vle_instrument_list></a></h2>
@@ -1778,7 +1823,9 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=32-read-vle-instrumenta-namevle_instrument_reada>3.2 Read VLE Instrument<a name=vle_instrument_read></a></h2>
@@ -1942,20 +1989,29 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <p><br><br></p>
 <h1 id=4-vle-course-instructor-management-a-namevle_course_instructor_managementa>4. VLE Course Instructor Management <a name=vle_course_instructor_management></a></h1>
 <hr>
 <p>Set of API endpoints that allows Instructor in a Course to be viewed or edited.<br></p>
-<p>4.1 GET: <a href=#vle_course_instructor_list>List VLE Course Instructor</a><br>
-4.2 POST: <a href=#vle_course_instructor_create>Create VLE Course Instructor</a><br>
-4.3 GET: <a href=#vle_course_instructor_read>Read VLE Course Instructor</a><br>
-4.4 PUT: <a href=#vle_course_instructor_update>Update VLE Course Instructor</a><br>
-4.5 PATCH: <a href=#vle_course_instructor_partial_update>Partial Update VLE Course Instructor</a><br>
-4.6 DELETE: <a href=#vle_course_instructor_delete>Delete VLE Course Instructor</a></p>
+<p>4.1 GET: <a href=#vle_course_instructor_list>List VLE Course Instructor</a>
+<br>
+4.2 POST: <a href=#vle_course_instructor_create>Create VLE Course Instructor</a>
+<br>
+4.3 GET: <a href=#vle_course_instructor_read>Read VLE Course Instructor</a>
+<br>
+4.4 PUT: <a href=#vle_course_instructor_update>Update VLE Course Instructor</a>
+<br>
+4.5 PATCH: <a href=#vle_course_instructor_partial_update>Partial Update VLE Course Instructor</a>
+<br>
+4.6 DELETE: <a href=#vle_course_instructor_delete>Delete VLE Course Instructor</a>
+</p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=41-list-vle-course-instructora-namevle_course_instructor_lista>4.1 List VLE Course Instructor<a name=vle_course_instructor_list></a></h2>
@@ -2116,7 +2172,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_instructor_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_instructor_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=42-create-vle-course-instructora-namevle_course_instructor_createa>4.2 Create VLE Course Instructor<a name=vle_course_instructor_create></a></h2>
@@ -2337,7 +2395,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_instructor_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_instructor_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=43-read-vle-course-instructora-namevle_course_instructor_reada>4.3 Read VLE Course Instructor<a name=vle_course_instructor_read></a></h2>
@@ -2506,7 +2566,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_instructor_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_instructor_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=44-update-vle-course-instructora-namevle_course_instructor_updatea>4.4 Update VLE Course Instructor<a name=vle_course_instructor_update></a></h2>
@@ -2732,7 +2794,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_instructor_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_instructor_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=45-partial-update-vle-course-instructor-a-namevle_course_instructor_partial_updatea>4.5 Partial Update VLE Course Instructor <a name=vle_course_instructor_partial_update></a></h2>
@@ -2958,7 +3022,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_instructor_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_instructor_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=46-delete-vle-course-instructora-namevle_course_instructor_deletea>4.6 Delete VLE Course Instructor<a name=vle_course_instructor_delete></a></h2>
@@ -3031,21 +3097,30 @@ Request parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_instructor_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_instructor_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br></p>
 <h1 id=5-vle-course-learner-management-a-namevle_course_learner_managementa>5. VLE Course Learner Management <a name=vle_course_learner_management></a></h1>
 <hr>
 <p>Set of API endpoints that allows learners in a course to be viewed or edited.<br></p>
-<p>5.1 GET: <a href=#vle_course_learner_list>List VLE Course Learner</a><br>
-5.2 POST: <a href=#vle_course_learner_create>Create VLE Course Learner</a><br>
-5.3 GET: <a href=#vle_course_learner_read>Read VLE Course Learner</a><br>
-5.4 PUT: <a href=#vle_course_learner_update>Update VLE Course Learner</a><br>
-5.5 PATCH: <a href=#vle_course_learner_partial_update>Partial Update VLE Course Learner</a><br>
-5.6 DELETE: <a href=#vle_course_learner_delete>Delete VLE Course Learner</a></p>
+<p>5.1 GET: <a href=#vle_course_learner_list>List VLE Course Learner</a>
+<br>
+5.2 POST: <a href=#vle_course_learner_create>Create VLE Course Learner</a>
+<br>
+5.3 GET: <a href=#vle_course_learner_read>Read VLE Course Learner</a>
+<br>
+5.4 PUT: <a href=#vle_course_learner_update>Update VLE Course Learner</a>
+<br>
+5.5 PATCH: <a href=#vle_course_learner_partial_update>Partial Update VLE Course Learner</a>
+<br>
+5.6 DELETE: <a href=#vle_course_learner_delete>Delete VLE Course Learner</a>
+</p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=51-list-vle-course-learnera-namevle_course_learner_lista>5.1 List VLE Course Learner<a name=vle_course_learner_list></a></h2>
@@ -3222,7 +3297,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=52-create-vle-course-learnera-namevle_course_learner_createa>5.2 Create VLE Course Learner<a name=vle_course_learner_create></a></h2>
@@ -3502,7 +3579,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=53-read-vle-course-learnera-namevle_course_learner_reada>5.3 Read VLE Course Learner<a name=vle_course_learner_read></a></h2>
@@ -3722,7 +3801,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=54-update-vle-course-learnera-namevle_course_learner_updatea>5.4 Update VLE Course Learner<a name=vle_course_learner_update></a></h2>
@@ -4007,7 +4088,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=55-partial-update-vle-course-learner-a-namevle_course_learner_partial_updatea>5.5 Partial Update VLE Course Learner <a name=vle_course_learner_partial_update></a></h2>
@@ -4292,7 +4375,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=56-delete-vle-course-learnera-namevle_course_learner_deletea>5.6 Delete VLE Course Learner<a name=vle_course_learner_delete></a></h2>
@@ -4365,21 +4450,30 @@ Request parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br></p>
 <h1 id=6-vle-course-activity-management-a-namevle_course_activity_managementa>6. VLE Course Activity Management <a name=vle_course_activity_management></a></h1>
 <hr>
 <p>Set of API endpoints that allows Activity in a Course to be viewed or edited.<br></p>
-<p>6.1 GET: <a href=#vle_course_activity_list>List VLE Course Activity</a><br>
-6.2 POST: <a href=#vle_course_activity_create>Create VLE Course Activity</a><br>
-6.3 GET: <a href=#vle_course_activity_read>Read VLE Course Activity</a><br>
-6.4 PUT: <a href=#vle_course_activity_update>Update VLE Course Activity</a><br>
-6.5 PATCH: <a href=#vle_course_activity_partial_update>Partial Update VLE Course Activity</a><br>
-6.6 DELETE: <a href=#vle_course_activity_delete>Delete VLE Course Activity</a></p>
+<p>6.1 GET: <a href=#vle_course_activity_list>List VLE Course Activity</a>
+<br>
+6.2 POST: <a href=#vle_course_activity_create>Create VLE Course Activity</a>
+<br>
+6.3 GET: <a href=#vle_course_activity_read>Read VLE Course Activity</a>
+<br>
+6.4 PUT: <a href=#vle_course_activity_update>Update VLE Course Activity</a>
+<br>
+6.5 PATCH: <a href=#vle_course_activity_partial_update>Partial Update VLE Course Activity</a>
+<br>
+6.6 DELETE: <a href=#vle_course_activity_delete>Delete VLE Course Activity</a>
+</p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=61-list-vle-course-activitya-namevle_course_activity_lista>6.1 List VLE Course Activity<a name=vle_course_activity_list></a></h2>
@@ -4559,7 +4653,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=62-create-vle-course-activitya-namevle_course_activity_createa>6.2 Create VLE Course Activity<a name=vle_course_activity_create></a></h2>
@@ -4796,7 +4892,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=63-read-vle-course-activitya-namevle_course_activity_reada>6.3 Read VLE Course Activity<a name=vle_course_activity_read></a></h2>
@@ -4969,7 +5067,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=64-update-vle-course-activitya-namevle_course_activity_updatea>6.4 Update VLE Course Activity<a name=vle_course_activity_update></a></h2>
@@ -5211,7 +5311,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=65-partial-update-vle-course-activity-a-namevle_course_activity_partial_updatea>6.5 Partial Update VLE Course Activity <a name=vle_course_activity_partial_update></a></h2>
@@ -5453,7 +5555,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=66-delete-vle-course-activitya-namevle_course_activity_deletea>6.6 Delete VLE Course Activity<a name=vle_course_activity_delete></a></h2>
@@ -5526,17 +5630,22 @@ Request parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br></p>
 <h1 id=7-vle-course-activity-attachment-management-a-namevle_course_activity_attachment_managementa>7. VLE Course Activity Attachment Management <a name=vle_course_activity_attachment_management></a></h1>
 <hr>
 <p>Set of API endpoints that Return the list of instruments (if any) waiting to process the attachment of the activity.<br></p>
-<p>7.1 GET: <a href=#vle_course_activity_attachment_list>List VLE Course Activity Attachment</a><br>
-7.2 POST: <a href=#vle_course_activity_attachment_create>Create VLE Course Activity Attachment</a><br></p>
+<p>7.1 GET: <a href=#vle_course_activity_attachment_list>List VLE Course Activity Attachment</a>
+<br>
+7.2 POST: <a href=#vle_course_activity_attachment_create>Create VLE Course Activity Attachment</a>
+<br></p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=71-list-vle-course-activity-attachmenta-namevle_course_activity_attachment_lista>7.1 List VLE Course Activity Attachment<a name=vle_course_activity_attachment_list></a></h2>
@@ -5686,7 +5795,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_attachment_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_attachment_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=72-create-vle-course-activity-attachmenta-namevle_course_activity_attachment_createa>7.2 Create VLE Course Activity Attachment<a name=vle_course_activity_attachment_create></a></h2>
@@ -5899,21 +6010,30 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_attachment_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_attachment_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br></p>
 <h1 id=8-vle-course-activity-instrument-management-a-namevle_course_activity_instrument_managementa>8. VLE Course Activity Instrument Management <a name=vle_course_activity_instrument_management></a></h1>
 <hr>
 <p>Set of API endpoints that allows Activity instruments in a Course to be viewed or edited.<br></p>
-<p>8.1 GET: <a href=#vle_course_activity_instrument_list>List VLE Course Activity Instrument</a><br>
-8.2 POST: <a href=#vle_course_activity_instrument_create>Create VLE Course Activity Instrument</a><br>
-8.3 GET: <a href=#vle_course_activity_instrument_read>Read VLE Course Activity Instrument</a><br>
-8.4 PUT: <a href=#vle_course_activity_instrument_update>Update VLE Course Activity Instrument</a><br>
-8.5 PATCH: <a href=#vle_course_activity_instrument_partial_update>Partial Update VLE Course Activity Instrument</a><br>
-8.6 DELETE: <a href=#vle_course_activity_instrument_delete>Delete VLE Course Activity Instrument</a></p>
+<p>8.1 GET: <a href=#vle_course_activity_instrument_list>List VLE Course Activity Instrument</a>
+<br>
+8.2 POST: <a href=#vle_course_activity_instrument_create>Create VLE Course Activity Instrument</a>
+<br>
+8.3 GET: <a href=#vle_course_activity_instrument_read>Read VLE Course Activity Instrument</a>
+<br>
+8.4 PUT: <a href=#vle_course_activity_instrument_update>Update VLE Course Activity Instrument</a>
+<br>
+8.5 PATCH: <a href=#vle_course_activity_instrument_partial_update>Partial Update VLE Course Activity Instrument</a>
+<br>
+8.6 DELETE: <a href=#vle_course_activity_instrument_delete>Delete VLE Course Activity Instrument</a>
+</p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=81-list-vle-course-activity-instrumenta-namevle_course_activity_instrument_lista>8.1 List VLE Course Activity Instrument<a name=vle_course_activity_instrument_list></a></h2>
@@ -6080,7 +6200,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=82-create-vle-course-activity-instrumenta-namevle_course_activity_instrument_createa>8.2 Create VLE Course Activity Instrument<a name=vle_course_activity_instrument_create></a></h2>
@@ -6295,7 +6417,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=83-read-vle-course-activity-instrumenta-namevle_course_activity_instrument_reada>8.3 Read VLE Course Activity Instrument<a name=vle_course_activity_instrument_read></a></h2>
@@ -6460,7 +6584,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=84-update-vle-course-activity-instrumenta-namevle_course_activity_instrument_updatea>8.4 Update VLE Course Activity Instrument<a name=vle_course_activity_instrument_update></a></h2>
@@ -6680,7 +6806,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=85-partial-update-vle-course-activity-instrument-a-namevle_course_activity_instrument_partial_updatea>8.5 Partial Update VLE Course Activity Instrument <a name=vle_course_activity_instrument_partial_update></a></h2>
@@ -6900,7 +7028,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=86-delete-vle-course-activity-instrumenta-namevle_course_activity_instrument_deletea>8.6 Delete VLE Course Activity Instrument<a name=vle_course_activity_instrument_delete></a></h2>
@@ -6976,19 +7106,26 @@ Request parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_instrument_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_instrument_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br></p>
 <h1 id=9-vle-course-activity-learner-management-a-namevle_course_activity_learner_managementa>9. VLE Course Activity Learner Management <a name=vle_course_activity_learner_management></a></h1>
 <hr>
 <p>Set of API endpoints that allows access results for learners in an Activity.<br></p>
-<p>9.1 GET: <a href=#vle_course_activity_learner_list>List VLE Course Activity Learner</a><br>
-9.2 GET: <a href=#vle_course_activity_learner_read>Read VLE Course Activity Learner</a><br>
-9.3 GET: <a href=#vle_course_activity_learner_request_list>List VLE Course Activity Learner Request</a><br>
-9.4 GET: <a href=#vle_course_activity_learner_request_read>Read VLE Course Activity Learner Request</a><br></p>
+<p>9.1 GET: <a href=#vle_course_activity_learner_list>List VLE Course Activity Learner</a>
+<br>
+9.2 GET: <a href=#vle_course_activity_learner_read>Read VLE Course Activity Learner</a>
+<br>
+9.3 GET: <a href=#vle_course_activity_learner_request_list>List VLE Course Activity Learner Request</a>
+<br>
+9.4 GET: <a href=#vle_course_activity_learner_request_read>Read VLE Course Activity Learner Request</a>
+<br></p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=91-list-vle-course-activity-learnera-namevle_course_activity_learner_lista>9.1 List VLE Course Activity Learner<a name=vle_course_activity_learner_list></a></h2>
@@ -7150,7 +7287,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=92-read-vle-course-activity-learnera-namevle_course_activity_learner_reada>9.2 Read VLE Course Activity Learner<a name=vle_course_activity_learner_read></a></h2>
@@ -7280,7 +7419,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=93-list-vle-course-activity-learner-requesta-namevle_course_activity_learner_request_lista>9.3 List VLE Course Activity Learner Request<a name=vle_course_activity_learner_request_list></a></h2>
@@ -7448,7 +7589,9 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=94-read-vle-course-activity-learner-requesta-namevle_course_activity_learner_request_reada>9.4 Read VLE Course Activity Learner Request<a name=vle_course_activity_learner_request_read></a></h2>
@@ -7629,16 +7772,21 @@ Response parameters.<br>
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_learner_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_learner_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <p><br><br><br></p>
 <h1 id=10-vle-course-activity-report-management-a-namevle_course_activity_report_managementa>10. VLE Course Activity Report Management <a name=vle_course_activity_report_management></a></h1>
 <hr>
-<p>10.1 <a href=#vle_course_activity_report_list>List VLE Course Activity Report</a><br>
-10.2 <a href=#vle_course_activity_report_read>Read VLE Course Activity Report</a><br><br></p>
+<p>10.1 <a href=#vle_course_activity_report_list>List VLE Course Activity Report</a>
+<br>
+10.2 <a href=#vle_course_activity_report_read>Read VLE Course Activity Report</a>
+<br><br></p>
 <div style=text-align:right>
-<p><a href=#table-of-content>[top page]</a></p>
+<p><a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <h2 id=101-list-vle-course-activity-report-a-namevle_course_activity_report_lista>10.1 List VLE Course Activity Report <a name=vle_course_activity_report_list></a></h2>
 <p>API endpoint for listing Activity Reports from a Course in a VLE.</p>
@@ -7791,7 +7939,9 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_report_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_report_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 <br>
 <h2 id=102-read-vle-course-activity-reporta-namevle_course_activity_report_reada>10.2 Read VLE Course Activity Report<a name=vle_course_activity_report_read></a></h2>
@@ -7933,7 +8083,9 @@ Response parameters.
 }
 </code></pre></div></details>
 <div style=text-align:right>
-<p><a href=#vle_course_activity_report_management>[top section]</a> <a href=#table-of-content>[top page]</a></p>
+<p><a href=#vle_course_activity_report_management>[top section]</a>
+<a href=#table-of-content>[top page]</a>
+</p>
 </div>
 </div>
 <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 25 Oct 2021</p>

@@ -162,18 +162,27 @@ Elements
 <div class="p-lg-5 p-4 bg-white">
 <h2 class=mb-5>Requirements</h2>
 <div class=content><h2 id=domain>Domain</h2>
-<p>Due to the use of personal data, TeSLA CE will use encrypted communications. As part of the deployment, <a href=https://traefik.io/>Traefik </a>proxy and load-balancer will be deployed by default, which will manage the certificates using <a href=https://letsencrypt.org/>LetsEncrypt</a>.</p>
+<p>Due to the use of personal data, TeSLA CE will use encrypted communications. As part of the deployment, <a href=https://traefik.io/ target=_blank>Traefik </a>
+proxy and load-balancer will be deployed by default, which will manage the certificates using <a href=https://letsencrypt.org/ target=_blank>LetsEncrypt</a>
+.</p>
 <p>You will require to have a valid domain name pointing to the server where TeSLA CE will be deployed.</p>
 <p>If you plan to deploy the services as part of the installation procedure (not recommended for production), you will also need to point sub-domains for deployed services pointing to the server. In this case, TeSLA CE configuration scripts will try to reach services on such sub-domains.</p>
 <h2 id=services>Services</h2>
 <h3 id=self-hosted>Self-Hosted</h3>
 <p>In order to operate, TeSLA CE needs a set of services ready to use:</p>
 <ul>
-<li>Database (<a href=https://www.mysql.com/>MySQL</a>/<a href=https://mariadb.org/>MariaDB</a>, <a href=https://www.postgresql.org/>PostgreSQL</a>)</li>
-<li><a href=https://www.vaultproject.io/>HashiCorp Vault</a></li>
-<li><a href=https://www.rabbitmq.com/>RabbitMQ</a></li>
-<li><a href=https://redis.io/>Redis</a></li>
-<li><a href=https://min.io/>MinIO</a></li>
+<li>Database (<a href=https://www.mysql.com/ target=_blank>MySQL</a>
+/<a href=https://mariadb.org/ target=_blank>MariaDB</a>
+, <a href=https://www.postgresql.org/ target=_blank>PostgreSQL</a>
+)</li>
+<li><a href=https://www.vaultproject.io/ target=_blank>HashiCorp Vault</a>
+</li>
+<li><a href=https://www.rabbitmq.com/ target=_blank>RabbitMQ</a>
+</li>
+<li><a href=https://redis.io/ target=_blank>Redis</a>
+</li>
+<li><a href=https://min.io/ target=_blank>MinIO</a>
+</li>
 </ul>
 <p>The configuration and credentials to access those services is required in order to perform the initial setup of the system</p>
 <p>The initial setup process will prepare all the services in order to be used by TeSLA CE.</p>
