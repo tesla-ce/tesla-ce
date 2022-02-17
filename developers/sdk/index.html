@@ -200,8 +200,13 @@ We&rsquo;re working on it!</p></div>
 <li><a href=#3-get-a-launcher>3. Get a Launcher</a></li>
 <li><a href=#4-creategetupdate-an-activity>4. Create/Get/Update an Activity</a></li>
 <li><a href=#5-learner-information>5. Learner Information</a></li>
-<li><a href=#6-create-an-assessment>6. Create an Assessment</a></li>
-<li><a href=#7-assessment>7. Assessment</a></li>
+<li><a href=#6-assessment-data>6. Assessment Data</a>
+<ul>
+<li><a href=#create-an-assessment----create_an_assessment--->Create an Assessment </a></li>
+<li><a href=#verification-data-sending-during-the-assessment>Verification Data sending during the Assessment</a></li>
+<li><a href=#verification-data-sending-after-the-assessment>Verification Data sending after the Assessment</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
@@ -329,13 +334,13 @@ for methods details.</p>
 </div>
 <br>
 <h2 id=4-creategetupdate-an-activity>4. Create/Get/Update an Activity</h2>
-<p>All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).</p>
+<p>SDK for Activity Management including 3 user cases: Create/Get/Update an Activity.</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
 <p>All the three User Cases (Create, Get, and Update) using the same API endpoint but with its corresponding verb (PUT, GET, and PATCH).</p>
-<p>Check the <a href=/developers/api/vle/#vle_course_activity_management>API VLE Actiity Management documentation</a>
+<p>Check the <a href=/developers/api/vle/#vle_course_activity_management>API VLE Activity Management documentation</a>
 for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
@@ -343,7 +348,7 @@ for methods details.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>create</span>(<span style=color:#f92672>...</span>);
 </code></pre></div><p>Get Activity information:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>get</span>(<span style=color:#f92672>...</span>);
-</code></pre></div><p>Get Course information by Activity ID and Actitity Type:</p>
+</code></pre></div><p>Get Activity information by Activity ID and Activity Type:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getByVleActivityIdAndType</span>(<span style=color:#f92672>...</span>);
 </code></pre></div><p>Updating an existing Activity:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>update</span>(<span style=color:#f92672>...</span>);
@@ -356,7 +361,7 @@ for methods details.</p>
 </code></pre></div><p>Get Activity information (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.get target=_blank>source code documentation</a>
 ):</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
-</code></pre></div><p>Get Activity information by VLE Course ID (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.find_by_vle_id target=_blank>source code documentation</a>
+</code></pre></div><p>Get Activity information by Activity ID (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.find_by_vle_id target=_blank>source code documentation</a>
 ):</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>find_by_vle_id(<span style=color:#f92672>...</span>)
 </code></pre></div><p>Updating an existing Activity (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.update target=_blank>source code documentation</a>
@@ -409,19 +414,34 @@ self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>v
 </div>
 </div>
 <br>
-<h2 id=6-create-an-assessment>6. Create an Assessment</h2>
-<p>There are two types of send data processes: the enrolment data and the verification data.</p>
-<p>The enrolment data is done once (unless the Institution decides it needs to be done more than once, such, for instance, once a year),
-and it&rsquo;s done in the TeSLA CE dashboard.</p>
-<p>The verification data process is done while the learner is making the assessment, and since the
-assessment can be done over several days, every day will have a dedicated assessment for
-letting the system know that all data sent during same assessment is related.</p>
-<p>This user case takes care of all the following scenarios:</p>
+<h2 id=6-assessment-data>6. Assessment Data</h2>
+<p>In order to apply for a TeSLA CE Assessment, the system needs to send different type of data from the learner to the system.</p>
+<p>We can differentiate two main types of send data processes: the enrolment data and the verification data.</p>
+<p>The enrolment data is done once (unless the Institution decides it needs to be done more than once, such, for instance,
+once a year), and it&rsquo;s done in the TeSLA CE dashboard. It implies the capturing of sample data in order to later verify that
+the learner applying for an assessment is, in fact, the right and allowed learner to do it.</p>
+<p>The verification data process, instead, needs to be done every time that the learner applies for an assessment.
+Inside this verification data process we can differentiate between verification done <em>during</em> the assessment (while
+the learner is performing the assessment), versus the verification done <em>after</em> the assessment (once the learner has delivered
+task of the assessment).</p>
+<p>The verification done <em>during</em> the assessment implies the capturing of several data (depending on the activated instruments
+for that specific activity) in order to verify that person typing, or sending, or recording the assessment is, actually,
+the allowed learner. An example of this assessment data could be face pictures for face recognition, or keystroke recording for
+keystroke dynamic recognition.</p>
+<p>On the other hand, for the verification done <em>after</em> the assessment, the system analyzes the data sent by the learner (the
+deliverable item of the assessment, such a document) and compares it with other delivered items in order to detect if the content is
+copied by an other source or learner. As an example, the plagiarism detection tool uses this process in order to compare a
+delivered document with all the other delivered documents.</p>
+<h3 id=create-an-assessment----create_an_assessment--->Create an Assessment </h3>
+<p>Since an assessment can be performed over several days, every different day will need a dedicated assessment
+for letting the system know that all verification data sent during the assessment is related to the same assessment
+and to the same learner. In order to achieve that target, the system returns a dynamic URL to be inserted in the LMS.</p>
+<p>Moreover, when using this method, the system will take care of the following 3 possible scenarios:</p>
 <ul>
-<li>Enrolment not done: system forwards the learner to dashboard for making the enrolment.</li>
-<li>Informed Consent is not accepted/signed: the system forward the learner to the informed consent in the dashboard.</li>
-<li>Otherwise (everything correct): the system returns a javascript (the URL connection) for inserting
-in the LMS for starting capturing data dinamically.</li>
+<li>Enrolment process not done: system forwards the Learner to the TeSLA CE Dashboard for making the enrolment.</li>
+<li>Informed Consent is not accepted/signed: the system forward the Learner to the informed consent page in the TeSLA CE Dashboard.</li>
+<li>Otherwise (everything correct): the system returns a javascript (the URL connection) that should be inserted<br>
+in the LMS for starting capturing data dynamically.</li>
 </ul>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
@@ -449,9 +469,17 @@ self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>v
 </div>
 </div>
 <br>
-<h2 id=7-assessment>7. Assessment</h2>
-<p>TODO: add docment to an assessment</p>
-<p>Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?</p>
+<h3 id=verification-data-sending-during-the-assessment>Verification Data sending during the Assessment</h3>
+<p>As mentioned in previous section, all data sent during an assessment needs to be related to an assessment session, i.e.
+needs to use the dynamic URL created in the &ldquo;Create an Assessment&rdquo; User Case.
+<br></p>
+<h3 id=verification-data-sending-after-the-assessment>Verification Data sending after the Assessment</h3>
+<p>For the verification data sending after the assessment, the data is not related to a session, but to a learner and activity.
+That&rsquo;s the reason why the system needs to verify if the verification data can be sent, i.e. validate if the Course
+exist in TeSLA system, if the Activity exist, and if the instrument is activated for that particular TeSLA Activity.</p>
+<p>So, the system needs to create the attachment stored in the LMS (the deliverable sent by the Learner) and also needs to
+verify if the data can be sent.</p>
+<p>TODO: add document to an assessment</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
