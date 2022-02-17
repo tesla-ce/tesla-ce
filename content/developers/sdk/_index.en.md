@@ -77,10 +77,9 @@ Adding a Course ([source code documentation](https://www.tesla-ce.eu/python-clie
 ```python
 self._client.vle.course.create(...)
 ```
-Get Course information:
-<!-- # TODO: missing GET call in python-client documentation --> 
+Get Course information ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.list)):
 ```python
-self._client.vle.course.get(...)
+self._client.vle.course.list(...)
  ```
 Get Course information by VLE Course ID ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.find_by_vle_id))::
 ```python
@@ -90,6 +89,8 @@ Updating an existing Course: *TBD*
 <!-- # TODO: missing updating existing course method in python-client -->
 <!-- # TODO: missing UPDATE call in python-client documentation -->
 ```python
+# Not implemented
+self._client.vle.course.update(...)
 ```
 {{% /tab %}}
 {{% /tabs %}}
@@ -105,37 +106,30 @@ Note that the User can be an Instructor or a Learner.
 The API level differentiate between Instructor and Learner users:
 - Adding an Instructor to a Course: Check the [API VLE Course Instructor documentation](/developers/api/vle/#vle_course_instructor_create)
 - Adding a Learner to a Course: Check the [API VLE Course Learner documentation](/developers/api/vle/#vle_course_learner_create)
-<!-- 666: is that correct? --> 
 {{% /tab %}}
 {{% tab "PHP SDK" %}}
 <!-- # TODO: Missing all source code documentation links -->
 Adding Instructor to a Course:
-<!-- 666 find right source code sample -->
 ```php
-echo "Section under construction";
 $this->client->getCourse()->addInstructor(...);
  ```
 Adding Learner to a Course
-<!-- 666 find right source code sample -->
 ```php
-echo "Section under construction";
 $this->client->getCourse()->addLearner(...);
  ```
 {{% /tab %}}
 {{% tab "Python SDK" %}}
-Adding Instructors to a Course ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.create)): 
-<!-- 666 find documentation link -->
-<!-- 666 find right source code sample -->
+<!-- # TODO: missing adding instructor to existing course method in python-client -->
+Adding Instructors to a Course:
 ```python
-print("Section under construction")
-self._client.vle.course.create(...)
+# Not implemented
+self._client.vle.course.add_instructor(...)
 ```
+<!-- # TODO: missing adding learner to existing course method in python-client -->
 Adding Learner to a Course:
-<!-- 666 find documentation link -->
-<!-- 666 find right source code sample -->
 ```python
-print("Section under construction")
-self._client.vle.course.get(...)
+# Not implemented
+self._client.vle.course.add_learner(...)
  ```
 
 {{% /tab %}}
@@ -160,24 +154,20 @@ the launcher, the system will check and decide if it needs to create the course 
 
 {{%tabs %}}
 {{% tab "HTTP" %}}
-The API level differentiate between Instructor and Learner users:
-<!-- 666: API endpoint? --> 
-{{% /tab %}}
-{{% tab "PHP SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
-```php
-echo "Section under construction";
-$this->client->getCourse()->addInstructor(...);
- ```
+
+Check the [API VLE Launcher documentation](/developers/api/vle/#vle_launcher) for methods details.
 
 {{% /tab %}}
+{{% tab "PHP SDK" %}}
+```php
+$this->client->getLauncher()->create(...);
+ ```
+{{% /tab %}}
 {{% tab "Python SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+Get launcher information ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.client.VleClient.get_launcher))::
+
 ```python
-print("Section under construction")
-self._client.vle.course.create(...)
+self._client.get_launcher(...)
 ```
 {{% /tab %}}
 {{% /tabs %}}
@@ -187,27 +177,47 @@ self._client.vle.course.create(...)
 
 All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).
 
-
 {{%tabs %}}
 {{% tab "HTTP" %}}
-The API level differentiate between Instructor and Learner users:
-<!-- 666: API endpoint? --> 
+All the three User Cases (Create, Get, and Update) using the same API endpoint but with its corresponding verb (PUT, GET, and PATCH).
+
+Check the [API VLE Actiity Management documentation](/developers/api/vle/#vle_course_activity_management) for methods details.
 {{% /tab %}}
 {{% tab "PHP SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+Adding an Activity:
 ```php
-echo "Section under construction";
-$this->client->getCourse()->addInstructor(...);
+$this->client->getActivity()->create(...);
  ```
+Get Activity information:
+```php
+$this->client->getActivity()->get(...);
+ ```
+Get Course information by Activity ID and Actitity Type:
+```php
+$this->client->getActivity()->getByVleActivityIdAndType(...);
+ ```
+Updating an existing Activity:
+```php
+$this->client->getActivity()->update(...);
+```
 
 {{% /tab %}}
 {{% tab "Python SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+Adding an Activity ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.create)):
 ```python
-print("Section under construction")
-self._client.vle.course.create(...)
+self._client.vle.course.activity.create(...)
+```
+Get Activity information ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.get)):
+```python
+self._client.vle.course.activity.get(...)
+ ```
+Get Activity information by VLE Course ID ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.find_by_vle_id)):
+```python
+self._client.vle.course.activity.find_by_vle_id(...)
+ ```
+Updating an existing Activity ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.update)):
+```python
+self._client.vle.course.activity.update(...)
 ```
 {{% /tab %}}
 {{% /tabs %}}
@@ -218,24 +228,54 @@ self._client.vle.course.create(...)
 
 {{%tabs %}}
 {{% tab "HTTP" %}}
-The API level differentiate between Instructor and Learner users:
-<!-- 666: API endpoint? --> 
+
+Check the [API VLE Course Learner Management documentation](/developers/api/vle/#vle_course_learner_management) for methods details.
+
 {{% /tab %}}
 {{% tab "PHP SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+Adding a Learner:
 ```php
-echo "Section under construction";
-$this->client->getCourse()->addInstructor(...);
+$this->client->getLearner()->create(...);
  ```
+Get Learner information:
+```php
+// Not implemented
+$this->client->getLearner()->get(...);
+ ```
+Get Learner information by UID:
+```php
+$this->client->getLearner()->getByUid(...);
+ ```
+Updating an existing Learner:
+```php
+// Not implemented
+$this->client->getLearner()->update(...);
+```
 
 {{% /tab %}}
 {{% tab "Python SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+Adding a Learner:
 ```python
-print("Section under construction")
-self._client.vle.course.create(...)
+# Not implemented
+self._client.vle.course.learner.create(...)
+```
+Get Learner information ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.get)):
+```python
+self._client.vle.course.learner.get(...)
+ ```
+Get Learner information by UID ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.learner.client.VleCourseLearnerClient.find_by_uid)):
+```python
+self._client.vle.course.learner.find_by_uid(...)
+ ```
+Get Learner information by mail ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.learner.client.VleCourseLearnerClient.find_by_mail)):
+```python
+self._client.vle.course.learner.find_by_mail(...)
+ ```
+
+Updating an existing learner:
+```python
+# Not implemented
+self._client.vle.course.learner.update(...)
 ```
 {{% /tab %}}
 {{% /tabs %}}
@@ -260,87 +300,70 @@ in the LMS for starting capturing data dinamically.
   
 {{%tabs %}}
 {{% tab "HTTP" %}}
-The API level differentiate between Instructor and Learner users:
-<!-- 666: API endpoint? --> 
+Check the [API VLE Assessment documentation](/developers/api/vle/#vle_assessment) for methods details.
+
 {{% /tab %}}
 {{% tab "PHP SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+Creating an assessment:
 ```php
-echo "Section under construction";
-$this->client->getCourse()->addInstructor(...);
+$this->client->getAssessment()->create(...);
+ ```
+Close an assessment:
+```php
+$this->client->getAssessment()->close(...);
  ```
 
 {{% /tab %}}
 {{% tab "Python SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+
+Create an assessment
 ```python
-print("Section under construction")
-self._client.vle.course.create(...)
+# Not implemented
+self._client.vle.course.activity.assessment.create(...)
 ```
+
+Close an assessment
+```python
+# Not implemented
+self._client.vle.course.activity.assessment.close(...)
+```
+
 {{% /tab %}}
 {{% /tabs %}}
 <br>
 
-## 7. Add document to an assessment
+## 7. Assessment
 
-SendActivityDocument
+TODO: add docment to an assessment
 
-{{%tabs %}}
-{{% tab "HTTP" %}}
-The API level differentiate between Instructor and Learner users:
-<!-- 666: API endpoint? --> 
-{{% /tab %}}
-{{% tab "PHP SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
-```php
-echo "Section under construction";
-$this->client->getCourse()->addInstructor(...);
- ```
-
-{{% /tab %}}
-{{% tab "Python SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
-```python
-print("Section under construction")
-self._client.vle.course.create(...)
-```
-{{% /tab %}}
-{{% /tabs %}}
-<br>
-
-## 8. Can Send 
-
-canSend
 Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?
 
+
 {{%tabs %}}
 {{% tab "HTTP" %}}
-The API level differentiate between Instructor and Learner users:
-<!-- 666: API endpoint? --> 
+Check the [API VLE Course Activity Attachment Management](/developers/api/vle/#vle_course_activity_attachment_management) for methods details.
+
 {{% /tab %}}
 {{% tab "PHP SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
+Creating an attachment:
 ```php
-echo "Section under construction";
-$this->client->getCourse()->addInstructor(...);
+$this->client->getVerification()->sendActivityDocument(...);
+ ```
+
+Can send:
+```php
+$this->client->getVerification()->canSend(...);
  ```
 
 {{% /tab %}}
 {{% tab "Python SDK" %}}
-<!-- # 666: Documentation links? -->
-<!-- # 666: source code? -->
 ```python
-print("Section under construction")
-self._client.vle.course.create(...)
+# Not implemented
 ```
 {{% /tab %}}
 {{% /tabs %}}
 <br>
+
 
 
 

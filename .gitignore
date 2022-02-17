@@ -2,4 +2,5 @@ public/
 resources/
 hugo
 run_hug.sh
-
+.idea
+.hugo_build.lock
