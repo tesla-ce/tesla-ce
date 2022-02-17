@@ -201,8 +201,7 @@ We&rsquo;re working on it!</p></div>
 <li><a href=#4-creategetupdate-an-activity>4. Create/Get/Update an Activity</a></li>
 <li><a href=#5-learner-information>5. Learner Information</a></li>
 <li><a href=#6-create-an-assessment>6. Create an Assessment</a></li>
-<li><a href=#7-add-document-to-an-assessment>7. Add document to an assessment</a></li>
-<li><a href=#8-can-send>8. Can Send</a></li>
+<li><a href=#7-assessment>7. Assessment</a></li>
 </ul>
 </nav>
 </div>
@@ -249,13 +248,16 @@ for methods details.</p>
 <p>Adding a Course (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.create target=_blank>source code documentation</a>
 ):</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
-</code></pre></div><p>Get Course information:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Course information (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.list target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>list(<span style=color:#f92672>...</span>)
 </code></pre></div><p>Get Course information by VLE Course ID (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.find_by_vle_id target=_blank>source code documentation</a>
 )::</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>find_by_vle_id(<span style=color:#f92672>...</span>)
 </code></pre></div><p>Updating an existing Course: <em>TBD</em></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python></code></pre></div>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>update(<span style=color:#f92672>...</span>)
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -277,21 +279,19 @@ for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
 <p>Adding Instructor to a Course:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
 </code></pre></div><p>Adding Learner to a Course</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addLearner</span>(<span style=color:#f92672>...</span>);
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addLearner</span>(<span style=color:#f92672>...</span>);
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<p>Adding Instructors to a Course (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.client.VleCourseClient.create target=_blank>source code documentation</a>
-):</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
-</code></pre></div><p>Adding Learner to a Course:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
+<p>Adding Instructors to a Course:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>add_instructor(<span style=color:#f92672>...</span>)
+</code></pre></div>
+<p>Adding Learner to a Course:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>add_learner(<span style=color:#f92672>...</span>)
 </code></pre></div>
 </div>
 </div>
@@ -312,16 +312,17 @@ the launcher, the system will check and decide if it needs to create the course 
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-<p>The API level differentiate between Instructor and Learner users:</p>
+<p>Check the <a href=/developers/api/vle/#vle_launcher>API VLE Launcher documentation</a>
+for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getLauncher</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>create</span>(<span style=color:#f92672>...</span>);
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+<p>Get launcher information (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.client.VleClient.get_launcher target=_blank>source code documentation</a>
+)::</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>get_launcher(<span style=color:#f92672>...</span>)
 </code></pre></div>
 </div>
 </div>
@@ -333,16 +334,34 @@ self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>v
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-<p>The API level differentiate between Instructor and Learner users:</p>
+<p>All the three User Cases (Create, Get, and Update) using the same API endpoint but with its corresponding verb (PUT, GET, and PATCH).</p>
+<p>Check the <a href=/developers/api/vle/#vle_course_activity_management>API VLE Actiity Management documentation</a>
+for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+<p>Adding an Activity:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>create</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Get Activity information:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>get</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Get Course information by Activity ID and Actitity Type:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getByVleActivityIdAndType</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Updating an existing Activity:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getActivity</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>update</span>(<span style=color:#f92672>...</span>);
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+<p>Adding an Activity (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.create target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Activity information (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.get target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Activity information by VLE Course ID (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.find_by_vle_id target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>find_by_vle_id(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Updating an existing Activity (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.update target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>update(<span style=color:#f92672>...</span>)
 </code></pre></div>
 </div>
 </div>
@@ -353,16 +372,38 @@ self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>v
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-<p>The API level differentiate between Instructor and Learner users:</p>
+<p>Check the <a href=/developers/api/vle/#vle_course_learner_management>API VLE Course Learner Management documentation</a>
+for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+<p>Adding a Learner:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getLearner</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>create</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Get Learner information:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>// Not implemented
+</span><span style=color:#75715e></span>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getLearner</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>get</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Get Learner information by UID:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getLearner</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getByUid</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Updating an existing Learner:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>// Not implemented
+</span><span style=color:#75715e></span>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getLearner</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>update</span>(<span style=color:#f92672>...</span>);
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+<p>Adding a Learner:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>learner<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Learner information (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.get target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>learner<span style=color:#f92672>.</span>get(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Learner information by UID (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.learner.client.VleCourseLearnerClient.find_by_uid target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>learner<span style=color:#f92672>.</span>find_by_uid(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Get Learner information by mail (<a href=https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.learner.client.VleCourseLearnerClient.find_by_mail target=_blank>source code documentation</a>
+):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>learner<span style=color:#f92672>.</span>find_by_mail(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Updating an existing learner:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>learner<span style=color:#f92672>.</span>update(<span style=color:#f92672>...</span>)
 </code></pre></div>
 </div>
 </div>
@@ -386,66 +427,54 @@ in the LMS for starting capturing data dinamically.</li>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-<p>The API level differentiate between Instructor and Learner users:</p>
+<p>Check the <a href=/developers/api/vle/#vle_assessment>API VLE Assessment documentation</a>
+for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+<p>Creating an assessment:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getAssessment</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>create</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Close an assessment:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getAssessment</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>close</span>(<span style=color:#f92672>...</span>);
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+<p>Create an assessment</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>assessment<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+</code></pre></div><p>Close an assessment</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
+self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>activity<span style=color:#f92672>.</span>assessment<span style=color:#f92672>.</span>close(<span style=color:#f92672>...</span>)
 </code></pre></div>
 </div>
 </div>
 </div>
 <br>
-<h2 id=7-add-document-to-an-assessment>7. Add document to an assessment</h2>
-<p>SendActivityDocument</p>
+<h2 id=7-assessment>7. Assessment</h2>
+<p>TODO: add docment to an assessment</p>
+<p>Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?</p>
 <div class=code-tabs>
 <ul class="nav nav-tabs"></ul>
 <div class=tab-content>
 <div class=tab-pane title=HTTP>
-<p>The API level differentiate between Instructor and Learner users:</p>
+<p>Check the <a href=/developers/api/vle/#vle_course_activity_attachment_management>API VLE Course Activity Attachment Management</a>
+for methods details.</p>
 </div>
 <div class=tab-pane title="PHP SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
+<p>Creating an attachment:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getVerification</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>sendActivityDocument</span>(<span style=color:#f92672>...</span>);
+</code></pre></div><p>Can send:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php>$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getVerification</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>canSend</span>(<span style=color:#f92672>...</span>);
 </code></pre></div>
 </div>
 <div class=tab-pane title="Python SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
-</code></pre></div>
-</div>
-</div>
-</div>
-<br>
-<h2 id=8-can-send>8. Can Send</h2>
-<p>canSend
-Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?</p>
-<div class=code-tabs>
-<ul class="nav nav-tabs"></ul>
-<div class=tab-content>
-<div class=tab-pane title=HTTP>
-<p>The API level differentiate between Instructor and Learner users:</p>
-</div>
-<div class=tab-pane title="PHP SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#66d9ef>echo</span> <span style=color:#e6db74>&#34;Section under construction&#34;</span>;
-$this<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>client</span><span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getCourse</span>()<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>addInstructor</span>(<span style=color:#f92672>...</span>);
-</code></pre></div>
-</div>
-<div class=tab-pane title="Python SDK">
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;Section under construction&#34;</span>)
-self<span style=color:#f92672>.</span>_client<span style=color:#f92672>.</span>vle<span style=color:#f92672>.</span>course<span style=color:#f92672>.</span>create(<span style=color:#f92672>...</span>)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Not implemented</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <br>
 </div>
-<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 15 Feb 2022</p>
+<p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 17 Feb 2022</p>
 <nav class="pagination mt-3">
 <a class="nav nav-prev" href=https://tesla-ce.github.io/developers/api/vle/ aria-label="Previous page"><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">VLE</span></a>
 <a class="nav nav-next" href=https://tesla-ce.github.io/about/ aria-label="Previous page"> <span class="d-none d-md-block">About</span><i class="ti-arrow-right ml-2"></i></a>
