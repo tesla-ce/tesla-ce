@@ -175,13 +175,14 @@ self._client.get_launcher(...)
 
 ## 4. Create/Get/Update an Activity
 
-All 3 user cases using the same endpoint but with its corresponding verb (PUT, GET, PATCH).
+SDK for Activity Management including 3 user cases: Create/Get/Update an Activity.
+
 
 {{%tabs %}}
 {{% tab "HTTP" %}}
 All the three User Cases (Create, Get, and Update) using the same API endpoint but with its corresponding verb (PUT, GET, and PATCH).
 
-Check the [API VLE Actiity Management documentation](/developers/api/vle/#vle_course_activity_management) for methods details.
+Check the [API VLE Activity Management documentation](/developers/api/vle/#vle_course_activity_management) for methods details.
 {{% /tab %}}
 {{% tab "PHP SDK" %}}
 Adding an Activity:
@@ -192,7 +193,7 @@ Get Activity information:
 ```php
 $this->client->getActivity()->get(...);
  ```
-Get Course information by Activity ID and Actitity Type:
+Get Activity information by Activity ID and Activity Type:
 ```php
 $this->client->getActivity()->getByVleActivityIdAndType(...);
  ```
@@ -211,7 +212,7 @@ Get Activity information ([source code documentation](https://www.tesla-ce.eu/py
 ```python
 self._client.vle.course.activity.get(...)
  ```
-Get Activity information by VLE Course ID ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.find_by_vle_id)):
+Get Activity information by Activity ID ([source code documentation](https://www.tesla-ce.eu/python-client/0.0.1/client/#tesla_ce_client.vle.course.activity.client.VleCourseActivityClient.find_by_vle_id)):
 ```python
 self._client.vle.course.activity.find_by_vle_id(...)
  ```
@@ -281,22 +282,43 @@ self._client.vle.course.learner.update(...)
 {{% /tabs %}}
 <br>
 
-## 6. Create an Assessment
+<!--- ## 6. Create an Assessment --->
+## 6. Assessment Data
 
-There are two types of send data processes: the enrolment data and the verification data.
+In order to apply for a TeSLA CE Assessment, the system needs to send different type of data from the learner to the system.
 
-The enrolment data is done once (unless the Institution decides it needs to be done more than once, such, for instance, once a year),
- and it's done in the TeSLA CE dashboard.
+We can differentiate two main types of send data processes: the enrolment data and the verification data.
 
-The verification data process is done while the learner is making the assessment, and since the 
-assessment can be done over several days, every day will have a dedicated assessment for 
-letting the system know that all data sent during same assessment is related.
+The enrolment data is done once (unless the Institution decides it needs to be done more than once, such, for instance, 
+once a year), and it's done in the TeSLA CE dashboard. It implies the capturing of sample data in order to later verify that 
+the learner applying for an assessment is, in fact, the right and allowed learner to do it.
 
-This user case takes care of all the following scenarios:
-* Enrolment not done: system forwards the learner to dashboard for making the enrolment.
-* Informed Consent is not accepted/signed: the system forward the learner to the informed consent in the dashboard.
-* Otherwise (everything correct): the system returns a javascript (the URL connection) for inserting 
-in the LMS for starting capturing data dinamically.
+The verification data process, instead, needs to be done every time that the learner applies for an assessment.
+Inside this verification data process we can differentiate between verification done *during* the assessment (while 
+the learner is performing the assessment), versus the verification done *after* the assessment (once the learner has delivered 
+task of the assessment).
+
+The verification done *during* the assessment implies the capturing of several data (depending on the activated instruments 
+for that specific activity) in order to verify that person typing, or sending, or recording the assessment is, actually, 
+the allowed learner. An example of this assessment data could be face pictures for face recognition, or keystroke recording for 
+keystroke dynamic recognition.
+
+On the other hand, for the verification done *after* the assessment, the system analyzes the data sent by the learner (the 
+deliverable item of the assessment, such a document) and compares it with other delivered items in order to detect if the content is 
+copied by an other source or learner. As an example, the plagiarism detection tool uses this process in order to compare a 
+delivered document with all the other delivered documents.
+
+### Create an Assessment <!-- create_an_assessment -->
+Since an assessment can be performed over several days, every different day will need a dedicated assessment 
+for letting the system know that all verification data sent during the assessment is related to the same assessment 
+and to the same learner. In order to achieve that target, the system returns a dynamic URL to be inserted in the LMS.
+
+Moreover, when using this method, the system will take care of the following 3 possible scenarios:
+
+* Enrolment process not done: system forwards the Learner to the TeSLA CE Dashboard for making the enrolment.
+* Informed Consent is not accepted/signed: the system forward the Learner to the informed consent page in the TeSLA CE Dashboard.
+* Otherwise (everything correct): the system returns a javascript (the URL connection) that should be inserted  
+in the LMS for starting capturing data dynamically.
   
 {{%tabs %}}
 {{% tab "HTTP" %}}
@@ -332,12 +354,22 @@ self._client.vle.course.activity.assessment.close(...)
 {{% /tabs %}}
 <br>
 
-## 7. Assessment
+### Verification Data sending during the Assessment 
+As mentioned in previous section, all data sent during an assessment needs to be related to an assessment session, i.e. 
+needs to use the dynamic URL created in the "Create an Assessment" User Case.
+<br>
 
-TODO: add docment to an assessment
+### Verification Data sending after the Assessment
+<!-- ## 7. Assessment -->
+For the verification data sending after the assessment, the data is not related to a session, but to a learner and activity. 
+That's the reason why the system needs to verify if the verification data can be sent, i.e. validate if the Course 
+exist in TeSLA system, if the Activity exist, and if the instrument is activated for that particular TeSLA Activity.
 
-Notify the system if a verification can be sent: does the course exist in TeSLA sytem? Does the activity exist? Is the instrument activated in the TeSLA Activity?
+So, the system needs to create the attachment stored in the LMS (the deliverable sent by the Learner) and also needs to 
+verify if the data can be sent.
 
+TODO: add document to an assessment
+<!-- 666 Roger? -->
 
 {{%tabs %}}
 {{% tab "HTTP" %}}
