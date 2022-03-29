@@ -96,6 +96,13 @@ self._client.vle.course.update(...)
 {{% /tabs %}}
 <br>
 
+
+<div style="text-align:right">
+
+[[top page]](#table-of-contents) 
+</div>
+<br>
+
 ## 2. Add User to a Course
 SDK for adding User to an existing Course.
 
@@ -136,6 +143,12 @@ self._client.vle.course.add_learner(...)
 {{% /tabs %}}
 <br>
 
+<div style="text-align:right">
+
+[[top page]](#table-of-contents) 
+</div>
+<br>
+
 ## 3. Get a Launcher
 What you need for forwarding from your LMS to TeSLA CE Dashboard, without need of the use of credentials.
 TeSLA CE Dashboard can be used for monitoring status of instruments, informed consent, activities.
@@ -171,6 +184,12 @@ self._client.get_launcher(...)
 ```
 {{% /tab %}}
 {{% /tabs %}}
+<br>
+
+<div style="text-align:right">
+
+[[top page]](#table-of-contents) 
+</div>
 <br>
 
 ## 4. Create/Get/Update an Activity
@@ -222,6 +241,12 @@ self._client.vle.course.activity.update(...)
 ```
 {{% /tab %}}
 {{% /tabs %}}
+<br>
+
+<div style="text-align:right">
+
+[[top page]](#table-of-contents) 
+</div>
 <br>
 
 ## 5. Learner Information
@@ -280,6 +305,12 @@ self._client.vle.course.learner.update(...)
 ```
 {{% /tab %}}
 {{% /tabs %}}
+<br>
+
+<div style="text-align:right">
+
+[[top page]](#table-of-contents) 
+</div>
 <br>
 
 <!--- ## 6. Create an Assessment --->
@@ -359,6 +390,7 @@ As mentioned in previous section, all data sent during an assessment needs to be
 needs to use the dynamic URL created in the "Create an Assessment" User Case.
 <br>
 
+
 ### Verification Data sending after the Assessment
 <!-- ## 7. Assessment -->
 For the verification data sending after the assessment, the data is not related to a session, but to a learner and activity. 
@@ -396,6 +428,11 @@ $this->client->getVerification()->canSend(...);
 {{% /tabs %}}
 <br>
 
+<div style="text-align:right">
+
+[[top page]](#table-of-contents) 
+</div>
+<br>
 
 
 
