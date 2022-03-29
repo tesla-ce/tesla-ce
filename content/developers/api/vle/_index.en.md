@@ -429,7 +429,7 @@ API endpoint that creates a new launcher url for VLE user.
 ### Request
 Concept | Data
 -- | --
-HTTP method | <code>**POST**</code>
+HTTP method | <code>**GET**</code>
 Path | /api/v2/vle/{id}/launcher/
 Authorization | JWT
 Content Type | application/json
@@ -446,19 +446,35 @@ Content Type | application/json
                   <td><strong>Comments</strong></td>
               </tr>
               <tr>
-                  <td><strong>id</strong><br><code>required</code></td>
-                  <td>integer </td>
-                  <td>Request path parameter. A unique integer value identifying this VLE.</td>
+                  <td><strong>vle_user_uid</strong><br><code>required</code></td>
+                  <td>string </td>
+                  <td>Identifier of the user in the vle.</td>
               </tr>
               <tr>
-                  <td><strong>token</strong><br><code>required</code></td>
-                  <td>string (Token)<br>non-empty </td>
-                  <td>-</td>
+                  <td>vle_id<br></td>
+                  <td>int</td>
+                  <td>Identifier of the vle. If not provided take it from module configuration.</td>
               </tr>
               <tr>
-                  <td><strong>id</strong><br><code>required</code></td>
-                  <td>integer (ID) </td>
-                  <td>-</td>
+                  <td>target</td>
+                  <td>string</td>
+                  <td>The target for the launcher. Accepted values are "dashboard" (default) and "lapi".
+                        <br>Default: 'DASHBOARD'</td>
+              </tr>
+              <tr>
+                  <td>target_url</td>
+                  <td>string</td>
+                  <td>The url where launcher is expected to be redirected.</td>
+              </tr>
+              <tr>
+                  <td>ttl</td>
+                  <td>int</td>
+                  <td>The amount of time this launcher will be valid. <br>Default: 120</td>
+              </tr>
+              <tr>
+                  <td>session_id</td>
+                  <td>int</td>
+                  <td>The assessment session linked to this launcher.</td>
               </tr>
          </tbody>
         </table>
@@ -474,19 +490,9 @@ Content Type | application/json
               <td><strong>Comments</strong></td>
           </tr>
           <tr>
-              <td><strong>token</strong><br><code>required</code></td>
-              <td>string (Token)<br>non-empty </td>
               <td>-</td>
-          </tr>
-          <tr>
-              <td><strong>id</strong><br><code>required</code></td>
-              <td>integer (ID) </td>
-              <td>-</td>
-          </tr>>
-          <tr>
-              <td>url</td>
-              <td>string &lt;Url&gt;</td>
-              <td>-</td>
+              <td>dict</td>
+              <td>Launcher id and token.</td>
           </tr>
       </tbody>
     </table>
@@ -496,23 +502,18 @@ Content Type | application/json
 #### Request Sample: 
 ```json
 {
-  "token": "string",
-  "id": 0
 }
 ````
 ### Responses
 
-#### Response sample: 201
+#### Response sample: 200
 
 <!--- details and summary tags, both, needed for expandable code --->
 <details>
-  <summary>201</summary>
+  <summary>200</summary>
 
 ```json
 {
-  "token": "string",
-  "id": 0,
-  "url": "string"
 }
 ```
 </details>
