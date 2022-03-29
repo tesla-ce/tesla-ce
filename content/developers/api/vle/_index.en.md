@@ -430,7 +430,7 @@ API endpoint that creates a new launcher url for VLE user.
 Concept | Data
 -- | --
 HTTP method | <code>**GET**</code>
-Path | /api/v2/vle/{id}/launcher/
+Path | /api/v2/vle/{vle_user_uid}/launcher/
 Authorization | JWT
 Content Type | application/json
 
