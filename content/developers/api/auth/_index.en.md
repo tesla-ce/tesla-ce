@@ -24,7 +24,7 @@ keywords: ["API","authentication", "auth"]
  <!--- auth_login_create --->
 # 1. Auth Login Create <a name="auth_login_create"></a>
 ---
-API endpoint that allow authentication process for front-end
+API endpoint that allows authentication process for front-end.
 
 
 ### Request
@@ -114,8 +114,8 @@ API endpoint that allow authentication process for front-end
 #### Request sample
 `````json
 {
-  "email": " inst_admin@dev.tesla-ce.eu", 
-  "password": "inst_admin@dev.tesla-ce.eu"
+  "email": " inst_admin@example.com", 
+  "password": "string"
 } 
 
 `````
@@ -129,8 +129,8 @@ API endpoint that allow authentication process for front-end
   ````json
 {
     "token": {
-      "access_token":"eyJhbGciOiAiUlMyNTYiLCAidHlwIjoWW89", 
-      "refresh_token":"eyJhbG"
+      "access_token":"8cdbacfe-de57-4c44-ad67-62f665bebfab", 
+      "refresh_token":"0f1d9342"
     }
 }
 
@@ -235,8 +235,8 @@ API endpoint that creates the access token for the SDK.
 #### Request sample
 `````json
 {
-  "role_id": "xxx", 
-  "secret_id": "xxx"
+  "role_id": "bad6209f-4310-4621-aa09-22178e71a7a9", 
+  "secret_id": "1211c5e7-d122-437b-9e45-824aa498bae9"
 } 
 
 
@@ -266,8 +266,8 @@ API endpoint that creates the access token for the SDK.
   "vle": { 
     "id": 1, 
     "lti": { 
-      "consumer_key": "c8e87343-9b3c-44ea-bb85-c640cc1f020b", 
-      "consumer_secret": "9bba2695-47b7-4d64-94f6-fbc76cd945b1"
+      "consumer_key": "0e55ff96-6a87-46bf-bfe9-09a882282d0d", 
+      "consumer_secret": "dd5c2714-f66a-4066-9b51-ac51b1f35a39"
     }, 
     "name": "default_moodle", 
     "type": 0, 
@@ -278,8 +278,8 @@ API endpoint that creates the access token for the SDK.
     "institution": 1
   }, 
   "token": { 
-    "access_token": "32ecbeb7-76f6-482f-8d92-bbdd50470704", 
-    "refresh_token": "2b450c9a-4211-4e1b-92ba-0893346da742"
+    "access_token": "ad56bb9e-c468-4c93-aef5-68048707b4bc", 
+    "refresh_token": "b96ac612-8473-423b-ac8b-3829a81afd7f"
   } 
 }
 
@@ -369,7 +369,7 @@ API endpoint used for recreating main token when it is expired.
 #### Request sample
 `````json
 { 
-  "refresh_token": "2b450c9a-4211-4e1b-92ba-0893346da742"
+  "refresh_token": "f59fc2e6-58e9-44a7-a398-a5c214a35ee7"
 } 
 
 
@@ -384,7 +384,7 @@ API endpoint used for recreating main token when it is expired.
   ````json
 {
   "token": {
-    "access_token": "7ce0eb17-3bdc-4fee-bce3-3a40386b0fc6"
+    "access_token": "fe67d841-5c6b-4799-b22c-a9493c401161"
   }
 }
 
