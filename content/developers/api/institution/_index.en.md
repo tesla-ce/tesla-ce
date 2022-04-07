@@ -1696,7 +1696,7 @@ API endpoint that allows Institution Courses list.
     </tr>
     <tr>
         <td>Path</td>
-        <td><span style="word-wrap: break-word">https://demo.tesla-project.eu/api/v2/institution/{parent_lookup_vle__institution_id}/course/</span></td>
+        <td><span style="word-wrap: break-word">/api/v2/institution/{parent_lookup_vle__institution_id}/course/</span></td>
     </tr>
     <tr>
         <td>Authorization</td>
