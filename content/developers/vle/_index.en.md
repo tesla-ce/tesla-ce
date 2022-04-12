@@ -10,64 +10,65 @@ keywords: ["vle","environment"]
   We're working on it!
 {{</ notice >}}
 
-Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam, ac posuere leo dapibus id. Cras fringilla convallis elit, at eleifend mi interam.
+<!--- COMMENT START
+# What is VLE?
+VLE from Virtual Learning Environment.
 
-{{< notice note >}}
-  This is a simple note.
-{{</ notice >}}
+Moodle, Kanbas, Blackboard.... Currently there is only plugin for Moodle.
 
-{{< notice tip >}}
-  This is a simple tip.
-{{</ notice >}}
+How to create course in Tesla -> When you create a course in VLE, it has to be created in Tesla.
 
-{{< notice info >}}
-  This is a simple info.
-{{</ notice >}}
+Where users and instructors interact.
+
+Everything that happens in VLE has to be sent to Tesla system.
 
 
-{{< tabs >}}
-  {{< tab "first" >}}
-   This is first tab
-  {{</ tab >}}
+Between Tesla and your VLE there is the SDK. Currently there are SDKs for Python and for <code>kenbeth???</code>.
+The SDK acts as a library for helping on call from VLE to Tesla and <code>viceversa?</code>
+SDK translate the requirement from VLE to an API endpoint.
 
-  {{< tab "second" >}}
-  this is second tab
-  {{</ tab >}}
+Endpoints:
+The Moodle plugin can create a Course, an activity, instructors and learners in Tesla.
 
-  {{< tab "third" >}}
-  this is third tab
-  {{</ tab >}}
-{{</ tabs >}}
+<br>
 
-Nulla non sollicitudin. Morbi sit amet laoreet ipsum, vel pretium mi. Morbi varius, tellus in accumsan blandit, elit ligula eleifend velit, luctus mattis ante nulla condimentum nulla. Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit.
+# Configuration
+---
+What we need to integrate a VLE: which data you need
 
-### Image Example
+Tesla: if you want to activate and use Tesla by default.
+Role
+Secret
+API URL
+Token expiration
+Debug mode: allows more error and information messages at interface leve.
+Learner create: Moodle can send in automated way Learner information to Tesla, or not.
+Instructor create: 
+Sticky position.
 
-Nunc porta malesuada porta. Etiam tristique vestibulum dolor at ultricies. Proin hendrerit sapien sed erat fermentum, at commodo velit consectetur.
-
+--- add configuration dashboard screenshot
 ![image example](img-1.jpg "image")
 
-Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.
+Create script to configure data or allow VLE to make it.
 
-### Example Of Code Block
+Steps:
+1. Set up VLE: get Moodle configuration (authentication: send role and secret to API, and the returns a set of data with configuration and tokens in order to allow you to communicate with the API )
+You will need the token for every query to API, since this is part of the authentication process.
+2. Depending on configuration VLE will be able to create course/learners or not. In case VLE is not allowed to created course/learners, those would need to be created from Instituion Dashboard???
 
-In accumsan lacus ac neque maximus dictum. Phasellus eleifend leo id mattis bibendum. Curabitur et purus turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+<br>
 
-```html
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png" >
-  <script src="/assets/js/main.js"></script>
-</head>
-```
+# API Endpoints
+---
 
-### Text and Quote
+## Admin user and Instructors:
+- Create and update a Course.
+- Create, update, configure, report and Activity
 
-Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna turpis.
+Learner user: The Learner user has no direct action with this module, beyond activating/deactivating and moving the position of the floating menu (sticky)
 
-> Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet
+## ONline/OFFline data
 
-Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.Etiam vestibulum risus vel arcu elementum eleifend. Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis. Phasellus at massa sit amet ante semper fermentum sed eget lectus. Quisque id dictum magna, et dapibus turpis.
+<br><br><br><br>
+
+COMMENT END --->
