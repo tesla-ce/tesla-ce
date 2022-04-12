@@ -429,7 +429,7 @@ API endpoint that creates a new launcher url for VLE user.
 ### Request
 Concept | Data
 -- | --
-HTTP method | <code>**GET**</code>
+HTTP method | <code>**POST**</code>
 Path | /api/v2/vle/{vle_user_uid}/launcher/
 Authorization | JWT
 Content Type | application/json
@@ -502,6 +502,11 @@ Content Type | application/json
 #### Request Sample: 
 ```json
 {
+	"vle_user_uid": "learner1@example.com",
+    "target": "DASHBOARD",
+    "ttl": 120,
+    "session_id": null,
+    "target_url": null
 }
 ````
 ### Responses
@@ -514,6 +519,9 @@ Content Type | application/json
 
 ```json
 {
+  "token": "df249481-1ad6-4c2e-ba8e-2db10132b5f4",
+  "id": 123,
+  "url": "https://yourdomain.com/ui/auth/launcher?id=123&token=df249481-1ad6-4c2e-ba8e-2db10132b5f4"
 }
 ```
 </details>
