@@ -10,19 +10,21 @@ keywords: ["API","authentication", "auth"]
   We're working on it!
 {{</ notice >}}
 
+
 <table><tr><td>
 
 # Table of Contents
-1. [Auth Login Create](#auth_login_create)
-1. [Auth Approle Create](#auth_approle_create)
-1. [Auth Token Refresh Create](#auth_token_refresh_create)
+1. [Authentication using login and password](#auth_login_create)
+1. [Authentication using vault approle](#auth_approle_create)
+1. [Token Refresh](#auth_token_refresh_create)
+1. [Authentication using launcher credentials](#auth_launcher)
 
 </td></tr></table>
 
 <br><br>
 
  <!--- auth_login_create --->
-# 1. Auth Login Create <a name="auth_login_create"></a>
+# 1. Authentication using login and password <a name="auth_login_create"></a>
 ---
 API endpoint that allows authentication process for front-end.
 
@@ -42,10 +44,6 @@ API endpoint that allows authentication process for front-end.
     <tr>
         <td>Path</td>
         <td><span style="word-wrap: break-word">/api/v2/auth/login</span></td>
-    </tr>
-    <tr>
-        <td>Authorization</td>
-        <td>JWT</td>
     </tr>
     <tr>
         <td>Content Type</td>
@@ -88,7 +86,7 @@ API endpoint that allows authentication process for front-end.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.<br>
+    Response parameters are included in a "token" object.<br><br>
     <table>
       <tbody>
           <tr>
@@ -124,7 +122,7 @@ API endpoint that allows authentication process for front-end.
 #### Response sample
 <!--- details and summary tags, both, needed for expandable code --->
 <details>
-  <summary>201</summary>
+  <summary>200</summary>
 
   ````json
 {
@@ -145,7 +143,7 @@ API endpoint that allows authentication process for front-end.
 
 
 <!--- auth_approle_create --->
-# 2. Auth Approle Create <a name="auth_approle_create"></a>
+# 2. Authentication using vault approle <a name="auth_approle_create"></a>
 ---
 API endpoint that creates the access token for the SDK.
 
@@ -165,10 +163,6 @@ API endpoint that creates the access token for the SDK.
     <tr>
         <td>Path</td>
         <td><span style="word-wrap: break-word">/api/v2/auth/approle</span></td>
-    </tr>
-    <tr>
-        <td>Authorization</td>
-        <td>JWT</td>
     </tr>
     <tr>
         <td>Content Type</td>
@@ -203,8 +197,11 @@ API endpoint that creates the access token for the SDK.
         </table>
   {{</ tab >}}
 
-  {{< tab "RESPONSE" >}}
-    Response parameters.<br>
+  {{<tab "RESPONSE">}}
+    Response parameters are included in a "token" object.<br><br>
+    The response also includes a complete VLE configuration that is not listed in the 
+below table (See <a href="/developers/api/auth/#response-sample-approle">Response Sample </a> 
+  section for a code sample).<br><br>
     <table>
       <tbody>
           <tr>
@@ -219,11 +216,6 @@ API endpoint that creates the access token for the SDK.
           </tr>
           <tr>
             <td><strong>refresh_token</strong><br><code>required</code></td>
-            <td>string </td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td><strong>access_token</strong><br><code>required</code></td>
             <td>string </td>
             <td>-</td>
           </tr>
@@ -243,10 +235,10 @@ API endpoint that creates the access token for the SDK.
 `````
 ### Responses
 
-#### Response sample
+#### Response sample <a name="response-sample-approle"></a>
 <!--- details and summary tags, both, needed for expandable code --->
 <details>
-  <summary>201</summary>
+  <summary>200</summary>
 
   ````json
 {
@@ -294,7 +286,7 @@ API endpoint that creates the access token for the SDK.
 <br>
 
 <!--- auth_token_refresh_create --->
-# 3. Auth Token Refresh Create <a name="auth_token_refresh_create"></a>
+# 3. Token Refresh <a name="auth_token_refresh_create"></a>
 ---
 API endpoint used for recreating main token when it is expired.
 
@@ -348,7 +340,7 @@ API endpoint used for recreating main token when it is expired.
   {{</ tab >}}
 
   {{< tab "RESPONSE" >}}
-    Response parameters.<br>
+    Response parameters are included in a "token" object.<br>
     <table>
       <tbody>
           <tr>
@@ -358,6 +350,11 @@ API endpoint used for recreating main token when it is expired.
           </tr>
           <tr>
             <td><strong>access_token</strong><br><code>required</code></td>
+            <td>string </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>refresh_token</strong><br><code>required</code></td>
             <td>string </td>
             <td>-</td>
           </tr>
@@ -379,12 +376,13 @@ API endpoint used for recreating main token when it is expired.
 #### Response sample
 <!--- details and summary tags, both, needed for expandable code --->
 <details>
-  <summary>201</summary>
+  <summary>200</summary>
 
   ````json
 {
   "token": {
-    "access_token": "fe67d841-5c6b-4799-b22c-a9493c401161"
+    "access_token": "fe67d841-5c6b-4799-b22c-a9493c401161",
+    "refresh_token": "4e183261-d394-4004-af96-017238668d42"
   }
 }
 
@@ -398,5 +396,116 @@ API endpoint used for recreating main token when it is expired.
 </div>
 <br>
 
+<!--- auth_launcher --->
+# 4. Authentication using launcher credentials<a name="auth_launcher"></a>
+---
+API endpoint that allows VLE user authentication for front-end using launcher credentials.
+
+### Request
+
+<table style="table-layout: fixed; width: 100%">
+ <tbody>
+    <tr>
+        <td style="width:20%"><strong>Concept</strong></td>
+        <td><strong>Data</strong></td>
+    </tr>
+    <tr>
+        <td>HTTP Method</td>
+        <td><strong><code>POST</code></strong></td>
+    </tr>
+    <tr>
+        <td>Path</td>
+        <td><span style="word-wrap: break-word">/api/v2/auth/token</span></td>
+    </tr>
+    <tr>
+        <td>Content Type</td>
+        <td>application/json</td>
+    </tr>
+ </tbody>
+</table>
+
+### Parameters
+
+{{< tabs >}}
+  {{< tab "REQUEST" >}}
+       Request parameters.<br>
+        <table>
+          <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>Type</strong></td>
+                <td><strong>Comments</strong></td>
+            </tr>
+            <tr>
+                <td><strong>launcher_id</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>token</strong><br><code>required</code></td>
+                <td>string</td>
+                <td>-</td>
+            </tr>
+         </tbody>
+        </table>
+  {{</ tab >}}
+
+  {{< tab "RESPONSE" >}}
+    Response parameters are included in a "token" object.<br>
+    <table>
+      <tbody>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Comments</strong></td>
+          </tr>
+          <tr>
+            <td><strong>access_token</strong><br><code>required</code></td>
+            <td>string </td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td><strong>refresh_token</strong><br><code>required</code></td>
+            <td>string </td>
+            <td>-</td>
+          </tr>
+       </tbody>
+    </table>
+  {{</tab>}}
+{{</tabs>}}
+
+#### Request sample
+`````json
+{
+  "id": "string", 
+  "token": "string"
+} 
+
+
+`````
+### Responses
+
+#### Response sample
+<!--- details and summary tags, both, needed for expandable code --->
+<details>
+  <summary>200</summary>
+
+  ````json
+{
+    "token": {
+      "access_token":"string", 
+      "refresh_token":"string"
+    }
+}
+
+
+  ````
+</details>
+
+<div style="text-align:right">
+
+[[top page]](#table-of-contents) 
+</div>
+<br>
 
 
