@@ -139,7 +139,7 @@ API endpoint that allows authentication process for front-end.
 
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -289,7 +289,7 @@ API endpoint that creates the access token for the SDK.
 
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -394,7 +394,7 @@ API endpoint used for recreating main token when it is expired.
 
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 

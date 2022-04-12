@@ -12,7 +12,7 @@ keywords: ["API","institution"]
 
 <table><tr><td>
 
-# Table of Content
+# Table of Contents
 
 1. [Institution Management](#institution_management)
 2. [Institution VLE Management](#institution_vle_management)
@@ -52,7 +52,7 @@ Set of API endpoint that allows access to institution data.
   1.4 PATCH: [Partial Update Institution](#institution_partial_update)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -195,7 +195,7 @@ API endpoint that allows access to institution data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_management) [[top page]](#table-of-content) 
+[[top section]](#institution_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -361,7 +361,7 @@ API endpoint that allows access to institution data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_management) [[top page]](#table-of-content) 
+[[top section]](#institution_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -579,7 +579,7 @@ API endpoint that allows institution data update.
 
 <div style="text-align:right">
 
-[[top section]](#institution_management) [[top page]](#table-of-content) 
+[[top section]](#institution_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -796,7 +796,7 @@ API endpoint that allows institution data update.
 
 <div style="text-align:right">
 
-[[top section]](#institution_management) [[top page]](#table-of-content) 
+[[top section]](#institution_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -814,7 +814,7 @@ Set of API endpoint that allows access to Institution VLE data.
   2.6 DEL: [Delete Institution VLE](#institution_vle_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -957,7 +957,7 @@ API endpoint that allows access to Institution VLE data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_vle_management) [[top page]](#table-of-content) 
+[[top section]](#institution_vle_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -1115,7 +1115,7 @@ API endpoint that creates Institution VLE.
 
 <div style="text-align:right">
 
-[[top section]](#institution_vle_management) [[top page]](#table-of-content) 
+[[top section]](#institution_vle_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -1250,7 +1250,7 @@ API endpoint that allows access to Institution VLE data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_vle_management) [[top page]](#table-of-content) 
+[[top section]](#institution_vle_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -1417,7 +1417,7 @@ API endpoint that updates Institution VLE data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_vle_management) [[top page]](#table-of-content) 
+[[top section]](#institution_vle_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -1580,7 +1580,7 @@ API endpoint that updates Institution VLE data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_vle_management) [[top page]](#table-of-content) 
+[[top section]](#institution_vle_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -1659,7 +1659,7 @@ API endpoint that deletes Institution VLE.
 
 <div style="text-align:right">
 
-[[top section]](#institution_vle_management) [[top page]](#table-of-content) 
+[[top section]](#institution_vle_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -1672,7 +1672,7 @@ Set of API endpoint that allows access to Institution Course data.
   3.3 GET: [Read Institution Course](#institution_course_read)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -1824,7 +1824,7 @@ API endpoint that allows Institution Courses list.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -1984,7 +1984,7 @@ API endpoint that allows access to Institution Course data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -2003,7 +2003,7 @@ Set of API endpoint that allows Course Groups to be viewed or edited.
   4.6 DEL: [Delete Institution Group](#institution_group_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -2170,7 +2170,7 @@ API endpoint that lists exisiting Course Groups.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -2351,7 +2351,7 @@ API endpoint that creates Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -2500,7 +2500,7 @@ API endpoint that allows access to a Course Group data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -2690,7 +2690,7 @@ API endpoint that updates Course Group data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -2878,7 +2878,7 @@ API endpoint that updates Course Group data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -2957,7 +2957,7 @@ API endpoint that deletes Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -2975,7 +2975,7 @@ Set of API endpoint that allows Courses in Course Groups to be added or deleted.
   5.6 DEL: [Delete Institution Group Courses](#institution_group_course_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -3120,7 +3120,7 @@ API endpoint that lists Courses in a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -3277,7 +3277,7 @@ API endpoint that adds Course to a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -3428,7 +3428,7 @@ API endpoint that allows access to Course data from a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -3594,7 +3594,7 @@ API endpoint that updates Course data from a Course Group .
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -3758,7 +3758,7 @@ API endpoint that updates Course data from a Course Group .
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -3842,7 +3842,7 @@ API endpoint that deletes course in a Course Group.
 
 <div style="text-align:right">
 
-[[top section]](#institution_group_course_management) [[top page]](#table-of-content) 
+[[top section]](#institution_group_course_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -3862,7 +3862,7 @@ Set of API endpoint that allows Informed Consent to be viewed or edited.
   6.7 DEL: [Delete Institution IC](#institution_ic_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -4019,7 +4019,7 @@ API endpoint that lists Informed Consent in an Institution.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -4188,7 +4188,7 @@ API endpoint that adds Informed Consent to an Institution.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -4343,7 +4343,7 @@ API endpoint that retrieves the current Informed Consent.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -4486,7 +4486,7 @@ API endpoint for reading an Informed Consent.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -4664,7 +4664,7 @@ API endpoint that updates Informed Consent data in an Institution.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -4840,7 +4840,7 @@ API endpoint that updates Informed Consent data in an Institution.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -4919,7 +4919,7 @@ API endpoint that deletes Informed Consent from an Institution.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -4938,7 +4938,7 @@ Set of API endpoint that allows Informed Consent Document to be viewed or edited
   7.6 DEL: [Delete Institution IC Document](#institution_ic_document_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -5108,7 +5108,7 @@ API endpoint that lists Informed Consent Documents.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_document_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_document_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -5285,7 +5285,7 @@ API endpoint that creates an Informed Consent Document.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_document_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_document_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -5446,7 +5446,7 @@ API endpoint for reading an Informed Consent Document.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_document_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_document_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -5646,7 +5646,7 @@ API endpoint that updates Informed Consent Document.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_document_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_document_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -5844,7 +5844,7 @@ API endpoint that updates Informed Consent Document.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_document_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_document_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -5928,7 +5928,7 @@ API endpoint that deletes Informed Consent Document.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ic_document_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ic_document_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -5943,7 +5943,7 @@ Set of API endpoint that allows read Instrument data.
   8.2 GET: [Read Institution Instrument](#institution_instrument_read)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -6093,7 +6093,7 @@ API endpoint that lists Institution Instruments.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instrument_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -6271,7 +6271,7 @@ API endpoint that allows read Instrument data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instrument_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -6289,7 +6289,7 @@ Set of API endpoint that allows Institution UI Options to be viewed or edited.
   9.6 DEL: [Delete Institution UI](#institution_ui_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -6431,7 +6431,7 @@ API endpoint that allows access to Institution UI data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ui_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ui_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -6577,7 +6577,7 @@ API endpoint that creates Institution UI.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ui_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ui_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -6706,7 +6706,7 @@ API endpoint that allows access to Institution UI data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ui_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ui_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -6861,7 +6861,7 @@ API endpoint that updates Institution UI data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ui_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ui_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -7014,7 +7014,7 @@ API endpoint that updates Institution UI data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ui_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ui_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -7093,7 +7093,7 @@ API endpoint that deletes Institution UI.
 
 <div style="text-align:right">
 
-[[top section]](#institution_ui_management) [[top page]](#table-of-content) 
+[[top section]](#institution_ui_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -7111,7 +7111,7 @@ Set of API endpoint that allows Institution Users to be managed.
   10.6 DEL: [Delete Institution User](#institution_user_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -7293,7 +7293,7 @@ API endpoint that allows Institution Users to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_user_management) [[top page]](#table-of-content) 
+[[top section]](#institution_user_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -7552,7 +7552,7 @@ API endpoint that creates Institution User.
 
 <div style="text-align:right">
 
-[[top section]](#institution_user_management) [[top page]](#table-of-content) 
+[[top section]](#institution_user_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -7741,7 +7741,7 @@ API endpoint that allows access to Institution User data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_user_management) [[top page]](#table-of-content) 
+[[top section]](#institution_user_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -8010,7 +8010,7 @@ API endpoint that updates Institution User data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_user_management) [[top page]](#table-of-content) 
+[[top section]](#institution_user_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -8277,7 +8277,7 @@ API endpoint that updates Institution User data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_user_management) [[top page]](#table-of-content) 
+[[top section]](#institution_user_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -8356,7 +8356,7 @@ API endpoint that deletes Institution User.
 
 <div style="text-align:right">
 
-[[top section]](#institution_user_management) [[top page]](#table-of-content) 
+[[top section]](#institution_user_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -8373,7 +8373,7 @@ Set of API endpoint that allows Institution Instructors to be viewed or edited.
   11.6 DEL: [Delete Institution Instructor](#institution_instructor_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -8523,7 +8523,7 @@ API endpoint that allows Institution Instructors to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -8753,7 +8753,7 @@ API endpoint that creates Institution Instructor.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -8930,7 +8930,7 @@ API endpoint that allows access to Institution Instructor data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instructor_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -9169,7 +9169,7 @@ API endpoint that updates Institution Instructor data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -9406,7 +9406,7 @@ API endpoint that updates Institution Instructor data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -9485,7 +9485,7 @@ API endpoint that deletes Institution Instructor.
 
 <div style="text-align:right">
 
-[[top section]](#institution_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -9508,7 +9508,7 @@ Set of API endpoint that allows Institution Learners to be viewed or edited.
 
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -9684,7 +9684,7 @@ API endpoint that allows Institution Learners to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -10008,7 +10008,7 @@ API endpoint that creates Institution Learner.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -10256,7 +10256,7 @@ API endpoint that allows access to Institution Learner data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -10589,7 +10589,7 @@ API endpoint that updates Institution Learner data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -10920,7 +10920,7 @@ API endpoint that updates Institution Learner data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -10999,7 +10999,7 @@ API endpoint that deletes Institution Learner.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -11247,7 +11247,7 @@ API endpoint that allows learner enrolment status to be viewed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -11579,7 +11579,7 @@ API endpoint that manages learner informed consent.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -11660,7 +11660,7 @@ API endpoint that deletes Institution Learner Informed Consent.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -11678,7 +11678,7 @@ Set of API endpoint that allows Institution SEND Category Data to be viewed or e
   13.6 DEL: [Delete Institution SEND](#institution_send_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -11834,7 +11834,7 @@ API endpoint that allows Institution SEND Categories to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -12003,7 +12003,7 @@ API endpoint that creates Institution SEND Category.
 
 <div style="text-align:right">
 
-[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -12146,7 +12146,7 @@ API endpoint that allows access to Institution SEND Category data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_send_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -12324,7 +12324,7 @@ API endpoint that updates Institution SEND Category data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -12500,7 +12500,7 @@ API endpoint that updates Institution SEND Category data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -12579,7 +12579,7 @@ API endpoint that deletes Institution SEND Category.
 
 <div style="text-align:right">
 
-[[top section]](#institution_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_send_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -12599,7 +12599,7 @@ Set of API endpoint that allows Institution Learner SEND Data to be viewed or ed
   14.6 DEL: [Delete Institution Learner SEND](#institution_learner_send_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -12765,7 +12765,7 @@ API endpoint that allows Institution Learner SEND to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -12938,7 +12938,7 @@ API endpoint that creates Institution Learner SEND.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -13081,7 +13081,7 @@ API endpoint that allows access to Institution Learner SEND data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -13263,7 +13263,7 @@ API endpoint that updates Institution Learner SEND data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -13443,7 +13443,7 @@ API endpoint that updates Institution Learner SEND data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -13527,7 +13527,7 @@ API endpoint that deletes Institution Learner SEND.
 
 <div style="text-align:right">
 
-[[top section]](#institution_learner_send_management) [[top page]](#table-of-content) 
+[[top section]](#institution_learner_send_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -13546,7 +13546,7 @@ Set of API endpoint that allows Institution Course Instructors to be viewed or e
   15.6 DEL: [Delete Institution Course Instructor](#institution_course_instructor_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -13695,7 +13695,7 @@ API endpoint that allows Institution Course Instructors to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -13846,7 +13846,7 @@ API endpoint that creates Institution Course Instructor.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -13992,7 +13992,7 @@ API endpoint that allows access to Institution Course Instructor data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_instructor_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -14152,7 +14152,7 @@ API endpoint that updates Institution Course Instructor data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -14309,7 +14309,7 @@ API endpoint that updates Institution Course Instructor data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -14393,7 +14393,7 @@ API endpoint that deletes Institution Course Instructor.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_instructor_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_instructor_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -14411,7 +14411,7 @@ Set of API endpoint that allows Institution Course Learners to be viewed or edit
   16.6 DEL: [Delete Institution Course Learner](#institution_course_learner_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -14588,7 +14588,7 @@ API endpoint that allows Institution Course Learners to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -14845,7 +14845,7 @@ API endpoint that creates Institution Course Learner.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -15074,7 +15074,7 @@ API endpoint that allows access to Institution Course Learner data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_learner_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -15340,7 +15340,7 @@ API endpoint that updates Institution Course Learner data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -15604,7 +15604,7 @@ API endpoint that updates Institution Course Learner data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -15688,7 +15688,7 @@ API endpoint that deletes Institution Course Learner.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_learner_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_learner_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -15707,7 +15707,7 @@ Set of API endpoint that allows Institution Course Activity Data to be viewed or
   17.6 DEL: [Delete Institution Course Activity](#institution_course_activity_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -15859,7 +15859,7 @@ API endpoint that allows Institution Course Activity to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -16034,7 +16034,7 @@ API endpoint that creates Institution Course Activity.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -16198,7 +16198,7 @@ API endpoint that allows access to Institution Course Activity data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -16382,7 +16382,7 @@ API endpoint that updates Institution Course Activity data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -16564,7 +16564,7 @@ API endpoint that updates Institution Course Activity data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -16648,7 +16648,7 @@ API endpoint that deletes Institution Course Activity.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -16667,7 +16667,7 @@ Set of API endpoint that allows Institution Course Activity Instrument Data to b
   18.6 DEL: [Delete Institution Course Activity Instrument](#institution_course_activity_instrument_delete)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -16836,7 +16836,7 @@ API endpoint that allows Institution Course Activity Instrument to be listed.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -17043,7 +17043,7 @@ API endpoint that creates Institution Course Activity Instrument.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -17209,7 +17209,7 @@ API endpoint that allows access to Institution Course Activity Instrument data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-contents) 
 </div>
 
 <br>
@@ -17421,7 +17421,7 @@ API endpoint that updates Institution Course Activity Instrument data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -17630,7 +17630,7 @@ API endpoint that updates Institution Course Activity Instrument data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -17719,7 +17719,7 @@ API endpoint that deletes Institution Course Activity Instrument.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_instrument_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -17733,7 +17733,7 @@ Set of API endpoint that allows view Activity Reports from a Course.
   19.2 GET: [Read Institution Course Activity Report](#institution_course_activity_report_read)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -17903,7 +17903,7 @@ API endpoint that lists Activity Reports in a Course.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_report_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_report_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -18063,7 +18063,7 @@ API endpoint that allows view Activity Reports data from a Course.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_report_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_report_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -18078,7 +18078,7 @@ Set of API endpoint that allows view Activity Reports Requests in a Course.
   20.2 GET: [Read Institution Course Activity Report Request](#institution_course_activity_report_request_read)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -18257,7 +18257,7 @@ API endpoint that lists Activity Reports Requests in a Course.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_report_request_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_report_request_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -18456,7 +18456,7 @@ API endpoint that allows view Activity Reports Requests data from a Course.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_report_request_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_report_request_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 
@@ -18471,7 +18471,7 @@ Set of API endpoint that allows view Activity Report Audit data.
   21.2 GET: [Read Institution Course Activity Report Audit](#institution_course_activity_report_audit_read)<br>
 <div style="text-align:right">
 
-[[top page]](#table-of-content) 
+[[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -18624,7 +18624,7 @@ API endpoint that lists Activity Report Audit data.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_report_audit_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_report_audit_management) [[top page]](#table-of-contents) 
 </div>
 <br>
 
@@ -18807,7 +18807,7 @@ API endpoint that allows view Activity Reports Audits data from a Course.
 
 <div style="text-align:right">
 
-[[top section]](#institution_course_activity_report_audit_management) [[top page]](#table-of-content) 
+[[top section]](#institution_course_activity_report_audit_management) [[top page]](#table-of-contents) 
 </div>
 <br><br>
 

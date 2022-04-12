@@ -11,7 +11,7 @@ keywords: ["API","admin"]
   We're working on it!
 {{</ notice >}}
 
-# Table of Content
+# Table of Contents
 1. [User Management](#user_management)
 2. [Institution Management](#institution_management)
 3. [Instrument Management](#instrument_management)
