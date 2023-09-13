@@ -1,6 +1,6 @@
 ---
 title: "Docker Swarm"
-weight: 1
+weight: 3
 draft: false
 # search related keywords
 keywords: ["install", "production", "docker", "self-hosted", "deployment"]
